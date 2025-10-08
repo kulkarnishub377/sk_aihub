@@ -446,10 +446,10 @@ if (monthlyBtn && yearlyBtn) {
     yearlyBtn.classList.remove('bg-primary-600', 'text-white');
     yearlyBtn.classList.add('text-neutral-600');
 
-    proPrice.textContent = '$49';
-    enterprisePrice.textContent = '$199';
-    proYearly.textContent = 'or $470/year';
-    enterpriseYearly.textContent = 'or $1910/year';
+    proPrice.textContent = '₹3,999';
+    enterprisePrice.textContent = '₹15,999';
+    proYearly.textContent = 'or ₹38,000/year';
+    enterpriseYearly.textContent = 'or ₹153,000/year';
   });
 
   yearlyBtn.addEventListener('click', () => {
@@ -458,10 +458,10 @@ if (monthlyBtn && yearlyBtn) {
     monthlyBtn.classList.remove('bg-primary-600', 'text-white');
     monthlyBtn.classList.add('text-neutral-600');
 
-    proPrice.textContent = '$39';
-    enterprisePrice.textContent = '$159';
-    proYearly.textContent = 'Save $120/year';
-    enterpriseYearly.textContent = 'Save $480/year';
+    proPrice.textContent = '₹3,199';
+    enterprisePrice.textContent = '₹12,799';
+    proYearly.textContent = 'Save ₹9,600/year';
+    enterpriseYearly.textContent = 'Save ₹38,400/year';
   });
 }
 
@@ -483,59 +483,4 @@ document.querySelectorAll('.faq-toggle').forEach(button => {
     content.classList.toggle('hidden');
     icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
   });
-});
-
-// Dark Mode Toggle Functionality
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const darkModeToggleDesktop = document.getElementById('dark-mode-toggle-desktop');
-
-function toggleDarkMode() {
-  const html = document.documentElement;
-  const isDark = html.classList.contains('dark');
-
-  if (isDark) {
-    html.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-    updateDarkModeIcons(false);
-  } else {
-    html.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-    updateDarkModeIcons(true);
-  }
-}
-
-function updateDarkModeIcons(isDark) {
-  const icons = document.querySelectorAll('#dark-mode-toggle .material-icons, #dark-mode-toggle-desktop .material-icons');
-  icons.forEach(icon => {
-    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
-  });
-}
-
-// Initialize dark mode
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-  document.documentElement.classList.add('dark');
-  updateDarkModeIcons(true);
-}
-
-if (darkModeToggle) {
-  darkModeToggle.addEventListener('click', toggleDarkMode);
-}
-
-if (darkModeToggleDesktop) {
-  darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
-}
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('theme')) {
-    if (e.matches) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    updateDarkModeIcons(e.matches);
-  }
 });
