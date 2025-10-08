@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Booster - SK AI Hub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #B80B0B;
+            --accent: #00c9a7;
+            --bg-light: #f8f9fa;
+            --bg-white: #fff;
+            --text-dark: #222;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Animated SVG Background */
+        .svg-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.18;
+            animation: bgMove 20s linear infinite alternate;
+        }
+        @keyframes bgMove {
+            0% { transform: scale(1) translateY(0);}
+            100% { transform: scale(1.05) translateY(-30px);}
+        }
+        /* Home Button */
+        .home-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+            background: var(--bg-white);
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 10px 22px;
+            font-weight: 600;
+            color: var(--primary);
+            transition: background 0.2s, color 0.2s;
+        }
+        .home-button:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        /* Header */
+        .course-header {
+            margin-top: 90px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .course-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            animation: fadeInDown 1s;
+        }
+        .course-header .lead {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-top: 10px;
+            animation: fadeInUp 1.2s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Course Details */
+        .course-details .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.97);
+            transition: transform 0.2s;
+        }
+        .course-details .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
+        }
+        .course-details .card-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+        .course-details ul {
+            padding-left: 1.2em;
+        }
+        .course-details ul li {
+            margin-bottom: 8px;
+            font-size: 1.08em;
+            position: relative;
+            padding-left: 28px;
+        }
+        .course-details ul li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        /* Registration Form */
+        .registration-form {
+            background-color: var(--bg-white);
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s;
+        }
+        .registration-form h2 {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .form-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .form-control:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem rgba(0,201,167,0.15);
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+            color: #fff;
+            border: none;
+            padding: 13px 32px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 4px 16px rgba(0,123,255,0.10);
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--accent) 60%, var(--primary) 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .course-header { margin-top: 60px;}
+        }
+        @media (max-width: 767px) {
+            .home-button { top: 12px; left: 12px; padding: 8px 16px;}
+            .course-header h1 { font-size: 2rem;}
+            .registration-form { padding: 1.2rem;}
+        }
+        /* Animated Icon */
+        .animated-icon {
+            animation: bounce 1.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-10px);}
+        }
+        /* SVG Divider */
+        .svg-divider {
+            width: 100%;
+            height: 60px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated SVG Background (W3 SVG style) -->
+    <svg class="svg-bg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="bg-gradient" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#007bff" />
+                <stop offset="1" stop-color="#00c9a7" />
+            </linearGradient>
+        </defs>
+        <circle cx="1200" cy="200" r="180" fill="url(#bg-gradient)" opacity="0.25"/>
+        <ellipse cx="300" cy="700" rx="220" ry="120" fill="#B80B0B" opacity="0.13"/>
+        <rect x="900" y="600" width="300" height="180" rx="90" fill="#00c9a7" opacity="0.10"/>
+        <polygon points="200,100 350,180 280,300" fill="#007bff" opacity="0.10"/>
+        <circle cx="400" cy="200" r="60" fill="#00c9a7" opacity="0.18"/>
+    </svg>
+
+    <a href="../../index.html" class="btn home-button shadow-sm">
+        <i class="fas fa-home animated-icon"></i> Home
+    </a>
+
+    <header class="course-header">
+        <div class="container">
+            <h1>
+                <i class="fas fa-rocket animated-icon"></i>
+                Career Booster: Interview + Resume + LinkedIn
+            </h1>
+            <p class="lead">
+                <i class="fas fa-briefcase"></i>
+                Land your dream job with our expert guidance.
+            </p>
+        </div>
+        <!-- SVG Divider -->
+        <svg class="svg-divider" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#00c9a7" fill-opacity="0.13" d="M0,32L80,37.3C160,43,320,53,480,53.3C640,53,800,43,960,37.3C1120,32,1280,32,1360,32L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z"></path>
+        </svg>
+    </header>
+
+    <main class="course-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <i class="fas fa-info-circle"></i> Course Description
+                            </h2>
+                            <p>
+                                Build <strong>ATS-friendly resumes</strong>, optimize your <strong>LinkedIn profile</strong>, and learn proven <strong>interview strategies</strong> to ace your next interview. This course is designed for professionals at all levels looking to advance their careers.
+                            </p>
+                            <h3 class="mt-4">
+                                <i class="fas fa-check-circle"></i> What you'll learn:
+                            </h3>
+                            <ul>
+                                <li>Resume writing for Applicant Tracking Systems (ATS)</li>
+                                <li>LinkedIn profile optimization techniques</li>
+                                <li>Behavioral and technical interview preparation</li>
+                                <li>Salary negotiation strategies</li>
+                                <li>Personal branding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <i class="fas fa-info"></i> Course Info
+                            </h3>
+                            <p><strong><i class="fas fa-sitemap"></i> Category:</strong> Professional</p>
+                            <p><strong><i class="fas fa-desktop"></i> Mode:</strong> Online Only (Free)</p>
+                            <p><strong><i class="far fa-clock"></i> Duration:</strong> 2 Weeks</p>
+                            <p><strong><i class="fas fa-rupee-sign"></i> Fee:</strong> ₹0 (Free)</p>
+                            <p><strong><i class="fas fa-chart-line"></i> Level:</strong> All Levels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-form mt-5">
+                <h2>
+                    <i class="fas fa-user-plus"></i> Register for this Course
+                </h2>
+                <form id="registerForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10,}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label"><i class="fas fa-university"></i> College/Organization</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label"><i class="fas fa-comment-dots"></i> Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">
+                        <i class="fas fa-paper-plane"></i> Register Now
+                    </button>
+                    <div id="formAlert" class="alert mt-3 d-none"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animated form feedback
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var alertBox = document.getElementById('formAlert');
+            alertBox.classList.remove('d-none', 'alert-danger');
+            alertBox.classList.add('alert', 'alert-success');
+            alertBox.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for registering! We will contact you soon.';
+            this.reset();
+            setTimeout(function() {
+                alertBox.classList.add('d-none');
+            }, 5000);
+        });
+        // Animate icons on hover
+        document.querySelectorAll('.btn-custom, .home-button').forEach(function(btn){
+            btn.addEventListener('mouseenter', function(){
+                btn.querySelector('i').classList.add('fa-bounce');
+            });
+            btn.addEventListener('mouseleave', function(){
+                btn.querySelector('i').classList.remove('fa-bounce');
+            });
+        });
+    </script>
+</body>
+</html>

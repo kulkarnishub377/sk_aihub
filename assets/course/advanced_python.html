@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Python with APIs & Automation - SK AI Hub</title>
+    <!-- Bootstrap & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #50e3c2;
+            --accent: #f9d423;
+            --dark: #0d2c4e;
+            --light: #f4f7f6;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(44,62,80,0.08);
+            --gradient: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: #222;
+            overflow-x: hidden;
+        }
+        .course-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 5rem 1rem 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-header .badge {
+            background: var(--accent);
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.5em 1.2em;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .course-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .course-header .lead {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
+        }
+        .header-illustration {
+            width: 140px;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.08));
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-18px);}
+        }
+        .header-home-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 10;
+            background: var(--primary);
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.15);
+            transition: background 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+        .header-home-btn:hover {
+            background: var(--dark);
+            transform: scale(1.08);
+            color: var(--white);
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            margin-top: 6px;
+        }
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            background: var(--white);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 32px rgba(44,62,80,0.13);
+        }
+        .card-body {
+            padding: 2.2rem;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.08rem;
+        }
+        .info-list li i {
+            color: var(--primary);
+            margin-right: 14px;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+        .what-you-learn-list {
+            list-style: none;
+            padding: 0;
+        }
+        .what-you-learn-list li {
+            position: relative;
+            padding-left: 2.1em;
+            margin-bottom: 0.9em;
+            font-size: 1.08rem;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s;
+        }
+        .what-you-learn-list li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .what-you-learn-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+        .registration-form {
+            background: var(--white);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .registration-form::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            opacity: 0.18;
+            z-index: 0;
+        }
+        .form-label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        .form-control, .form-select {
+            border-radius: 7px;
+            border: 1px solid #e0e0e0;
+            padding: 0.9em 1em;
+            font-size: 1rem;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.18rem rgba(74,144,226,0.13);
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            padding: 0.85em 2.5em;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: translateY(-2px) scale(1.03);
+        }
+        .form-check-input:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .form-check-label i {
+            margin-right: 6px;
+            color: var(--secondary);
+        }
+        .timeline {
+            position: relative;
+            margin: 2rem 0 2rem 0.5rem;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2.2rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-step:last-child { margin-bottom: 0; }
+        .timeline-step .step-icon {
+            position: absolute;
+            left: -2px;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        }
+        .timeline-step .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .timeline-step .step-desc {
+            color: #444;
+            font-size: 1rem;
+        }
+        .course-icon {
+            margin-right: 12px;
+            filter: drop-shadow(0 2px 8px rgba(44,62,80,0.08));
+            transition: transform 0.3s;
+        }
+        .course-icon:hover {
+            transform: scale(1.15) rotate(-8deg);
+        }
+        .fit-content-title {
+            width: fit-content;
+        }
+        .highlight {
+            background: linear-gradient(90deg, var(--accent) 60%, transparent 100%);
+            padding: 0 0.3em;
+            border-radius: 6px;
+            color: var(--dark);
+        }
+        .floating-badge {
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 0.5em 1.2em;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+            animation: badgeFloat 2.5s infinite alternate;
+            z-index: 2;
+        }
+        @keyframes badgeFloat {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-10px);}
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .course-header h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.4rem; }
+            .card-body { padding: 1.2rem; }
+            .registration-form { padding: 1.2rem 0.7rem; }
+            .header-home-btn {
+                top: 12px;
+                right: 12px;
+                width: 42px;
+                height: 42px;
+                font-size: 1.1rem;
+            }
+            .floating-badge { left: 10px; top: 10px; }
+        }
+        @media (max-width: 767px) {
+            .timeline { padding-left: 1.2rem; }
+            .timeline-step { padding-left: 2rem; }
+            .timeline-step .step-icon { left: -8px; }
+        }
+         .contact-support-title {
+            color: var(--primary);
+            font-weight: 600;
+        }
+         .highlighted-announcement {
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header class="course-header">
+        <a href="../../index.html" class="header-home-btn" title="Go to Home">
+            <i class="fas fa-home"></i>
+        </a>
+        <span class="floating-badge" data-aos="fade-down">Professional Course</span>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="header-illustration" data-aos="zoom-in" />
+        <h1 data-aos="fade-up"><span class="highlight">Advanced Python</span> with APIs & Automation</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">
+            Automate tasks, build robust APIs, and elevate your Python skills for the real world.<br>
+            <span class="highlighted-announcement">Now with <b>Cloud Deployment</b> & <b>Live Projects</b>!</span>
+       
+        </p>
+        <div class="d-flex justify-content-center gap-3 mb-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" width="38" class="course-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" width="38" class="course-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" width="38" class="course-icon">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" width="38" class="course-icon">
+        </div>
+    </header>
+    <main class="course-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card" data-aos="fade-right">
+                        <div class="card-body">
+                            <h2 class="section-title">Course Description</h2>
+                            <p>
+                                <strong>Advanced Python with APIs & Automation</strong> is a hands-on, project-driven course designed for learners who want to take their Python skills to the next level. This course covers advanced programming concepts, API development, and real-world automation techniques. You will learn to build and consume RESTful APIs, automate repetitive tasks, and integrate Python with popular web frameworks and tools.
+                            </p>
+                            <ul class="mb-4">
+                                <li><strong>API Development:</strong> Learn to design, build, and secure RESTful APIs using Flask and Django REST Framework.</li>
+                                <li><strong>Automation:</strong> Automate web tasks, file operations, and data pipelines using Python scripts and libraries.</li>
+                                <li><strong>Web Scraping:</strong> Extract and process data from websites using BeautifulSoup and Scrapy.</li>
+                                <li><strong>Browser Automation:</strong> Use Selenium for browser-based automation and testing workflows.</li>
+                                <li><strong>Cloud Deployment:</strong> Deploy Python applications to cloud platforms and manage environments efficiently.</li>
+                                <li><strong>Best Practices:</strong> Follow industry standards for code quality, security, and scalability.</li>
+                                <li><strong>Live Projects:</strong> Work on real-world projects to build your portfolio and gain practical experience.</li>
+                                <li><strong>Career Guidance:</strong> Get tips on interviews, resume building, and freelancing with Python.</li>
+                            </ul>
+                            <h3 class="section-title mt-5">Who Should Enroll?</h3>
+                            <ul>
+                                <li>Students and professionals with basic Python knowledge seeking advanced skills.</li>
+                                <li>Developers interested in automation, API development, and web integration.</li>
+                                <li>Anyone aiming to build real-world Python projects for career growth.</li>
+                                <li>Freelancers and job seekers wanting to stand out with practical Python expertise.</li>
+                            </ul>
+                            <h3 class="section-title mt-5">What You'll Learn</h3>
+                            <ul class="what-you-learn-list" id="learn-list"></ul>
+                            <h3 class="section-title mt-5">Course Roadmap</h3>
+                            <div class="timeline" id="timeline"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" data-aos="fade-left">
+                        <div class="card-body">
+                            <h3 class="section-title">Course Info</h3>
+                            <div class="mb-3 d-flex flex-wrap gap-2">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" width="38" class="course-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" width="38" class="course-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" width="38" class="course-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS" width="38" class="course-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="38" class="course-icon">
+                            </div>
+                            <ul class="info-list" id="info-list"></ul>
+                            <div class="mt-4">
+                                <h5 class="mb-2 contact-support-title">Contact & Support</h5>
+                                <p class="mb-1"><i class="fas fa-envelope"></i> <a href="mailto:info@skaihub.com">info@skaihub.com</a></p>
+                                <p class="mb-0"><i class="fas fa-phone"></i> <a href="tel:+911234567890">+91 12345 67890</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registration-form" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-center section-title mx-auto fit-content-title">Register for this Course</h2>
+                <form class="mt-4" id="regForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label">College/Organization</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Any questions you have..."></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label">Mode</label>
+                            <select class="form-select" id="mode" required>
+                                <option value="">Select Mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Payment Option</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
+                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
+                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="formAlert" class="alert mt-3 d-none"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">Register Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap & AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Animate on Scroll
+        AOS.init({ duration: 900, once: true });
+
+        // Dynamic What You'll Learn List with animation
+        const learnList = [
+            "Build RESTful APIs with Flask and Django.",
+            "Advanced web scraping with BeautifulSoup & Scrapy.",
+            "Automate browsers for testing and data gathering using Selenium.",
+            "Integrate with databases and third-party APIs.",
+            "Deploy Python applications to the cloud (AWS, Heroku).",
+            "Follow best practices for code, security, and scalability.",
+            "Work on live projects and real-world automation tasks.",
+            "Version control with Git & GitHub for collaboration.",
+            "Dockerize your Python apps for easy deployment.",
+            "Interview prep and freelancing tips for Python developers."
+        ];
+        const learnUl = document.getElementById('learn-list');
+        learnList.forEach((item, idx) => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            learnUl.appendChild(li);
+            setTimeout(() => li.classList.add('visible'), 200 + idx * 120);
+        });
+
+        // Dynamic Course Info
+        const infoList = [
+            { icon: "fas fa-sitemap", label: "Category:", value: "Professional" },
+            { icon: "fas fa-desktop", label: "Mode:", value: "Online + Offline" },
+            { icon: "far fa-clock", label: "Duration:", value: "1 Month (40+ hours)" },
+            { icon: "fas fa-rupee-sign", label: "Fee:", value: "₹3,999" },
+            { icon: "fas fa-chart-line", label: "Level:", value: "Intermediate–Advanced" },
+            { icon: "fas fa-certificate", label: "Certificate:", value: "Yes (with project)" },
+            { icon: "fas fa-users", label: "Batch Size:", value: "Small (max 15)" },
+            { icon: "fas fa-briefcase", label: "Projects:", value: "3+ Live Projects" }
+        ];
+        const infoUl = document.getElementById('info-list');
+        infoList.forEach(info => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="${info.icon}"></i><strong>${info.label}</strong> ${info.value}`;
+            infoUl.appendChild(li);
+        });
+
+        // Dynamic Timeline (Course Roadmap)
+        const timelineSteps = [
+            {
+                icon: "fas fa-code",
+                title: "Advanced Python Concepts",
+                desc: "OOP, decorators, generators, context managers, error handling, and best practices."
+            },
+            {
+                icon: "fas fa-network-wired",
+                title: "API Development",
+                desc: "RESTful API design, Flask & Django REST Framework, authentication, and documentation."
+            },
+            {
+                icon: "fas fa-robot",
+                title: "Automation & Scripting",
+                desc: "Automate files, emails, Excel, and repetitive tasks using Python scripts."
+            },
+            {
+                icon: "fas fa-spider",
+                title: "Web Scraping",
+                desc: "Scrape and process data from websites using BeautifulSoup and Scrapy."
+            },
+            {
+                icon: "fas fa-globe",
+                title: "Browser Automation",
+                desc: "Automate browsers for testing and data extraction using Selenium."
+            },
+            {
+                icon: "fas fa-database",
+                title: "Database & API Integration",
+                desc: "Connect with SQL/NoSQL databases and third-party APIs."
+            },
+            {
+                icon: "fab fa-docker",
+                title: "Deployment & Docker",
+                desc: "Dockerize your apps and deploy to AWS/Heroku."
+            },
+            {
+                icon: "fas fa-project-diagram",
+                title: "Live Projects",
+                desc: "Work on real-world projects and build your portfolio."
+            },
+            {
+                icon: "fas fa-user-tie",
+                title: "Career Guidance",
+                desc: "Interview prep, freelancing, and resume building."
+            }
+        ];
+        const timelineDiv = document.getElementById('timeline');
+        timelineSteps.forEach((step, idx) => {
+            const stepDiv = document.createElement('div');
+            stepDiv.className = 'timeline-step';
+            stepDiv.setAttribute('data-aos', 'fade-up');
+            stepDiv.setAttribute('data-aos-delay', 100 + idx * 80);
+            stepDiv.innerHTML = `
+                <span class="step-icon"><i class="${step.icon}"></i></span>
+                <div class="step-title">${step.title}</div>
+                <div class="step-desc">${step.desc}</div>
+            `;
+            timelineDiv.appendChild(stepDiv);
+        });
+
+        // Enhanced Form Validation and Feedback
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const mode = document.getElementById('mode').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+            const alertBox = document.getElementById('formAlert');
+            if (!name || !email || !phone || !mode || !payment) {
+                alertBox.className = 'alert alert-danger mt-3';
+                alertBox.textContent = 'Please fill all required fields and select a payment option.';
+                alertBox.classList.remove('d-none');
+                return;
+            }
+            alertBox.className = 'alert alert-success mt-3';
+            alertBox.textContent = 'Registration successful! We will contact you soon.';
+            alertBox.classList.remove('d-none');
+            this.reset();
+            setTimeout(() => alertBox.classList.add('d-none'), 3500);
+        });
+
+        // Animate course icons on hover (JS fallback for mobile)
+        document.querySelectorAll('.course-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', () => icon.style.transform = 'scale(1.15) rotate(-8deg)');
+            icon.addEventListener('mouseleave', () => icon.style.transform = '');
+        });
+    </script>
+</body>
+</html>

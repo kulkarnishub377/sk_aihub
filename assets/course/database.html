@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Mastery Course - SK AI Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0062e6;
+            --secondary-color: #b80b0b;
+            --accent-color: #00c9a7;
+            --text-color: #23272f;
+            --bg-light: #f4f7fa;
+            --bg-white: #fff;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: var(--bg-light);
+            min-height: 100vh;
+            margin: 0;
+        }
+        .header-home-btn {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            z-index: 100;
+            background: var(--primary-color);
+            color: #fff !important;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,98,230,0.08);
+            transition: background 0.2s;
+        }
+        .header-home-btn:hover {
+            background: var(--secondary-color);
+        }
+        .course-header {
+            background: linear-gradient(120deg, var(--primary-color) 60%, var(--accent-color) 100%);
+            color: #fff;
+            padding: 4.5rem 0 2.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-header .badge {
+            background: var(--secondary-color);
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5em 1.2em;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(184,11,11,0.08);
+        }
+        .course-header .header-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            animation: bounceIn 1.2s;
+        }
+        .course-header h1 {
+            font-weight: 700;
+            font-size: 2.7rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.7rem;
+            animation: fadeInDown 1s;
+        }
+        .course-header .lead {
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+            animation: fadeInUp 1.2s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.7);}
+            60% { transform: scale(1.1);}
+            100% { transform: scale(1);}
+        }
+        .course-details {
+            padding: 3.5rem 0 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .section-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            background: var(--bg-white);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
+        }
+        .what-you-learn-list, .info-list, .modules-list {
+            padding-left: 1.2rem;
+            margin-bottom: 0;
+        }
+        .what-you-learn-list li, .info-list li, .modules-list li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.7rem;
+            font-size: 1.05rem;
+        }
+        .what-you-learn-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .info-list li::before {
+            display: none;
+        }
+        .info-list i {
+            color: var(--primary-color);
+            margin-right: 0.7em;
+            font-size: 1.1em;
+        }
+        .modules-list li::before {
+            content: "\f0da";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .modules-list .module-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .registration-form {
+            background: var(--bg-white);
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s;
+        }
+        .fit-width {
+            width: fit-content;
+        }
+        .registration-form h2 {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,98,230,0.08);
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(184,11,11,0.12);
+        }
+        .tech-icons img {
+            margin-right: 10px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+        }
+        .highlight-box {
+            background: linear-gradient(90deg, #e3f2fd 60%, #e0f7fa 100%);
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,98,230,0.06);
+            font-size: 1.08rem;
+            color: #1a237e;
+            font-weight: 500;
+        }
+        @media (max-width: 991px) {
+            .course-header {
+                padding: 2.5rem 0 1.5rem 0;
+            }
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .registration-form {
+                padding: 1.5rem 0.5rem;
+            }
+            .header-home-btn {
+                top: 12px;
+                right: 12px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Button at Top Right -->
+    <a href="../../index.html" class="header-home-btn" title="Go to Home">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="course-header position-relative">
+        <span class="badge">Professional Course</span>
+        <span class="header-icon mb-2">
+            <i class="fas fa-database"></i>
+        </span>
+        <h1>Database Mastery: SQL & NoSQL</h1>
+        <p class="lead">Master the fundamentals and advanced concepts of databases, SQL, and NoSQL for real-world applications.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="course-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="highlight-box" id="highlight-box"></div>
+                            <h2 class="section-title">Course Description</h2>
+                            <p id="course-desc"></p>
+                            <h3 class="section-title mt-5">What You'll Learn</h3>
+                            <ul class="what-you-learn-list" id="learn-list"></ul>
+                            <h3 class="section-title mt-5">Course Modules</h3>
+                            <ul class="modules-list" id="modules-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="section-title">Course Info</h3>
+                            <ul class="info-list" id="info-list"></ul>
+                            <div class="mt-4 text-center tech-icons" id="tech-icons"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registration-form mt-4">
+                <h2 class="text-center section-title mx-auto fit-width">Register for this Course</h2>
+                <form class="mt-4" id="regForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label">College/Organization</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Any questions you have..."></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label">Mode</label>
+                            <select class="form-select" id="mode" required>
+                                <option value="">Select Mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Payment Option</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
+                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
+                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="formAlert" class="alert mt-3 d-none"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">Register Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight Box
+        document.getElementById('highlight-box').innerHTML =
+            '<i class="fas fa-star text-warning"></i> <span>Limited seats available! Early registrants get exclusive project resources and 1:1 mentorship session.</span>';
+
+        // Course Description
+        document.getElementById('course-desc').textContent =
+            "Database Mastery: SQL & NoSQL is a hands-on, project-driven course covering everything from database fundamentals to advanced SQL and NoSQL concepts. Learn to design, implement, and manage databases for web and enterprise applications. Get hands-on with MySQL, PostgreSQL, MongoDB, and more. Perfect for aspiring developers, data analysts, and anyone looking to boost their data skills.";
+
+        // What You'll Learn List
+        const learnList = [
+            "Database fundamentals: RDBMS vs NoSQL",
+            "SQL: SELECT, INSERT, UPDATE, DELETE, JOINs, GROUP BY, and more",
+            "Database design: ER diagrams, normalization, relationships",
+            "Hands-on with MySQL & PostgreSQL",
+            "Introduction to NoSQL: MongoDB basics",
+            "CRUD operations in SQL & NoSQL",
+            "Indexes, transactions, and performance tuning",
+            "Backup, restore, and security essentials",
+            "Connecting databases with web applications",
+            "Mini projects and real-world scenarios"
+        ];
+        const learnUl = document.getElementById('learn-list');
+        learnList.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            learnUl.appendChild(li);
+        });
+
+        // Course Modules
+        const modules = [
+            { title: "Module 1: Database Basics", topics: [
+                "What is a Database?", "Types of Databases", "RDBMS vs NoSQL"
+            ]},
+            { title: "Module 2: SQL Essentials", topics: [
+                "Data Types & Tables", "SELECT, INSERT, UPDATE, DELETE", "JOINs, GROUP BY, Aggregations"
+            ]},
+            { title: "Module 3: Database Design", topics: [
+                "ER Diagrams", "Normalization", "Relationships"
+            ]},
+            { title: "Module 4: Advanced SQL", topics: [
+                "Indexes & Transactions", "Stored Procedures", "Performance Tuning"
+            ]},
+            { title: "Module 5: NoSQL & MongoDB", topics: [
+                "NoSQL Concepts", "CRUD in MongoDB", "Aggregation & Indexing"
+            ]},
+            { title: "Module 6: Integration & Projects", topics: [
+                "Connecting DB with Apps", "Security & Backup", "Mini Projects"
+            ]}
+        ];
+        const modulesUl = document.getElementById('modules-list');
+        modules.forEach(mod => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span class="module-title">${mod.title}</span><ul style="margin-top:0.3em;">${
+                mod.topics.map(t => `<li style="font-weight:400;color:#23272f;padding-left:1.2em;">${t}</li>`).join('')
+            }</ul>`;
+            modulesUl.appendChild(li);
+        });
+
+        // Course Info
+        const infoList = [
+            { icon: "fas fa-sitemap", label: "Category:", value: "Professional" },
+            { icon: "fas fa-desktop", label: "Mode:", value: "Online + Offline" },
+            { icon: "far fa-clock", label: "Duration:", value: "1 Month" },
+            { icon: "fas fa-rupee-sign", label: "Fee:", value: "₹3,999" },
+            { icon: "fas fa-chart-line", label: "Level:", value: "Beginner to Intermediate" },
+            { icon: "fas fa-certificate", label: "Certificate:", value: "Yes" },
+            { icon: "fas fa-language", label: "Language:", value: "English, Hindi" }
+        ];
+        const infoUl = document.getElementById('info-list');
+        infoList.forEach(info => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="${info.icon}"></i><strong>${info.label}</strong> ${info.value}`;
+            infoUl.appendChild(li);
+        });
+
+        // Tech Icons
+        const techIcons = [
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", alt: "MySQL" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", alt: "PostgreSQL" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB" },
+            { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg", alt: "SQLite" }
+        ];
+        const techIconsDiv = document.getElementById('tech-icons');
+        techIcons.forEach(icon => {
+            const img = document.createElement('img');
+            img.src = icon.src;
+            img.alt = icon.alt;
+            img.width = 38;
+            techIconsDiv.appendChild(img);
+        });
+
+        // Enhanced Form Validation and Feedback
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const mode = document.getElementById('mode').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+            const alertBox = document.getElementById('formAlert');
+            if (!name || !email || !phone || !mode || !payment) {
+                alertBox.className = 'alert alert-danger mt-3';
+                alertBox.textContent = 'Please fill all required fields and select a payment option.';
+                alertBox.classList.remove('d-none');
+                return;
+            }
+            alertBox.className = 'alert alert-success mt-3';
+            alertBox.textContent = 'Registration successful! We will contact you soon.';
+            alertBox.classList.remove('d-none');
+            this.reset();
+            setTimeout(() => alertBox.classList.add('d-none'), 3500);
+        });
+    </script>
+</body>
+</html>

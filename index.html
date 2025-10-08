@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Tags and Title -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SK AI Hub - Professional Training</title>
+  <meta content="SK AI Hub offers professional training in web development, software development, and more." name="description">
+  <meta content="e-learning, online courses, web development, python, java, programming" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/icon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Boxicons CSS for mission icon -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <style>
+    .btn-portfolio-hero {
+      top: 100px;
+      right: 40px;
+      z-index: 10;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 2rem;
+      padding: 0.6rem 1.5rem;
+      position: absolute;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .btn-portfolio-hero:focus, .btn-portfolio-hero:hover {
+      background: #ffc107;
+      color: #222;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      text-decoration: none;
+    }
+    @media (max-width: 767.98px) {
+      .btn-portfolio-hero {
+        top: 18px;
+        right: 12px;
+        padding: 0.5rem 1rem;
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+  
+  <!-- Custom JS Files -->
+  <script src="assets/js/main1.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+  <!-- Back to Portfolio Button moved into Navbar (Top Left) -->
+  <!-- ======= Header / Navbar (Pro Theme) ======= -->
+  <header id="header" class="pro-navbar navbar navbar-expand-lg fixed-top shadow-sm bg-gradient-primary border-0">
+      <nav class="container-fluid px-0">
+      <div class="container d-flex align-items-center justify-content-between py-2">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero" aria-label="SK AI Hub Home">
+            <img src="assets/img/new_logo.png" alt="SK AI Hub Logo" class="logo-img pro-navbar-logo" width="500" height="500">
+          <span class="fw-bold fs-5 ms-2 d-none d-md-inline text-gradient">SK AI Hub</span>
+        </a>
+      <!-- Navbar Toggler for Mobile -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon d-flex align-items-center justify-content-center"><i class="fa fa-bars fs-3"></i></span>
+      </button>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center gap-lg-2 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link scrollto active px-lg-3" href="#hero" aria-current="page"><i class="fa fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto px-lg-3" href="#about"><i class="fa fa-info-circle me-1"></i> About</a>
+          </li>
+          <!-- Courses Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle scrollto px-lg-3" href="#courses" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-graduation-cap me-1"></i> Courses
+            </a>
+            <ul class="dropdown-menu shadow-sm border-0 rounded-3 mt-2 animate__animated animate__fadeInDown animate__faster" aria-labelledby="coursesDropdown">
+              <li><a class="dropdown-item" href="assets/course/advanced_python.html">Advanced Python</a></li>
+              <li><a class="dropdown-item" href="assets/course/c_cpp_programming.html">C/C++ Programming</a></li>
+              <li><a class="dropdown-item" href="assets/course/career_booster.html">Career Booster</a></li>
+              <li><a class="dropdown-item" href="assets/course/database.html">Database Mastery: SQL &amp; NoSQL</a></li>
+              <li><a class="dropdown-item" href="assets/course/flutter_app_dev.html">Flutter App Development</a></li>
+              <li><a class="dropdown-item" href="assets/course/full_stack_web_dev.html">Full Stack Web Development</a></li>
+              <li><a class="dropdown-item" href="assets/course/java_with_dsa.html">Java with DSA</a></li>
+              <li><a class="dropdown-item" href="assets/course/python_for_software_dev.html">Python for Software Development</a></li>
+              <li><a class="dropdown-item" href="assets/course/web_design.html">Professional Web Design</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto px-lg-3" href="#whyus"><i class="fa fa-star me-1"></i> Why Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto px-lg-3" href="#contact"><i class="fa fa-envelope me-1"></i> Contact</a>
+          </li>
+          <!-- Login/Signup Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-lg-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-user me-1"></i> Login/Signup
+            </a>
+            <ul class="dropdown-menu shadow-sm border-0 rounded-3 mt-2 animate__animated animate__fadeInDown animate__faster" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="assets/course/login_signup.html">Login</a></li>
+              <li><a class="dropdown-item" href="assets/course/login_signup.html">Sign Up</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="pro-hero hero-section position-relative d-flex align-items-center justify-content-center">
+    <!-- Back to Work Portfolio Button (Top Right, Below Navbar) -->
+    <a href="../index.html" class="btn btn-warning btn-portfolio-hero position-absolute">
+      <i class="fa fa-briefcase me-2"></i> Back to Work Portfolio
+    </a>
+    <!-- Canvas Animated Background -->
+    <canvas id="hero-canvas" class="hero-canvas-bg"></canvas>
+    <div class="container hero-content text-center position-relative" data-aos="fade-up">
+      <h1 class="display-4 fw-bold mb-3 hero-title">Empower Your Future with <br> <span class="text-gradient">SK AI Hub</span></h1>
+      <h2 class="mb-4 hero-subtitle">Unlock your potential with industry-driven courses, expert mentors, and hands-on learning. <br><span class="typed-text"></span></h2>
+      <!-- Hero Stats -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <div class="hero-stat-card p-3">
+            <div class="hero-stat" data-target="1500">0</div>
+            <div class="fw-semibold">Students Trained</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="hero-stat-card p-3">
+            <div class="hero-stat" data-target="25">0</div>
+            <div class="fw-semibold">Expert Instructors</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="hero-stat-card p-3">
+            <div class="hero-stat" data-target="8">0</div>
+            <div class="fw-semibold">Courses Offered</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="hero-stat-card p-3">
+            <div class="hero-stat" data-target="98">0</div>
+            <div class="fw-semibold">Placement Rate (%)</div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Buttons -->
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-2">
+        <a href="#courses" class="btn btn-get-started">Get Started</a>
+        <a href="#contact" class="btn btn-get-started">Contact Us</a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+      <!-- ======= About Us & Mission Section (Combined) ======= -->
+      <section id="about" class="about-section py-5 position-relative">
+        <div class="container">
+          <div class="section-title mb-5 text-center">
+            <h2>About Us</h2>
+            <p class="lead">Empowering Careers Through Professional Training & Skill Development</p>
+          </div>
+          <!-- Who We Are Row -->
+          <div class="row content align-items-center mb-5">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+              <img src="assets/img/operational-excellence.jpg" class="img-fluid rounded-4 shadow-lg" alt="About SK AI Hub">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+              <h2 class="fw-bold mb-3 text-gradient">Who We Are</h2>
+              <p class="lead mb-3">
+                SK AI Hub Pvt Ltd is a leading training institute dedicated to building future-ready professionals in technology.
+              </p>
+              <p>
+                With 5+ years of experience, we specialize in delivering industry-driven training in Web Development, Software Development, UI/UX Design, and more. Our expert mentors and hands-on approach ensure every learner gains practical skills and confidence to excel in the tech industry.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li><i class="fa fa-check-circle text-success me-2"></i> 100% practical, project-based learning</li>
+                <li><i class="fa fa-check-circle text-success me-2"></i> Personalized mentorship & career guidance</li>
+                <li><i class="fa fa-check-circle text-success me-2"></i> Recognized certifications for employability</li>
+              </ul>
+            </div>
+          </div>
+          <!-- What We Do Row -->
+          <div class="row content align-items-center mb-5">
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-left" data-aos-delay="200">
+              <h2 class="fw-bold mb-3 text-gradient">What We Do</h2>
+              <p>
+                We offer a wide range of professional training programs designed to meet the needs of students, graduates, and working professionals. Our curriculum is updated with the latest industry trends and focuses on real-world skills through live projects, coding labs, and interactive sessions.
+              </p>
+              <p>
+                Whether you want to become a software developer, web designer, or boost your career with advanced tech skills, SK AI Hub is your trusted partner for success.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li><i class="fa fa-check-circle text-success me-2"></i> Web & App Development Training</li>
+                <li><i class="fa fa-check-circle text-success me-2"></i> Data Structures, Algorithms, and Interview Prep</li>
+                <li><i class="fa fa-check-circle text-success me-2"></i> Career Booster & Placement Support</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right" data-aos-delay="100">
+              <img src="assets/img/AE+Business+Solutions+-+WFM.jpg" class="img-fluid rounded-4 shadow-lg" alt="Training at SK AI Hub">
+            </div>
+          </div>
+          <!-- Mission, Story, Vision Row (Pro Style) -->
+          <div class="row g-4 align-items-stretch pro-mission-row mb-2">
+            <!-- Mission Card -->
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box pro-mission-card text-center p-4 h-100 shadow rounded-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="pro-mission-icon mx-auto mb-3 d-flex align-items-center justify-content-center">
+                  <i class="bx bx-tachometer icon-mission fa-2x" aria-hidden="true"></i>
+                </div>
+                <h4 class="mt-3 mb-2 pro-mission-title">Our Mission</h4>
+                <p class="pro-mission-desc mission-desc mb-0">
+                  To empower students and professionals with practical, industry-relevant technology skills through hands-on training, expert mentorship, and real-world projects—enabling them to build successful tech careers.
+                </p>
+              </div>
+            </div>
+            <!-- Story Card -->
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box pro-mission-card text-center p-4 h-100 shadow rounded-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="pro-mission-icon mx-auto mb-3 d-flex align-items-center justify-content-center">
+                  <i class="fa-regular fa-rectangle-list icon-story fa-2x" aria-hidden="true"></i>
+                </div>
+                <h4 class="mt-3 mb-2 pro-mission-title">Our Story</h4>
+                <p class="pro-mission-desc story-desc mb-0">
+                  Founded by passionate educators and tech professionals, we saw the need for practical, job-oriented training beyond traditional education. Our journey began with a vision to bridge the gap between academic learning and industry demands, helping thousands launch and advance their tech careers.
+                </p>
+              </div>
+            </div>
+            <!-- Vision Card -->
+            <div class="col-xl-4 d-flex align-items-stretch">
+              <div class="icon-box pro-mission-card text-center p-4 h-100 shadow rounded-4 animate__animated animate__fadeInUp animate__delay-3s">
+                <div class="pro-mission-icon mx-auto mb-3 d-flex align-items-center justify-content-center">
+                  <i class="fa-solid fa-eye icon-vision fa-2x" aria-hidden="true"></i>
+                </div>
+                <h4 class="mt-3 mb-2 pro-mission-title">Our Vision</h4>
+                <p class="pro-mission-desc vision-desc mb-0">
+                  To become a leading training institute recognized for transforming learners into skilled professionals, driving innovation in tech education, and supporting lifelong learning for a future-ready workforce.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    <!-- ======= Courses Section (Redesigned, Modern, Pro Grid, 3 per row, Uniform Height & Button) ======= -->
+    <section id="courses" class="courses-section py-5 bg-light">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="section-title text-center mb-5 animate__animated animate__fadeInDown animate__delay-1s">
+          <h2 class="fw-bold display-5 text-gradient">Our <span class="text-gradient">Courses</span></h2>
+          <p class="lead">Explore our curated, industry-focused programs. <span class="fw-semibold text-primary">Learn, build, and launch your tech career with confidence.</span></p>
+        </div>
+        <div class="row g-5 pro-courses-grid row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+        <!-- Python for Software Development -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-success">Free</span>
+          <i class="fa-brands fa-python fa-2x text-primary"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Python for Software Development</h5>
+          <p class="small text-muted mb-3">Start coding with Python. Build apps, automate tasks, and gain practical skills for real-world software development.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> Logic building & mini-projects</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> OOP, file handling, automation</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Real-world app development</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-light text-dark border">Beginner</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/python_for_software_dev.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Full Stack Web Development -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fa-solid fa-globe fa-2x text-success"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Full Stack Web Development</h5>
+          <p class="small text-muted mb-3">Master the MERN stack. Build complete web apps, from frontend to backend, with deployment skills.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> MERN Stack (MongoDB, Express, React, Node)</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> RESTful APIs, deployment</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Real-world projects</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">MERN</span>
+            <span class="badge bg-light text-dark border">Intermediate</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/full_stack_web_dev.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Professional Web Design -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-success">Free</span>
+          <i class="fa-solid fa-palette fa-2x text-warning"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Professional Web Design</h5>
+          <p class="small text-muted mb-3">Design beautiful, responsive websites. Learn UI/UX, HTML, CSS, and build your portfolio.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> HTML5, CSS3, Bootstrap</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> UI/UX principles</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Portfolio projects</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Web Design</span>
+            <span class="badge bg-light text-dark border">Beginner</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/web_design.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Advanced Python -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fa-solid fa-robot fa-2x text-secondary"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Advanced Python</h5>
+          <p class="small text-muted mb-3">Go beyond basics: APIs, automation, web scraping, advanced OOP, and more.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> REST APIs & automation</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Web scraping</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Advanced OOP</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Python</span>
+            <span class="badge bg-light text-dark border">Advanced</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/advanced_python.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Java with DSA -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fa-brands fa-java fa-2x text-warning"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Java with DSA</h5>
+          <p class="small text-muted mb-3">Crack coding interviews. Master Java, Data Structures & Algorithms, and system design basics.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> Java fundamentals & OOP</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> DSA & interview prep</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> System design basics</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Java</span>
+            <span class="badge bg-light text-dark border">Intermediate</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/java_with_dsa.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Flutter App Development -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fa-brands fa-android fa-2x text-info"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Flutter App Development</h5>
+          <p class="small text-muted mb-3">Build mobile apps for Android & iOS. Learn Dart, Flutter, Firebase, and app publishing.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> Dart & Flutter widgets</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> State management</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Publish to app stores</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Flutter</span>
+            <span class="badge bg-light text-dark border">Intermediate</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/flutter_app_dev.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- C/C++ Programming -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-success">Free</span>
+          <i class="fa-solid fa-code fa-2x text-dark"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">C/C++ Programming</h5>
+          <p class="small text-muted mb-3">Build a strong base with C & C++. Perfect for beginners and competitive coders.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> C & C++ fundamentals</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Arrays, pointers, OOP basics</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Competitive coding</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">C/C++</span>
+            <span class="badge bg-light text-dark border">Beginner</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/c_cpp_programming.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Career Booster -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fa-solid fa-rocket fa-2x text-danger"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Career Booster</h5>
+          <p class="small text-muted mb-3">Get expert career guidance, resume help, and ace your interviews with personal branding.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> Resume & LinkedIn optimization</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Mock interviews</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Personal branding</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">Career</span>
+            <span class="badge bg-light text-dark border">All Levels</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/career_booster.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+        <!-- Database Mastery: SQL & NoSQL -->
+        <div class="col d-flex">
+        <div class="course-card pro-card flex-fill d-flex flex-column shadow-sm rounded-4 h-100">
+          <div class="course-card-header d-flex align-items-center justify-content-between px-3 pt-3">
+          <span class="badge bg-danger">Paid</span>
+          <i class="fas fa-database fa-2x text-primary"></i>
+          </div>
+          <div class="course-card-body flex-fill px-3 pb-3 pt-2 d-flex flex-column">
+          <h5 class="fw-bold mb-2">Database Mastery: SQL &amp; NoSQL</h5>
+          <p class="small text-muted mb-3">Master SQL & NoSQL. Learn design, security, and build real-world database projects.</p>
+          <ul class="course-features list-unstyled small mb-3">
+            <li><i class="fa fa-check-circle text-success me-2"></i> RDBMS & NoSQL basics</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> SQL, MySQL, MongoDB</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Database design projects</li>
+          </ul>
+          <div class="mb-3">
+            <span class="badge bg-primary">SQL/NoSQL</span>
+            <span class="badge bg-light text-dark border">Intermediate</span>
+          </div>
+          <div class="mt-auto">
+            <a href="assets/course/database.html" class="btn btn-outline-primary w-100 fw-semibold py-2">Learn More</a>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+        <!-- ...existing code for other courses, repeat the above card structure for each course, using unique icons, gradients, and badges as in the previous cards... -->
+        <!-- Call to Action -->
+        <div class="text-center mt-5 animate__animated animate__fadeIn animate__delay-2s">
+          <a href="#contact" class="btn btn-lg fw-bold shadow border-0 px-5 py-3 contact-expert-btn gradient-bg-blue text-white">
+            Need Guidance? Contact Our Experts
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Why Choose Us Section (Modern, Pro-Style, Graphics-Rich) ======= -->
+    <section class="whyus-section pro-whyus-section py-5 position-relative" id="whyus">
+      <div class="container position-relative">
+        <div class="section-title mb-5 text-center" data-aos="fade-up">
+          <h2 class="fw-bold">Why Choose <span class="text-gradient">SK AI Hub</span>?</h2>
+          <p class="lead">Discover what sets us apart as a leading training institute for tech careers.</p>
+        </div>
+        
+        <!-- Why Us Features -->
+        <div class="row whyus-features g-4 justify-content-center position-relative z-1">
+          <!-- Each feature card below highlights a unique selling point -->
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-1s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Expert Mentors</h4>
+              <p class="feature-desc">Learn from industry professionals with years of real-world experience and a passion for teaching.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-2s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-laptop-code fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Hands-on Learning</h4>
+              <p class="feature-desc">Engage in practical projects, coding labs, and real assignments to build job-ready skills.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-3s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-briefcase fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Career Support</h4>
+              <p class="feature-desc">Benefit from resume reviews, mock interviews, and placement assistance to launch your career.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-4s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-certificate fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Recognized Certification</h4>
+              <p class="feature-desc">Earn industry-recognized certificates to showcase your skills and boost your employability.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mt-4 justify-content-center position-relative z-1">
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-5s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-gear fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Customization</h4>
+              <p class="feature-desc">Personalized learning paths and solutions tailored to your unique goals and skills.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-6s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-database fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Tech-Driven</h4>
+              <p class="feature-desc">Cutting-edge curriculum and tools, always up-to-date with the latest industry trends.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-7s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-stopwatch fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">On-Time Delivery</h4>
+              <p class="feature-desc">We honor deadlines and ensure timely delivery of all training and projects.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="whyus-feature-card p-4 text-center h-100 animate__animated animate__fadeInUp animate__delay-8s no-fade-icon">
+              <div class="feature-icon mb-3 gradient-icon-bg mx-auto">
+                <i class="fa-solid fa-shield-halved fa-2x"></i>
+              </div>
+              <h4 class="feature-title mb-2">Secure & Economical</h4>
+              <p class="feature-desc">Your data is protected and our solutions are cost-effective for every learner.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Success Stories (Pro Style) -->
+        <div class="section-title mb-4 mt-5 text-center" data-aos="fade-up">
+          <h2 class="fw-bold">Success <span class="text-gradient">Stories</span></h2>
+          <p class="lead">Hear from our alumni who have transformed their careers with SK AI Hub.</p>
+        </div>
+        <div class="row g-4 justify-content-center pro-success-row">
+          <!-- Each card below is a testimonial from a student -->
+          <div class="col-md-4">
+            <div class="pro-success-card card shadow border-0 rounded-4 p-4 h-100 animate__animated animate__fadeInLeft animate__delay-1s">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/img/student-1.svg" alt="Student 1" class="rounded-circle me-3 pro-success-avatar" width="60">
+                <div>
+                  <h5 class="mb-0">Priya Sharma</h5>
+                  <small class="text-muted">Python Developer @ TechCorp</small>
+                </div>
+              </div>
+              <p class="mb-0 pro-success-quote">“The Python course was amazing! The hands-on projects helped me land my first job.”</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pro-success-card card shadow border-0 rounded-4 p-4 h-100 animate__animated animate__fadeInUp animate__delay-2s">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/img/student-2.svg" alt="Student 2" class="rounded-circle me-3 pro-success-avatar" width="60">
+                <div>
+                  <h5 class="mb-0">Rahul Mehta</h5>
+                  <small class="text-muted">Full Stack Engineer @ Webify</small>
+                </div>
+              </div>
+              <p class="mb-0 pro-success-quote">“Great instructors and practical content. Highly recommend SK AI Hub.”</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pro-success-card card shadow border-0 rounded-4 p-4 h-100 animate__animated animate__fadeInRight animate__delay-3s">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/img/student-3.svg" alt="Student 3" class="rounded-circle me-3 pro-success-avatar" width="60">
+                <div>
+                  <h5 class="mb-0">Sneha Verma</h5>
+                  <small class="text-muted">UI/UX Designer @ Creatix</small>
+                </div>
+              </div>
+              <p class="mb-0 pro-success-quote">“The career support team helped me ace my interviews. Thank you!”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Section (Redesigned, Pro, Interactive) ======= -->
+    <section id="contact" class="contact-section py-5 position-relative bg-light">
+      <div class="container">
+        <div class="section-title mb-5 text-center" data-aos="fade-up">
+          <h2 class="fw-bold display-5 text-gradient">Contact <span class="text-gradient">Us</span></h2>
+          <p class="lead">Get in touch for course details, partnership, or support. <span class="fw-semibold text-primary">We’re here to help you succeed!</span></p>
+        </div>
+        <div class="row g-5 align-items-stretch justify-content-center">
+          <!-- Contact Info Card -->
+          <div class="col-lg-5 d-flex flex-column mb-4 mb-lg-0 animate__animated animate__fadeInLeft animate__delay-1s">
+            <div class="contact-info-box p-4 rounded-4 shadow-lg bg-white h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="mb-3"><i class="fa fa-map-marker-alt me-2 text-gradient"></i> <span class="fw-bold">Our Offices</span></h5>
+                <ul class="list-unstyled mb-3">
+                  <li class="mb-2"><strong>Nashik:</strong> Flat no:18, B-Wing, Sai Meghdoot Apartment, Pandit Colony lane no:5, Behind Kabra Emporium, Sharanpur Road, Nashik-422002</li>
+                  <li><strong>Pune:</strong> Survey No:114, Flat No.101, Homewoods Apartment, Bhumkar vasti, Near Bhumkar Chowk, Wakad, Pune-411057</li>
+                </ul>
+                <h5 class="mb-3 mt-4"><i class="fa fa-phone me-2 text-gradient"></i> <span class="fw-bold">Phone</span></h5>
+                <p class="mb-2"><a href="tel:9028889915" class="contact-link-dark fw-semibold">+91 9028889915</a></p>
+                <h5 class="mb-3 mt-4"><i class="fa fa-envelope me-2 text-gradient"></i> <span class="fw-bold">Email</span></h5>
+                <p class="mb-2"><a href="mailto:developer@skaihub.com" class="contact-link-dark fw-semibold">developer@skaihub.com</a></p>
+              </div>
+              <div class="social-links mt-4">
+                <a href="https://www.facebook.com/skaihub/" class="me-3 social-icon-link" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://www.linkedin.com/company/sk-ai-hub/" class="me-3 social-icon-link" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://www.instagram.com/skaihub/" class="me-3 social-icon-link" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+              </div>
+              <div class="contact-map rounded-4 overflow-hidden shadow mt-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d245.02203343637623!2d73.77576606398159!3d20.002126096098003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb8b9c3d14a9%3A0xad6f158a306dd206!2sSK%20AI%20Hub!5e0!3m2!1sen!2sin!4v1751886902049!5m2!1sen!2sin" width="100%" height="180" class="map-iframe border-0" allowfullscreen title="SK AI Hub Location"></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Enquiry Form Card -->
+          <div class="col-lg-7 animate__animated animate__fadeInRight animate__delay-1s">
+            <div class="contact-form-box p-4 rounded-4 shadow-lg bg-white h-100">
+              <h4 class="mb-4 fw-bold text-gradient">Enquiry Form</h4>
+              <form id="enquiry-form" class="needs-validation" novalidate autocomplete="off">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Your Phone Number" pattern="[0-9]{10}" required>
+                    <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <select name="course" class="form-select form-select-lg" required title="Select Course">
+                      <option value="" disabled selected>Select Course</option>
+                      <option value="Python for Software Development">Python for Software Development</option>
+                      <option value="Full Stack Web Development">Full Stack Web Development</option>
+                      <option value="Professional Web Design">Professional Web Design</option>
+                      <option value="Advanced Python">Advanced Python</option>
+                      <option value="Java with DSA">Java with DSA</option>
+                      <option value="Flutter App Development">Flutter App Development</option>
+                      <option value="C/C++ Programming">C/C++ Programming</option>
+                      <option value="Career Booster">Career Booster</option>
+                      <option value="Database Mastery: SQL & NoSQL">Database Mastery: SQL & NoSQL</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a course.</div>
+                  </div>
+                  <div class="col-12">
+                    <textarea name="message" rows="5" class="form-control form-control-lg" placeholder="Your Enquiry" required></textarea>
+                    <div class="invalid-feedback">Please enter your enquiry.</div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold gradient-bg-blue">Submit Enquiry</button>
+                  </div>
+                </div>
+                <div class="sent-message mt-3 alert alert-success d-none" role="alert">
+                  <i class="fa fa-check-circle me-2"></i>Thank you! Your enquiry has been submitted successfully.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer (Redesigned, Professional, Accessible) ======= -->
+  <footer id="footer" class="footer-bg pro-footer pt-5 mt-5 border-top bg-white">
+    <div class="container">
+      <div class="row gy-5 align-items-start">
+        <!-- Brand & About -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <a href="#hero" class="footer-brand d-flex align-items-center mb-3 gap-2 text-decoration-none" aria-label="SK AI Hub Home">
+            <img src="assets/img/new_logo.png" alt="SK AI Hub Logo" class="pro-navbar-logo">
+            <span class="fw-bold fs-5 text-gradient">SK AI Hub</span>
+          </a>
+          <p class="footer-about-text text-muted mb-3">
+            We give our customers the best value through excellent services, cutting-edge technologies, and affordable solutions—anytime, every time.
+          </p>
+          <div class="footer-social d-flex gap-2 mt-2">
+            <a href="https://www.facebook.com/skaihub/" class="footer-social-link" title="Facebook" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i><span class="visually-hidden">Facebook</span></a>
+            <a href="https://www.instagram.com/skaihub/" class="footer-social-link" title="Instagram" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i><span class="visually-hidden">Instagram</span></a>
+            <a href="https://www.linkedin.com/company/sk-ai-hub/" class="footer-social-link" title="LinkedIn" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i><span class="visually-hidden">LinkedIn</span></a>
+          </div>
+        </div>
+        <!-- Useful Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h5 class="footer-title mb-3">Useful Links</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#courses" class="footer-link">Courses</a></li>
+            <li><a href="#whyus" class="footer-link">Why Us</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Courses -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h5 class="footer-title mb-3">Our Courses</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li><a href="assets/course/advanced_python.html" class="footer-link">Advanced Python</a></li>
+            <li><a href="assets/course/c_cpp_programming.html" class="footer-link">C/C++ Programming</a></li>
+            <li><a href="assets/course/career_booster.html" class="footer-link">Career Booster</a></li>
+            <li><a href="assets/course/database.html" class="footer-link">Database Mastery: SQL &amp; NoSQL</a></li>
+            <li><a href="assets/course/flutter_app_dev.html" class="footer-link">Flutter App Development</a></li>
+            <li><a href="assets/course/full_stack_web_dev.html" class="footer-link">Full Stack Web Development</a></li>
+            <li><a href="assets/course/java_with_dsa.html" class="footer-link">Java with DSA</a></li>
+            <li><a href="assets/course/python_for_software_dev.html" class="footer-link">Python for Software Development</a></li>
+            <li><a href="assets/course/web_design.html" class="footer-link">Professional Web Design</a></li>
+          </ul>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title mb-3">Contact Us</h5>
+          <ul class="list-unstyled footer-contact mb-0">
+            <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-gradient"></i>Flat no:18, B-Wing, Sai Meghdoot Apartment, Pandit Colony lane no:5, Behind Kabra Emporium, Sharanpur Road, Nashik-422002</li>
+            <li class="mb-2"><i class="fa-solid fa-phone me-2 text-gradient"></i><a href="tel:9028889915" class="footer-link">+91 9028889915</a></li>
+            <li><i class="fa-solid fa-envelope me-2 text-gradient"></i><a href="mailto:developer@skaihub.com" class="footer-link">developer@skaihub.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4 pt-3 border-top align-items-center small text-muted">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span>© Copyright <strong>SK AI Hub Pvt Ltd.</strong> All Rights Reserved</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <span>Made by Shubham Kulkarni, Jr. S/W Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pro Back to Top Button -->
+  <a href="#" class="back-to-top pro-back-to-top d-flex align-items-center justify-content-center" title="Back to top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+    <span class="visually-hidden">Back to top</span>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script>
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({ duration: 1000, once: true });
+
+    // Back to top button show/hide on scroll
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      const toggleBackToTop = () => {
+        if (window.scrollY > 100) {
+          backToTop.classList.add('active');
+        } else {
+          backToTop.classList.remove('active');
+        }
+      }
+      window.addEventListener('load', toggleBackToTop);
+      document.addEventListener('scroll', toggleBackToTop);
+    }
+
+    // Smooth scroll for nav links and buttons
+    document.querySelectorAll('.nav-link.scrollto, .btn-get-started, .footer-links a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            window.scrollTo({
+              top: target.offsetTop - 70, // adjust for fixed navbar
+              behavior: 'smooth'
+            });
+            history.replaceState(null, null, href);
+          }
+        }
+      });
+    });
+
+    // Scrollspy: highlight nav as you scroll
+    function onScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPos = window.scrollY + 80;
+      let found = false;
+      sections.forEach(section => {
+        if (!found && scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          document.querySelectorAll('.nav-link.scrollto').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + section.id) {
+              link.classList.add('active');
+            }
+          });
+          found = true;
+        }
+      });
+      if (!found) {
+        document.querySelectorAll('.nav-link.scrollto').forEach(link => {
+          if (link.getAttribute('href') === '#hero') {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    }
+    window.addEventListener('scroll', onScrollSpy);
+    window.addEventListener('load', onScrollSpy);
+
+    // Always open to hero section on refresh (even if hash is present)
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash && document.getElementById('hero')) {
+        setTimeout(function() {
+          window.scrollTo({
+            top: document.getElementById('hero').offsetTop - 70,
+            behavior: 'auto'
+          });
+          history.replaceState(null, null, '#hero');
+        }, 10);
+      }
+    });
+
+    // Typing effect for hero section
+    const typedText = document.querySelector('.typed-text');
+    const phrases = [
+      "Your gateway to professional skills and a successful career.",
+      "Learn Python, Java, Web Development, and more.",
+      "Get hands-on experience with real-world projects.",
+      "Join 1200+ successful students today!"
+    ];
+    let phraseIndex = 0, charIndex = 0, typing = true;
+    function typeEffect() {
+      if (!typedText) return;
+      if (typing) {
+        if (charIndex < phrases[phraseIndex].length) {
+          typedText.textContent += phrases[phraseIndex][charIndex++];
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          typedText.textContent = phrases[phraseIndex].substring(0, --charIndex);
+          setTimeout(typeEffect, 30);
+        } else {
+          typing = true;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeEffect, 500);
+        }
+      }
+    }
+    typeEffect();
+
+    // Animated counters (hero stats)
+    function animateCounter(counter) {
+      const target = +counter.getAttribute('data-target');
+      const speed = 200;
+      const updateCount = () => {
+        const current = +counter.innerText.replace('+','');
+        const increment = Math.ceil(target / speed);
+        if (current < target) {
+          counter.innerText = current + increment > target ? target : current + increment;
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target + (target < 100 ? '+' : '');
+        }
+      };
+      updateCount();
+    }
+    document.querySelectorAll('.hero-stat').forEach(counter => {
+      animateCounter(counter);
+    });
+
+    // Animate SVG lines in hero and courses backgrounds (if present)
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroBg = document.querySelector('.hero-bg-svg');
+      if (heroBg) {
+        const lines = heroBg.querySelectorAll('polyline');
+        let glow = true;
+        setInterval(() => {
+          lines.forEach(line => {
+            line.setAttribute('opacity', glow ? '0.18' : '0.08');
+          });
+          glow = !glow;
+        }, 1200);
+      }
+      const coursesBg = document.getElementById('courses-bg');
+      if (coursesBg) {
+        const lines = coursesBg.querySelectorAll('polyline');
+        let glow = true;
+        setInterval(() => {
+          lines.forEach(line => {
+            line.setAttribute('opacity', glow ? '0.16' : '0.08');
+          });
+          glow = !glow;
+        }, 1400);
+      }
+    });
+
+    // Newsletter form success message (if present)
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        this.querySelector('.sent-message-newsletter').style.display = 'block';
+        this.reset();
+        setTimeout(() => {
+          this.querySelector('.sent-message-newsletter').style.display = 'none';
+        }, 3000);
+      });
+    }
+
+    // ======= Contact Form Validation & AJAX (Pro) =======
+    const enquiryForm = document.getElementById('enquiry-form');
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Bootstrap validation
+        if (!enquiryForm.checkValidity()) {
+          enquiryForm.classList.add('was-validated');
+          return;
+        }
+        // Simulate AJAX (replace with real endpoint as needed)
+        const sentMsg = enquiryForm.querySelector('.sent-message');
+        sentMsg.classList.remove('d-none');
+        sentMsg.classList.add('animate__animated', 'animate__fadeIn');
+        enquiryForm.reset();
+        enquiryForm.classList.remove('was-validated');
+        setTimeout(() => {
+          sentMsg.classList.add('d-none');
+          sentMsg.classList.remove('animate__animated', 'animate__fadeIn');
+        }, 3500);
+      });
+    }
+  </script>
+</body>
+</html>

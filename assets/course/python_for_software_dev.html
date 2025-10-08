@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python for Software Development - SK AI Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6f42c1;
+            --accent-color: #ffb347;
+            --text-color: #343a40;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #dee2e6;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            background: var(--bg-light);
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Animated SVG background using a fixed div */
+        .animated-bg {
+            position: fixed;
+            z-index: 0;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .animated-bg svg {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        .navbar {
+            box-shadow: var(--shadow);
+            background: rgba(255,255,255,0.95) !important;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            z-index: 10;
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: var(--primary-color) !important;
+        }
+        .course-header {
+            padding: 7rem 0 4rem 0;
+            text-align: center;
+            color: var(--bg-white);
+            background: linear-gradient(120deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+            background-size: 200% 200%;
+            animation: gradient-animation 8s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .course-header .display-4, .course-header h1 {
+            font-weight: 800;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            z-index: 1;
+            position: relative;
+        }
+        .course-header .lead {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            z-index: 1;
+            position: relative;
+        }
+        .highlight-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(255,179,71,0.15);
+            letter-spacing: 1px;
+            z-index: 1;
+            position: relative;
+        }
+        .section-padding {
+            padding: 4rem 0 2rem 0;
+            z-index: 1;
+            position: relative;
+        }
+        .card, .content-card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            background: var(--bg-white);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover, .content-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.18);
+        }
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .learn-list {
+            list-style: none;
+            padding-left: 0;
+            columns: 2;
+        }
+        .learn-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            font-size: 1.08rem;
+            break-inside: avoid-column;
+        }
+        .learn-list .fa-check-circle {
+            color: var(--accent-color);
+            margin-right: 12px;
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+        .info-card p, .info-card li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .info-card .fas, .info-card .far {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 22px;
+            text-align: center;
+        }
+        .accordion-button:not(.collapsed) {
+            color: var(--bg-white);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        .accordion-button {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .accordion-body {
+            font-size: 1.02rem;
+        }
+        .registration-form {
+            background: linear-gradient(120deg, #fff 70%, #f8f9fa 100%);
+            padding: 3rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-top: 3rem;
+        }
+        .registration-form label {
+            font-weight: 600;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px rgba(13,110,253,0.10);
+        }
+        .btn-custom:hover, .btn-custom:focus {
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .section-padding { padding: 2.5rem 0 1rem 0; }
+            .registration-form { padding: 2rem 1rem; }
+        }
+        @media (max-width: 767px) {
+            .course-header { padding: 4rem 0 2rem 0; }
+            .course-header .display-4, .course-header h1 { font-size: 2.1rem; }
+            .registration-form { padding: 1.2rem 0.5rem; }
+            .learn-list { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated SVG Background -->
+    <div class="animated-bg">
+        <svg id="bg-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+            <defs>
+                <radialGradient id="grad1" cx="50%" cy="50%" r="70%">
+                    <stop offset="0%" stop-color="#ffb347" stop-opacity="0.18"/>
+                    <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0d6efd" stop-opacity="0.10"/>
+                    <stop offset="100%" stop-color="#6f42c1" stop-opacity="0.10"/>
+                </linearGradient>
+            </defs>
+            <circle id="bg-circle1" cx="400" cy="300" r="220" fill="url(#grad1)"/>
+            <circle id="bg-circle2" cx="1600" cy="800" r="180" fill="url(#grad1)"/>
+            <ellipse id="bg-ellipse1" cx="1200" cy="200" rx="180" ry="90" fill="url(#grad2)"/>
+            <ellipse id="bg-ellipse2" cx="600" cy="900" rx="140" ry="60" fill="url(#grad2)"/>
+        </svg>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>SK AI Hub
+            </a>
+            <a href="../../index.html" class="btn btn-outline-primary rounded-pill">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+        </div>
+    </nav>
+    <header class="course-header">
+        <div class="container">
+            <span class="highlight-badge">
+                <i class="fas fa-star"></i> New Batch Starting Soon!
+            </span>
+            <h1 class="display-4">Advanced Python for Software Development</h1>
+            <p class="lead">Master Python to build robust, scalable, and real-world applications from scratch.</p>
+        </div>
+    </header>
+    <main class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Main Content Column -->
+                <div class="col-lg-8">
+                    <!-- Course Description Card -->
+                    <div class="content-card p-4">
+                        <h2 class="card-title mb-3">Course Description</h2>
+                        <p>This comprehensive course takes you from Python fundamentals to advanced software development techniques. You'll build real-world applications and scripts, focusing on logic-building, design patterns, and practical projects. This course covers everything you need to build robust, scalable, and maintainable software using Python.</p>
+                        <hr class="my-4">
+                        <h3 class="card-title mb-3">What you'll learn:</h3>
+                        <ul class="learn-list">
+                            <li><i class="fas fa-check-circle"></i> Python fundamentals and advanced data structures</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced Object-Oriented Programming (OOP)</li>
+                            <li><i class="fas fa-check-circle"></i> Working with files, databases (SQL), and APIs</li>
+                            <li><i class="fas fa-check-circle"></i> Building Graphical User Interface (GUI) applications</li>
+                            <li><i class="fas fa-check-circle"></i> Web scraping, automation, and advanced scripting</li>
+                            <li><i class="fas fa-check-circle"></i> Best practices for writing clean, efficient code</li>
+                            <li><i class="fas fa-check-circle"></i> Unit testing and debugging with pytest</li>
+                            <li><i class="fas fa-check-circle"></i> Version control with Git and GitHub</li>
+                            <li><i class="fas fa-check-circle"></i> Introduction to web development with Flask</li>
+                            <li><i class="fas fa-check-circle"></i> Concurrency and multithreading basics</li>
+                        </ul>
+                    </div>
+                    <!-- Course Curriculum Card -->
+                    <div class="content-card p-4">
+                        <h2 class="card-title mb-3">Course Curriculum</h2>
+                        <div class="accordion" id="curriculumAccordion">
+                            <!-- Module 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        Module 1: Python Fundamentals & Environment Setup
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Introduction to Python, setting up the development environment (VS Code, PyCharm), virtual environments, variables, data types, and basic operators.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Module 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        Module 2: Control Flow & Core Data Structures
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Conditional statements (if/else), loops (for/while), and in-depth exploration of lists, tuples, dictionaries, and sets, including comprehensions.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Module 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        Module 3: Functions & Advanced Object-Oriented Programming
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Creating functions, understanding scope, lambda functions, decorators. Diving deep into OOP concepts: classes, objects, inheritance, polymorphism, and magic methods.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Module 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                        Module 4: File I/O, Databases, and APIs
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Reading and writing files (text, CSV, JSON). Interacting with SQL databases using SQLite. Making HTTP requests to consume REST APIs.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Module 5 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                        Module 5: Testing, Debugging, and Version Control
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Writing unit tests with the pytest framework. Using a debugger to find and fix errors. Managing code with Git and collaborating via GitHub.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Module 6 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                                        Module 6: Final Project - Build a Complete Application
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body">
+                                        Apply all learned concepts to build a complete, real-world software application from planning and design to implementation and testing.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar Column -->
+                <div class="col-lg-4">
+                    <div class="content-card info-card p-4">
+                        <h3 class="card-title mb-4">Course Info</h3>
+                        <ul class="list-unstyled">
+                            <li><strong><i class="fas fa-sitemap"></i> Category:</strong> Software Development</li>
+                            <li><strong><i class="fas fa-desktop"></i> Mode:</strong> Online + Offline (Hybrid)</li>
+                            <li><strong><i class="far fa-clock"></i> Duration:</strong> 2 Months (60+ hours)</li>
+                            <li><strong><i class="fas fa-calendar-alt"></i> Next Batch:</strong> 15th July 2024</li>
+                            <li><strong><i class="fas fa-rupee-sign"></i> Fee:</strong> ₹6,499</li>
+                            <li><strong><i class="fas fa-chart-line"></i> Level:</strong> Beginner–Advanced</li>
+                            <li><strong><i class="fas fa-certificate"></i> Certificate:</strong> Yes (with unique ID)</li>
+                            <li><strong><i class="fas fa-user-friends"></i> Seats:</strong> Limited (30 per batch)</li>
+                            <li><strong><i class="fas fa-phone"></i> Contact:</strong> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                        </ul>
+                    </div>
+                    <div class="content-card p-4">
+                        <h3 class="card-title mb-3">Prerequisites</h3>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center mb-2"><i class="fas fa-laptop-code me-2 text-primary"></i> No prior programming experience required.</li>
+                            <li class="d-flex align-items-center"><i class="fas fa-mouse-pointer me-2 text-primary"></i> Basic computer literacy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Registration Form -->
+            <div class="registration-form" id="registrationFormSection">
+                <h2 class="text-center mb-4">Register for this Course</h2>
+                <form id="registerForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label">College/Organization</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label">Mode</label>
+                            <select class="form-select" id="mode" required>
+                                <option value="">Select Mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Payment Option <span class="text-danger">*</span></label>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
+                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
+                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Any questions? Let us know!"></textarea>
+                    </div>
+                    <div id="formAlert" class="alert mt-3 d-none"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom" id="registerBtn">
+                            <span id="registerBtnText">Register Now</span>
+                            <span id="registerBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animated SVG background movement
+        function animateSVG() {
+            const t = Date.now() * 0.001;
+            // Animate circle1
+            const c1 = document.getElementById('bg-circle1');
+            c1.setAttribute('cx', 400 + Math.sin(t * 0.6) * 60);
+            c1.setAttribute('cy', 300 + Math.cos(t * 0.7) * 40);
+            // Animate circle2
+            const c2 = document.getElementById('bg-circle2');
+            c2.setAttribute('cx', 1600 + Math.cos(t * 0.5) * 50);
+            c2.setAttribute('cy', 800 + Math.sin(t * 0.8) * 30);
+            // Animate ellipse1
+            const e1 = document.getElementById('bg-ellipse1');
+            e1.setAttribute('cx', 1200 + Math.sin(t * 0.4) * 70);
+            e1.setAttribute('rx', 180 + Math.cos(t * 0.9) * 20);
+            // Animate ellipse2
+            const e2 = document.getElementById('bg-ellipse2');
+            e2.setAttribute('cy', 900 + Math.sin(t * 0.6) * 40);
+            e2.setAttribute('rx', 140 + Math.sin(t * 0.7) * 15);
+            requestAnimationFrame(animateSVG);
+        }
+        animateSVG();
+
+        // Registration Form Animation & Validation
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('registerBtn');
+            const btnText = document.getElementById('registerBtnText');
+            const btnSpinner = document.getElementById('registerBtnSpinner');
+            btn.disabled = true;
+            btnText.textContent = "Registering...";
+            btnSpinner.classList.remove('d-none');
+
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const mode = document.getElementById('mode').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+            const alertBox = document.getElementById('formAlert');
+            if (!name || !email || !phone || !mode || !payment) {
+                alertBox.className = 'alert alert-danger mt-3';
+                alertBox.textContent = 'Please fill all required fields and select a payment option.';
+                alertBox.classList.remove('d-none');
+                btn.disabled = false;
+                btnText.textContent = "Register Now";
+                btnSpinner.classList.add('d-none');
+                return;
+            }
+            // Simulate async registration
+            setTimeout(() => {
+                alertBox.className = 'alert alert-success mt-3';
+                alertBox.innerHTML = '<i class="fas fa-check-circle me-2"></i>Registration successful! We will contact you soon.';
+                alertBox.classList.remove('d-none');
+                btn.disabled = false;
+                btnText.textContent = "Register Now";
+                btnSpinner.classList.add('d-none');
+                this.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 3500);
+            }, 1200);
+        });
+
+        // Animate register button on hover (extra effect)
+        const registerBtn = document.getElementById('registerBtn');
+        registerBtn.addEventListener('mouseenter', () => {
+            registerBtn.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.18)';
+            registerBtn.style.transform = 'scale(1.07)';
+        });
+        registerBtn.addEventListener('mouseleave', () => {
+            registerBtn.style.boxShadow = '';
+            registerBtn.style.transform = '';
+        });
+    </script>
+</body>
+</html>

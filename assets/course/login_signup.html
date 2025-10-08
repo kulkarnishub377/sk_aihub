@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* Added for inline style replacements */
+        .span-bold {
+            font-weight: 500;
+        }
+        .forgot-link {
+            color: var(--danger);
+            font-weight: 600;
+        }
+        .forgot-link:hover, .forgot-link:focus {
+            color: #b91c1c;
+        }
+
+        :root {
+            --primary-color: #2563eb; /* Deep blue */
+            --secondary-color: #0ea5e9; /* Lighter blue */
+            --accent-color: #fbbf24; /* Soft yellow */
+            --text-color: #18181b; /* Almost black */
+            --bg-light: #f1f5f9; /* Light gray */
+            --bg-white: #fff;
+            --border-color: #e5e7eb;
+            --input-bg: #f3f4f6;
+            --danger: #ef4444;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--bg-light);
+            color: var(--text-color);
+        }
+
+        .container-wrapper {
+            background-color: var(--bg-white);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.10);
+            position: relative;
+            overflow: hidden;
+            width: 800px;
+            max-width: 95vw;
+            min-height: 520px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container-wrapper.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        .container-wrapper.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        /* Improved keyframes: animate only opacity for better performance */
+        @keyframes show {
+            0%, 49.99% {
+                opacity: 0;
+            }
+            50%, 100% {
+                opacity: 1;
+            }
+        }
+
+        form {
+            background-color: var(--bg-white);
+            display: flex;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+            font-size: 15px;
+            color: var(--text-color);
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px #93c5fd;
+            color: var(--text-color);
+        }
+
+        form a {
+            color: var(--primary-color);
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+
+        form a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-custom {
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in, background-color 0.3s, border-color 0.3s;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+        }
+
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-custom:active {
+            transform: scale(0.97);
+        }
+
+        .btn-custom:focus {
+            outline: none;
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            border-color: var(--bg-white);
+            color: var(--primary-color);
+        }
+        
+        .btn-ghost:hover {
+            background-color: var(--bg-white);
+            color: var(--secondary-color);
+        }
+
+        .social-container a {
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+            color: var(--primary-color);
+            background: var(--input-bg);
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 18px;
+        }
+        .social-container a:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+            z-index: 100;
+        }
+
+        .container-wrapper.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+
+        .overlay {
+            background: linear-gradient(120deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: var(--bg-white);
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+
+        .container-wrapper.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .container-wrapper.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container-wrapper.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+
+        .overlay-panel h1,
+        .overlay-panel p {
+            color: var(--bg-white);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .overlay-panel p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* Improved Home Button */
+        .home-link {
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-white);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            border: 1px solid var(--border-color);
+            z-index: 101;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .home-link i {
+            font-size: 18px;
+        }
+        .home-link:hover {
+            background: var(--primary-color);
+            color: var(--bg-white);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.16);
+        }
+
+        /* Make all text darker and more readable */
+        span, label, input, .form-control, .btn, .btn-custom, .btn-ghost, .overlay-panel p, .overlay-panel h1, form a {
+            color: var(--text-color);
+        }
+        .overlay-panel h1, .overlay-panel p {
+            color: var(--bg-white);
+        }
+
+        /* Placeholder color */
+        ::placeholder {
+            color: #52525b;
+            opacity: 1;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container-wrapper {
+                width: 98vw;
+                min-width: 320px;
+            }
+            .home-link {
+                top: 12px;
+                left: 12px;
+                font-size: 15px;
+                padding: 7px 14px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container-wrapper {
+                min-height: 600px;
+                width: 100vw;
+                border-radius: 0;
+            }
+            .form-container, .overlay-container {
+                width: 100%;
+                left: 0;
+            }
+            .overlay-panel {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</style>
+</head>
+<body>
+    <a href="../../index.html" class="home-link"><i class="fas fa-home"></i> Home</a>
+    <div class="container-wrapper" id="container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container my-2">
+                    <a href="#" class="social" title="Sign up with Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="visually-hidden">Sign up with Facebook</span></a>
+                    <a href="#" class="social" title="Sign up with Google"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="visually-hidden">Sign up with Google</span></a>
+                    <a href="#" class="social" title="Sign up with LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">Sign up with LinkedIn</span></a>
+                </div>
+                <span class="mb-2 fw-500">or use your email for registration</span>
+                <input type="text" class="form-control" placeholder="Name" required />
+                <input type="email" class="form-control" placeholder="Email" required />
+                <input type="password" class="form-control" placeholder="Password" required minlength="6" />
+                <span class="mb-2 span-bold">or use your account</span>
+            </form>
+        </div>
+        <a href="#" class="forgot-link">Forgot your password?</a>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign In</h1>
+                <div class="social-container my-2">
+                    <a href="#" class="social" title="Sign in with Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="visually-hidden">Sign in with Facebook</span></a>
+                    <a href="#" class="social" title="Sign in with Google"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="visually-hidden">Sign in with Google</span></a>
+                    <a href="#" class="social" title="Sign in with LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="visually-hidden">Sign in with LinkedIn</span></a>
+                </div>
+                <span class="mb-2 fw-500">or use your account</span>
+                <input type="email" class="form-control" placeholder="Email" required />
+                <input type="password" class="form-control" placeholder="Password" required minlength="6" />
+                <a href="#" class="forgot-link">Forgot your password?</a>
+                <button class="btn-custom mt-3" type="submit">Sign In</button>
+            </form>
+            <button class="btn-custom btn-ghost" id="signUpForm" type="button">Sign Up</button>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us, please login with your personal info.</p>
+                    <button class="btn-custom btn-ghost" id="signInOverlay" type="button">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us.</p>
+                    <button class="btn-custom btn-ghost" id="signUpOverlay" type="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Use unique IDs for buttons
+        const signUpButton = document.getElementById('signUpForm');
+        const signInButton = document.getElementById('signInOverlay');
+        const signUpOverlayButton = document.getElementById('signUpOverlay');
+        const signInOverlayButton = document.getElementById('signInOverlay');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+        signUpOverlayButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+        signInOverlayButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming with DSA - SK AI Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS (Animate on Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6f42c1;
+            --accent-color: #ffb347;
+            --text-color: #343a40;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #dee2e6;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(120deg, #f8f9fa 60%, #e3e6f3 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            box-shadow: var(--shadow);
+            background: rgba(255,255,255,0.95) !important;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: var(--primary-color) !important;
+        }
+        .course-header {
+            padding: 7rem 0 4rem 0;
+            text-align: center;
+            color: var(--bg-white);
+            background: linear-gradient(120deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+            background-size: 200% 200%;
+            animation: gradient-animation 8s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-header::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.18;
+            z-index: 0;
+            transform: translateX(-50%);
+            animation: float 6s ease-in-out infinite alternate;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0% { top: 100px; }
+            100% { top: 60px; }
+        }
+        .course-header .display-4 {
+            font-weight: 800;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            z-index: 1;
+            position: relative;
+        }
+        .course-header .lead {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            z-index: 1;
+            position: relative;
+        }
+        .highlight-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(255,179,71,0.15);
+            letter-spacing: 1px;
+            z-index: 1;
+            position: relative;
+        }
+        .section-padding {
+            padding: 4rem 0 2rem 0;
+        }
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            background: var(--bg-white);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.18);
+        }
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .key-features-list li {
+            font-size: 1.08rem;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+        }
+        .key-features-list i {
+            color: var(--accent-color);
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        .curriculum-accordion .accordion-button:not(.collapsed) {
+            color: var(--bg-white);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        .curriculum-accordion .accordion-button {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .curriculum-accordion .accordion-body {
+            font-size: 1.02rem;
+        }
+        .course-info-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e3e6f3 100%);
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+        .course-info-card .list-group-item {
+            border: none;
+            background: transparent;
+            font-size: 1.08rem;
+            padding: 0.7rem 0;
+        }
+        .course-info-card i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 22px;
+            text-align: center;
+        }
+        .registration-form {
+            background: linear-gradient(120deg, #fff 70%, #f8f9fa 100%);
+            padding: 3rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-top: 3rem;
+        }
+        .registration-form label {
+            font-weight: 600;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 16px rgba(13,110,253,0.10);
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-2px) scale(1.03);
+        }
+        .animated-icon {
+            animation: bounce 1.2s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-8px);}
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .section-padding { padding: 2.5rem 0 1rem 0; }
+            .registration-form { padding: 2rem 1rem; }
+        }
+        @media (max-width: 767px) {
+            .course-header { padding: 4rem 0 2rem 0; }
+            .course-header .display-4 { font-size: 2.1rem; }
+            .registration-form { padding: 1.2rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-graduation-cap me-2 animated-icon"></i>SK AI Hub
+            </a>
+            <a href="../../index.html" class="btn btn-outline-primary rounded-pill">
+                <i class="fas fa-home me-2"></i>Home
+            </a>
+        </div>
+    </nav>
+    <header class="course-header">
+        <div class="container" data-aos="fade-down">
+            <span class="highlight-badge" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-star"></i> New Batch Starting Soon!
+            </span>
+            <h1 class="display-4">Java Programming with DSA</h1>
+            <p class="lead">Master Java, Data Structures & Algorithms with hands-on projects, live mentorship, and interview prep. <br> Your Gateway to Top Tech Companies.</p>
+        </div>
+    </header>
+    <main class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Left Column: Course Details -->
+                <div class="col-lg-8">
+                    <div class="card" data-aos="fade-right">
+                        <div class="card-body p-4">
+                            <h2 class="card-title mb-3">Course Description</h2>
+                            <p>
+                                <strong>Java Programming with DSA</strong> is a career-focused course designed for students and professionals aiming for top tech jobs. You’ll learn Java from scratch, master essential Data Structures & Algorithms, and solve real-world coding problems. The course includes live interactive classes, hands-on projects, mock interviews, and personalized mentorship to help you crack technical interviews at leading companies.
+                            </p>
+                            <ul>
+                                <li>Live classes with industry experts</li>
+                                <li>Project-based learning & coding assignments</li>
+                                <li>1:1 mentorship and doubt-solving</li>
+                                <li>Resume & LinkedIn profile building</li>
+                                <li>Placement & interview preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">Key Features</h3>
+                            <ul class="list-unstyled key-features-list">
+                                <li><i class="fas fa-chalkboard-teacher"></i> Live interactive classes & recordings</li>
+                                <li><i class="fas fa-laptop-code"></i> 50+ coding assignments & 3 major projects</li>
+                                <li><i class="fas fa-users"></i> Peer group, hackathons & coding contests</li>
+                                <li><i class="fas fa-question-circle"></i> Dedicated doubt-solving sessions</li>
+                                <li><i class="fas fa-briefcase"></i> Resume, LinkedIn & interview workshops</li>
+                                <li><i class="fas fa-certificate"></i> Industry-recognized certificate</li>
+                                <li><i class="fas fa-user-shield"></i> Lifetime access to course materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">Course Curriculum</h3>
+                            <div class="accordion curriculum-accordion" id="curriculumAccordion">
+                                <!-- Module 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                            Module 1: Core Java & OOP
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Java Basics, IDE setup, Input/Output</li>
+                                                <li>Variables, Data Types, Operators</li>
+                                                <li>Control Flow (if, switch, loops)</li>
+                                                <li>Functions, Arrays, Strings</li>
+                                                <li>OOP: Classes, Objects, Inheritance, Polymorphism, Abstraction, Encapsulation</li>
+                                                <li>Exception Handling, Packages</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Module 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            Module 2: Data Structures
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Arrays, 2D Arrays, Strings</li>
+                                                <li>Linked Lists (Singly, Doubly, Circular)</li>
+                                                <li>Stacks, Queues, Deques</li>
+                                                <li>Trees (Binary, BST, AVL, Heap)</li>
+                                                <li>Graphs (BFS, DFS, Shortest Path)</li>
+                                                <li>Hash Tables, Sets, Maps</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Module 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                            Module 3: Algorithms & Problem Solving
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Time & Space Complexity Analysis</li>
+                                                <li>Searching (Linear, Binary)</li>
+                                                <li>Sorting (Bubble, Selection, Insertion, Merge, Quick, Heap)</li>
+                                                <li>Recursion & Backtracking</li>
+                                                <li>Dynamic Programming (Knapsack, LIS, LCS, etc.)</li>
+                                                <li>Greedy Algorithms</li>
+                                                <li>Interview Problem Solving</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Module 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                            Module 4: Advanced Java & Projects
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Java Collections Framework</li>
+                                                <li>File I/O, Serialization</li>
+                                                <li>Multithreading & Concurrency</li>
+                                                <li>GUI with JavaFX/Swing</li>
+                                                <li>Mini Projects: Library System, Chat App, etc.</li>
+                                                <li>Mock Interviews & Resume Building</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Module 5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                            Module 5: Placement Preparation
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Resume & LinkedIn Profile Review</li>
+                                                <li>Mock Technical & HR Interviews</li>
+                                                <li>DSA Interview Patterns</li>
+                                                <li>Company-specific Problem Sets</li>
+                                                <li>Career Guidance & Roadmap</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Course Info & Registration -->
+                <div class="col-lg-4">
+                    <div class="card course-info-card sticky-top" data-aos="fade-left">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">Course Info</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong><i class="fas fa-sitemap"></i> Category:</strong> Software Development</li>
+                                <li class="list-group-item"><strong><i class="fas fa-desktop"></i> Mode:</strong> Online + Offline (Hybrid)</li>
+                                <li class="list-group-item"><strong><i class="far fa-clock"></i> Duration:</strong> 2 Months (60+ hours)</li>
+                                <li class="list-group-item"><strong><i class="fas fa-calendar-alt"></i> Next Batch:</strong> 15th July 2024</li>
+                                <li class="list-group-item"><strong><i class="fas fa-rupee-sign"></i> Fee:</strong> ₹7,500</li>
+                                <li class="list-group-item"><strong><i class="fas fa-chart-line"></i> Level:</strong> Intermediate</li>
+                                <li class="list-group-item"><strong><i class="fas fa-certificate"></i> Certificate:</strong> Yes (with unique ID)</li>
+                                <li class="list-group-item"><strong><i class="fas fa-user-friends"></i> Seats:</strong> Limited (30 per batch)</li>
+                                <li class="list-group-item"><strong><i class="fas fa-phone"></i> Contact:</strong> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Registration Form Section -->
+            <div class="registration-form" data-aos="fade-up">
+                <h2 class="text-center mb-4">Register for this Course</h2>
+                <form id="registerForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label">College/Organization</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label">Mode</label>
+                            <select class="form-select" id="mode" required>
+                                <option value="">Select Mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Payment Option <span class="text-danger">*</span></label>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
+                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
+                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
+                                </div>
+                                <!-- EMI option removed -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Any questions? Let us know!"></textarea>
+                    </div>
+                    <div id="formAlert" class="alert mt-3 d-none"></div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom" id="registerBtn">
+                            <span id="registerBtnText">Register Now</span>
+                            <span id="registerBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 900,
+            once: true,
+        });
+
+        // Animate cards on scroll using Intersection Observer
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(40px)';
+        });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.transition = 'opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1)';
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+        // Registration Form Animation & Validation
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('registerBtn');
+            const btnText = document.getElementById('registerBtnText');
+            const btnSpinner = document.getElementById('registerBtnSpinner');
+            btn.disabled = true;
+            btnText.textContent = "Registering...";
+            btnSpinner.classList.remove('d-none');
+
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const mode = document.getElementById('mode').value;
+            const payment = document.querySelector('input[name="payment"]:checked');
+            const alertBox = document.getElementById('formAlert');
+            if (!name || !email || !phone || !mode || !payment) {
+                alertBox.className = 'alert alert-danger mt-3';
+                alertBox.textContent = 'Please fill all required fields and select a payment option.';
+                alertBox.classList.remove('d-none');
+                btn.disabled = false;
+                btnText.textContent = "Register Now";
+                btnSpinner.classList.add('d-none');
+                return;
+            }
+            // Simulate async registration
+            setTimeout(() => {
+                alertBox.className = 'alert alert-success mt-3';
+                alertBox.innerHTML = '<i class="fas fa-check-circle me-2"></i>Registration successful! We will contact you soon.';
+                alertBox.classList.remove('d-none');
+                btn.disabled = false;
+                btnText.textContent = "Register Now";
+                btnSpinner.classList.add('d-none');
+                this.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 3500);
+            }, 1200);
+        });
+
+        // Animate register button on hover
+        const registerBtn = document.getElementById('registerBtn');
+        registerBtn.addEventListener('mouseenter', () => {
+            registerBtn.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.18)';
+            registerBtn.style.transform = 'scale(1.04)';
+        });
+        registerBtn.addEventListener('mouseleave', () => {
+            registerBtn.style.boxShadow = '';
+            registerBtn.style.transform = '';
+        });
+    </script>
+</body>
+</html>

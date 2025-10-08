@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Web Design (UI/UX + Bootstrap) - SK AI Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #B80B0B;
+            --accent-color: #00c9a7;
+            --text-color: #222;
+            --bg-light-gray: #f6f6f7;
+            --bg-white: #fff;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: var(--bg-light-gray);
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* SVG Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -100px;
+            left: -100px;
+            width: 700px;
+            height: 700px;
+            z-index: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg"><circle cx="350" cy="350" r="340" fill="%23007bff" fill-opacity="0.08"/><circle cx="350" cy="350" r="250" fill="%23B80B0B" fill-opacity="0.06"/></svg>') no-repeat;
+            background-size: cover;
+            pointer-events: none;
+        }
+        /* Navbar */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: var(--shadow);
+            z-index: 10;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary-color) !important;
+        }
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .home-btn {
+            background: var(--primary-color);
+            color: #fff !important;
+            border-radius: 30px;
+            padding: 8px 24px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .home-btn:hover {
+            background: var(--secondary-color);
+            color: #fff !important;
+        }
+        /* Header */
+        .course-header {
+            background: linear-gradient(120deg, var(--primary-color) 60%, var(--accent-color) 100%);
+            color: var(--bg-white);
+            padding: 5rem 0 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .course-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            animation: fadeInDown 1s;
+        }
+        .course-header .lead {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1.2s;
+        }
+        .course-header .header-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            animation: bounceIn 1.2s;
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.7);}
+            60% { transform: scale(1.1);}
+            100% { transform: scale(1);}
+        }
+        /* Course Details */
+        .course-details {
+            padding: 4rem 0 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .course-details .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: var(--bg-white);
+        }
+        .course-details .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
+        }
+        .course-details .card-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .course-details ul {
+            padding-left: 1.2rem;
+        }
+        .course-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .course-details li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        /* Registration Form */
+        .registration-form {
+            background: var(--bg-white);
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s;
+        }
+        .registration-form h2 {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(184,11,11,0.12);
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .course-header {
+                padding: 3rem 0 2rem 0;
+            }
+            .course-header h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .registration-form {
+                padding: 1.5rem 0.5rem;
+            }
+        }
+        /* Decorative SVG bottom */
+        .svg-bottom {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            z-index: 1;
+        }
+         /* Hide payment feedback by default, show when needed */
+        #paymentFeedback.visually-hidden {
+            display: none !important;
+        }
+        #paymentFeedback.d-block {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-graduation-cap"></i> SK AI Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" title="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item ms-2">
+                        <a class="home-btn nav-link px-3" href="../../index.html">
+                            <i class="fas fa-arrow-left"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header --> 
+     <header class="course-header position-relative">
+        <div class="container position-relative z-2">
+            <div class="header-icon mb-2">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h1>Professional Web Design (UI/UX + Bootstrap)</h1>
+            <p class="lead">Design beautiful and responsive websites with modern UI/UX principles and Bootstrap 5.</p>
+        </div>
+        <!-- Decorative SVG bottom -->
+        <div class="svg-bottom">
+            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#fff" fill-opacity="1" d="M0,32L60,37.3C120,43,240,53,360,58.7C480,64,600,64,720,58.7C840,53,960,43,1080,42.7C1200,43,1320,53,1380,58.7L1440,64L1440,80L1380,80C1320,80,1200,80,1080,80C960,80,840,80,720,80C600,80,480,80,360,80C240,80,120,80,60,80L0,80Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="course-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card animate__animated animate__fadeInLeft">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-info-circle me-2"></i>Course Description</h2>
+                            <p>
+                                Dive into the world of modern web design! This course covers HTML5, CSS3, UI/UX design, and responsive layouts with Bootstrap 5. Learn to create visually stunning, user-friendly websites and build a professional portfolio.
+                            </p>
+                            <h3 class="mt-4"><i class="fas fa-check-circle me-2"></i>What you'll learn:</h3>
+                            <ul>
+                                <li>HTML5 and CSS3 fundamentals</li>
+                                <li>UI/UX design principles and best practices</li>
+                                <li>Responsive web design with Bootstrap 5</li>
+                                <li>Wireframing and prototyping</li>
+                                <li>Creating a professional design portfolio</li>
+                                <li>Modern CSS animations and transitions</li>
+                                <li>Accessibility and SEO basics</li>
+                                <li>Real-world project building</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card animate__animated animate__fadeInRight">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-info me-2"></i>Course Info</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-sitemap"></i> <strong>Category:</strong> Professional</li>
+                                <li class="list-group-item"><i class="fas fa-desktop"></i> <strong>Mode:</strong> Online + Offline</li>
+                                <li class="list-group-item"><i class="far fa-clock"></i> <strong>Duration:</strong> 1 Month</li>
+                                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> <strong>Fee:</strong> ₹3,999</li>
+                                <li class="list-group-item"><i class="fas fa-chart-line"></i> <strong>Level:</strong> Beginner</li>
+                                <li class="list-group-item"><i class="fas fa-certificate"></i> <strong>Certificate Available:</strong> Yes</li>
+                                <li class="list-group-item"><i class="fas fa-language"></i> <strong>Language:</strong> English, Hindi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-form mt-5 animate__animated animate__fadeInUp">
+                <h2 class="text-center mb-4"><i class="fas fa-user-plus me-2"></i>Register for this Course</h2>
+                <form id="registrationForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label">College/Organization</label>
+                            <input type="text" class="form-control" id="college" name="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label">Mode</label>
+                            <select class="form-select" id="mode" name="mode" required>
+                                <option value="">Select mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a mode.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Payment Option</label>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi">UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash" required>
+                                    <label class="form-check-label" for="cash">Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card" required>
+                                    <label class="form-check-label" for="card">Card</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback d-block visually-hidden" id="paymentFeedback">Please select a payment option.</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="form-label">Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Any questions you have..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom"><i class="fas fa-paper-plane me-2"></i>Register Now</button>
+                    </div>
+                </form>
+                <div class="alert alert-success mt-3 d-none" id="successMessage" role="alert">
+                    Registration successful! We'll contact you soon.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate.css CDN for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom JS for form and animation -->
+    <script>
+        // Animate on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedEls = document.querySelectorAll('.animate__animated');
+            function animateOnScroll() {
+                animatedEls.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add('animate__fadeInUp');
+                    }
+                });
+            }
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+
+            // Registration form validation
+            const form = document.getElementById('registrationForm');
+            const paymentFeedback = document.getElementById('paymentFeedback');
+            const successMessage = document.getElementById('successMessage');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                let valid = true;
+                // Bootstrap validation
+                if (!form.checkValidity()) {
+                    valid = false;
+                }
+                // Payment option validation
+                const paymentChecked = form.querySelector('input[name="payment"]:checked');
+                if (!paymentChecked) {
+                    paymentFeedback.style.display = 'block';
+                    valid = false;
+                } else {
+                    paymentFeedback.style.display = 'none';
+                }
+                form.classList.add('was-validated');
+                if (valid) {
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    successMessage.classList.remove('d-none');
+                    setTimeout(() => { successMessage.classList.add('d-none'); }, 4000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter App Development - SK AI Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #B80B0B;
+            --accent-color: #00bfae;
+            --text-color: #222;
+            --bg-light-gray: #f8f9fa;
+            --bg-white: #fff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f8f9fa 60%, #e3f2fd 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* SVG background */
+        .svg-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .course-header {
+            position: relative;
+            background: linear-gradient(120deg, rgba(0,123,255,0.95) 60%, rgba(0,191,174,0.85) 100%);
+            color: var(--bg-white);
+            padding: 7rem 0 5rem 0;
+            text-align: center;
+            border-bottom-left-radius: 60% 15%;
+            border-bottom-right-radius: 60% 15%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .course-header h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            animation: fadeInDown 1s;
+        }
+        .course-header .lead {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1.2s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .home-button {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 20;
+            background: var(--bg-white);
+            color: var(--primary-color);
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+        .home-button:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        .course-details {
+            position: relative;
+            z-index: 2;
+            padding: 4rem 0 2rem 0;
+        }
+        .course-details .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
+            overflow: hidden;
+        }
+        .course-details .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,123,255,0.10);
+        }
+        .course-details .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        /* Redesigned Course Info Card */
+        .pro-course-info-card {
+            border-radius: 1.5rem;
+            box-shadow: 0 6px 32px rgba(0,123,255,0.10);
+            border: none;
+            background: linear-gradient(120deg, #f8f9fa 80%, #e3f2fd 100%);
+            min-height: 420px;
+        }
+        .pro-course-info-card .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+        .pro-course-info-card ul li {
+            font-size: 1.08rem;
+            padding-left: 0;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+        }
+        .pro-course-info-card ul li i {
+            min-width: 1.5em;
+            font-size: 1.1em;
+        }
+        .pro-course-badge {
+            font-size: 1rem;
+            border-radius: 1rem 1rem 1rem 0;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 8px rgba(184,12,12,0.10);
+        }
+        .pro-course-info-card .badge {
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 0.7rem;
+            padding: 0.4em 1em;
+        }
+        .course-details ul {
+            padding-left: 1.2rem;
+        }
+        .course-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .course-details li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+        }
+        .registration-form {
+            background: linear-gradient(120deg, #fff 80%, #e3f2fd 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+            animation: fadeInUp 1.2s;
+        }
+        .registration-form h2 {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            transform: scale(1.04);
+        }
+        /* Animated icon in header */
+        .flutter-icon-anim {
+            font-size: 4rem;
+            color: #61dafb;
+            animation: flutterSpin 3s infinite linear;
+            margin-bottom: 1rem;
+        }
+        @keyframes flutterSpin {
+            0% { transform: rotate(-10deg);}
+            50% { transform: rotate(10deg);}
+            100% { transform: rotate(-10deg);}
+        }
+        /* Responsive */
+        @media (max-width: 991px) {
+            .course-header h1 { font-size: 2.2rem;}
+            .course-header { padding: 4rem 0 2.5rem 0;}
+        }
+        @media (max-width: 767px) {
+            .registration-form { padding: 1.2rem;}
+            .home-button { top: 12px; left: 12px; font-size: 0.95rem;}
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG Background -->
+    <svg class="svg-bg" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="svgGrad1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#e3f2fd" />
+                <stop offset="100%" stop-color="#b3e5fc" />
+            </linearGradient>
+        </defs>
+        <path d="M0,100 Q360,200 720,100 T1440,100 V600 H0 Z" fill="url(#svgGrad1)" opacity="0.3"/>
+        <circle cx="1200" cy="80" r="80" fill="#00bfae" opacity="0.12"/>
+        <circle cx="200" cy="120" r="60" fill="#007bff" opacity="0.10"/>
+        <rect x="900" y="400" width="180" height="80" rx="40" fill="#B80B0B" opacity="0.08"/>
+    </svg>
+
+    <!-- Home Button -->
+    <a href="../../index.html" class="btn home-button shadow-sm">
+        <i class="fas fa-home"></i> Home
+    </a>
+
+    <header class="course-header">
+        <div class="container position-relative">
+            <div class="flutter-icon-anim mb-2">
+                <svg width="64" height="64" viewBox="0 0 256 256" fill="none">
+                    <g>
+                        <polygon fill="#42A5F5" points="44,156 128,72 212,156 188,180 128,120 68,180"/>
+                        <polygon fill="#1976D2" points="128,120 188,180 128,240 68,180"/>
+                        <polygon fill="#42A5F5" points="44,156 68,180 128,120 128,72"/>
+                    </g>
+                </svg>
+            </div>
+            <h1>Flutter App Development</h1>
+            <p class="lead"><i class="fab fa-android"></i> <i class="fab fa-apple"></i> Build beautiful, cross-platform mobile apps.</p>
+        </div>
+    </header>
+
+    <main class="course-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card animate__animated animate__fadeInLeft">
+                        <div class="card-body">
+                            <h2 class="card-title"><i class="fas fa-info-circle"></i> Course Description</h2>
+                            <p>
+                                Dive into Flutter and Dart to create stunning, high-performance mobile apps for both iOS and Android. This hands-on course covers everything from setup to deployment, including UI design, state management, API integration, and publishing.
+                            </p>
+                            <h3 class="mt-4"><i class="fas fa-list-check"></i> What you'll learn:</h3>
+                            <ul>
+                                <li>Dart programming language fundamentals</li>
+                                <li>Building user interfaces with Flutter widgets</li>
+                                <li>State management solutions (Provider, Bloc, Riverpod)</li>
+                                <li>Working with REST APIs and local databases (SQLite, Hive)</li>
+                                <li>Animations and custom UI</li>
+                                <li>Testing and debugging Flutter apps</li>
+                                <li>Publishing apps to the App Store and Google Play</li>
+                            </ul>
+                            <h3 class="mt-4"><i class="fas fa-star"></i> Why Choose This Course?</h3>
+                            <ul>
+                                <li>Project-based learning with real-world examples</li>
+                                <li>Access to code samples and resources</li>
+                                <li>Mentor support and Q&A sessions</li>
+                                <li>Certificate of completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card pro-course-info-card animate__animated animate__fadeInRight position-relative overflow-visible">
+                    <div class="position-absolute top-0 end-0 m-3">
+                      <span class="badge bg-danger text-white px-3 py-2 fs-6 shadow pro-course-badge">Paid</span>
+                    </div>
+                    <div class="card-body p-4">
+                      <h3 class="card-title mb-3 d-flex align-items-center gap-2"><i class="fas fa-info-circle text-primary"></i> Course Info</h3>
+                      <ul class="list-unstyled mb-3">
+                        <li class="mb-2"><i class="fas fa-sitemap me-2 text-success"></i> <strong>Category:</strong> Software Development</li>
+                        <li class="mb-2"><i class="fas fa-desktop me-2 text-info"></i> <strong>Mode:</strong> Online + Offline</li>
+                        <li class="mb-2"><i class="far fa-clock me-2 text-warning"></i> <strong>Duration:</strong> 1.5 Months</li>
+                        <li class="mb-2"><i class="fas fa-rupee-sign me-2 text-danger"></i> <strong>Fee:</strong> ₹5,499</li>
+                        <li class="mb-2"><i class="fas fa-chart-line me-2 text-primary"></i> <strong>Level:</strong> Intermediate</li>
+                        <li class="mb-2"><i class="fas fa-certificate me-2 text-purple"></i> <strong>Certificate:</strong> Yes</li>
+                        <li class="mb-2"><i class="fas fa-user-friends me-2 text-success"></i> <strong>Mentor Support:</strong> Yes</li>
+                      </ul>
+                      <div class="d-flex flex-wrap gap-2 mt-3">
+                        <span class="badge bg-primary">Flutter</span>
+                        <span class="badge bg-info text-dark">Dart</span>
+                        <span class="badge bg-success">Mobile Apps</span>
+                        <span class="badge bg-warning text-dark">UI/UX</span>
+                        <span class="badge bg-secondary">API</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="registration-form mt-5 shadow animate__animated animate__fadeInUp">
+                <h2><i class="fas fa-user-plus"></i> Register for this Course</h2>
+                <form id="registerForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label"><i class="fas fa-user"></i> Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label"><i class="fas fa-phone"></i> Phone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Your phone number" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="college" class="form-label"><i class="fas fa-university"></i> Institution</label>
+                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mode" class="form-label"><i class="fas fa-chalkboard"></i> Mode</label>
+                            <select class="form-select" id="mode" required>
+                                <option value="">Select Mode</option>
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label"><i class="fas fa-money-check-alt"></i> Payment Option</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
+                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
+                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
+                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label"><i class="fas fa-comment-dots"></i> Your Message (Optional)</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom"><i class="fas fa-paper-plane"></i> Register Now</button>
+                    <div id="formAlert" class="mt-3"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate.css for fadeIn animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script>
+        // Simple form validation and feedback
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+            var mode = document.getElementById('mode').value;
+            var payment = document.querySelector('input[name="payment"]:checked');
+            var alertBox = document.getElementById('formAlert');
+            if(!name || !email || !phone || !mode || !payment) {
+                alertBox.innerHTML = '<div class="alert alert-danger">Please fill all required fields and select a payment option.</div>';
+                return;
+            }
+            // Simulate success
+            alertBox.innerHTML = '<div class="alert alert-success">Thank you for registering! We will contact you soon.</div>';
+            this.reset();
+        });
+
+        // Animate cards on scroll
+        function animateOnScroll() {
+            var elements = document.querySelectorAll('.card, .registration-form');
+            var windowHeight = window.innerHeight;
+            elements.forEach(function(el) {
+                var position = el.getBoundingClientRect().top;
+                if(position < windowHeight - 100) {
+                    el.classList.add('animate__fadeInUp');
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
