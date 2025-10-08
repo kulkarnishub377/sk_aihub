@@ -286,7 +286,7 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -300,19 +300,32 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                        <span class="material-icons">menu</span>
                     </button>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
-                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
-                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
-                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Home</a>
+                    <div class="relative">
+                        <button class="text-gray-700 hover:text-primary-600 transition-colors duration-200 flex items-center" id="courses-dropdown">
+                            Courses <span class="material-icons text-sm ml-1">expand_more</span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden" id="courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Contact</a>
+                    <a href="login_signup.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Login</a>
                 </div>
             </div>
 
@@ -320,7 +333,22 @@
             <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
-                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <div class="relative">
+                        <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 flex items-center justify-between" id="mobile-courses-dropdown">
+                            Courses <span class="material-icons text-sm">expand_more</span>
+                        </button>
+                        <div class="ml-4 mt-1 space-y-1 hidden" id="mobile-courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
                     <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
                     <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
                     <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
@@ -330,7 +358,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12 pt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <!-- Badge -->
@@ -347,12 +375,24 @@
                     Your first step into the world of programming. Master C and C++ fundamentals, build strong programming logic, and create efficient applications.
                 </p>
 
-                <!-- Tech Stack Icons -->
-                <div class="flex justify-center items-center space-x-6 mb-8">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-10 h-10">
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-c-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">C</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-cplusplus-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">C++</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-visualstudio-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">Visual Studio</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-git-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">Git</span>
+                    </div>
                 </div>
 
                 <!-- Stats -->
@@ -385,6 +425,163 @@
                         <span class="material-icons mr-2">info</span>
                         Course Overview
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose This Course?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Start your programming journey with C and C++, the foundation languages that power everything from operating systems to games.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">foundation</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Strong Foundation</h3>
+                    <p class="text-gray-600">
+                        Learn the fundamentals that every programmer needs. C and C++ concepts form the basis for understanding any programming language.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">memory</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Memory Management</h3>
+                    <p class="text-gray-600">
+                        Master manual memory management, pointers, and low-level operations that give you complete control over system resources.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-green-600 text-2xl">speed</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">High Performance</h3>
+                    <p class="text-gray-600">
+                        Build fast, efficient applications. Learn to write code that runs close to the hardware for maximum speed and minimal overhead.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What You'll Build</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Create practical applications and understand core programming concepts through hands-on projects.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">calculate</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Command-Line Calculator</h3>
+                    <p class="text-gray-600 mb-4">
+                        Build a fully functional calculator program in C that handles basic arithmetic operations, error checking, and user input validation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">C Programming</span>
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Input/Output</span>
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Error Handling</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">school</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Student Management System</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create a C++ program to manage student records with file I/O, data structures, and object-oriented programming concepts.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">C++ Classes</span>
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">File I/O</span>
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Data Structures</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">gamepad</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Console Game - Snake</h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop the classic Snake game in C with dynamic memory allocation, game loops, and collision detection algorithms.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Game Development</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Dynamic Memory</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Algorithms</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-blue-600">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Data Analysis Tool</h3>
+                    <p class="text-gray-600 mb-4">
+                        Build a C++ application for statistical analysis with custom data structures, sorting algorithms, and performance optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Statistics</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Sorting Algorithms</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Performance</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-purple-600">library_books</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Library Management System</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create a comprehensive library system in C++ with book cataloging, user management, and advanced search functionality.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">OOP Concepts</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Search Algorithms</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Database Design</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-orange-600">security</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">File Encryption Tool</h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop a secure file encryption/decryption program in C using cryptographic algorithms and secure memory handling.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Cryptography</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">File Operations</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Security</span>
+                    </div>
                 </div>
             </div>
         </div>

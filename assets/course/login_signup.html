@@ -3,11 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Signup</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Login & Signup - SK AI Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        },
+                        accent: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- DevIcon for tech icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -359,7 +411,79 @@
 </style>
 </head>
 <body>
-    <a href="../../index.html" class="home-link"><i class="fas fa-home"></i> Home</a>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Home</a>
+                    <div class="relative">
+                        <button class="text-gray-700 hover:text-primary-600 transition-colors duration-200 flex items-center" id="courses-dropdown">
+                            Courses <span class="material-icons text-sm ml-1">expand_more</span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden" id="courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Contact</a>
+                    <a href="login_signup.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <div class="relative">
+                        <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 flex items-center justify-between" id="mobile-courses-dropdown">
+                            Courses <span class="material-icons text-sm">expand_more</span>
+                        </button>
+                        <div class="ml-4 mt-1 space-y-1 hidden" id="mobile-courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20">
     <div class="container-wrapper" id="container">
         <!-- Sign Up Form -->
         <div class="form-container sign-up-container">
@@ -431,6 +555,36 @@
         });
         signInOverlayButton.addEventListener('click', () => {
             container.classList.remove('right-panel-active');
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const coursesDropdown = document.getElementById('courses-dropdown');
+        const coursesMenu = document.getElementById('courses-menu');
+        const mobileCoursesDropdown = document.getElementById('mobile-courses-dropdown');
+        const mobileCoursesMenu = document.getElementById('mobile-courses-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        coursesDropdown.addEventListener('click', () => {
+            coursesMenu.classList.toggle('hidden');
+        });
+
+        mobileCoursesDropdown.addEventListener('click', () => {
+            mobileCoursesMenu.classList.toggle('hidden');
+        });
+
+        // Close menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!coursesDropdown.contains(e.target)) {
+                coursesMenu.classList.add('hidden');
+            }
+            if (!mobileCoursesDropdown.contains(e.target)) {
+                mobileCoursesMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>

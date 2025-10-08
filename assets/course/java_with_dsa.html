@@ -273,7 +273,7 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -287,19 +287,32 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                        <span class="material-icons">menu</span>
                     </button>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
-                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
-                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
-                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
-                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Home</a>
+                    <div class="relative">
+                        <button class="text-gray-700 hover:text-primary-600 transition-colors duration-200 flex items-center" id="courses-dropdown">
+                            Courses <span class="material-icons text-sm ml-1">expand_more</span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden" id="courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Contact</a>
+                    <a href="login_signup.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Login</a>
                 </div>
             </div>
 
@@ -307,7 +320,22 @@
             <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
-                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <div class="relative">
+                        <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 flex items-center justify-between" id="mobile-courses-dropdown">
+                            Courses <span class="material-icons text-sm">expand_more</span>
+                        </button>
+                        <div class="ml-4 mt-1 space-y-1 hidden" id="mobile-courses-menu">
+                            <a href="python_for_software_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI with Python</a>
+                            <a href="full_stack_web_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI Web Applications</a>
+                            <a href="web_design.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">UI/UX Design</a>
+                            <a href="advanced_python.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Advanced Python</a>
+                            <a href="java_with_dsa.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Java with DSA</a>
+                            <a href="flutter_app_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Flutter App Dev</a>
+                            <a href="c_cpp_programming.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">C/C++ Programming</a>
+                            <a href="database.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Database Management</a>
+                            <a href="career_booster.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Career Booster</a>
+                        </div>
+                    </div>
                     <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
                     <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
                     <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
@@ -317,7 +345,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12 pt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <!-- Badge -->
@@ -334,12 +362,24 @@
                     Master Java, Data Structures & Algorithms with hands-on projects, live mentorship, and interview preparation for top tech companies.
                 </p>
 
-                <!-- Tech Stack Icons -->
-                <div class="flex justify-center items-center space-x-6 mb-8">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-10 h-10">
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-java-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">Java</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-spring-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">Spring</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-mysql-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">MySQL</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
+                        <i class="devicon-git-plain colored text-2xl mr-2"></i>
+                        <span class="font-medium text-gray-700">Git</span>
+                    </div>
                 </div>
 
                 <!-- Stats -->
@@ -372,6 +412,163 @@
                         <span class="material-icons mr-2">info</span>
                         Course Overview
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose This Course?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Master Java programming and DSA with industry-focused curriculum designed for career success.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">work</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Career-Focused Learning</h3>
+                    <p class="text-gray-600">
+                        Comprehensive curriculum designed to prepare you for top tech companies with 85% placement rate and interview-focused training.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">psychology</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">DSA Mastery</h3>
+                    <p class="text-gray-600">
+                        Deep dive into Data Structures and Algorithms with practical implementations and problem-solving techniques for coding interviews.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-green-600 text-2xl">rocket</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Full-Stack Java Development</h3>
+                    <p class="text-gray-600">
+                        From core Java to Spring Boot, build complete applications with databases, APIs, and modern development practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Build Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What You'll Build</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Create industry-standard Java applications and master complex algorithms through hands-on projects.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">shopping_cart</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">E-commerce Platform</h3>
+                    <p class="text-gray-600 mb-4">
+                        Build a complete e-commerce application with Spring Boot, user authentication, product catalog, shopping cart, and payment integration.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Spring Boot</span>
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">MySQL</span>
+                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">JWT</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Data Analysis Engine</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create a data processing application with custom data structures, sorting algorithms, and performance optimization techniques.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Collections</span>
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Algorithms</span>
+                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Streams</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">chat</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Real-time Chat Application</h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop a WebSocket-based chat system with user management, message encryption, and real-time communication features.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">WebSocket</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Spring MVC</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Redis</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-blue-600">school</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Learning Management System</h3>
+                    <p class="text-gray-600 mb-4">
+                        Build an educational platform with course management, student progress tracking, and assessment features using advanced Java concepts.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">JPA/Hibernate</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">REST APIs</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Security</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-purple-600">gamepad</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Algorithm Visualizer</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create an interactive tool to visualize sorting and searching algorithms with step-by-step execution and performance comparisons.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Swing/JavaFX</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">DSA</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Multithreading</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-orange-600">account_balance</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Banking Management System</h3>
+                    <p class="text-gray-600 mb-4">
+                        Develop a secure banking application with account management, transaction processing, and comprehensive audit logging features.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">JDBC</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Transactions</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Security</span>
+                    </div>
                 </div>
             </div>
         </div>
