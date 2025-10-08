@@ -1,8 +1,16 @@
 
-// Initialize AOS (Animate On Scroll) - keeping for compatibility
-if (typeof AOS !== 'undefined') {
-  AOS.init({ duration: 1000, once: true });
-}
+// Loading screen
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('loading-screen');
+  if (loadingScreen) {
+    setTimeout(() => {
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }, 1000); // Show loading for at least 1 second
+  }
+});
 
 // Neural Network Animation
 const canvas = document.getElementById('neural-network-canvas');

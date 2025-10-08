@@ -176,6 +176,69 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
     }
+
+    /* Dark Mode Styles */
+    .dark {
+      color-scheme: dark;
+    }
+    .dark body {
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    .dark .material-card,
+    .dark .bg-white {
+      background-color: #1e293b;
+      border-color: #334155;
+    }
+    .dark .text-neutral-900 {
+      color: #f1f5f9;
+    }
+    .dark .text-neutral-600 {
+      color: #cbd5e1;
+    }
+    .dark .text-neutral-700 {
+      color: #e2e8f0;
+    }
+    .dark .border-neutral-200 {
+      border-color: #334155;
+    }
+    .dark .border-neutral-300 {
+      border-color: #475569;
+    }
+    .dark nav {
+      background-color: rgba(15, 23, 42, 0.95);
+      border-color: #334155;
+    }
+    .dark .hover\\:bg-neutral-100:hover {
+      background-color: #334155;
+    }
+    .dark .bg-neutral-50 {
+      background-color: #1e293b;
+    }
+    /* Floating Elements */
+    .floating-element {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.1;
+    }
+    .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+    .floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+    .floating-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
+    .floating-element:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 1s; }
+    /* Particle Effects */
+    .particle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, rgba(102, 126, 234, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleFloat 8s ease-in-out infinite;
+    }
+    .particle:nth-child(odd) { animation-delay: -2s; }
+    .particle:nth-child(even) { animation-delay: -4s; }
+    @keyframes particleFloat {
+      0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-30px) scale(1.2); opacity: 0.6; }
+    }
   </style>
 
   <!-- Vendor JS Files (Minimal) -->
@@ -183,7 +246,14 @@
 
 </head>
 
-<body class="bg-base-100 text-base-content font-sans">
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="fixed inset-0 bg-white dark:bg-slate-900 z-50 flex items-center justify-center transition-opacity duration-500">
+    <div class="text-center">
+      <div class="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-white mb-2">SK AI Hub</h2>
+      <p class="text-neutral-600 dark:text-neutral-400">Loading amazing AI experiences...</p>
+    </div>
+  </div>
   <!-- Modern Material Design Navbar -->
   <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-neutral-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -304,6 +374,15 @@
           <span class="material-icons text-secondary-600">smart_toy</span>
         </div>
       </div>
+    </div>
+
+    <!-- Particle Effects -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="particle" style="width: 20px; height: 20px; top: 20%; left: 20%;"></div>
+      <div class="particle" style="width: 15px; height: 15px; top: 60%; right: 25%;"></div>
+      <div class="particle" style="width: 25px; height: 25px; bottom: 30%; left: 15%;"></div>
+      <div class="particle" style="width: 18px; height: 18px; top: 40%; right: 10%;"></div>
+      <div class="particle" style="width: 12px; height: 12px; bottom: 20%; right: 30%;"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
