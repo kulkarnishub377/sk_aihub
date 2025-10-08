@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter App Development - SK AI Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Master Flutter app development with Dart. Build cross-platform mobile apps for iOS and Android with real-world projects.">
+    <meta name="keywords" content="Flutter, Dart, mobile app development, cross-platform apps, iOS, Android, app development course">
+    <meta name="author" content="SK AI Hub">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        }
+                    },
+                    boxShadow: {
+                        'material': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-material {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .shadow-material-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
     <style>
         :root {
             --primary-color: #007bff;
@@ -204,25 +274,667 @@
         }
     </style>
 </head>
-<body>
-    <!-- SVG Background -->
-    <svg class="svg-bg" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="svgGrad1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e3f2fd" />
-                <stop offset="100%" stop-color="#b3e5fc" />
-            </linearGradient>
-        </defs>
-        <path d="M0,100 Q360,200 720,100 T1440,100 V600 H0 Z" fill="url(#svgGrad1)" opacity="0.3"/>
-        <circle cx="1200" cy="80" r="80" fill="#00bfae" opacity="0.12"/>
-        <circle cx="200" cy="120" r="60" fill="#007bff" opacity="0.10"/>
-        <rect x="900" y="400" width="180" height="80" rx="40" fill="#B80B0B" opacity="0.08"/>
-    </svg>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
 
-    <!-- Home Button -->
-    <a href="../../index.html" class="btn home-button shadow-sm">
-        <i class="fas fa-home"></i> Home
-    </a>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">phone_android</span>
+                    Cross-Platform Development
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Flutter App <span class="text-gradient">Development</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Build beautiful, high-performance mobile apps for iOS and Android using Flutter and Dart. Create stunning UIs and deploy to both platforms from a single codebase.
+                </p>
+
+                <!-- Tech Stack Icons -->
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" class="w-10 h-10">
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">4.7</div>
+                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">900+</div>
+                        <div class="text-sm text-gray-600">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">10</div>
+                        <div class="text-sm text-gray-600">Weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">iOS & Android</div>
+                        <div class="text-sm text-gray-600">Platforms</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">play_arrow</span>
+                        Start Learning Free
+                    </a>
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">info</span>
+                        Course Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Master Flutter development and build production-ready mobile applications for both iOS and Android platforms.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Dart Programming -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">code</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Dart Programming</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Dart fundamentals and syntax
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Object-oriented programming
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Asynchronous programming
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Collections and generics
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Flutter Widgets -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">widgets</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Flutter Widgets</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Stateless and Stateful widgets
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Material Design components
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Custom widget development
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Layout and positioning
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- App Development -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">developer_mode</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">App Development</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            State management solutions
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            API integration and networking
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Local storage and databases
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            App deployment and publishing
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    10-week comprehensive program covering Flutter development from basics to advanced app deployment.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Introduction to Dart & Flutter</h3>
+                                <p class="text-gray-600 text-sm">Week 1-2 • 12 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Get started with Dart programming language and Flutter framework fundamentals.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Dart programming basics and syntax
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Flutter installation and setup
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Your first Flutter app
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Hot reload and development tools
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Building Beautiful UIs</h3>
+                                <p class="text-gray-600 text-sm">Week 3-4 • 14 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master Flutter widgets and create stunning user interfaces.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Material Design and Cupertino widgets
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Layout widgets and containers
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Custom widgets and themes
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Responsive design principles
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">State Management & Navigation</h3>
+                                <p class="text-gray-600 text-sm">Week 5-6 • 12 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn advanced state management and app navigation patterns.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Provider and Riverpod state management
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Navigation and routing
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Form handling and validation
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Dependency injection
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Backend Integration & Deployment</h3>
+                                <p class="text-gray-600 text-sm">Week 7-10 • 18 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Connect your app to backend services and deploy to app stores.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    REST API integration with Dio
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Firebase integration and authentication
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Local storage with SQLite
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    App store deployment (iOS & Android)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Info & Registration -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Info -->
+                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Duration</p>
+                                        <p class="text-gray-600">10 Weeks (56+ hours)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">school</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Level</p>
+                                        <p class="text-gray-600">Beginner to Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">group</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Batch Size</p>
+                                        <p class="text-gray-600">Limited (25 students)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">computer</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mode</p>
+                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">verified</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Certificate</p>
+                                        <p class="text-gray-600">Yes (with portfolio)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">phone</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Contact</p>
+                                        <p class="text-gray-600">+91 98765 43210</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="bg-white rounded-xl shadow-material p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Basic programming knowledge (any language)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Understanding of object-oriented concepts</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Computer with minimum 8GB RAM</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Access to a smartphone for testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
+
+                        <!-- Pricing -->
+                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">₹6,999</div>
+                            <div class="text-gray-600">Complete Course Fee</div>
+                            <div class="text-sm text-green-600 mt-2">App Store Deployment Included</div>
+                        </div>
+
+                        <form id="registerForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
+                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
+                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                    <option value="">Select Mode</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
+                                        <span class="ml-2 text-gray-700">UPI Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Cash Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Card Payment</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
+                            </div>
+
+                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
+
+                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <span id="registerBtnText">Register Now</span>
+                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Next batch starts: <strong>25th August 2024</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Curriculum accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+
+            curriculumToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.curriculum-icon');
+
+                    // Close all other modules
+                    document.querySelectorAll('.curriculum-content').forEach(c => {
+                        if (c.id !== targetId) {
+                            c.classList.add('hidden');
+                        }
+                    });
+
+                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                        if (i !== icon) {
+                            i.textContent = 'expand_more';
+                        }
+                    });
+
+                    // Toggle current module
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = 'expand_less';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = 'expand_more';
+                    }
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('registerBtn');
+                    const btnText = document.getElementById('registerBtnText');
+                    const btnSpinner = document.getElementById('registerBtnSpinner');
+                    const alertBox = document.getElementById('formAlert');
+
+                    // Get form values
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const college = document.getElementById('college').value.trim();
+                    const mode = document.getElementById('mode').value;
+                    const payment = document.querySelector('input[name="payment"]:checked');
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !mode || !payment) {
+                        showAlert('Please fill all required fields and select a payment option.', 'error');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showAlert('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Phone validation
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.textContent = "Registering...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
+                        registerForm.reset();
+                        btn.disabled = false;
+                        btnText.textContent = "Register Now";
+                        btnSpinner.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+
+            function showAlert(message, type) {
+                const alertBox = document.getElementById('formAlert');
+                alertBox.textContent = message;
+                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                alertBox.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
     <header class="course-header">
         <div class="container position-relative">

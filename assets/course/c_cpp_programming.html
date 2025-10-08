@@ -4,11 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C & C++ Programming Foundation - SK AI Hub</title>
-    <!-- Bootstrap & Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Master C and C++ programming fundamentals. Learn system programming, memory management, and build efficient applications.">
+    <meta name="keywords" content="C programming, C++, system programming, memory management, programming fundamentals, low-level programming">
+    <meta name="author" content="SK AI Hub">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        }
+                    },
+                    boxShadow: {
+                        'material': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-material {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .shadow-material-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
     <style>
         :root {
             --primary: #007bff;
@@ -216,19 +284,667 @@
         }
     </style>
 </head>
-<body>
-    <header class="course-header">
-        <!-- Home Button at Top Right -->
-        <a href="../../index.html" class="header-home-btn" title="Go to Home">
-            <i class="fas fa-home"></i>
-        </a>
-        <span class="badge">Foundation Course</span>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="header-illustration" />
-        <h1>C & C++ Programming Foundation</h1>
-        <p class="lead">
-            Your first step into the world of programming.
-        </p>
-    </header>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">foundation</span>
+                    Foundation Course
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    C & C++ Programming <span class="text-gradient">Foundation</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Your first step into the world of programming. Master C and C++ fundamentals, build strong programming logic, and create efficient applications.
+                </p>
+
+                <!-- Tech Stack Icons -->
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" class="w-10 h-10">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-10 h-10">
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">4.5</div>
+                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">800+</div>
+                        <div class="text-sm text-gray-600">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">8</div>
+                        <div class="text-sm text-gray-600">Weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">Beginner</div>
+                        <div class="text-sm text-gray-600">Level</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">play_arrow</span>
+                        Start Learning Free
+                    </a>
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">info</span>
+                        Course Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive introduction to C and C++ programming, perfect for beginners looking to build a strong foundation in programming.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- C Programming -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">code</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">C Programming</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            C syntax and basic constructs
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Variables, data types, operators
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Control structures and loops
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Functions and pointers
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- C++ Programming -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">build</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">C++ Programming</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            OOP concepts and classes
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Inheritance and polymorphism
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            STL containers and algorithms
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Exception handling
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- System Programming -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">memory</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">System Programming</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Memory management
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            File I/O operations
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Data structures implementation
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Performance optimization
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    8-week structured program covering C and C++ programming fundamentals with hands-on practice.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Introduction to Programming & C Basics</h3>
+                                <p class="text-gray-600 text-sm">Week 1-2 • 10 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Start your programming journey with C language fundamentals and basic concepts.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Programming concepts and logic building
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    C syntax, variables, and data types
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Operators and expressions
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Input/output operations
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Control Structures & Functions</h3>
+                                <p class="text-gray-600 text-sm">Week 3-4 • 12 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master decision making, loops, and modular programming with functions.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Conditional statements (if-else, switch)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Loops (for, while, do-while)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Functions and parameter passing
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Scope and lifetime of variables
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Arrays, Strings & Pointers</h3>
+                                <p class="text-gray-600 text-sm">Week 5-6 • 14 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Work with arrays, strings, and understand memory management with pointers.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Arrays and multi-dimensional arrays
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    String manipulation functions
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Pointers and memory addresses
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Dynamic memory allocation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">C++ OOP & Advanced Concepts</h3>
+                                <p class="text-gray-600 text-sm">Week 7-8 • 16 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn object-oriented programming in C++ and build complete applications.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Classes and objects in C++
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Inheritance and polymorphism
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    File handling and I/O streams
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Final project and portfolio building
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Info & Registration -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Info -->
+                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Duration</p>
+                                        <p class="text-gray-600">8 Weeks (52+ hours)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">school</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Level</p>
+                                        <p class="text-gray-600">Beginner (No experience needed)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">group</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Batch Size</p>
+                                        <p class="text-gray-600">Limited (30 students)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">computer</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mode</p>
+                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">verified</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Certificate</p>
+                                        <p class="text-gray-600">Yes (with project portfolio)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">phone</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Contact</p>
+                                        <p class="text-gray-600">+91 98765 43210</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="bg-white rounded-xl shadow-material p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Basic computer literacy and internet access</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Logical thinking and problem-solving interest</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Windows/Linux/Mac computer with basic configuration</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">No prior programming experience required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
+
+                        <!-- Pricing -->
+                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">₹4,999</div>
+                            <div class="text-gray-600">Complete Course Fee</div>
+                            <div class="text-sm text-green-600 mt-2">Certificate Included</div>
+                        </div>
+
+                        <form id="registerForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
+                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
+                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                    <option value="">Select Mode</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
+                                        <span class="ml-2 text-gray-700">UPI Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Cash Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Card Payment</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
+                            </div>
+
+                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
+
+                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <span id="registerBtnText">Register Now</span>
+                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Next batch starts: <strong>1st September 2024</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Curriculum accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+
+            curriculumToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.curriculum-icon');
+
+                    // Close all other modules
+                    document.querySelectorAll('.curriculum-content').forEach(c => {
+                        if (c.id !== targetId) {
+                            c.classList.add('hidden');
+                        }
+                    });
+
+                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                        if (i !== icon) {
+                            i.textContent = 'expand_more';
+                        }
+                    });
+
+                    // Toggle current module
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = 'expand_less';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = 'expand_more';
+                    }
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('registerBtn');
+                    const btnText = document.getElementById('registerBtnText');
+                    const btnSpinner = document.getElementById('registerBtnSpinner');
+                    const alertBox = document.getElementById('formAlert');
+
+                    // Get form values
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const college = document.getElementById('college').value.trim();
+                    const mode = document.getElementById('mode').value;
+                    const payment = document.querySelector('input[name="payment"]:checked');
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !mode || !payment) {
+                        showAlert('Please fill all required fields and select a payment option.', 'error');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showAlert('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Phone validation
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.textContent = "Registering...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
+                        registerForm.reset();
+                        btn.disabled = false;
+                        btnText.textContent = "Register Now";
+                        btnSpinner.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+
+            function showAlert(message, type) {
+                const alertBox = document.getElementById('formAlert');
+                alertBox.textContent = message;
+                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                alertBox.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
     <main class="course-details">
         <div class="container">
             <div class="row g-4">

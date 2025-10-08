@@ -3,10 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Web Design (UI/UX + Bootstrap) - SK AI Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <title>Professional Web Design (UI/UX + Bootstrap) - Master Modern Web Design | SK AI Hub</title>
+    <meta name="description" content="Master Professional Web Design with UI/UX principles and Bootstrap at SK AI Hub. Create stunning, responsive websites.">
+    <meta name="keywords" content="Web Design, UI/UX Design, Bootstrap, Responsive Design, HTML, CSS, JavaScript, SK AI Hub">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Professional Web Design (UI/UX + Bootstrap) - Master Modern Web Design | SK AI Hub">
+    <meta property="og:description" content="Master Professional Web Design with UI/UX principles and Bootstrap at SK AI Hub. Create stunning, responsive websites.">
+    <meta property="og:image" content="https://skaihub.com/assets/img/new_logo.png">
+    <meta property="og:url" content="https://skaihub.com/assets/course/web_design.html">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://skaihub.com/assets/course/web_design.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            50: '#fef3c7',
+                            100: '#fde68a',
+                            200: '#fcd34d',
+                            300: '#fbbf24',
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                    },
+                    boxShadow: {
+                        'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #007bff;
@@ -211,27 +292,698 @@
         }
     </style>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-graduation-cap"></i> SK AI Hub
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" title="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item ms-2">
-                        <a class="home-btn nav-link px-3" href="../../index.html">
-                            <i class="fas fa-arrow-left"></i> Home
-                        </a>
-                    </li>
-                </ul>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">palette</span>
+                    Free Course
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Professional Web Design with <span class="text-gradient">UI/UX</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Master modern web design principles, UI/UX best practices, and create stunning responsive websites with Bootstrap and advanced CSS techniques.
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">4.7</div>
+                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">1,850+</div>
+                        <div class="text-sm text-gray-600">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">6</div>
+                        <div class="text-sm text-gray-600">Weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">Free</div>
+                        <div class="text-sm text-gray-600">Certificate</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">play_arrow</span>
+                        Start Learning Free
+                    </a>
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">info</span>
+                        Course Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Learn professional web design from fundamentals to advanced techniques, creating modern, responsive websites that users love.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Design Fundamentals -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">design_services</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Design Fundamentals</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            UI/UX design principles
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Color theory and typography
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Wireframing and prototyping
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            User research methods
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">code</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Technical Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            HTML5 semantic markup
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Advanced CSS3 techniques
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Bootstrap 5 framework
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            JavaScript interactions
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Portfolio Projects -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">web</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Portfolio Projects</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Business website design
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            E-commerce interface
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Mobile-first responsive design
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Professional portfolio site
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    6-week comprehensive program covering design principles, technical skills, and real-world projects.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">HTML5 & CSS3 Fundamentals</h3>
+                                <p class="text-gray-600 text-sm">Week 1 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master the building blocks of modern web design with HTML5 and advanced CSS3 techniques.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    HTML5 semantic elements and structure
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    CSS3 selectors, properties, and animations
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Flexbox and CSS Grid layouts
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Responsive design principles
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">UI/UX Design Principles</h3>
+                                <p class="text-gray-600 text-sm">Week 2 • 10 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn professional design principles and user experience best practices.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Color theory and psychology
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Typography and readability
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    User research and personas
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Wireframing and prototyping tools
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Bootstrap 5 Framework</h3>
+                                <p class="text-gray-600 text-sm">Weeks 3-4 • 12 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master Bootstrap 5 for rapid, responsive web development.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Bootstrap grid system and utilities
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Components (cards, modals, navigation)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Customizing Bootstrap themes
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Building responsive layouts
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">JavaScript & Interactions</h3>
+                                <p class="text-gray-600 text-sm">Week 5 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Add interactivity and dynamic behavior to your websites.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    DOM manipulation basics
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Event handling and listeners
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Form validation and interactions
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    jQuery fundamentals
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module5">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">5</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Final Project & Portfolio</h3>
+                                <p class="text-gray-600 text-sm">Week 6 • 14 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module5" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Build professional projects and create a stunning portfolio website.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Complete website project
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Portfolio website design
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    SEO and performance optimization
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Deployment and hosting
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Info & Registration -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Info -->
+                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Duration</p>
+                                        <p class="text-gray-600">6 Weeks (60+ hours)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">school</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Level</p>
+                                        <p class="text-gray-600">Beginner to Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">group</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Batch Size</p>
+                                        <p class="text-gray-600">Limited (30 students)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">computer</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mode</p>
+                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">verified</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Certificate</p>
+                                        <p class="text-gray-600">Yes (with unique ID)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">phone</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Contact</p>
+                                        <p class="text-gray-600">+91 98765 43210</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="bg-white rounded-xl shadow-material p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Basic computer literacy and internet browsing skills</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">No prior programming or design experience required</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Access to a computer with internet connection</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Creative mindset and willingness to learn</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
+
+                        <!-- Pricing -->
+                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">₹4,999</div>
+                            <div class="text-gray-600">Complete Course Fee</div>
+                            <div class="text-sm text-green-600 mt-2">Free Certificate Included</div>
+                        </div>
+
+                        <form id="registerForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
+                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
+                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                    <option value="">Select Mode</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
+                                        <span class="ml-2 text-gray-700">UPI Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Cash Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Card Payment</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
+                            </div>
+
+                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
+
+                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <span id="registerBtnText">Register Now</span>
+                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Next batch starts: <strong>25th July 2024</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Curriculum accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+
+            curriculumToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.curriculum-icon');
+
+                    // Close all other modules
+                    document.querySelectorAll('.curriculum-content').forEach(c => {
+                        if (c.id !== targetId) {
+                            c.classList.add('hidden');
+                        }
+                    });
+
+                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                        if (i !== icon) {
+                            i.textContent = 'expand_more';
+                        }
+                    });
+
+                    // Toggle current module
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = 'expand_less';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = 'expand_more';
+                    }
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('registerBtn');
+                    const btnText = document.getElementById('registerBtnText');
+                    const btnSpinner = document.getElementById('registerBtnSpinner');
+                    const alertBox = document.getElementById('formAlert');
+
+                    // Get form values
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const college = document.getElementById('college').value.trim();
+                    const mode = document.getElementById('mode').value;
+                    const payment = document.querySelector('input[name="payment"]:checked');
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !mode || !payment) {
+                        showAlert('Please fill all required fields and select a payment option.', 'error');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showAlert('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Phone validation
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.textContent = "Registering...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
+                        registerForm.reset();
+                        btn.disabled = false;
+                        btnText.textContent = "Register Now";
+                        btnSpinner.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+
+            function showAlert(message, type) {
+                const alertBox = document.getElementById('formAlert');
+                alertBox.textContent = message;
+                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                alertBox.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
 
     <!-- Header --> 
      <header class="course-header position-relative">

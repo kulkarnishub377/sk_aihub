@@ -3,51 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Booster - SK AI Hub</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Career Booster: Interview + Resume + LinkedIn - SK AI Hub</title>
+    <meta name="description" content="Free career development course covering resume writing, LinkedIn optimization, and interview preparation. Build ATS-friendly resumes and land your dream job.">
+    <meta name="keywords" content="career development, resume writing, LinkedIn optimization, interview preparation, job search, ATS resume, professional development">
+    <meta name="author" content="SK AI Hub">
+    <meta property="og:title" content="Career Booster: Interview + Resume + LinkedIn - SK AI Hub">
+    <meta property="og:description" content="Free career development course covering resume writing, LinkedIn optimization, and interview preparation.">
+    <meta property="og:image" content="../../assets/img/new_logo.png">
+    <meta property="og:url" content="https://skaihub.com/assets/course/career_booster.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../../assets/img/new_logo.png" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        accent: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'material': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --primary: #007bff;
-            --secondary: #B80B0B;
-            --accent: #00c9a7;
-            --bg-light: #f8f9fa;
-            --bg-white: #fff;
-            --text-dark: #222;
-            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-dark);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-        /* Animated SVG Background */
-        .svg-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.18;
-            animation: bgMove 20s linear infinite alternate;
-        }
-        @keyframes bgMove {
-            0% { transform: scale(1) translateY(0);}
-            100% { transform: scale(1.05) translateY(-30px);}
-        }
-        /* Home Button */
-        .home-button {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            z-index: 10;
-            background: var(--bg-white);
+    </style>
+</head>
             border-radius: 50px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             padding: 10px 22px;
@@ -189,144 +212,667 @@
         }
     </style>
 </head>
-<body>
-    <!-- Animated SVG Background (W3 SVG style) -->
-    <svg class="svg-bg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="bg-gradient" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#007bff" />
-                <stop offset="1" stop-color="#00c9a7" />
-            </linearGradient>
-        </defs>
-        <circle cx="1200" cy="200" r="180" fill="url(#bg-gradient)" opacity="0.25"/>
-        <ellipse cx="300" cy="700" rx="220" ry="120" fill="#B80B0B" opacity="0.13"/>
-        <rect x="900" y="600" width="300" height="180" rx="90" fill="#00c9a7" opacity="0.10"/>
-        <polygon points="200,100 350,180 280,300" fill="#007bff" opacity="0.10"/>
-        <circle cx="400" cy="200" r="60" fill="#00c9a7" opacity="0.18"/>
-    </svg>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
 
-    <a href="../../index.html" class="btn home-button shadow-sm">
-        <i class="fas fa-home animated-icon"></i> Home
-    </a>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
 
-    <header class="course-header">
-        <div class="container">
-            <h1>
-                <i class="fas fa-rocket animated-icon"></i>
-                Career Booster: Interview + Resume + LinkedIn
-            </h1>
-            <p class="lead">
-                <i class="fas fa-briefcase"></i>
-                Land your dream job with our expert guidance.
-            </p>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
+            </div>
         </div>
-        <!-- SVG Divider -->
-        <svg class="svg-divider" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#00c9a7" fill-opacity="0.13" d="M0,32L80,37.3C160,43,320,53,480,53.3C640,53,800,43,960,37.3C1120,32,1280,32,1360,32L1440,32L1440,60L1360,60C1280,60,1120,60,960,60C800,60,640,60,480,60C320,60,160,60,80,60L0,60Z"></path>
-        </svg>
-    </header>
+    </nav>
 
-    <main class="course-details">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
-                                <i class="fas fa-info-circle"></i> Course Description
-                            </h2>
-                            <p>
-                                Build <strong>ATS-friendly resumes</strong>, optimize your <strong>LinkedIn profile</strong>, and learn proven <strong>interview strategies</strong> to ace your next interview. This course is designed for professionals at all levels looking to advance their careers.
-                            </p>
-                            <h3 class="mt-4">
-                                <i class="fas fa-check-circle"></i> What you'll learn:
-                            </h3>
-                            <ul>
-                                <li>Resume writing for Applicant Tracking Systems (ATS)</li>
-                                <li>LinkedIn profile optimization techniques</li>
-                                <li>Behavioral and technical interview preparation</li>
-                                <li>Salary negotiation strategies</li>
-                                <li>Personal branding</li>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">rocket_launch</span>
+                    Free Career Development
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Career Booster: <span class="text-gradient">Interview + Resume + LinkedIn</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Land your dream job with expert guidance on resume writing, LinkedIn optimization, and interview preparation. Build ATS-friendly resumes and master job search strategies.
+                </p>
+
+                <!-- Tech Stack Icons -->
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-10 h-10">
+                    <span class="material-icons text-3xl text-primary-600">description</span>
+                    <span class="material-icons text-3xl text-accent-600">work</span>
+                    <span class="material-icons text-3xl text-green-600">trending_up</span>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">4.8</div>
+                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">2,500+</div>
+                        <div class="text-sm text-gray-600">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">2</div>
+                        <div class="text-sm text-gray-600">Weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">FREE</div>
+                        <div class="text-sm text-gray-600">Course</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">play_arrow</span>
+                        Start Learning Free
+                    </a>
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">info</span>
+                        Course Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive career development program designed to help you land your dream job with professional resume, LinkedIn optimization, and interview skills.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Resume Writing -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">description</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">ATS-Friendly Resume</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Resume writing fundamentals
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            ATS optimization techniques
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Industry-specific formatting
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Keywords and action verbs
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- LinkedIn Optimization -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">work</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">LinkedIn Mastery</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Profile optimization
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Professional networking
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Content creation strategies
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Job search on LinkedIn
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interview Preparation -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">forum</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Interview Success</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Behavioral interview prep
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Technical interview tips
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Salary negotiation
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Follow-up strategies
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    2-week intensive career development program covering all aspects of job search and interview preparation.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Resume & Personal Branding</h3>
+                                <p class="text-gray-600 text-sm">Week 1 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn to create compelling resumes and build a strong personal brand that stands out to employers.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Resume writing fundamentals and structure
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    ATS optimization and keyword research
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Personal branding and professional summary
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Industry-specific resume templates
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                <i class="fas fa-info"></i> Course Info
-                            </h3>
-                            <p><strong><i class="fas fa-sitemap"></i> Category:</strong> Professional</p>
-                            <p><strong><i class="fas fa-desktop"></i> Mode:</strong> Online Only (Free)</p>
-                            <p><strong><i class="far fa-clock"></i> Duration:</strong> 2 Weeks</p>
-                            <p><strong><i class="fas fa-rupee-sign"></i> Fee:</strong> ₹0 (Free)</p>
-                            <p><strong><i class="fas fa-chart-line"></i> Level:</strong> All Levels</p>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">LinkedIn & Job Search</h3>
+                                <p class="text-gray-600 text-sm">Week 1 • 6 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master LinkedIn optimization and learn effective job search strategies in the digital age.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    LinkedIn profile optimization
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Professional networking strategies
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Job search techniques and tools
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Building professional connections
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Interview Preparation</h3>
+                                <p class="text-gray-600 text-sm">Week 2 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Prepare for interviews with proven strategies, practice questions, and confidence-building techniques.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Behavioral interview preparation
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Technical interview strategies
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    STAR method and answer frameworks
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Mock interview practice sessions
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Career Advancement</h3>
+                                <p class="text-gray-600 text-sm">Week 2 • 6 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn salary negotiation, career planning, and long-term professional development strategies.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Salary negotiation techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Career planning and goal setting
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Professional development paths
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Job offer evaluation and acceptance
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="registration-form mt-5">
-                <h2>
-                    <i class="fas fa-user-plus"></i> Register for this Course
-                </h2>
-                <form id="registerForm" autocomplete="off">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="fullName" class="form-label"><i class="fas fa-user"></i> Full Name</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    <!-- Course Info & Registration -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Info -->
+                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Duration</p>
+                                        <p class="text-gray-600">2 Weeks (28+ hours)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">school</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Level</p>
+                                        <p class="text-gray-600">All Levels</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">group</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Batch Size</p>
+                                        <p class="text-gray-600">Unlimited (Free)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">computer</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mode</p>
+                                        <p class="text-gray-600">Online Only</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">verified</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Certificate</p>
+                                        <p class="text-gray-600">Yes (Completion)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">phone</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Contact</p>
+                                        <p class="text-gray-600">+91 98765 43210</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="phone" class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10,}">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="college" class="form-label"><i class="fas fa-university"></i> College/Organization</label>
-                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
+
+                    <!-- What You'll Learn -->
+                    <div class="bg-white rounded-xl shadow-material p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">What You'll Learn</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Create ATS-friendly resumes that pass automated screening</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Optimize LinkedIn profile for maximum visibility</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Master behavioral and technical interview questions</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Learn effective salary negotiation techniques</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Build professional network on LinkedIn</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Develop personal branding strategies</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Create compelling cover letters</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                    <span class="text-gray-600">Job search strategies and tools</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label"><i class="fas fa-comment-dots"></i> Your Message (Optional)</label>
-                        <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gradient-to-br from-green-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register for FREE</h3>
+
+                        <!-- Pricing -->
+                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
+                            <div class="text-3xl font-bold text-green-600 mb-1">₹0</div>
+                            <div class="text-gray-600">Completely Free</div>
+                            <div class="text-sm text-green-600 mt-2">Career Certificate Included</div>
+                        </div>
+
+                        <form id="registerForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Current Status *</label>
+                                <select id="status" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                    <option value="">Select your status</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Fresher">Fresher</option>
+                                    <option value="Working Professional">Working Professional</option>
+                                    <option value="Job Seeker">Job Seeker</option>
+                                    <option value="Career Switcher">Career Switcher</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
+                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any specific career goals or questions?"></textarea>
+                            </div>
+
+                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
+
+                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <span id="registerBtnText">Register for FREE</span>
+                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Next batch starts: <strong>Every Monday</strong></p>
+                            <p class="mt-2">No payment required • Instant access</p>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-custom">
-                        <i class="fas fa-paper-plane"></i> Register Now
-                    </button>
-                    <div id="formAlert" class="alert mt-3 d-none"></div>
-                </form>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
-        // Simple animated form feedback
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var alertBox = document.getElementById('formAlert');
-            alertBox.classList.remove('d-none', 'alert-danger');
-            alertBox.classList.add('alert', 'alert-success');
-            alertBox.innerHTML = '<i class="fas fa-check-circle"></i> Thank you for registering! We will contact you soon.';
-            this.reset();
-            setTimeout(function() {
-                alertBox.classList.add('d-none');
-            }, 5000);
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
         });
-        // Animate icons on hover
-        document.querySelectorAll('.btn-custom, .home-button').forEach(function(btn){
-            btn.addEventListener('mouseenter', function(){
-                btn.querySelector('i').classList.add('fa-bounce');
+
+        // Curriculum accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+
+            curriculumToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.curriculum-icon');
+
+                    // Close all other modules
+                    document.querySelectorAll('.curriculum-content').forEach(c => {
+                        if (c.id !== targetId) {
+                            c.classList.add('hidden');
+                        }
+                    });
+
+                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                        if (i !== icon) {
+                            i.textContent = 'expand_more';
+                        }
+                    });
+
+                    // Toggle current module
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = 'expand_less';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = 'expand_more';
+                    }
+                });
             });
-            btn.addEventListener('mouseleave', function(){
-                btn.querySelector('i').classList.remove('fa-bounce');
-            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('registerBtn');
+                    const btnText = document.getElementById('registerBtnText');
+                    const btnSpinner = document.getElementById('registerBtnSpinner');
+                    const alertBox = document.getElementById('formAlert');
+
+                    // Get form values
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const status = document.getElementById('status').value;
+                    const college = document.getElementById('college').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !status) {
+                        showAlert('Please fill all required fields.', 'error');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showAlert('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Phone validation
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.textContent = "Registering...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showAlert('Registration successful! Check your email for course access details.', 'success');
+                        registerForm.reset();
+                        btn.disabled = false;
+                        btnText.textContent = "Register for FREE";
+                        btnSpinner.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+
+            function showAlert(message, type) {
+                const alertBox = document.getElementById('formAlert');
+                alertBox.textContent = message;
+                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                alertBox.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 5000);
+                }
+            }
         });
     </script>
 </body>

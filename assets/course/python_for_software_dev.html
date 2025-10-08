@@ -3,51 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python for Software Development - SK AI Hub</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO Meta Tags -->
+    <title>AI with Python Course - Master Python for AI Development | SK AI Hub</title>
+    <meta name="description" content="Master Python for AI development at SK AI Hub. Learn machine learning, data science, and build intelligent applications. Free course with certificate.">
+    <meta name="keywords" content="Python for AI, machine learning Python, data science, artificial intelligence, Python programming, AI development, SK AI Hub">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI with Python Course - Master Python for AI Development | SK AI Hub">
+    <meta property="og:description" content="Master Python for AI development at SK AI Hub. Learn machine learning, data science, and build intelligent applications.">
+    <meta property="og:image" content="https://skaihub.com/assets/img/new_logo.png">
+    <meta property="og:url" content="https://skaihub.com/assets/course/python_for_software_dev.html">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://skaihub.com/assets/course/python_for_software_dev.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            50: '#fef3c7',
+                            100: '#fde68a',
+                            200: '#fcd34d',
+                            300: '#fbbf24',
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                    },
+                    boxShadow: {
+                        'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
-        :root {
-            --primary-color: #0d6efd;
-            --secondary-color: #6f42c1;
-            --accent-color: #ffb347;
-            --text-color: #343a40;
-            --bg-light: #f8f9fa;
-            --bg-white: #ffffff;
-            --border-color: #dee2e6;
-            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            min-height: 100vh;
-            background: var(--bg-light);
-            position: relative;
-            overflow-x: hidden;
+        .material-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.3s;
         }
-        /* Animated SVG background using a fixed div */
-        .animated-bg {
-            position: fixed;
-            z-index: 0;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            overflow: hidden;
+        .material-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        .animated-bg svg {
-            width: 100vw;
-            height: 100vh;
-            display: block;
-        }
-        .navbar {
-            box-shadow: var(--shadow);
-            background: rgba(255,255,255,0.95) !important;
-            -webkit-backdrop-filter: blur(6px);
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center space-x-2">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="../../index.html#courses" class="text-gray-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+                    <a href="login_signup.html" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">Login</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Courses</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">school</span>
+                    Free Course
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    AI with <span class="text-gradient">Python</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Master Python programming for AI development. Build intelligent applications, automate tasks, and create AI-powered solutions with hands-on projects.
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">4.8</div>
+                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">2,450+</div>
+                        <div class="text-sm text-gray-600">Students</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">8</div>
+                        <div class="text-sm text-gray-600">Weeks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary-600">Free</div>
+                        <div class="text-sm text-gray-600">Certificate</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">play_arrow</span>
+                        Start Learning Free
+                    </a>
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">info</span>
+                        Course Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
             backdrop-filter: blur(6px);
             z-index: 10;
         }
@@ -197,319 +354,632 @@
     </style>
 </head>
 <body>
-    <!-- Animated SVG Background -->
-    <div class="animated-bg">
-        <svg id="bg-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-            <defs>
-                <radialGradient id="grad1" cx="50%" cy="50%" r="70%">
-                    <stop offset="0%" stop-color="#ffb347" stop-opacity="0.18"/>
-                    <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#0d6efd" stop-opacity="0.10"/>
-                    <stop offset="100%" stop-color="#6f42c1" stop-opacity="0.10"/>
-                </linearGradient>
-            </defs>
-            <circle id="bg-circle1" cx="400" cy="300" r="220" fill="url(#grad1)"/>
-            <circle id="bg-circle2" cx="1600" cy="800" r="180" fill="url(#grad1)"/>
-            <ellipse id="bg-ellipse1" cx="1200" cy="200" rx="180" ry="90" fill="url(#grad2)"/>
-            <ellipse id="bg-ellipse2" cx="600" cy="900" rx="140" ry="60" fill="url(#grad2)"/>
-        </svg>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../../index.html">
-                <i class="fas fa-graduation-cap me-2"></i>SK AI Hub
-            </a>
-            <a href="../../index.html" class="btn btn-outline-primary rounded-pill">
-                <i class="fas fa-home me-2"></i>Home
-            </a>
-        </div>
-    </nav>
-    <header class="course-header">
-        <div class="container">
-            <span class="highlight-badge">
-                <i class="fas fa-star"></i> New Batch Starting Soon!
-            </span>
-            <h1 class="display-4">Advanced Python for Software Development</h1>
-            <p class="lead">Master Python to build robust, scalable, and real-world applications from scratch.</p>
-        </div>
-    </header>
-    <main class="section-padding">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Main Content Column -->
-                <div class="col-lg-8">
-                    <!-- Course Description Card -->
-                    <div class="content-card p-4">
-                        <h2 class="card-title mb-3">Course Description</h2>
-                        <p>This comprehensive course takes you from Python fundamentals to advanced software development techniques. You'll build real-world applications and scripts, focusing on logic-building, design patterns, and practical projects. This course covers everything you need to build robust, scalable, and maintainable software using Python.</p>
-                        <hr class="my-4">
-                        <h3 class="card-title mb-3">What you'll learn:</h3>
-                        <ul class="learn-list">
-                            <li><i class="fas fa-check-circle"></i> Python fundamentals and advanced data structures</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced Object-Oriented Programming (OOP)</li>
-                            <li><i class="fas fa-check-circle"></i> Working with files, databases (SQL), and APIs</li>
-                            <li><i class="fas fa-check-circle"></i> Building Graphical User Interface (GUI) applications</li>
-                            <li><i class="fas fa-check-circle"></i> Web scraping, automation, and advanced scripting</li>
-                            <li><i class="fas fa-check-circle"></i> Best practices for writing clean, efficient code</li>
-                            <li><i class="fas fa-check-circle"></i> Unit testing and debugging with pytest</li>
-                            <li><i class="fas fa-check-circle"></i> Version control with Git and GitHub</li>
-                            <li><i class="fas fa-check-circle"></i> Introduction to web development with Flask</li>
-                            <li><i class="fas fa-check-circle"></i> Concurrency and multithreading basics</li>
-                        </ul>
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Master Python programming from fundamentals to advanced software development. Build real-world applications and gain the skills needed for a successful career in software development.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- What You'll Learn -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">school</span>
                     </div>
-                    <!-- Course Curriculum Card -->
-                    <div class="content-card p-4">
-                        <h2 class="card-title mb-3">Course Curriculum</h2>
-                        <div class="accordion" id="curriculumAccordion">
-                            <!-- Module 1 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                        Module 1: Python Fundamentals & Environment Setup
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Introduction to Python, setting up the development environment (VS Code, PyCharm), virtual environments, variables, data types, and basic operators.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">What You'll Learn</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Python fundamentals & advanced concepts
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Object-Oriented Programming
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            File I/O, databases & APIs
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            GUI applications & automation
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skills You'll Gain -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">code</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Skills You'll Gain</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Problem-solving & logic building
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Clean code & best practices
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Testing & debugging
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Version control with Git
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Career Opportunities -->
+                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-600">work</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Career Opportunities</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Python Developer
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Software Engineer
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Backend Developer
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
+                            Automation Engineer
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive 8-week program covering Python fundamentals to advanced software development techniques.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Python Fundamentals & Environment Setup</h3>
+                                <p class="text-gray-600 text-sm">Week 1 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Introduction to Python programming, development environment setup, and core concepts.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Python installation and IDE setup (VS Code, PyCharm)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Virtual environments and package management
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Variables, data types, and basic operators
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    First Python programs and debugging basics
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Control Flow & Data Structures</h3>
+                                <p class="text-gray-600 text-sm">Week 2 • 10 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Master control structures and Python's powerful data structures.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Conditional statements (if/else/elif)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Loops (for/while) and loop control
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Lists, tuples, dictionaries, and sets
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    List/dictionary comprehensions
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Functions & OOP</h3>
+                                <p class="text-gray-600 text-sm">Week 3-4 • 12 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Deep dive into functions and object-oriented programming principles.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Function definition, parameters, and return values
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Scope, lambda functions, and decorators
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Classes, objects, and constructors
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Inheritance, polymorphism, and magic methods
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">File I/O & Databases</h3>
+                                <p class="text-gray-600 text-sm">Week 5 • 8 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Learn to work with files, databases, and external APIs.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Reading/writing text, CSV, and JSON files
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    SQLite database operations
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    HTTP requests and REST API integration
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Error handling and data validation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module5">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">5</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Testing & Version Control</h3>
+                                <p class="text-gray-600 text-sm">Week 6 • 6 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module5" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Professional development practices for robust software.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Unit testing with pytest framework
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Debugging techniques and tools
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Git version control basics
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    GitHub collaboration workflow
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-primary-600 font-semibold">6</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Final Project</h3>
+                                <p class="text-gray-600 text-sm">Week 7-8 • 16 hours</p>
+                            </div>
+                        </div>
+                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
+                    </button>
+                    <div id="module6" class="px-6 pb-4 hidden curriculum-content">
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="text-gray-600 mb-3">Build a complete real-world application from start to finish.</p>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Project planning and requirements analysis
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    System design and architecture
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Implementation with best practices
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
+                                    Testing, debugging, and deployment
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Info & Registration -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Course Info -->
+                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Duration</p>
+                                        <p class="text-gray-600">8 Weeks (60+ hours)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">school</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Level</p>
+                                        <p class="text-gray-600">Beginner to Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">group</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Batch Size</p>
+                                        <p class="text-gray-600">Limited (30 students)</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Module 2 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                        Module 2: Control Flow & Core Data Structures
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Conditional statements (if/else), loops (for/while), and in-depth exploration of lists, tuples, dictionaries, and sets, including comprehensions.
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">computer</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Mode</p>
+                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">verified</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Certificate</p>
+                                        <p class="text-gray-600">Yes (with unique ID)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-600 mr-3">phone</span>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Contact</p>
+                                        <p class="text-gray-600">+91 98765 43210</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Module 3 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                        Module 3: Functions & Advanced Object-Oriented Programming
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Creating functions, understanding scope, lambda functions, decorators. Diving deep into OOP concepts: classes, objects, inheritance, polymorphism, and magic methods.
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="bg-white rounded-xl shadow-material p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">No prior programming experience required</span>
                             </div>
-                            <!-- Module 4 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                        Module 4: File I/O, Databases, and APIs
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Reading and writing files (text, CSV, JSON). Interacting with SQL databases using SQLite. Making HTTP requests to consume REST APIs.
-                                    </div>
-                                </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Basic computer literacy and familiarity with using a computer</span>
                             </div>
-                            <!-- Module 5 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-                                        Module 5: Testing, Debugging, and Version Control
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Writing unit tests with the pytest framework. Using a debugger to find and fix errors. Managing code with Git and collaborating via GitHub.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Module 6 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
-                                        Module 6: Final Project - Build a Complete Application
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                                    <div class="accordion-body">
-                                        Apply all learned concepts to build a complete, real-world software application from planning and design to implementation and testing.
-                                    </div>
-                                </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
+                                <span class="text-gray-600">Access to a computer with internet connection</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Sidebar Column -->
-                <div class="col-lg-4">
-                    <div class="content-card info-card p-4">
-                        <h3 class="card-title mb-4">Course Info</h3>
-                        <ul class="list-unstyled">
-                            <li><strong><i class="fas fa-sitemap"></i> Category:</strong> Software Development</li>
-                            <li><strong><i class="fas fa-desktop"></i> Mode:</strong> Online + Offline (Hybrid)</li>
-                            <li><strong><i class="far fa-clock"></i> Duration:</strong> 2 Months (60+ hours)</li>
-                            <li><strong><i class="fas fa-calendar-alt"></i> Next Batch:</strong> 15th July 2024</li>
-                            <li><strong><i class="fas fa-rupee-sign"></i> Fee:</strong> ₹6,499</li>
-                            <li><strong><i class="fas fa-chart-line"></i> Level:</strong> Beginner–Advanced</li>
-                            <li><strong><i class="fas fa-certificate"></i> Certificate:</strong> Yes (with unique ID)</li>
-                            <li><strong><i class="fas fa-user-friends"></i> Seats:</strong> Limited (30 per batch)</li>
-                            <li><strong><i class="fas fa-phone"></i> Contact:</strong> <a href="tel:+919876543210">+91 98765 43210</a></li>
-                        </ul>
-                    </div>
-                    <div class="content-card p-4">
-                        <h3 class="card-title mb-3">Prerequisites</h3>
-                        <ul class="list-unstyled">
-                            <li class="d-flex align-items-center mb-2"><i class="fas fa-laptop-code me-2 text-primary"></i> No prior programming experience required.</li>
-                            <li class="d-flex align-items-center"><i class="fas fa-mouse-pointer me-2 text-primary"></i> Basic computer literacy.</li>
-                        </ul>
+
+                <!-- Registration Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
+
+                        <!-- Pricing -->
+                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
+                            <div class="text-3xl font-bold text-primary-600 mb-1">₹6,499</div>
+                            <div class="text-gray-600">Complete Course Fee</div>
+                            <div class="text-sm text-green-600 mt-2">Free Certificate Included</div>
+                        </div>
+
+                        <form id="registerForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
+                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
+                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
+                                    <option value="">Select Mode</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
+                                        <span class="ml-2 text-gray-700">UPI Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Cash Payment</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
+                                        <span class="ml-2 text-gray-700">Card Payment</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
+                            </div>
+
+                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
+
+                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <span id="registerBtnText">Register Now</span>
+                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </form>
+
+                        <div class="mt-4 text-center text-sm text-gray-600">
+                            <p>Next batch starts: <strong>15th July 2024</strong></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Registration Form -->
-            <div class="registration-form" id="registrationFormSection">
-                <h2 class="text-center mb-4">Register for this Course</h2>
-                <form id="registerForm" autocomplete="off">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="college" class="form-label">College/Organization</label>
-                            <input type="text" class="form-control" id="college" placeholder="Your institution name">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="mode" class="form-label">Mode</label>
-                            <select class="form-select" id="mode" required>
-                                <option value="">Select Mode</option>
-                                <option value="Online">Online</option>
-                                <option value="Offline">Offline</option>
-                                <option value="Hybrid">Hybrid</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Payment Option <span class="text-danger">*</span></label>
-                            <div class="d-flex gap-3 flex-wrap">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
-                                    <label class="form-check-label" for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash">
-                                    <label class="form-check-label" for="cash"><i class="fas fa-money-bill-wave"></i> Cash</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
-                                    <label class="form-check-label" for="card"><i class="fas fa-credit-card"></i> Card</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="form-label">Your Message (Optional)</label>
-                        <textarea class="form-control" id="message" rows="3" placeholder="Any questions? Let us know!"></textarea>
-                    </div>
-                    <div id="formAlert" class="alert mt-3 d-none"></div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-custom" id="registerBtn">
-                            <span id="registerBtnText">Register Now</span>
-                            <span id="registerBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </form>
-            </div>
         </div>
-    </main>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </section>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
-        // Animated SVG background movement
-        function animateSVG() {
-            const t = Date.now() * 0.001;
-            // Animate circle1
-            const c1 = document.getElementById('bg-circle1');
-            c1.setAttribute('cx', 400 + Math.sin(t * 0.6) * 60);
-            c1.setAttribute('cy', 300 + Math.cos(t * 0.7) * 40);
-            // Animate circle2
-            const c2 = document.getElementById('bg-circle2');
-            c2.setAttribute('cx', 1600 + Math.cos(t * 0.5) * 50);
-            c2.setAttribute('cy', 800 + Math.sin(t * 0.8) * 30);
-            // Animate ellipse1
-            const e1 = document.getElementById('bg-ellipse1');
-            e1.setAttribute('cx', 1200 + Math.sin(t * 0.4) * 70);
-            e1.setAttribute('rx', 180 + Math.cos(t * 0.9) * 20);
-            // Animate ellipse2
-            const e2 = document.getElementById('bg-ellipse2');
-            e2.setAttribute('cy', 900 + Math.sin(t * 0.6) * 40);
-            e2.setAttribute('rx', 140 + Math.sin(t * 0.7) * 15);
-            requestAnimationFrame(animateSVG);
-        }
-        animateSVG();
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
 
-        // Registration Form Animation & Validation
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('registerBtn');
-            const btnText = document.getElementById('registerBtnText');
-            const btnSpinner = document.getElementById('registerBtnSpinner');
-            btn.disabled = true;
-            btnText.textContent = "Registering...";
-            btnSpinner.classList.remove('d-none');
+        // Curriculum accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
 
-            const name = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const mode = document.getElementById('mode').value;
-            const payment = document.querySelector('input[name="payment"]:checked');
-            const alertBox = document.getElementById('formAlert');
-            if (!name || !email || !phone || !mode || !payment) {
-                alertBox.className = 'alert alert-danger mt-3';
-                alertBox.textContent = 'Please fill all required fields and select a payment option.';
-                alertBox.classList.remove('d-none');
-                btn.disabled = false;
-                btnText.textContent = "Register Now";
-                btnSpinner.classList.add('d-none');
-                return;
+            curriculumToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('.curriculum-icon');
+
+                    // Close all other modules
+                    document.querySelectorAll('.curriculum-content').forEach(c => {
+                        if (c.id !== targetId) {
+                            c.classList.add('hidden');
+                        }
+                    });
+
+                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                        if (i !== icon) {
+                            i.textContent = 'expand_more';
+                        }
+                    });
+
+                    // Toggle current module
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = 'expand_less';
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = 'expand_more';
+                    }
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-            // Simulate async registration
-            setTimeout(() => {
-                alertBox.className = 'alert alert-success mt-3';
-                alertBox.innerHTML = '<i class="fas fa-check-circle me-2"></i>Registration successful! We will contact you soon.';
-                alertBox.classList.remove('d-none');
-                btn.disabled = false;
-                btnText.textContent = "Register Now";
-                btnSpinner.classList.add('d-none');
-                this.reset();
-                setTimeout(() => alertBox.classList.add('d-none'), 3500);
-            }, 1200);
-        });
 
-        // Animate register button on hover (extra effect)
-        const registerBtn = document.getElementById('registerBtn');
-        registerBtn.addEventListener('mouseenter', () => {
-            registerBtn.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.18)';
-            registerBtn.style.transform = 'scale(1.07)';
-        });
-        registerBtn.addEventListener('mouseleave', () => {
-            registerBtn.style.boxShadow = '';
-            registerBtn.style.transform = '';
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const btn = document.getElementById('registerBtn');
+                    const btnText = document.getElementById('registerBtnText');
+                    const btnSpinner = document.getElementById('registerBtnSpinner');
+                    const alertBox = document.getElementById('formAlert');
+
+                    // Get form values
+                    const name = document.getElementById('fullName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const college = document.getElementById('college').value.trim();
+                    const mode = document.getElementById('mode').value;
+                    const payment = document.querySelector('input[name="payment"]:checked');
+                    const message = document.getElementById('message').value.trim();
+
+                    // Validation
+                    if (!name || !email || !phone || !mode || !payment) {
+                        showAlert('Please fill all required fields and select a payment option.', 'error');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showAlert('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Phone validation
+                    const phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
+                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.textContent = "Registering...";
+                    btnSpinner.classList.remove('hidden');
+
+                    // Simulate registration process
+                    setTimeout(() => {
+                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
+                        registerForm.reset();
+                        btn.disabled = false;
+                        btnText.textContent = "Register Now";
+                        btnSpinner.classList.add('hidden');
+                    }, 1500);
+                });
+            }
+
+            function showAlert(message, type) {
+                const alertBox = document.getElementById('formAlert');
+                alertBox.textContent = message;
+                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                alertBox.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 5000);
+                }
+            }
         });
     </script>
 </body>
+
 </html>
