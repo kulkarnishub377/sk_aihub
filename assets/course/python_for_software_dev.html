@@ -5,504 +5,514 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>AI with Python Course - Master Python for AI Development | SK AI Hub</title>
-    <meta name="description" content="Master Python for AI development at SK AI Hub. Learn machine learning, data science, and build intelligent applications. Free course with certificate.">
-    <meta name="keywords" content="Python for AI, machine learning Python, data science, artificial intelligence, Python programming, AI development, SK AI Hub">
+    <title>Python for Software Developers - Master Programming Skills | SK AI Hub</title>
+    <meta name="description" content="Master Python programming for software developers. Learn advanced Python concepts, software development best practices, web development, automation, and build real-world applications. Industry-recognized certification included.">
+    <meta name="keywords" content="Python for developers, software development Python, Python programming course, web development Python, Python automation, backend development, full-stack Python, software engineering Python">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AI with Python Course - Master Python for AI Development | SK AI Hub">
-    <meta property="og:description" content="Master Python for AI development at SK AI Hub. Learn machine learning, data science, and build intelligent applications.">
+    <meta property="og:title" content="Python for Software Developers - Master Programming Skills | SK AI Hub">
+    <meta property="og:description" content="Master Python programming for software developers. Learn advanced Python concepts, software development best practices, web development, automation, and build real-world applications.">
     <meta property="og:image" content="https://skaihub.com/assets/img/new_logo.png">
     <meta property="og:url" content="https://skaihub.com/assets/course/python_for_software_dev.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Python for Software Developers - Master Programming Skills | SK AI Hub">
+    <meta name="twitter:description" content="Master Python programming for software developers. Learn advanced Python concepts, software development best practices, web development, automation, and build real-world applications.">
+    <meta name="twitter:image" content="https://skaihub.com/assets/img/new_logo.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://skaihub.com/assets/course/python_for_software_dev.html">
 
+    <!-- Favicons -->
+    <link href="../../assets/img/new_logo.png" rel="icon">
+    <link href="../../assets/img/new_logo.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        },
-                        accent: {
-                            50: '#fef3c7',
-                            100: '#fde68a',
-                            200: '#fcd34d',
-                            300: '#fbbf24',
-                            400: '#f59e0b',
-                            500: '#d97706',
-                            600: '#b45309',
-                            700: '#92400e',
-                            800: '#78350f',
-                            900: '#451a03',
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-in-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'bounce-subtle': 'bounceSubtle 2s infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        bounceSubtle: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-5px)' },
-                        },
-                    },
-                    boxShadow: {
-                        'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                        'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    },
-                }
-            }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+              accent: {
+                50: '#fef3c7',
+                100: '#fde68a',
+                200: '#fcd34d',
+                300: '#fbbf24',
+                400: '#f59e0b',
+                500: '#d97706',
+                600: '#b45309',
+                700: '#92400e',
+                800: '#78350f',
+                900: '#451a03',
+              },
+              secondary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+              },
+              neutral: {
+                50: '#fafafa',
+                100: '#f5f5f5',
+                200: '#e5e5e5',
+                300: '#d4d4d4',
+                400: '#a3a3a3',
+                500: '#737373',
+                600: '#525252',
+                700: '#404040',
+                800: '#262626',
+                900: '#171717',
+              },
+              'base-100': '#ffffff',
+              'base-200': '#f9fafb',
+              'base-300': '#f3f4f6',
+              'base-content': '#1f2937',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'gradient': 'gradient 3s ease infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              gradient: {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+              },
+            },
+            boxShadow: {
+              'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+              'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+            },
+            backgroundImage: {
+              'mesh': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+            },
+          }
         }
+      }
     </script>
 
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Custom Material Design Styles -->
+    <style>
+      .material-card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .material-card:hover {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        transform: translateY(-4px);
+      }
+      .material-btn {
+        padding: 0.875rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .material-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+      .material-btn:hover::before {
+        left: 100%;
+      }
+      .material-btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      }
+
+      /* Loading animation */
+      .loading-spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* Progress bar animation */
+      .progress-bar {
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      /* Custom form styling */
+      .form-input {
+        transition: all 0.3s ease;
+        border: 2px solid #e5e7eb;
+      }
+      .form-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      /* Custom form styling */
+      .form-input {
+        transition: all 0.3s ease;
+        border: 2px solid #e5e7eb;
+      }
+      .form-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      /* Skill badges */
+      .skill-badge {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        transition: all 0.3s ease;
+      }
+      .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      }
+
+      /* Body initial state for loading */
+      body {
+        opacity: 0;
+        transition: opacity 0.8s cubic-bezier(.4,0,.2,1);
+      }
+    </style>
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        .text-gradient {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .material-card {
-            background: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            transition: box-shadow 0.3s;
-        }
-        .material-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .backdrop {
-            backdrop-filter: blur(6px);
-            z-index: 10;
-        }
-        .navbar-brand {
-            font-size: 2rem;
-            letter-spacing: 1px;
-            color: var(--primary-color) !important;
-        }
-        .course-header {
-            padding: 7rem 0 4rem 0;
-            text-align: center;
-            color: var(--bg-white);
-            background: linear-gradient(120deg, var(--primary-color) 60%, var(--secondary-color) 100%);
-            background-size: 200% 200%;
-            animation: gradient-animation 8s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .course-header .display-4, .course-header h1 {
-            font-weight: 800;
-            font-size: 3.5rem;
-            letter-spacing: 1px;
-            z-index: 1;
-            position: relative;
-        }
-        .course-header .lead {
-            font-size: 1.4rem;
-            margin-top: 1rem;
-            z-index: 1;
-            position: relative;
-        }
-        .highlight-badge {
-            display: inline-block;
-            background: var(--accent-color);
-            color: #fff;
-            font-weight: 700;
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(255,179,71,0.15);
-            letter-spacing: 1px;
-            z-index: 1;
-            position: relative;
-        }
-        .section-padding {
-            padding: 4rem 0 2rem 0;
-            z-index: 1;
-            position: relative;
-        }
-        .card, .content-card {
-            border: none;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2.5rem;
-            background: var(--bg-white);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover, .content-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.18);
-        }
-        .card-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        .learn-list {
-            list-style: none;
-            padding-left: 0;
-            columns: 2;
-        }
-        .learn-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            font-size: 1.08rem;
-            break-inside: avoid-column;
-        }
-        .learn-list .fa-check-circle {
-            color: var(--accent-color);
-            margin-right: 12px;
-            font-size: 1.2rem;
-            margin-top: 4px;
-        }
-        .info-card p, .info-card li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .info-card .fas, .info-card .far {
-            color: var(--primary-color);
-            margin-right: 10px;
-            width: 22px;
-            text-align: center;
-        }
-        .accordion-button:not(.collapsed) {
-            color: var(--bg-white);
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-        }
-        .accordion-button {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        .accordion-body {
-            font-size: 1.02rem;
-        }
-        .registration-form {
-            background: linear-gradient(120deg, #fff 70%, #f8f9fa 100%);
-            padding: 3rem 2rem;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-top: 3rem;
-        }
-        .registration-form label {
-            font-weight: 600;
-        }
-        .btn-custom {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            border: none;
-            padding: 14px 38px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 16px rgba(13,110,253,0.10);
-        }
-        .btn-custom:hover, .btn-custom:focus {
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-        }
-        /* Responsive */
-        @media (max-width: 991px) {
-            .section-padding { padding: 2.5rem 0 1rem 0; }
-            .registration-form { padding: 2rem 1rem; }
-        }
-        @media (max-width: 767px) {
-            .course-header { padding: 4rem 0 2rem 0; }
-            .course-header .display-4, .course-header h1 { font-size: 2.1rem; }
-            .registration-form { padding: 1.2rem 0.5rem; }
-            .learn-list { columns: 1; }
-        }
-    </style>
+    <!-- Animate.css for enhanced animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
+<body class="font-sans bg-gradient-to-br from-primary-50 via-white to-accent-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <h2 class="text-2xl font-bold text-gradient mb-2">SK AI Hub</h2>
+            <p class="text-neutral-600">Loading Python development resources...</p>
+        </div>
+    </div>
+
+    <!-- Modern Material Design Navbar -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="../../index.html" class="flex items-center space-x-2">
-                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
-                        <span class="text-lg font-bold text-gradient">SK AI Hub</span>
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-10 w-10">
+                        <span class="text-xl font-bold text-gradient hidden sm:block">SK AI Hub</span>
                     </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 focus:outline-none">
-                        <span class="material-icons">menu</span>
-                    </button>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../../index.html" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Home</a>
-                    <div class="relative">
-                        <button class="text-gray-700 hover:text-primary-600 transition-colors duration-200 flex items-center" id="courses-dropdown">
-                            Courses <span class="material-icons text-sm ml-1">expand_more</span>
+                    <a href="../../index.html" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Home</a>
+                    <a href="../../index.html#about" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">About</a>
+
+                    <!-- Courses Dropdown -->
+                    <div class="relative group">
+                        <button class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 flex items-center">
+                            Courses
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 hidden" id="courses-menu">
-                            <a href="python_for_software_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI with Python</a>
-                            <a href="full_stack_web_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">AI Web Applications</a>
-                            <a href="web_design.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">UI/UX Design</a>
-                            <a href="advanced_python.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Advanced Python</a>
-                            <a href="java_with_dsa.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Java with DSA</a>
-                            <a href="flutter_app_dev.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Flutter App Dev</a>
-                            <a href="c_cpp_programming.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">C/C++ Programming</a>
-                            <a href="database.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Database Management</a>
-                            <a href="career_booster.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary-600">Career Booster</a>
+                        <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-neutral-200">
+                            <div class="py-2">
+                                <a href="advanced_python.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Advanced Python</a>
+                                <a href="c_cpp_programming.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">C/C++ Programming</a>
+                                <a href="career_booster.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Career Booster</a>
+                                <a href="database.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Database Management</a>
+                                <a href="flutter_app_dev.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Flutter App Development</a>
+                                <a href="full_stack_web_dev.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Full Stack Web Development</a>
+                                <a href="java_with_dsa.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Java with DSA</a>
+                                <a href="python_for_software_dev.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Python for Software Developers</a>
+                                <a href="web_design.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Web Design</a>
+                            </div>
                         </div>
                     </div>
-                    <a href="../../index.html#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">About</a>
-                    <a href="../../index.html#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Contact</a>
-                    <a href="login_signup.html" class="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">Login</a>
+
+                    <a href="../../index.html#whyus" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Why Us</a>
+                    <a href="../../index.html#contact" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Contact</a>
+
+                    <!-- Login/Signup -->
+                    <div class="relative group">
+                        <button class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 flex items-center">
+                            <span class="material-icons mr-1 text-sm">person</span>
+                            Account
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-neutral-200">
+                            <div class="py-2">
+                                <a href="login_signup.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Login</a>
+                                <a href="login_signup.html" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary-50 hover:text-primary-600">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-neutral-700 hover:text-primary-600 focus:outline-none focus:text-primary-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-neutral-200">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="../../index.html" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Home</a>
-                    <div class="relative">
-                        <button class="w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 flex items-center justify-between" id="mobile-courses-dropdown">
-                            Courses <span class="material-icons text-sm">expand_more</span>
-                        </button>
-                        <div class="ml-4 mt-1 space-y-1 hidden" id="mobile-courses-menu">
-                            <a href="python_for_software_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI with Python</a>
-                            <a href="full_stack_web_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">AI Web Applications</a>
-                            <a href="web_design.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">UI/UX Design</a>
-                            <a href="advanced_python.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Advanced Python</a>
-                            <a href="java_with_dsa.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Java with DSA</a>
-                            <a href="flutter_app_dev.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Flutter App Dev</a>
-                            <a href="c_cpp_programming.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">C/C++ Programming</a>
-                            <a href="database.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Database Management</a>
-                            <a href="career_booster.html" class="block px-3 py-2 text-gray-600 hover:text-primary-600">Career Booster</a>
-                        </div>
-                    </div>
-                    <a href="../../index.html#about" class="block px-3 py-2 text-gray-700 hover:text-primary-600">About</a>
-                    <a href="../../index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-primary-600">Contact</a>
-                    <a href="login_signup.html" class="block px-3 py-2 bg-primary-600 text-white rounded-lg text-center">Login</a>
+                    <a href="../../index.html" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Home</a>
+                    <a href="../../index.html#about" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">About</a>
+                    <a href="../../index.html#courses" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Courses</a>
+                    <a href="../../index.html#whyus" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Why Us</a>
+                    <a href="../../index.html#contact" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Contact</a>
+                    <a href="login_signup.html" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Login</a>
+                    <a href="login_signup.html" class="block px-3 py-2 text-base font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-md">Sign Up</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Overview Section -->
-    <section id="overview" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Master Python programming from fundamentals to advanced software development. Build real-world applications and gain the skills needed for a successful career in software development.
-                </p>
-            </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-mesh"></div>
+        </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- What You'll Learn -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-primary-600">school</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">What You'll Learn</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Python fundamentals & advanced concepts
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Object-Oriented Programming
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            File I/O, databases & APIs
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            GUI applications & automation
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Skills You'll Gain -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-accent-600">code</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Skills You'll Gain</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Problem-solving & logic building
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Clean code & best practices
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Testing & debugging
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Version control with Git
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Career Opportunities -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-green-600">work</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Career Opportunities</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Python Developer
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Software Engineer
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Backend Developer
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Automation Engineer
-                        </li>
-                    </ul>
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-20 animate-float opacity-10">
+                <div class="w-20 h-20 bg-primary-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-primary-600 text-2xl">code</span>
                 </div>
             </div>
+            <div class="absolute top-40 right-32 animate-float opacity-10" style="animation-delay: 2s;">
+                <div class="w-16 h-16 bg-accent-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-accent-600 text-xl">web</span>
+                </div>
+            </div>
+            <div class="absolute bottom-32 left-32 animate-float opacity-10" style="animation-delay: 4s;">
+                <div class="w-24 h-24 bg-secondary-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-secondary-600 text-3xl">developer_mode</span>
+                </div>
+            </div>
+        </div>
 
-            <!-- What You'll Build -->
-            <div class="mt-16">
-                <div class="text-center mb-12">
-                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">What You'll Build</h3>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Hands-on projects that demonstrate real-world application of Python and AI concepts
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left" data-aos="fade-up">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-primary text-white text-sm font-semibold mb-6 animate-bounce-subtle">
+                        <span class="material-icons text-sm mr-2">developer_board</span>
+                        🔥 Most Popular Developer Course
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="text-4xl md:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+                        Master <span class="text-gradient">Python</span> for<br>
+                        <span class="text-gradient">AI-Powered Software Development</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed max-w-2xl">
+                        Elevate your software development career with Python and AI. Learn advanced programming concepts,
+                        build intelligent applications, master automation, and become a versatile full-stack developer
+                        that companies can't ignore. Integrate cutting-edge AI capabilities into production-ready software.
                     </p>
+
+                    <!-- Key Benefits -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-primary-600 mr-2 text-sm">build</span>
+                            <span class="text-sm font-medium">Production Ready</span>
+                        </div>
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-accent-600 mr-2 text-sm">work</span>
+                            <span class="text-sm font-medium">Industry Standard</span>
+                        </div>
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-secondary-600 mr-2 text-sm">trending_up</span>
+                            <span class="text-sm font-medium">Career Growth</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#enrollment" class="material-btn bg-gradient-primary text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <span class="material-icons mr-2 text-sm">rocket_launch</span>
+                            Start Your Journey
+                        </a>
+                        <a href="#curriculum" class="material-btn bg-white text-neutral-700 border-2 border-neutral-300 hover:border-primary-500 hover:text-primary-600 px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                            <span class="material-icons mr-2 text-sm">school</span>
+                            Explore Curriculum
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-8 mt-12 pt-8 border-t border-neutral-200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">800+</div>
+                            <div class="text-sm text-neutral-600">Developers Trained</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">92%</div>
+                            <div class="text-sm text-neutral-600">Job Success Rate</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">4.8/5</div>
+                            <div class="text-sm text-neutral-600">Developer Rating</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-primary-600">smart_toy</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">AI Chatbot</h4>
-                        <p class="text-gray-600 mb-4">Build an intelligent chatbot using NLP techniques that can understand and respond to user queries with context awareness.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">NLP</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">Dialogflow</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-accent-600">analytics</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Data Analysis Dashboard</h4>
-                        <p class="text-gray-600 mb-4">Create interactive data visualizations and dashboards using pandas, matplotlib, and streamlit for business intelligence.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">Pandas</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">Streamlit</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-secondary-600">image</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Image Recognition App</h4>
-                        <p class="text-gray-600 mb-4">Develop an image classification system using TensorFlow and Keras to identify objects in photos with high accuracy.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">TensorFlow</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">Computer Vision</span>
+                <!-- Hero Visual -->
+                <div class="relative" data-aos="fade-left">
+                    <!-- Main Python Code Preview -->
+                    <div class="relative bg-white rounded-2xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl p-4">
+                            <!-- Mock Code Editor -->
+                            <div class="bg-neutral-800 rounded-t-lg p-2 flex items-center space-x-2">
+                                <div class="flex space-x-1">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="flex-1 bg-neutral-700 rounded px-3 py-1 text-xs text-neutral-300 text-center">
+                                    full_stack_app.py
+                                </div>
+                            </div>
+                            <!-- Mock Python Code -->
+                            <div class="bg-neutral-900 rounded-b-lg p-6 font-mono text-sm text-green-400">
+                                <div class="text-blue-400">from</div>
+                                <div class="text-yellow-400">fastapi</div>
+                                <div class="text-blue-400">import</div>
+                                <div class="text-green-400">FastAPI, HTTPException</div>
+                                <br>
+                                <div class="text-green-400">app</div>
+                                <div class="text-white">=</div>
+                                <div class="text-yellow-400">FastAPI</div><div>()</div>
+                                <br>
+                                <div class="text-purple-400">@app.get</div><div class="text-yellow-400">("/api/users")</div>
+                                <br>
+                                <div class="text-blue-400">async def</div>
+                                <div class="text-green-400">get_users</div><div>()</div><div>:</div>
+                                <br>
+                                <div class="ml-4 text-blue-400">return</div>
+                                <div class="ml-4 text-yellow-400">{"users": users}</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-green-600">web</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">AI Web Scraper</h4>
-                        <p class="text-gray-600 mb-4">Build an intelligent web scraping tool that uses AI to extract and analyze data from websites automatically.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">BeautifulSoup</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">Selenium</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-blue-600">trending_up</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Predictive Analytics Model</h4>
-                        <p class="text-gray-600 mb-4">Create machine learning models for predictive analytics using scikit-learn to forecast trends and make data-driven decisions.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">Scikit-learn</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">ML</span>
+                    <!-- Floating Cards -->
+                    <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 1s;">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="material-icons text-primary-600 text-sm">web</span>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-neutral-900">Full-Stack Development</div>
+                                <div class="text-xs text-neutral-500">Python + Modern Frameworks</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Project 6 -->
-                    <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                            <span class="material-icons text-purple-600">api</span>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">AI REST API</h4>
-                        <p class="text-gray-600 mb-4">Develop a complete REST API with AI capabilities using Flask/Django, integrating multiple ML models for intelligent responses.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-100 text-primary-800 text-xs font-medium">Flask</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-full bg-accent-100 text-accent-800 text-xs font-medium">REST API</span>
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 3s;">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="material-icons text-accent-600 text-sm">settings</span>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-neutral-900">Production Ready</div>
+                                <div class="text-xs text-neutral-500">Scalable Applications</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -510,246 +520,447 @@
         </div>
     </section>
 
-    <!-- Curriculum Section -->
-    <section id="curriculum" class="py-16 bg-gray-50">
+    <!-- Course Overview Section -->
+    <section class="py-20 bg-white" id="overview">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive 8-week program covering Python fundamentals to advanced software development techniques.
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Why Python for <span class="text-gradient">Software Developers</span>?
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Python isn't just another programming language—it's the most versatile tool in a developer's arsenal.
+                    From web applications to automation, data processing to DevOps, Python empowers developers to build
+                    anything they can imagine.
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">speed</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Rapid Development</h3>
+                    <p class="text-neutral-600">
+                        Python's clean syntax and extensive libraries let you build applications 5x faster than traditional
+                        languages. Focus on solving problems, not writing boilerplate code.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">devices</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Full-Stack Capabilities</h3>
+                    <p class="text-neutral-600">
+                        Build everything from web APIs and desktop applications to mobile backends and cloud services.
+                        One language, endless possibilities for software development.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">engineering</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Production Ready</h3>
+                    <p class="text-neutral-600">
+                        Python powers some of the world's largest applications. Learn industry best practices for
+                        scalable, maintainable, and secure software development.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">auto_fix_high</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Automation Expert</h3>
+                    <p class="text-neutral-600">
+                        Automate repetitive tasks, build DevOps tools, create testing frameworks, and streamline
+                        your entire development workflow with Python scripting.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Data Processing Power</h3>
+                    <p class="text-neutral-600">
+                        Handle massive datasets, perform complex data transformations, and build data pipelines
+                        that scale. Essential skills for modern software development.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">smart_toy</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">AI & Machine Learning Integration</h3>
+                    <p class="text-neutral-600">
+                        Build intelligent applications with AI capabilities. Integrate machine learning models,
+                        natural language processing, and computer vision into your software projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-neutral-50" id="skills">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Master These <span class="text-gradient">Essential Skills</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Our comprehensive curriculum covers all the Python skills that software developers need to excel
+                    in their careers, from fundamentals to advanced enterprise-level development.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Python Core -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">code</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Python Core</h3>
+                    <p class="text-sm text-neutral-600">Advanced Python syntax, OOP, decorators, generators, context managers, metaclasses</p>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">web</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Web Development</h3>
+                    <p class="text-sm text-neutral-600">Flask, Django, FastAPI, REST APIs, GraphQL, authentication, deployment</p>
+                </div>
+
+                <!-- Automation & Scripting -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-secondary-600 text-2xl">build</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Automation & DevOps</h3>
+                    <p class="text-sm text-neutral-600">Shell scripting, task automation, CI/CD pipelines, Docker, cloud deployment</p>
+                </div>
+
+                <!-- Data Processing -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">analytics</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Data Processing</h3>
+                    <p class="text-sm text-neutral-600">Pandas, NumPy, data pipelines, ETL processes, database integration</p>
+                </div>
+
+                <!-- Testing & Quality -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">verified</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Testing & Quality Assurance</h3>
+                    <p class="text-sm text-neutral-600">Unit testing, integration testing, TDD, code coverage, debugging techniques</p>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-white text-2xl">smart_toy</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">AI & Machine Learning</h3>
+                    <p class="text-sm text-neutral-600">Scikit-learn, TensorFlow, NLP, computer vision, model deployment, MLOps</p>
+                </div>
+
+                <!-- Database Design -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="700">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">storage</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Database Design</h3>
+                    <p class="text-sm text-neutral-600">SQL, NoSQL, ORM, database design, query optimization, migrations</p>
+                </div>
+
+                <!-- Software Architecture -->
+                <div class="skill-badge p-6 text-center" data-aos="fade-up" data-aos-delay="800">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">architecture</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Software Architecture</h3>
+                    <p class="text-sm text-neutral-600">Design patterns, microservices, scalable architecture, clean code principles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Curriculum Section -->
+    <section class="py-20 bg-white" id="curriculum">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Comprehensive <span class="text-gradient">Developer Curriculum</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Our 6-month intensive program is designed by industry experts to give you the skills and
+                    experience needed to excel in the competitive software development field.
+                </p>
+            </div>
+
+            <div class="space-y-6">
                 <!-- Module 1 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                <div class="material-card p-6" data-aos="fade-up">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">1</span>
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-primary-600">1</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Python Fundamentals & Environment Setup</h3>
-                                <p class="text-gray-600 text-sm">Week 1 • 8 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Python Fundamentals & Advanced Concepts</h3>
+                                <p class="text-neutral-600">Weeks 1-4</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Introduction to Python programming, development environment setup, and core concepts.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Python installation and IDE setup (VS Code, PyCharm)
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Virtual environments and package management
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Variables, data types, and basic operators
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    First Python programs and debugging basics
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-primary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Data Types & Structures</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>OOP & Classes</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Decorators & Generators</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Error Handling</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Context Managers</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Async Programming</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Command-line Calculator</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>File System Organizer</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Custom Data Structures Library</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 2 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">2</span>
+                            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-accent-600">2</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Control Flow & Data Structures</h3>
-                                <p class="text-gray-600 text-sm">Week 2 • 10 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Web Development with Python</h3>
+                                <p class="text-neutral-600">Weeks 5-8</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Master control structures and Python's powerful data structures.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Conditional statements (if/else/elif)
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Loops (for/while) and loop control
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Lists, tuples, dictionaries, and sets
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    List/dictionary comprehensions
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-accent-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Flask Framework</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Django ORM</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>FastAPI for Modern APIs</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>REST API Design</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Authentication & Security</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Database Integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>REST API for Task Management</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>E-commerce Backend</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Real-time Chat Application</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 3 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">3</span>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">3</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Functions & OOP</h3>
-                                <p class="text-gray-600 text-sm">Week 3-4 • 12 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Data Processing & Automation</h3>
+                                <p class="text-neutral-600">Weeks 9-12</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Deep dive into functions and object-oriented programming principles.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Function definition, parameters, and return values
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Scope, lambda functions, and decorators
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Classes, objects, and constructors
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Inheritance, polymorphism, and magic methods
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Pandas & NumPy</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Data Cleaning & ETL</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Script Automation</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Task Scheduling</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>System Integration</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Performance Optimization</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Automated Report Generator</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Data Migration Tool</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>System Monitoring Dashboard</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 4 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">4</span>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">4</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">File I/O & Databases</h3>
-                                <p class="text-gray-600 text-sm">Week 5 • 8 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Testing, Debugging & Quality Assurance</h3>
+                                <p class="text-neutral-600">Weeks 13-16</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Learn to work with files, databases, and external APIs.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Reading/writing text, CSV, and JSON files
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    SQLite database operations
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    HTTP requests and REST API integration
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Error handling and data validation
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Unit Testing (pytest)</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Integration Testing</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Test-Driven Development</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Debugging Tools</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Code Coverage</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Code Quality Tools</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Test Suite for Web API</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Automated Testing Framework</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Code Quality Analyzer</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 5 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module5">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">5</span>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">5</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Testing & Version Control</h3>
-                                <p class="text-gray-600 text-sm">Week 6 • 6 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Production Deployment & DevOps</h3>
+                                <p class="text-neutral-600">Weeks 17-20</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module5" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Professional development practices for robust software.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Unit testing with pytest framework
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Debugging techniques and tools
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Git version control basics
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    GitHub collaboration workflow
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Docker Containers</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Cloud Deployment</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>CI/CD Pipelines</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Monitoring & Logging</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Security Best Practices</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Infrastructure as Code</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Containerized Web App</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>CI/CD Pipeline</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Cloud-Deployed Microservice</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 6 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module6">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">6</span>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">6</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Final Project</h3>
-                                <p class="text-gray-600 text-sm">Week 7-8 • 16 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Advanced Topics & Real-World Projects</h3>
+                                <p class="text-neutral-600">Weeks 21-24</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module6" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Build a complete real-world application from start to finish.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Project planning and requirements analysis
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    System design and architecture
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Implementation with best practices
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Testing, debugging, and deployment
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Full-Stack Applications</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Microservices Architecture</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>API Design</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Performance Optimization</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Scalable Systems</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Machine Learning Integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Capstone Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>E-commerce Platform</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Social Media API</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Analytics Dashboard</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>IoT Monitoring System</li>
                             </ul>
                         </div>
                     </div>
@@ -758,208 +969,999 @@
         </div>
     </section>
 
-    <!-- Course Info & Registration -->
-    <section class="py-16 bg-white">
+    <!-- Detailed Python Programming Topics Section -->
+    <section class="py-20 bg-white" id="detailed-topics">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Main Content -->
-                <div class="lg:col-span-2">
-                    <!-- Course Info -->
-                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Duration</p>
-                                        <p class="text-gray-600">8 Weeks (60+ hours)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">school</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Level</p>
-                                        <p class="text-gray-600">Beginner to Advanced</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">group</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Batch Size</p>
-                                        <p class="text-gray-600">Limited (30 students)</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">computer</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Mode</p>
-                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">verified</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Certificate</p>
-                                        <p class="text-gray-600">Yes (with unique ID)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">phone</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Contact</p>
-                                        <p class="text-gray-600">+91 98765 43210</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Comprehensive <span class="text-gradient">Python Programming</span> Topics
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Dive deep into every aspect of Python programming for software development.
+                    From basic syntax to advanced enterprise-level concepts, master it all.
+                </p>
+            </div>
 
-                    <!-- Prerequisites -->
-                    <div class="bg-white rounded-xl shadow-material p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">No prior programming experience required</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">Basic computer literacy and familiarity with using a computer</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">Access to a computer with internet connection</span>
-                            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Python -->
+                <div class="material-card p-6" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">code</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Core Python Programming</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Variables, Data Types & Operators</li>
+                        <li>• Control Flow (if/else, loops)</li>
+                        <li>• Functions & Lambda Expressions</li>
+                        <li>• Lists, Tuples, Dictionaries, Sets</li>
+                        <li>• String Manipulation & Formatting</li>
+                        <li>• File I/O Operations</li>
+                        <li>• Exception Handling</li>
+                        <li>• Modules & Packages</li>
+                    </ul>
+                </div>
+
+                <!-- Object-Oriented Programming -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">class</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Object-Oriented Programming</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Classes & Objects</li>
+                        <li>• Inheritance & Polymorphism</li>
+                        <li>• Encapsulation & Abstraction</li>
+                        <li>• Magic Methods (__init__, __str__)</li>
+                        <li>• Property Decorators</li>
+                        <li>• Class Methods & Static Methods</li>
+                        <li>• Multiple Inheritance</li>
+                        <li>• Method Resolution Order</li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Python -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">psychology</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Advanced Python Concepts</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Decorators & Closures</li>
+                        <li>• Generators & Iterators</li>
+                        <li>• Context Managers</li>
+                        <li>• Metaclasses & Introspection</li>
+                        <li>• Async/Await Programming</li>
+                        <li>• Coroutines & Event Loops</li>
+                        <li>• Memory Management</li>
+                        <li>• Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Web Development -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">web</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Web Development Frameworks</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Flask Application Structure</li>
+                        <li>• Django MTV Architecture</li>
+                        <li>• FastAPI for Modern APIs</li>
+                        <li>• RESTful API Design</li>
+                        <li>• Authentication & Authorization</li>
+                        <li>• Database ORM (SQLAlchemy, Django ORM)</li>
+                        <li>• Template Engines (Jinja2)</li>
+                        <li>• WebSockets & Real-time Features</li>
+                    </ul>
+                </div>
+
+                <!-- Data Processing -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">analytics</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Data Processing & Analysis</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• NumPy Arrays & Operations</li>
+                        <li>• Pandas DataFrames & Series</li>
+                        <li>• Data Cleaning & Transformation</li>
+                        <li>• CSV, JSON, XML Processing</li>
+                        <li>• Database Connectivity</li>
+                        <li>• Data Visualization (Matplotlib)</li>
+                        <li>• Statistical Analysis</li>
+                        <li>• ETL Pipeline Development</li>
+                    </ul>
+                </div>
+
+                <!-- Testing & Quality -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">verified</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Testing & Code Quality</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Unit Testing with pytest/unittest</li>
+                        <li>• Integration & System Testing</li>
+                        <li>• Test-Driven Development (TDD)</li>
+                        <li>• Mocking & Test Fixtures</li>
+                        <li>• Code Coverage Analysis</li>
+                        <li>• Debugging Techniques</li>
+                        <li>• Code Review Best Practices</li>
+                        <li>• Static Analysis Tools</li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Deployment -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">build</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">DevOps & Deployment</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Docker Containerization</li>
+                        <li>• Kubernetes Orchestration</li>
+                        <li>• CI/CD Pipeline Setup</li>
+                        <li>• Cloud Platforms (AWS, GCP, Azure)</li>
+                        <li>• Infrastructure as Code</li>
+                        <li>• Monitoring & Logging</li>
+                        <li>• Security Best Practices</li>
+                        <li>• Performance Monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Software Architecture -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">architecture</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Software Architecture</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Design Patterns (Singleton, Factory, etc.)</li>
+                        <li>• Microservices Architecture</li>
+                        <li>• REST & GraphQL APIs</li>
+                        <li>• Database Design & Normalization</li>
+                        <li>• Caching Strategies</li>
+                        <li>• Scalability Patterns</li>
+                        <li>• Clean Code Principles</li>
+                        <li>• SOLID Principles</li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Topics -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="800">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">science</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Specialized Development Areas</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Machine Learning Integration</li>
+                        <li>• Blockchain Development</li>
+                        <li>• IoT & Embedded Systems</li>
+                        <li>• GUI Applications (Tkinter, PyQt)</li>
+                        <li>• Network Programming</li>
+                        <li>• Cryptography & Security</li>
+                        <li>• Game Development</li>
+                        <li>• Scientific Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI & Machine Learning Integration Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50" id="ai-ml">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    AI & Machine Learning <span class="text-gradient">Integration</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Master the integration of AI and ML capabilities into your software applications.
+                    Build intelligent systems that learn, adapt, and provide valuable insights.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Machine Learning Fundamentals -->
+                <div class="material-card p-6" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">psychology</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Machine Learning Fundamentals</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• Scikit-learn Framework</li>
+                        <li>• Supervised & Unsupervised Learning</li>
+                        <li>• Regression & Classification Models</li>
+                        <li>• Model Training & Validation</li>
+                        <li>• Feature Engineering</li>
+                        <li>• Cross-Validation Techniques</li>
+                        <li>• Model Evaluation Metrics</li>
+                        <li>• Hyperparameter Tuning</li>
+                    </ul>
+                </div>
+
+                <!-- Deep Learning & Neural Networks -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">neural_network</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Deep Learning & Neural Networks</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• TensorFlow & Keras</li>
+                        <li>• PyTorch Fundamentals</li>
+                        <li>• Convolutional Neural Networks</li>
+                        <li>• Recurrent Neural Networks</li>
+                        <li>• Natural Language Processing</li>
+                        <li>• Computer Vision Applications</li>
+                        <li>• Transfer Learning</li>
+                        <li>• Model Deployment</li>
+                    </ul>
+                </div>
+
+                <!-- AI Integration Patterns -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">integration_instructions</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">AI Integration Patterns</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• AI Service Architecture</li>
+                        <li>• API Integration with ML Models</li>
+                        <li>• Real-time AI Processing</li>
+                        <li>• Batch Processing Systems</li>
+                        <li>• Model Versioning & A/B Testing</li>
+                        <li>• AI Pipeline Orchestration</li>
+                        <li>• Edge AI Deployment</li>
+                        <li>• AI Ethics & Bias Mitigation</li>
+                    </ul>
+                </div>
+
+                <!-- NLP & Text Processing -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">text_fields</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">NLP & Text Processing</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• NLTK & spaCy Libraries</li>
+                        <li>• Text Preprocessing & Tokenization</li>
+                        <li>• Sentiment Analysis</li>
+                        <li>• Named Entity Recognition</li>
+                        <li>• Text Classification</li>
+                        <li>• Language Models (BERT, GPT)</li>
+                        <li>• Chatbot Development</li>
+                        <li>• Text Summarization</li>
+                    </ul>
+                </div>
+
+                <!-- Computer Vision -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">visibility</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">Computer Vision</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• OpenCV Integration</li>
+                        <li>• Image Processing & Analysis</li>
+                        <li>• Object Detection & Recognition</li>
+                        <li>• Facial Recognition Systems</li>
+                        <li>• Image Classification</li>
+                        <li>• Video Processing</li>
+                        <li>• Augmented Reality</li>
+                        <li>• Medical Imaging AI</li>
+                    </ul>
+                </div>
+
+                <!-- AI in Production -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-white">rocket_launch</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4">AI in Production</h3>
+                    <ul class="space-y-2 text-sm text-neutral-600">
+                        <li>• ML Model Deployment</li>
+                        <li>• MLOps Best Practices</li>
+                        <li>• Model Monitoring & Maintenance</li>
+                        <li>• Performance Optimization</li>
+                        <li>• Scalable AI Infrastructure</li>
+                        <li>• AI Security & Privacy</li>
+                        <li>• Cost Optimization</li>
+                        <li>• Regulatory Compliance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI Project Showcase -->
+            <div class="mt-16" data-aos="fade-up" data-aos-delay="600">
+                <h3 class="text-2xl font-bold text-center text-neutral-900 mb-8">AI-Powered Projects You'll Build</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="material-card p-6 text-center">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-icons text-white text-2xl">smart_toy</span>
+                        </div>
+                        <h4 class="font-semibold text-neutral-900 mb-2">Intelligent Chatbot</h4>
+                        <p class="text-sm text-neutral-600">Build a conversational AI assistant with NLP capabilities for customer service automation.</p>
+                    </div>
+                    <div class="material-card p-6 text-center">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-icons text-white text-2xl">image_search</span>
+                        </div>
+                        <h4 class="font-semibold text-neutral-900 mb-2">Visual Recognition System</h4>
+                        <p class="text-sm text-neutral-600">Create an image classification and object detection system for automated content analysis.</p>
+                    </div>
+                    <div class="material-card p-6 text-center">
+                        <div class="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-icons text-white text-2xl">analytics</span>
+                        </div>
+                        <h4 class="font-semibold text-neutral-900 mb-2">Predictive Analytics Engine</h4>
+                        <p class="text-sm text-neutral-600">Develop a machine learning system for data analysis and future trend prediction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-20 bg-neutral-50" id="success-stories">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Developer <span class="text-gradient">Success Stories</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Real developers, real transformations. Hear from software developers who elevated their careers
+                    with our Python for Software Developers course. These are authentic stories from professionals
+                    who are now building the future.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Success Story 1 -->
+                <div class="material-card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-primary-600 text-2xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Alex Chen</h3>
+                    <p class="text-sm text-neutral-500 mb-4">Senior Python Developer at Stripe</p>
+                    <p class="text-neutral-600 mb-4">
+                        "This course transformed me from a junior developer struggling with Python to a senior engineer
+                        building scalable systems at Stripe. The production-ready skills I learned here are invaluable."
+                    </p>
+                    <div class="flex justify-center space-x-1">
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                    </div>
+                </div>
+
+                <!-- Success Story 2 -->
+                <div class="material-card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-accent-600 text-2xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Sarah Rodriguez</h3>
+                    <p class="text-sm text-neutral-500 mb-4">Full-Stack Developer at Netflix</p>
+                    <p class="text-neutral-600 mb-4">
+                        "The web development and automation modules completely changed how I approach software development.
+                        I'm now leading backend projects at Netflix and mentoring junior developers."
+                    </p>
+                    <div class="flex justify-center space-x-1">
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                    </div>
+                </div>
+
+                <!-- Success Story 3 -->
+                <div class="material-card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="material-icons text-secondary-600 text-2xl">person</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-neutral-900 mb-2">Marcus Thompson</h3>
+                    <p class="text-sm text-neutral-500 mb-4">DevOps Engineer at Google</p>
+                    <p class="text-neutral-600 mb-4">
+                        "The automation and DevOps content was exactly what I needed. I went from manual deployments
+                        to building automated pipelines that handle millions of requests daily at Google."
+                    </p>
+                    <div class="flex justify-center space-x-1">
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                        <span class="material-icons text-yellow-400 text-sm">star</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white" id="faq">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Frequently Asked <span class="text-gradient">Questions</span>
+                </h2>
+                <p class="text-lg text-neutral-600">
+                    Get answers to common questions about our Python for Software Developers course.
+                </p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <!-- FAQ 1 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">Do I need prior programming experience?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>While some programming experience is helpful, our course is designed to take developers from intermediate to advanced levels. If you're new to programming, we recommend starting with our Python Fundamentals course first. We cover advanced concepts assuming basic programming knowledge.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Registration Form -->
-                <div class="lg:col-span-1">
-                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
-
-                        <!-- Pricing -->
-                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
-                            <div class="text-3xl font-bold text-primary-600 mb-1">FREE</div>
-                            <div class="text-gray-600">Complete Course Fee</div>
-                            <div class="text-sm text-green-600 mt-2">Certificate Included</div>
+                <!-- FAQ 2 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">What's the difference between this and general Python courses?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>This course focuses specifically on software development applications of Python. We emphasize production-ready code, scalable architecture, testing, deployment, and DevOps practices. It's not about data science or AI—it's about building robust software systems that companies rely on.</p>
                         </div>
+                    </div>
+                </div>
 
-                        <form id="registerForm" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
-                            </div>
+                <!-- FAQ 3 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">Will I get job placement assistance?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>Yes! Our career services team provides comprehensive job placement support including resume reviews, interview preparation, portfolio development, and direct connections with hiring partners. We have partnerships with 200+ tech companies actively looking for Python developers.</p>
+                        </div>
+                    </div>
+                </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
-                            </div>
+                <!-- FAQ 4 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">What kind of projects will I build?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>You'll build 15+ real-world projects including: REST APIs, full-stack web applications, automation scripts, data processing pipelines, testing frameworks, containerized applications, and microservices. Each project is designed to showcase skills that employers are looking for.</p>
+                        </div>
+                    </div>
+                </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
-                            </div>
+                <!-- FAQ 5 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">Is there a money-back guarantee?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>Yes, we offer a 30-day money-back guarantee. If you're not completely satisfied with the course content or learning experience within the first 30 days, we'll refund your payment in full, no questions asked.</p>
+                        </div>
+                    </div>
+                </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
-                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
-                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
-                                    <option value="">Select Mode</option>
-                                    <option value="Online">Online</option>
-                                    <option value="Offline">Offline</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
-                                <div class="space-y-2">
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
-                                        <span class="ml-2 text-gray-700">UPI Payment</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
-                                        <span class="ml-2 text-gray-700">Cash Payment</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
-                                        <span class="ml-2 text-gray-700">Card Payment</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
-                            </div>
-
-                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
-
-                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                                <span id="registerBtnText">Register Now</span>
-                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                            </button>
-                        </form>
-
-                        <div class="mt-4 text-center text-sm text-gray-600">
-                            <p>Next batch starts: <strong>15th July 2024</strong></p>
+                <!-- FAQ 6 -->
+                <div class="material-card p-6">
+                    <div class="faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center">
+                            <h3 class="text-lg font-semibold text-neutral-900">Can I learn at my own pace?</h3>
+                            <span class="material-icons text-neutral-500 faq-icon">expand_more</span>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-neutral-600">
+                            <p>Absolutely! Our self-paced learning option gives you lifetime access to all course materials. Learn when it fits your schedule, revisit content as needed, and progress at your own speed. Most students complete the course within 3-6 months.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Enrollment Section -->
+    <section class="py-20 bg-neutral-50" id="enrollment">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Choose Your <span class="text-gradient">Developer Path</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Flexible pricing designed for developers at different stages of their careers.
+                    All plans include comprehensive learning materials, projects, and certification.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Self-Paced Plan -->
+                <div class="material-card p-8 text-center relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-neutral-200 text-neutral-700 px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Self-Paced Learning</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">₹24,999</div>
+                        <p class="text-neutral-600">One-time payment</p>
+                    </div>
+
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Complete video curriculum</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">15+ real-world projects</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Industry certification</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Lifetime access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Community support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Downloadable resources</span>
+                        </li>
+                    </ul>
+
+                    <a href="#enrollment" class="material-btn bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full block">
+                        Start Learning
+                    </a>
+                </div>
+
+                <!-- Mentored Plan -->
+                <div class="material-card p-8 text-center border-2 border-primary-200 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary-500 text-white px-4 py-1 rounded-full text-sm font-medium">Recommended</span>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Mentored Program</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">₹44,999</div>
+                        <p class="text-neutral-600">One-time payment</p>
+                    </div>
+
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Everything in Self-Paced</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">1-on-1 mentorship sessions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Code reviews & feedback</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Project portfolio building</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Interview preparation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Job placement assistance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Resume optimization</span>
+                        </li>
+                    </ul>
+
+                    <a href="#enrollment" class="material-btn bg-gradient-primary text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full block">
+                        Get Mentored
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="material-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Team Training</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">Custom</div>
+                        <p class="text-neutral-600">Contact for pricing</p>
+                    </div>
+
+                    <ul class="text-left space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Everything in Mentored</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Custom curriculum design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Dedicated training team</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">On-site training options</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Progress tracking dashboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-green-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Team performance analytics</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="material-btn bg-white text-neutral-700 border-2 border-neutral-300 hover:border-primary-500 hover:text-primary-600 px-8 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 w-full block">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    What Developers <span class="text-gradient">Are Saying</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what developers who completed our course
+                    have to say about their learning experience and career growth.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "The depth of Python knowledge I gained here is incredible. I went from struggling with basic
+                        scripts to building complex web applications and automation systems. The projects are exactly
+                        what employers look for."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-primary-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">David Kim</div>
+                            <div class="text-sm text-neutral-500">Backend Developer at Spotify</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "Finally, a Python course that focuses on real software development! The testing, deployment,
+                        and DevOps modules were game-changers. I now lead a team of developers and build scalable systems."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-accent-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">Lisa Wang</div>
+                            <div class="text-sm text-neutral-500">Tech Lead at Airbnb</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "The automation and scripting modules saved me countless hours at work. I automated our entire
+                        deployment pipeline and now focus on building features instead of manual tasks. Career changer!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-secondary-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">James Wilson</div>
+                            <div class="text-sm text-neutral-500">DevOps Engineer at Tesla</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "As someone transitioning from data science to full-stack development, this course was perfect.
+                        The web development modules with Flask and Django gave me the confidence to build complete applications."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-primary-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">Maria Garcia</div>
+                            <div class="text-sm text-neutral-500">Full-Stack Developer at Uber</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "The code quality and testing practices I learned here are exceptional. My code reviews are now
+                        more thorough, and I write more maintainable software. This course elevated my entire approach to development."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-accent-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">Robert Chen</div>
+                            <div class="text-sm text-neutral-500">Senior Developer at Microsoft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                            <span class="material-icons text-sm">star</span>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600 mb-4 italic">
+                        "From startup to enterprise, this course prepared me for it all. The scalable architecture and
+                        production deployment skills I learned here helped me grow from a solo developer to leading engineering teams."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="material-icons text-secondary-600 text-sm">person</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-neutral-900">Sarah Johnson</div>
+                            <div class="text-sm text-neutral-500">Engineering Manager at Amazon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Enquiry Form Section -->
+    <section class="py-20 bg-neutral-50" id="contact">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Ready to Advance Your <span class="text-gradient">Development Career</span>?
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Have questions about our Python for Software Developers course? Get in touch with our expert counselors
+                    who will help you choose the right learning path for your career goals.
+                </p>
+            </div>
+
+            <div class="material-card p-8" data-aos="fade-up">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-neutral-700 mb-2">First Name *</label>
+                            <input type="text" id="first-name" name="firstName" required
+                                   class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-neutral-700 mb-2">Last Name *</label>
+                            <input type="text" id="last-name" name="lastName" required
+                                   class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neutral-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-neutral-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required
+                                   class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="current-role" class="block text-sm font-medium text-neutral-700 mb-2">Current Role</label>
+                        <select id="current-role" name="currentRole"
+                                class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                            <option value="">Select your current role</option>
+                            <option value="student">Student</option>
+                            <option value="junior-developer">Junior Developer</option>
+                            <option value="mid-level-developer">Mid-level Developer</option>
+                            <option value="senior-developer">Senior Developer</option>
+                            <option value="non-technical">Non-technical Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="experience" class="block text-sm font-medium text-neutral-700 mb-2">Python Experience Level</label>
+                        <select id="experience" name="experience"
+                                class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0">
+                            <option value="">Select your experience level</option>
+                            <option value="beginner">Beginner (No Python experience)</option>
+                            <option value="intermediate">Intermediate (Some Python knowledge)</option>
+                            <option value="advanced">Advanced (Experienced Python developer)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-neutral-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                                  class="form-input w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:ring-0 resize-none"
+                                  placeholder="Tell us about your career goals, current challenges, or specific areas you'd like to focus on..."></textarea>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded">
+                        <label for="newsletter" class="ml-2 block text-sm text-neutral-700">
+                            I agree to receive updates and promotional emails from SK AI Hub
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="material-btn bg-gradient-primary text-white font-semibold px-12 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <span class="material-icons mr-2 text-sm">send</span>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-xl font-bold">SK AI Hub</span>
+                    </div>
+                    <p class="text-neutral-300 mb-6 max-w-md">
+                        Empowering software developers with comprehensive Python training, from fundamentals to
+                        production-ready applications. Join thousands of developers building the future with Python.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors duration-200">
+                            <span class="material-icons">facebook</span>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors duration-200">
+                            <span class="material-icons">twitter</span>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors duration-200">
+                            <span class="material-icons">linkedin</span>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors duration-200">
+                            <span class="material-icons">instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="../../index.html#about" class="text-neutral-400 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="../../index.html#courses" class="text-neutral-400 hover:text-white transition-colors duration-200">Courses</a></li>
+                        <li><a href="../../index.html#whyus" class="text-neutral-400 hover:text-white transition-colors duration-200">Why Choose Us</a></li>
+                        <li><a href="../../index.html#contact" class="text-neutral-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Courses -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="python_for_software_dev.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Python for Software Developers</a></li>
+                        <li><a href="advanced_python.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Advanced Python</a></li>
+                        <li><a href="web_design.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Web Design</a></li>
+                        <li><a href="database.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Database Management</a></li>
+                        <li><a href="full_stack_web_dev.html" class="text-neutral-400 hover:text-white transition-colors duration-200">Full Stack Web Development</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-neutral-400 text-sm">
+                        © 2024 SK AI Hub. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-neutral-400 hover:text-white text-sm transition-colors duration-200">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+
+    <!-- JavaScript -->
     <script>
-        // Navbar functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileCoursesDropdown = document.getElementById('mobile-courses-dropdown');
-            const mobileCoursesMenu = document.getElementById('mobile-courses-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            if (mobileCoursesDropdown && mobileCoursesMenu) {
-                mobileCoursesDropdown.addEventListener('click', function() {
-                    mobileCoursesMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Desktop dropdown functionality
-            const coursesDropdown = document.getElementById('courses-dropdown');
-            const coursesMenu = document.getElementById('courses-menu');
-
-            if (coursesDropdown && coursesMenu) {
-                coursesDropdown.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    coursesMenu.classList.toggle('hidden');
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function() {
-                    coursesMenu.classList.add('hidden');
-                });
-            }
-        });
-
         // Initialize AOS
         AOS.init({
             duration: 800,
@@ -967,183 +1969,131 @@
             offset: 100
         });
 
-        // Curriculum accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('opacity-0');
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.body.style.opacity = '1';
+                }, 500);
+            }, 1500);
+        });
 
-            curriculumToggles.forEach(toggle => {
-                toggle.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    const content = document.getElementById(targetId);
-                    const icon = this.querySelector('.curriculum-icon');
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-                    // Close all other modules
-                    document.querySelectorAll('.curriculum-content').forEach(c => {
-                        if (c.id !== targetId) {
-                            c.classList.add('hidden');
-                        }
-                    });
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-                    document.querySelectorAll('.curriculum-icon').forEach(i => {
-                        if (i !== icon) {
-                            i.textContent = 'expand_more';
-                        }
-                    });
-
-                    // Toggle current module
-                    if (content.classList.contains('hidden')) {
-                        content.classList.remove('hidden');
-                        icon.textContent = 'expand_less';
-                    } else {
-                        content.classList.add('hidden');
-                        icon.textContent = 'expand_more';
-                    }
-                });
-            });
-
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Registration Form Handling
-            const registerForm = document.getElementById('registerForm');
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    const btn = document.getElementById('registerBtn');
-                    const btnText = document.getElementById('registerBtnText');
-                    const btnSpinner = document.getElementById('registerBtnSpinner');
-                    const alertBox = document.getElementById('formAlert');
-
-                    // Get form values
-                    const name = document.getElementById('fullName').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const phone = document.getElementById('phone').value.trim();
-                    const college = document.getElementById('college').value.trim();
-                    const mode = document.getElementById('mode').value;
-                    const payment = document.querySelector('input[name="payment"]:checked');
-                    const message = document.getElementById('message').value.trim();
-
-                    // Validation
-                    if (!name || !email || !phone || !mode || !payment) {
-                        showAlert('Please fill all required fields and select a payment option.', 'error');
-                        return;
-                    }
-
-                    // Email validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        showAlert('Please enter a valid email address.', 'error');
-                        return;
-                    }
-
-                    // Phone validation
-                    const phoneRegex = /^[6-9]\d{9}$/;
-                    if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
-                        showAlert('Please enter a valid 10-digit phone number.', 'error');
-                        return;
-                    }
-
-                    // Show loading state
-                    btn.disabled = true;
-                    btnText.textContent = "Registering...";
-                    btnSpinner.classList.remove('hidden');
-
-                    // Simulate registration process
-                    setTimeout(() => {
-                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
-                        registerForm.reset();
-                        btn.disabled = false;
-                        btnText.textContent = "Register Now";
-                        btnSpinner.classList.add('hidden');
-                    }, 1500);
-                });
-            }
-
-            function showAlert(message, type) {
-                const alertBox = document.getElementById('formAlert');
-                alertBox.textContent = message;
-                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
-                alertBox.classList.remove('hidden');
-
-                if (type === 'success') {
-                    setTimeout(() => {
-                        alertBox.classList.add('hidden');
-                    }, 5000);
-                }
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
             }
         });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = this.querySelector('.faq-icon');
+
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+
+                // Rotate icon
+                icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<div class="loading-spinner mx-auto"></div>';
+            submitButton.disabled = true;
+
+            // Simulate form submission (replace with actual API call)
+            setTimeout(function() {
+                // Reset button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+
+                // Show success message
+                showAlert('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+
+                // Reset form
+                contactForm.reset();
+            }, 2000);
+        });
+
+        // Alert function
+        function showAlert(message, type) {
+            const alertBox = document.createElement('div');
+            alertBox.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            alertBox.innerHTML = `
+                <div class="flex items-center">
+                    <span class="material-icons mr-2">${type === 'success' ? 'check_circle' : 'error'}</span>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(alertBox);
+
+            // Animate in
+            setTimeout(() => {
+                alertBox.classList.remove('translate-x-full');
+            }, 100);
+
+            // Auto remove
+            setTimeout(() => {
+                alertBox.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 300);
+            }, 5000);
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
     </script>
-
-    <!-- Footer with Material Design -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
-                        <span class="text-lg font-bold">SK AI Hub</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Empowering the next generation of developers and innovators through comprehensive technology education and hands-on learning experiences.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">facebook</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">twitter</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">linkedin</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">instagram</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="../../index.html#about" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="../../index.html#courses" class="hover:text-white transition-colors">Courses</a></li>
-                        <li><a href="../../index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">phone</span>
-                            +91 98765 43210
-                        </li>
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">email</span>
-                            info@skaihub.com
-                        </li>
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">location_on</span>
-                            Your City, India
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 SK AI Hub. All rights reserved. | Made with ❤️ for aspiring developers</p>
-            </div>
-        </div>
-    </footer>
-
 </body>
 </html>
+                       

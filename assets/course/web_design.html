@@ -5,294 +5,275 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Professional Web Design (UI/UX + Bootstrap) - Master Modern Web Design | SK AI Hub</title>
-    <meta name="description" content="Master Professional Web Design with UI/UX principles and Bootstrap at SK AI Hub. Create stunning, responsive websites.">
-    <meta name="keywords" content="Web Design, UI/UX Design, Bootstrap, Responsive Design, HTML, CSS, JavaScript, SK AI Hub">
+    <title>AI UI/UX Design & Web Development Course | Master Modern Web Design | SK AI Hub</title>
+    <meta name="description" content="Master AI-powered UI/UX Design & Web Development at SK AI Hub. Learn modern design principles, responsive web development, and create stunning digital experiences with cutting-edge tools.">
+    <meta name="keywords" content="UI/UX Design, Web Development, AI Design Tools, Figma, Adobe XD, Responsive Design, User Experience, Interface Design, Web Design Course, SK AI Hub">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Professional Web Design (UI/UX + Bootstrap) - Master Modern Web Design | SK AI Hub">
-    <meta property="og:description" content="Master Professional Web Design with UI/UX principles and Bootstrap at SK AI Hub. Create stunning, responsive websites.">
+    <meta property="og:title" content="AI UI/UX Design & Web Development Course | Master Modern Web Design | SK AI Hub">
+    <meta property="og:description" content="Master AI-powered UI/UX Design & Web Development at SK AI Hub. Learn modern design principles, responsive web development, and create stunning digital experiences.">
     <meta property="og:image" content="https://skaihub.com/assets/img/new_logo.png">
     <meta property="og:url" content="https://skaihub.com/assets/course/web_design.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="AI UI/UX Design & Web Development Course | SK AI Hub">
+    <meta property="twitter:description" content="Master AI-powered UI/UX Design & Web Development. Learn modern design principles and create stunning digital experiences.">
+    <meta property="twitter:image" content="https://skaihub.com/assets/img/new_logo.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://skaihub.com/assets/course/web_design.html">
 
+    <!-- Favicons -->
+    <link href="../../assets/img/new_logo.png" rel="icon">
+    <link href="../../assets/img/new_logo.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        },
-                        accent: {
-                            50: '#fef3c7',
-                            100: '#fde68a',
-                            200: '#fcd34d',
-                            300: '#fbbf24',
-                            400: '#f59e0b',
-                            500: '#d97706',
-                            600: '#b45309',
-                            700: '#92400e',
-                            800: '#78350f',
-                            900: '#451a03',
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-in-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'bounce-subtle': 'bounceSubtle 2s infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        bounceSubtle: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-5px)' },
-                        },
-                    },
-                    boxShadow: {
-                        'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-                        'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                        'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    },
-                }
-            }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+              },
+              secondary: {
+                50: '#fefce8',
+                100: '#fef9c3',
+                200: '#fef08a',
+                300: '#fde047',
+                400: '#facc15',
+                500: '#eab308',
+                600: '#ca8a04',
+                700: '#a16207',
+                800: '#854d0e',
+                900: '#713f12',
+              },
+              accent: {
+                50: '#f0fdf4',
+                100: '#dcfce7',
+                200: '#bbf7d0',
+                300: '#86efac',
+                400: '#4ade80',
+                500: '#22c55e',
+                600: '#16a34a',
+                700: '#15803d',
+                800: '#166534',
+                900: '#14532d',
+              },
+              neutral: {
+                50: '#fafafa',
+                100: '#f5f5f5',
+                200: '#e5e5e5',
+                300: '#d4d4d4',
+                400: '#a3a3a3',
+                500: '#737373',
+                600: '#525252',
+                700: '#404040',
+                800: '#262626',
+                900: '#171717',
+              },
+              'base-100': '#ffffff',
+              'base-200': '#f9fafb',
+              'base-300': '#f3f4f6',
+              'base-content': '#1f2937',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-in-out',
+              'slide-up': 'slideUp 0.6s ease-out',
+              'bounce-subtle': 'bounceSubtle 2s infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'gradient': 'gradient 3s ease infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              bounceSubtle: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-5px)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              gradient: {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              },
+            },
+            boxShadow: {
+              'material': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+              'material-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              'material-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+              'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
+            },
+            backgroundImage: {
+              'gradient-primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              'gradient-secondary': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+              'mesh': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+            },
+          }
         }
+      }
     </script>
 
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- Custom Material Design Styles -->
+    <style>
+      .material-card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .material-card:hover {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        transform: translateY(-4px);
+      }
+      .material-btn {
+        padding: 0.875rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .material-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+      .material-btn:hover::before {
+        left: 100%;
+      }
+      .material-btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      }
+
+      /* Loading animation */
+      .loading-spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* Progress bar animation */
+      .progress-bar {
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      /* Custom form styling */
+      .form-input {
+        transition: all 0.3s ease;
+        border: 2px solid #e5e7eb;
+      }
+      .form-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      /* Skill badges */
+      .skill-badge {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        transition: all 0.3s ease;
+      }
+      .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+      }
+    </style>
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #B80B0B;
-            --accent-color: #00c9a7;
-            --text-color: #222;
-            --bg-light-gray: #f6f6f7;
-            --bg-white: #fff;
-            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            background: var(--bg-light-gray);
-            position: relative;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        /* SVG Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: -100px;
-            left: -100px;
-            width: 700px;
-            height: 700px;
-            z-index: 0;
-            background: url('data:image/svg+xml;utf8,<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg"><circle cx="350" cy="350" r="340" fill="%23007bff" fill-opacity="0.08"/><circle cx="350" cy="350" r="250" fill="%23B80B0B" fill-opacity="0.06"/></svg>') no-repeat;
-            background-size: cover;
-            pointer-events: none;
-        }
-        /* Navbar */
-        .navbar {
-            background: var(--bg-white);
-            box-shadow: var(--shadow);
-            z-index: 10;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--primary-color) !important;
-        }
-        .nav-link {
-            color: var(--text-color) !important;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-        .home-btn {
-            background: var(--primary-color);
-            color: #fff !important;
-            border-radius: 30px;
-            padding: 8px 24px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .home-btn:hover {
-            background: var(--secondary-color);
-            color: #fff !important;
-        }
-        /* Header */
-        .course-header {
-            background: linear-gradient(120deg, var(--primary-color) 60%, var(--accent-color) 100%);
-            color: var(--bg-white);
-            padding: 5rem 0 3rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .course-header h1 {
-            font-weight: 700;
-            font-size: 2.8rem;
-            letter-spacing: 1px;
-            animation: fadeInDown 1s;
-        }
-        .course-header .lead {
-            font-size: 1.3rem;
-            margin-top: 1rem;
-            animation: fadeInUp 1.2s;
-        }
-        .course-header .header-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            animation: bounceIn 1.2s;
-        }
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0.7);}
-            60% { transform: scale(1.1);}
-            100% { transform: scale(1);}
-        }
-        /* Course Details */
-        .course-details {
-            padding: 4rem 0 2rem 0;
-            position: relative;
-            z-index: 1;
-        }
-        .course-details .card {
-            border: none;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            background: var(--bg-white);
-        }
-        .course-details .card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.18);
-        }
-        .course-details .card-title {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        .course-details ul {
-            padding-left: 1.2rem;
-        }
-        .course-details li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        .course-details li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-        /* Registration Form */
-        .registration-form {
-            background: var(--bg-white);
-            padding: 2.5rem 2rem;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-top: 2rem;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.2s;
-        }
-        .registration-form h2 {
-            color: var(--secondary-color);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-        .btn-custom {
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            color: #fff;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(0,123,255,0.08);
-        }
-        .btn-custom:hover {
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(184,11,11,0.12);
-        }
-        /* Responsive */
-        @media (max-width: 991px) {
-            .course-header {
-                padding: 3rem 0 2rem 0;
-            }
-            .course-header h1 {
-                font-size: 2rem;
-            }
-        }
-        @media (max-width: 767px) {
-            .registration-form {
-                padding: 1.5rem 0.5rem;
-            }
-        }
-        /* Decorative SVG bottom */
-        .svg-bottom {
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            width: 100%;
-            z-index: 1;
-        }
-         /* Hide payment feedback by default, show when needed */
-        #paymentFeedback.visually-hidden {
-            display: none !important;
-        }
-        #paymentFeedback.d-block {
-            display: block !important;
-        }
-    </style>
 </head>
-<body class="font-sans bg-gray-50">
+
+<body class="font-sans bg-gradient-to-br from-primary-50 via-white to-accent-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <h2 class="text-2xl font-bold text-gradient mb-2">SK AI Hub</h2>
+            <p class="text-neutral-600">Loading amazing design experiences...</p>
+        </div>
+    </div>
+
     <!-- Modern Material Design Navbar -->
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -380,528 +361,623 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-12 pt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <!-- Badge -->
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
-                    <span class="material-icons text-sm mr-2">palette</span>
-                    Free Course
+    <section class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-mesh"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-20 animate-float opacity-10">
+                <div class="w-20 h-20 bg-primary-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-primary-600 text-2xl">design_services</span>
+                </div>
+            </div>
+            <div class="absolute top-40 right-32 animate-float opacity-10" style="animation-delay: 2s;">
+                <div class="w-16 h-16 bg-accent-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-accent-600 text-xl">web</span>
+                </div>
+            </div>
+            <div class="absolute bottom-32 left-32 animate-float opacity-10" style="animation-delay: 4s;">
+                <div class="w-24 h-24 bg-secondary-300 rounded-full flex items-center justify-center shadow-lg">
+                    <span class="material-icons text-secondary-600 text-3xl">palette</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left" data-aos="fade-up">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-primary text-white text-sm font-semibold mb-6 animate-bounce-subtle">
+                        <span class="material-icons text-sm mr-2">local_fire_department</span>
+                        🔥 Most Popular Course
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="text-4xl md:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+                        Master <span class="text-gradient">AI-Powered</span><br>
+                        UI/UX Design &<br>
+                        <span class="text-gradient">Web Development</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed max-w-2xl">
+                        Transform your career with cutting-edge design skills. Learn modern UI/UX principles,
+                        responsive web development, and AI-powered design tools to create stunning digital experiences
+                        that users love.
+                    </p>
+
+                    <!-- Key Benefits -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-primary-600 mr-2 text-sm">check_circle</span>
+                            <span class="text-sm font-medium">100% Practical</span>
+                        </div>
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-accent-600 mr-2 text-sm">check_circle</span>
+                            <span class="text-sm font-medium">Industry Experts</span>
+                        </div>
+                        <div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                            <span class="material-icons text-secondary-600 mr-2 text-sm">check_circle</span>
+                            <span class="text-sm font-medium">Job Ready</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#enrollment" class="material-btn bg-gradient-primary text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <span class="material-icons mr-2 text-sm">rocket_launch</span>
+                            Start Learning Today
+                        </a>
+                        <a href="#curriculum" class="material-btn bg-white text-neutral-700 border-2 border-neutral-300 hover:border-primary-500 hover:text-primary-600 px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                            <span class="material-icons mr-2 text-sm">visibility</span>
+                            View Curriculum
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-8 mt-12 pt-8 border-t border-neutral-200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">500+</div>
+                            <div class="text-sm text-neutral-600">Students Enrolled</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">95%</div>
+                            <div class="text-sm text-neutral-600">Job Placement</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-gradient">4.9/5</div>
+                            <div class="text-sm text-neutral-600">Student Rating</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Title -->
-                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Professional Web Design with <span class="text-gradient">UI/UX</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                    Master modern web design principles, UI/UX best practices, and create stunning responsive websites with Bootstrap and advanced CSS techniques.
-                </p>
+                <!-- Hero Visual -->
+                <div class="relative" data-aos="fade-left">
+                    <!-- Main Design Preview -->
+                    <div class="relative bg-white rounded-2xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl p-4">
+                            <!-- Mock Browser -->
+                            <div class="bg-neutral-800 rounded-t-lg p-2 flex items-center space-x-2">
+                                <div class="flex space-x-1">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="flex-1 bg-neutral-700 rounded px-3 py-1 text-xs text-neutral-300 text-center">
+                                    skaihub.com
+                                </div>
+                            </div>
+                            <!-- Mock Content -->
+                            <div class="bg-white rounded-b-lg p-6 space-y-4">
+                                <div class="h-4 bg-primary-200 rounded animate-pulse"></div>
+                                <div class="h-3 bg-neutral-200 rounded w-3/4 animate-pulse"></div>
+                                <div class="flex space-x-2">
+                                    <div class="h-8 w-20 bg-accent-200 rounded animate-pulse"></div>
+                                    <div class="h-8 w-24 bg-secondary-200 rounded animate-pulse"></div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="h-16 bg-neutral-100 rounded animate-pulse"></div>
+                                    <div class="h-16 bg-neutral-100 rounded animate-pulse"></div>
+                                    <div class="h-16 bg-neutral-100 rounded animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Tech Stack -->
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-                        <i class="devicon-html5-plain colored text-2xl mr-2"></i>
-                        <span class="font-medium text-gray-700">HTML5</span>
+                    <!-- Floating Cards -->
+                    <div class="absolute -top-4 -left-4 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 1s;">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="material-icons text-primary-600 text-sm">smartphone</span>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-neutral-900">Mobile First</div>
+                                <div class="text-xs text-neutral-500">Responsive Design</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-                        <i class="devicon-css3-plain colored text-2xl mr-2"></i>
-                        <span class="font-medium text-gray-700">CSS3</span>
-                    </div>
-                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-                        <i class="devicon-bootstrap-plain colored text-2xl mr-2"></i>
-                        <span class="font-medium text-gray-700">Bootstrap</span>
-                    </div>
-                    <div class="flex items-center px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200">
-                        <i class="devicon-figma-plain colored text-2xl mr-2"></i>
-                        <span class="font-medium text-gray-700">Figma</span>
-                    </div>
-                </div>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">4.7</div>
-                        <div class="text-sm text-gray-600">⭐ Rating</div>
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 3s;">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="material-icons text-accent-600 text-sm">psychology</span>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-neutral-900">AI-Powered</div>
+                                <div class="text-xs text-neutral-500">Smart Design Tools</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">1,850+</div>
-                        <div class="text-sm text-gray-600">Students</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">6</div>
-                        <div class="text-sm text-gray-600">Weeks</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">Free</div>
-                        <div class="text-sm text-gray-600">Certificate</div>
-                    </div>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
-                        <span class="material-icons mr-2">play_arrow</span>
-                        Start Learning Free
-                    </a>
-                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
-                        <span class="material-icons mr-2">info</span>
-                        Course Overview
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Features Section -->
-    <section class="py-16 bg-white">
+    <!-- Course Overview Section -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose This Course?</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Get hands-on experience with industry-standard tools and techniques used by professional web designers.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="material-icons text-primary-600 text-2xl">lightbulb</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Industry-Relevant Skills</h3>
-                    <p class="text-gray-600">
-                        Learn the latest design trends, tools, and techniques used by top design agencies and companies worldwide.
-                    </p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="material-icons text-accent-600 text-2xl">build</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Practical Projects</h3>
-                    <p class="text-gray-600">
-                        Build a professional portfolio with real-world projects that showcase your design and development skills.
-                    </p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="material-icons text-green-600 text-2xl">school</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Expert Instruction</h3>
-                    <p class="text-gray-600">
-                        Learn from experienced designers with years of industry experience in UI/UX and web development.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What You'll Build Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What You'll Build</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Create stunning, professional websites and design systems that will impress employers and clients.
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Why Choose Our <span class="text-gradient">AI UI/UX Design</span> Course?
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Join thousands of successful designers who have transformed their careers with our comprehensive,
+                    industry-leading UI/UX design and web development program.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-primary-600">business</span>
+                <!-- Feature 1 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">lightbulb</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Corporate Website</h3>
-                    <p class="text-gray-600 mb-4">
-                        Design and develop a complete business website with modern UI/UX principles, responsive design, and professional branding.
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">AI-Powered Design</h3>
+                    <p class="text-neutral-600">
+                        Master cutting-edge AI design tools like Figma AI, Adobe Sensei, and Midjourney to create
+                        stunning visuals 10x faster than traditional methods.
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">HTML5</span>
-                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">CSS3</span>
-                        <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Bootstrap</span>
-                    </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-accent-600">shopping_cart</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">E-commerce Store</h3>
-                    <p class="text-gray-600 mb-4">
-                        Create a fully functional online store interface with product galleries, shopping cart, and checkout flow design.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">UI/UX</span>
-                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Responsive</span>
-                        <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Bootstrap</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-green-600">person</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Personal Portfolio</h3>
-                    <p class="text-gray-600 mb-4">
-                        Build an impressive personal portfolio website showcasing your work, skills, and professional background.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Portfolio</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">CSS Animations</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-blue-600">restaurant</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Restaurant Website</h3>
-                    <p class="text-gray-600 mb-4">
-                        Design a beautiful restaurant website with menu display, reservation system, and mobile-optimized layout.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Food & Dining</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Mobile-First</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">CSS Grid</span>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-purple-600">fitness_center</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Fitness App UI</h3>
-                    <p class="text-gray-600 mb-4">
-                        Create a modern fitness tracking app interface with workout plans, progress tracking, and social features.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Mobile App</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">UI Design</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Figma</span>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-orange-600">school</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Educational Platform</h3>
-                    <p class="text-gray-600 mb-4">
-                        Design an online learning platform with course catalogs, video lessons, and interactive elements.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">E-learning</span>
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Interactive</span>
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Accessibility</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Overview Section -->
-    <section id="overview" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Overview</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Learn professional web design from fundamentals to advanced techniques, creating modern, responsive websites that users love.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Design Fundamentals -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-primary-600">design_services</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Design Fundamentals</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            UI/UX design principles
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Color theory and typography
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Wireframing and prototyping
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            User research methods
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                <!-- Feature 2 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
                         <span class="material-icons text-accent-600">code</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Technical Skills</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            HTML5 semantic markup
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Advanced CSS3 techniques
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Bootstrap 5 framework
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            JavaScript interactions
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Full-Stack Development</h3>
+                    <p class="text-neutral-600">
+                        Learn modern web development with React, Next.js, and Node.js. Build responsive,
+                        performant websites that work perfectly on all devices.
+                    </p>
                 </div>
 
-                <!-- Portfolio Projects -->
-                <div class="bg-white rounded-xl shadow-material p-6 hover:shadow-material-lg transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                        <span class="material-icons text-green-600">web</span>
+                <!-- Feature 3 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">psychology</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Portfolio Projects</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Business website design
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            E-commerce interface
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Mobile-first responsive design
-                        </li>
-                        <li class="flex items-start">
-                            <span class="material-icons text-green-500 mr-2 mt-0.5 text-sm">check_circle</span>
-                            Professional portfolio site
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">UX Research & Strategy</h3>
+                    <p class="text-neutral-600">
+                        Master user research, usability testing, and design thinking methodologies to create
+                        products that users truly love and engage with.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-primary-600">business</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Industry-Ready Portfolio</h3>
+                    <p class="text-neutral-600">
+                        Build a professional portfolio with real client projects. Get feedback from industry experts
+                        and land your dream job in top tech companies.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-accent-600">groups</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Mentorship & Community</h3>
+                    <p class="text-neutral-600">
+                        Get 1-on-1 mentorship from senior designers and join our exclusive community of 10,000+
+                        designers sharing opportunities and insights.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                        <span class="material-icons text-secondary-600">workspace_premium</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-3">Certification & Placement</h3>
+                    <p class="text-neutral-600">
+                        Earn industry-recognized certification and get placement assistance. Our students work at
+                        Google, Microsoft, Adobe, and other top companies.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Curriculum Section -->
-    <section id="curriculum" class="py-16 bg-gray-50">
+    <!-- Skills You'll Learn Section -->
+    <section class="py-20 bg-gradient-to-br from-neutral-50 to-primary-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    6-week comprehensive program covering design principles, technical skills, and real-world projects.
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Skills You'll Master
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Our comprehensive curriculum covers everything you need to become a professional UI/UX designer
+                    and web developer in today's competitive job market.
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Design Skills -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                        <span class="material-icons text-primary-600 mr-2">palette</span>
+                        Design Skills
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            UI/UX Design Principles
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Figma & Adobe XD
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Prototyping & Wireframing
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Design Systems
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            User Research
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development Skills -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                        <span class="material-icons text-accent-600 mr-2">code</span>
+                        Development Skills
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            HTML5 & CSS3
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            JavaScript & TypeScript
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            React & Next.js
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Tailwind CSS
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Responsive Design
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Tools -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                        <span class="material-icons text-secondary-600 mr-2">psychology</span>
+                        AI & Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Midjourney & DALL-E
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Figma AI Assistant
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Adobe Sensei
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Auto Layout & Variants
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Component Libraries
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                        <span class="material-icons text-primary-600 mr-2">business_center</span>
+                        Professional Skills
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Client Communication
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Project Management
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Agile Methodology
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Portfolio Development
+                        </div>
+                        <div class="skill-badge px-4 py-2 rounded-lg text-sm font-medium text-neutral-700">
+                            Job Search Strategy
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Curriculum Section -->
+    <section id="curriculum" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Comprehensive <span class="text-gradient">Curriculum</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Our 6-month intensive program is designed by industry experts to give you the skills and
+                    experience needed to excel in the competitive design and development field.
+                </p>
+            </div>
+
+            <div class="space-y-6">
                 <!-- Module 1 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module1">
+                <div class="material-card p-6" data-aos="fade-up">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">1</span>
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-primary-600">1</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">HTML5 & CSS3 Fundamentals</h3>
-                                <p class="text-gray-600 text-sm">Week 1 • 8 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Foundation of Design & UX</h3>
+                                <p class="text-neutral-600">Weeks 1-4</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module1" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Master the building blocks of modern web design with HTML5 and advanced CSS3 techniques.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    HTML5 semantic elements and structure
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    CSS3 selectors, properties, and animations
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Flexbox and CSS Grid layouts
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Responsive design principles
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-primary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Design Theory & Principles</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Color Theory & Typography</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>User Research Methods</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Wireframing & Prototyping</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Usability Testing</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Mobile App Redesign</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>User Research Report</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Interactive Prototype</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 2 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module2">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">2</span>
+                            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-accent-600">2</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">UI/UX Design Principles</h3>
-                                <p class="text-gray-600 text-sm">Week 2 • 10 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Advanced UI Design & Tools</h3>
+                                <p class="text-neutral-600">Weeks 5-8</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module2" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Learn professional design principles and user experience best practices.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Color theory and psychology
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Typography and readability
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    User research and personas
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Wireframing and prototyping tools
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-accent-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Figma Advanced Features</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Design Systems Creation</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>AI-Powered Design Tools</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Micro-interactions</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Animation Principles</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Complete Design System</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>E-commerce Website Design</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>AI-Generated Art Portfolio</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 3 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module3">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">3</span>
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">3</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Bootstrap 5 Framework</h3>
-                                <p class="text-gray-600 text-sm">Weeks 3-4 • 12 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Frontend Development</h3>
+                                <p class="text-neutral-600">Weeks 9-12</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module3" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Master Bootstrap 5 for rapid, responsive web development.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Bootstrap grid system and utilities
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Components (cards, modals, navigation)
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Customizing Bootstrap themes
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Building responsive layouts
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>HTML5 & Semantic Markup</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>CSS3 & Flexbox/Grid</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>JavaScript Fundamentals</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>React & Component Architecture</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>State Management</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Responsive Portfolio Website</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Interactive Dashboard</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>React E-commerce Site</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 4 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module4">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">4</span>
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-primary-600">4</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">JavaScript & Interactions</h3>
-                                <p class="text-gray-600 text-sm">Week 5 • 8 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Full-Stack Development</h3>
+                                <p class="text-neutral-600">Weeks 13-16</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module4" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Add interactivity and dynamic behavior to your websites.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    DOM manipulation basics
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Event handling and listeners
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Form validation and interactions
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    jQuery fundamentals
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-primary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Node.js & Express</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Database Design (MongoDB/SQL)</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>API Development</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Authentication & Security</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Deployment & DevOps</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Full-Stack Social Media App</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>E-commerce Platform</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Real-time Chat Application</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Module 5 -->
-                <div class="bg-white rounded-xl shadow-material mb-4 overflow-hidden">
-                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 curriculum-toggle" data-target="module5">
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-primary-600 font-semibold">5</span>
+                            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-accent-600">5</span>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900">Final Project & Portfolio</h3>
-                                <p class="text-gray-600 text-sm">Week 6 • 14 hours</p>
+                                <h3 class="text-xl font-semibold text-neutral-900">Portfolio & Career Development</h3>
+                                <p class="text-neutral-600">Weeks 17-20</p>
                             </div>
                         </div>
-                        <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
-                    </button>
-                    <div id="module5" class="px-6 pb-4 hidden curriculum-content">
-                        <div class="border-t border-gray-100 pt-4">
-                            <p class="text-gray-600 mb-3">Build professional projects and create a stunning portfolio website.</p>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Complete website project
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Portfolio website design
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    SEO and performance optimization
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="material-icons text-primary-500 mr-2 mt-0.5 text-sm">play_circle_filled</span>
-                                    Deployment and hosting
-                                </li>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-accent-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Portfolio Development</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Personal Branding</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Job Search Strategies</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Interview Preparation</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Freelancing Guide</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Projects:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Professional Portfolio Website</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Case Study Presentations</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>LinkedIn Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                <span class="text-xl font-bold text-secondary-600">6</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-neutral-900">Capstone Project & Launch</h3>
+                                <p class="text-neutral-600">Weeks 21-24</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-neutral-500">4 Weeks</div>
+                            <div class="w-24 bg-neutral-200 rounded-full h-2 mt-1">
+                                <div class="bg-secondary-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">What You'll Learn:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Real Client Project Management</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Advanced Problem Solving</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Team Collaboration</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Project Presentation</li>
+                                <li class="flex items-center"><span class="material-icons text-primary-500 mr-2 text-sm">check</span>Industry Best Practices</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-neutral-900 mb-2">Final Project:</h4>
+                            <ul class="space-y-1 text-neutral-600">
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Complete Product Design & Development</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Client Presentation & Demo</li>
+                                <li class="flex items-center"><span class="material-icons text-accent-500 mr-2 text-sm">work</span>Portfolio Case Study</li>
                             </ul>
                         </div>
                     </div>
@@ -910,165 +986,399 @@
         </div>
     </section>
 
-    <!-- Course Info & Registration -->
-    <section class="py-16 bg-white">
+    <!-- Student Success Stories -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Main Content -->
-                <div class="lg:col-span-2">
-                    <!-- Course Info -->
-                    <div class="bg-white rounded-xl shadow-material p-6 mb-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Information</h3>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">schedule</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Duration</p>
-                                        <p class="text-gray-600">6 Weeks (60+ hours)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">school</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Level</p>
-                                        <p class="text-gray-600">Beginner to Intermediate</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">group</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Batch Size</p>
-                                        <p class="text-gray-600">Limited (30 students)</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">computer</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Mode</p>
-                                        <p class="text-gray-600">Online + Offline (Hybrid)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">verified</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Certificate</p>
-                                        <p class="text-gray-600">Yes (with unique ID)</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="material-icons text-primary-600 mr-3">phone</span>
-                                    <div>
-                                        <p class="font-semibold text-gray-900">Contact</p>
-                                        <p class="text-gray-600">+91 98765 43210</p>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Student <span class="text-gradient">Success Stories</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Hear from our graduates who have transformed their careers and landed dream jobs
+                    at top companies around the world.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900">Priya Sharma</h4>
+                            <p class="text-sm text-neutral-600">UX Designer at Google</p>
                         </div>
                     </div>
-
-                    <!-- Prerequisites -->
-                    <div class="bg-white rounded-xl shadow-material p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prerequisites</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">Basic computer literacy and internet browsing skills</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">No prior programming or design experience required</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">Access to a computer with internet connection</span>
-                            </div>
-                            <div class="flex items-start">
-                                <span class="material-icons text-green-500 mr-3 mt-0.5">check_circle</span>
-                                <span class="text-gray-600">Creative mindset and willingness to learn</span>
-                            </div>
-                        </div>
+                    <div class="flex text-secondary-400 mb-3">
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                    </div>
+                    <p class="text-neutral-600 italic">
+                        "This course completely changed my career. Within 3 months of completing the program,
+                        I landed a UX Designer role at Google. The practical projects and mentorship were invaluable."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-neutral-100">
+                        <p class="text-sm text-neutral-500">Salary increased by 300%</p>
                     </div>
                 </div>
 
-                <!-- Registration Form -->
-                <div class="lg:col-span-1">
-                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl shadow-material p-6 sticky top-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Register Now</h3>
+                <!-- Testimonial 2 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900">Ahmed Hassan</h4>
+                            <p class="text-sm text-neutral-600">Product Designer at Microsoft</p>
+                        </div>
+                    </div>
+                    <div class="flex text-secondary-400 mb-3">
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                    </div>
+                    <p class="text-neutral-600 italic">
+                        "The AI-powered design tools training was a game-changer. I went from knowing nothing
+                        about design to leading design projects at Microsoft. Highly recommend!"
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-neutral-100">
+                        <p class="text-sm text-neutral-500">From accountant to designer</p>
+                    </div>
+                </div>
 
-                        <!-- Pricing -->
-                        <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
-                            <div class="text-3xl font-bold text-primary-600 mb-1">FREE</div>
-                            <div class="text-gray-600">Complete Course Fee</div>
-                            <div class="text-sm text-green-600 mt-2">Certificate Included</div>
+                <!-- Testimonial 3 -->
+                <div class="material-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-neutral-900">Lisa Chen</h4>
+                            <p class="text-sm text-neutral-600">Senior Designer at Adobe</p>
+                        </div>
+                    </div>
+                    <div class="flex text-secondary-400 mb-3">
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                        <span class="material-icons text-sm">star</span>
+                    </div>
+                    <p class="text-neutral-600 italic">
+                        "The portfolio I built during this course got me interviews at 15 top companies.
+                        The instructors' feedback and real-world projects made all the difference."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-neutral-100">
+                        <p class="text-sm text-neutral-500">15 job offers received</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Stats -->
+            <div class="mt-16 bg-gradient-primary rounded-2xl p-8 text-white" data-aos="fade-up">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-2">Our Track Record</h3>
+                    <p class="text-primary-100">Proven results that speak for themselves</p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold mb-2">95%</div>
+                        <div class="text-primary-100">Job Placement Rate</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">₹12L</div>
+                        <div class="text-primary-100">Average Salary Hike</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <div class="text-primary-100">Students Placed</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">4.9/5</div>
+                        <div class="text-primary-100">Student Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="enrollment" class="py-20 bg-gradient-to-br from-neutral-50 to-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Choose Your <span class="text-gradient">Learning Path</span>
+                </h2>
+                <p class="text-lg text-neutral-600 max-w-3xl mx-auto">
+                    Flexible pricing options designed to fit your learning needs and budget.
+                    All plans include lifetime access and certificate of completion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="material-card p-8 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Self-Paced</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">₹29,999</div>
+                        <p class="text-neutral-600">One-time payment</p>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">24/7 Access to Course Content</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Downloadable Resources</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Community Access</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Certificate of Completion</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-neutral-400 mr-3 text-sm">cancel</span>
+                            <span class="text-neutral-500">Live Mentorship Sessions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-neutral-400 mr-3 text-sm">cancel</span>
+                            <span class="text-neutral-500">1-on-1 Project Reviews</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="material-btn bg-neutral-100 text-neutral-700 hover:bg-neutral-200 w-full block text-center">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Pro Plan - Most Popular -->
+                <div class="material-card p-8 relative border-2 border-primary-500 transform scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </span>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Mentorship Program</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">₹49,999</div>
+                        <p class="text-neutral-600">One-time payment</p>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Everything in Self-Paced</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">12 Live Mentorship Sessions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">1-on-1 Project Reviews</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Portfolio Review & Feedback</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Job Search Assistance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">LinkedIn Profile Optimization</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="material-btn bg-gradient-primary text-white w-full block text-center">
+                        Start Learning Today
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="material-card p-8 relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium Support</h3>
+                        <div class="text-4xl font-bold text-gradient mb-2">₹79,999</div>
+                        <p class="text-neutral-600">One-time payment</p>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Everything in Mentorship</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">24 Live Mentorship Sessions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Weekly 1-on-1 Coaching</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Real Client Projects</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Job Guarantee Program</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                            <span class="text-neutral-700">Priority Placement Support</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="material-btn bg-gradient-primary text-white w-full block text-center">
+                        Get Premium Access
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact/Enquiry Form Section -->
+    <section class="py-20 bg-gradient-to-br from-neutral-50 to-primary-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Ready to Start Your <span class="text-gradient">Design Journey?</span>
+                </h2>
+                <p class="text-lg text-neutral-600">
+                    Get in touch with our admissions team. We'll help you choose the right plan and answer all your questions.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="material-card p-8" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-6">Enquire Now</h3>
+                    <form id="enquiryForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-700 mb-2">First Name *</label>
+                                <input type="text" id="firstName" class="form-input w-full" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-700 mb-2">Last Name *</label>
+                                <input type="text" id="lastName" class="form-input w-full" required>
+                            </div>
                         </div>
 
-                        <form id="registerForm" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input type="text" id="fullName" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your full name" required>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" class="form-input w-full" required>
+                        </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your email" required>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input w-full" required>
+                        </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" required>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Current Experience Level</label>
+                            <select id="experience" class="form-input w-full">
+                                <option value="">Select your level</option>
+                                <option value="beginner">Complete Beginner</option>
+                                <option value="intermediate">Some Design Experience</option>
+                                <option value="advanced">Professional Designer</option>
+                            </select>
+                        </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">College/Organization</label>
-                                <input type="text" id="college" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Your institution name">
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="form-input w-full" placeholder="Tell us about your goals and any questions you have..."></textarea>
+                        </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Mode *</label>
-                                <select id="mode" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
-                                    <option value="">Select Mode</option>
-                                    <option value="Online">Online</option>
-                                    <option value="Offline">Offline</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                </select>
+                        <button type="submit" id="submitBtn" class="material-btn bg-gradient-primary text-white font-semibold w-full">
+                            <span id="submitText">Send Enquiry</span>
+                            <div id="submitSpinner" class="hidden ml-2">
+                                <div class="loading-spinner w-4 h-4 border-2 border-white border-t-transparent"></div>
                             </div>
+                        </button>
+                    </form>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method *</label>
-                                <div class="space-y-2">
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="UPI" class="text-primary-600 focus:ring-primary-500" required>
-                                        <span class="ml-2 text-gray-700">UPI Payment</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="Cash" class="text-primary-600 focus:ring-primary-500">
-                                        <span class="ml-2 text-gray-700">Cash Payment</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="payment" value="Card" class="text-primary-600 focus:ring-primary-500">
-                                        <span class="ml-2 text-gray-700">Card Payment</span>
-                                    </label>
+                    <!-- Success/Error Messages -->
+                    <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="space-y-8">
+                        <!-- Contact Details -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-neutral-900 mb-6">Get in Touch</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                                        <span class="material-icons text-primary-600">location_on</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-900">Visit Us</h4>
+                                        <p class="text-neutral-600">
+                                            Flat no:18, B-Wing, Sai Meghdoot Apartment,<br>
+                                            Pandit Colony lane no:5, Behind Kabra Emporium,<br>
+                                            Sharanpur Road, Nashik-422002
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mr-4">
+                                        <span class="material-icons text-accent-600">phone</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-900">Call Us</h4>
+                                        <p class="text-neutral-600">+91 9028889915</p>
+                                        <p class="text-sm text-neutral-500">Mon-Fri: 9AM-6PM IST</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mr-4">
+                                        <span class="material-icons text-secondary-600">email</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-neutral-900">Email Us</h4>
+                                        <p class="text-neutral-600">developer@skaihub.com</p>
+                                        <p class="text-sm text-neutral-500">We'll respond within 24 hours</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Any questions or special requirements?"></textarea>
+                        <!-- Why Choose Us -->
+                        <div class="material-card p-6">
+                            <h4 class="font-semibold text-neutral-900 mb-4">Why Choose SK AI Hub?</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                                    <span class="text-sm text-neutral-700">Industry-leading curriculum</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                                    <span class="text-sm text-neutral-700">Expert instructors from top companies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                                    <span class="text-sm text-neutral-700">100% practical, hands-on learning</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-primary-500 mr-3 text-sm">check_circle</span>
+                                    <span class="text-sm text-neutral-700">Lifetime access & community support</span>
+                                </div>
                             </div>
-
-                            <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
-
-                            <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                                <span id="registerBtnText">Register Now</span>
-                                <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                            </button>
-                        </form>
-
-                        <div class="mt-4 text-center text-sm text-gray-600">
-                            <p>Next batch starts: <strong>25th July 2024</strong></p>
                         </div>
                     </div>
                 </div>
@@ -1076,9 +1386,107 @@
         </div>
     </section>
 
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Footer with Material Design -->
+    <footer class="bg-neutral-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand & About -->
+                <div class="lg:col-span-1">
+                    <a href="../../index.html" class="flex items-center mb-6">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="w-10 h-10 mr-3">
+                        <span class="text-2xl font-bold text-gradient">SK AI Hub</span>
+                    </a>
+                    <p class="text-neutral-400 leading-relaxed mb-6">
+                        We give our customers the best value through excellent services, cutting-edge technologies, and affordable solutions—anytime, every time.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/skaihub/" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 bg-neutral-800 rounded-xl hover:bg-primary-600 transition-colors duration-300">
+                            <span class="material-icons text-sm">facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/skaihub/" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 bg-neutral-800 rounded-xl hover:bg-pink-600 transition-colors duration-300">
+                            <span class="material-icons text-sm">instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/sk-ai-hub/" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 bg-neutral-800 rounded-xl hover:bg-blue-600 transition-colors duration-300">
+                            <span class="material-icons text-sm">linkedin</span>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Useful Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Useful Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../../index.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">Home</a></li>
+                        <li><a href="../../index.html#about" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">About Us</a></li>
+                        <li><a href="../../index.html#courses" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">Courses</a></li>
+                        <li><a href="../../index.html#whyus" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">Why Us</a></li>
+                        <li><a href="../../index.html#contact" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Courses -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Our Courses</h3>
+                    <ul class="space-y-3">
+                        <li><a href="python_for_software_dev.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI with Python</a></li>
+                        <li><a href="full_stack_web_dev.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Web Applications</a></li>
+                        <li><a href="web_design.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI UI/UX Design</a></li>
+                        <li><a href="advanced_python.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">Advanced AI Python</a></li>
+                        <li><a href="java_with_dsa.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Algorithms with Java</a></li>
+                        <li><a href="flutter_app_dev.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Mobile Applications</a></li>
+                        <li><a href="c_cpp_programming.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Systems Programming</a></li>
+                        <li><a href="career_booster.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Career Accelerator</a></li>
+                        <li><a href="database.html" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">AI Data Engineering</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-6">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="material-icons text-primary-400 mr-3 mt-1 text-sm">location_on</span>
+                            <div>
+                                <p class="text-neutral-400 leading-relaxed text-sm">
+                                    Flat no:18, B-Wing, Sai Meghdoot Apartment,<br>
+                                    Pandit Colony lane no:5, Behind Kabra Emporium,<br>
+                                    Sharanpur Road, Nashik-422002
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-400 mr-3 text-sm">phone</span>
+                            <a href="tel:9028889915" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">+91 9028889915</a>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-primary-400 mr-3 text-sm">email</span>
+                            <a href="mailto:developer@skaihub.com" class="text-neutral-400 hover:text-primary-400 transition-colors duration-200">developer@skaihub.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-neutral-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-neutral-400 text-sm">
+                        © Copyright <span class="font-semibold">SK AI Hub Pvt Ltd.</span> All Rights Reserved
+                    </p>
+                    <p class="text-neutral-400 text-sm mt-2 md:mt-0">
+                        Made by Shubham Kulkarni, Jr. S/W Developer
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg hover:bg-primary-700 transition-all duration-300 opacity-0 invisible transform translate-y-4 z-40">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -1087,30 +1495,67 @@
             offset: 100
         });
 
-        // Curriculum accordion functionality
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('opacity-0');
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+        // Navbar functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const curriculumToggles = document.querySelectorAll('.curriculum-toggle');
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-            curriculumToggles.forEach(toggle => {
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+
+            // Back to top button
+            const backToTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                    backToTopBtn.style.transform = 'translateY(0)';
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                    backToTopBtn.style.transform = 'translateY(1rem)';
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // FAQ functionality
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
                 toggle.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    const content = document.getElementById(targetId);
-                    const icon = this.querySelector('.curriculum-icon');
+                    const content = this.parentElement.querySelector('.faq-content');
+                    const icon = this.querySelector('.faq-icon');
 
-                    // Close all other modules
-                    document.querySelectorAll('.curriculum-content').forEach(c => {
-                        if (c.id !== targetId) {
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        if (c !== content) {
                             c.classList.add('hidden');
                         }
                     });
-
-                    document.querySelectorAll('.curriculum-icon').forEach(i => {
+                    document.querySelectorAll('.faq-icon').forEach(i => {
                         if (i !== icon) {
                             i.textContent = 'expand_more';
                         }
                     });
 
-                    // Toggle current module
+                    // Toggle current FAQ
                     if (content.classList.contains('hidden')) {
                         content.classList.remove('hidden');
                         icon.textContent = 'expand_less';
@@ -1121,367 +1566,72 @@
                 });
             });
 
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+            // Enquiry form handling
+            const enquiryForm = document.getElementById('enquiryForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const formMessage = document.getElementById('formMessage');
 
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Registration Form Handling
-            const registerForm = document.getElementById('registerForm');
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
+            if (enquiryForm) {
+                enquiryForm.addEventListener('submit', function(e) {
                     e.preventDefault();
 
-                    const btn = document.getElementById('registerBtn');
-                    const btnText = document.getElementById('registerBtnText');
-                    const btnSpinner = document.getElementById('registerBtnSpinner');
-                    const alertBox = document.getElementById('formAlert');
-
                     // Get form values
-                    const name = document.getElementById('fullName').value.trim();
+                    const firstName = document.getElementById('firstName').value.trim();
+                    const lastName = document.getElementById('lastName').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const phone = document.getElementById('phone').value.trim();
-                    const college = document.getElementById('college').value.trim();
-                    const mode = document.getElementById('mode').value;
-                    const payment = document.querySelector('input[name="payment"]:checked');
+                    const experience = document.getElementById('experience').value;
                     const message = document.getElementById('message').value.trim();
 
                     // Validation
-                    if (!name || !email || !phone || !mode || !payment) {
-                        showAlert('Please fill all required fields and select a payment option.', 'error');
+                    if (!firstName || !lastName || !email || !phone) {
+                        showFormMessage('Please fill all required fields.', 'error');
                         return;
                     }
 
                     // Email validation
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(email)) {
-                        showAlert('Please enter a valid email address.', 'error');
+                        showFormMessage('Please enter a valid email address.', 'error');
                         return;
                     }
 
                     // Phone validation
                     const phoneRegex = /^[6-9]\d{9}$/;
                     if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
-                        showAlert('Please enter a valid 10-digit phone number.', 'error');
+                        showFormMessage('Please enter a valid 10-digit phone number.', 'error');
                         return;
                     }
 
                     // Show loading state
-                    btn.disabled = true;
-                    btnText.textContent = "Registering...";
-                    btnSpinner.classList.remove('hidden');
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Sending...';
+                    submitSpinner.classList.remove('hidden');
 
-                    // Simulate registration process
+                    // Simulate form submission
                     setTimeout(() => {
-                        showAlert('Registration successful! We will contact you soon with further details.', 'success');
-                        registerForm.reset();
-                        btn.disabled = false;
-                        btnText.textContent = "Register Now";
-                        btnSpinner.classList.add('hidden');
-                    }, 1500);
+                        showFormMessage('Thank you for your enquiry! Our team will contact you within 24 hours.', 'success');
+                        enquiryForm.reset();
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Send Enquiry';
+                        submitSpinner.classList.add('hidden');
+                    }, 2000);
                 });
             }
 
-            function showAlert(message, type) {
-                const alertBox = document.getElementById('formAlert');
-                alertBox.textContent = message;
-                alertBox.className = `p-3 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
-                alertBox.classList.remove('hidden');
+            function showFormMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `p-4 rounded-lg text-sm mb-4 ${type === 'error' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}`;
+                formMessage.classList.remove('hidden');
 
                 if (type === 'success') {
                     setTimeout(() => {
-                        alertBox.classList.add('hidden');
+                        formMessage.classList.add('hidden');
                     }, 5000);
                 }
             }
-        });
-    </script>
-</body>
-</html>
-
-    <!-- Header --> 
-     <header class="course-header position-relative">
-        <div class="container position-relative z-2">
-            <div class="header-icon mb-2">
-                <i class="fas fa-paint-brush"></i>
-            </div>
-            <h1>Professional Web Design (UI/UX + Bootstrap)</h1>
-            <p class="lead">Design beautiful and responsive websites with modern UI/UX principles and Bootstrap 5.</p>
-        </div>
-        <!-- Decorative SVG bottom -->
-        <div class="svg-bottom">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#fff" fill-opacity="1" d="M0,32L60,37.3C120,43,240,53,360,58.7C480,64,600,64,720,58.7C840,53,960,43,1080,42.7C1200,43,1320,53,1380,58.7L1440,64L1440,80L1380,80C1320,80,1200,80,1080,80C960,80,840,80,720,80C600,80,480,80,360,80C240,80,120,80,60,80L0,80Z"></path>
-            </svg>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="course-details">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-8">
-                    <div class="card animate__animated animate__fadeInLeft">
-                        <div class="card-body">
-                            <h2 class="card-title"><i class="fas fa-info-circle me-2"></i>Course Description</h2>
-                            <p>
-                                Dive into the world of modern web design! This course covers HTML5, CSS3, UI/UX design, and responsive layouts with Bootstrap 5. Learn to create visually stunning, user-friendly websites and build a professional portfolio.
-                            </p>
-                            <h3 class="mt-4"><i class="fas fa-check-circle me-2"></i>What you'll learn:</h3>
-                            <ul>
-                                <li>HTML5 and CSS3 fundamentals</li>
-                                <li>UI/UX design principles and best practices</li>
-                                <li>Responsive web design with Bootstrap 5</li>
-                                <li>Wireframing and prototyping</li>
-                                <li>Creating a professional design portfolio</li>
-                                <li>Modern CSS animations and transitions</li>
-                                <li>Accessibility and SEO basics</li>
-                                <li>Real-world project building</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card animate__animated animate__fadeInRight">
-                        <div class="card-body">
-                            <h3 class="card-title"><i class="fas fa-info me-2"></i>Course Info</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><i class="fas fa-sitemap"></i> <strong>Category:</strong> Professional</li>
-                                <li class="list-group-item"><i class="fas fa-desktop"></i> <strong>Mode:</strong> Online + Offline</li>
-                                <li class="list-group-item"><i class="far fa-clock"></i> <strong>Duration:</strong> 1 Month</li>
-                                <li class="list-group-item"><i class="fas fa-rupee-sign"></i> <strong>Fee:</strong> FREE</li>
-                                <li class="list-group-item"><i class="fas fa-chart-line"></i> <strong>Level:</strong> Beginner</li>
-                                <li class="list-group-item"><i class="fas fa-certificate"></i> <strong>Certificate Available:</strong> Yes</li>
-                                <li class="list-group-item"><i class="fas fa-language"></i> <strong>Language:</strong> English, Hindi</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="registration-form mt-5 animate__animated animate__fadeInUp">
-                <h2 class="text-center mb-4"><i class="fas fa-user-plus me-2"></i>Register for this Course</h2>
-                <form id="registrationForm" novalidate>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
-                            <div class="invalid-feedback">Please enter your full name.</div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                            <div class="invalid-feedback">Please enter a valid email address.</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
-                            <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="college" class="form-label">College/Organization</label>
-                            <input type="text" class="form-control" id="college" name="college" placeholder="Your institution name">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="mode" class="form-label">Mode</label>
-                            <select class="form-select" id="mode" name="mode" required>
-                                <option value="">Select mode</option>
-                                <option value="Online">Online</option>
-                                <option value="Offline">Offline</option>
-                                <option value="Hybrid">Hybrid</option>
-                            </select>
-                            <div class="invalid-feedback">Please select a mode.</div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Payment Option</label>
-                            <div class="d-flex flex-wrap gap-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI" required>
-                                    <label class="form-check-label" for="upi">UPI</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="cash" value="Cash" required>
-                                    <label class="form-check-label" for="cash">Cash</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="payment" id="card" value="Card" required>
-                                    <label class="form-check-label" for="card">Card</label>
-                                </div>
-                            </div>
-                            <div class="invalid-feedback d-block visually-hidden" id="paymentFeedback">Please select a payment option.</div>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="form-label">Your Message (Optional)</label>
-                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Any questions you have..."></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-custom"><i class="fas fa-paper-plane me-2"></i>Register Now</button>
-                    </div>
-                </form>
-                <div class="alert alert-success mt-3 d-none" id="successMessage" role="alert">
-                    Registration successful! We'll contact you soon.
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer with Material Design -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
-                        <span class="text-lg font-bold">SK AI Hub</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Empowering the next generation of developers and innovators through comprehensive technology education and hands-on learning experiences.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">facebook</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">twitter</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">linkedin</span>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <span class="material-icons">instagram</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="../../index.html#about" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="../../index.html#courses" class="hover:text-white transition-colors">Courses</a></li>
-                        <li><a href="../../index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">phone</span>
-                            +91 98765 43210
-                        </li>
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">email</span>
-                            info@skaihub.com
-                        </li>
-                        <li class="flex items-center">
-                            <span class="material-icons text-sm mr-2">location_on</span>
-                            Your City, India
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 SK AI Hub. All rights reserved. | Made with ❤️ for aspiring developers</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Animate.css CDN for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Custom JS for form and animation -->
-    <script>
-        // Navbar functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileCoursesDropdown = document.getElementById('mobile-courses-dropdown');
-            const mobileCoursesMenu = document.getElementById('mobile-courses-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            if (mobileCoursesDropdown && mobileCoursesMenu) {
-                mobileCoursesDropdown.addEventListener('click', function() {
-                    mobileCoursesMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Desktop dropdown functionality
-            const coursesDropdown = document.getElementById('courses-dropdown');
-            const coursesMenu = document.getElementById('courses-menu');
-
-            if (coursesDropdown && coursesMenu) {
-                coursesDropdown.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    coursesMenu.classList.toggle('hidden');
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function() {
-                    coursesMenu.classList.add('hidden');
-                });
-            }
-        });
-
-        // Animate on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedEls = document.querySelectorAll('.animate__animated');
-            function animateOnScroll() {
-                animatedEls.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100) {
-                        el.classList.add('animate__fadeInUp');
-                    }
-                });
-            }
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll();
-
-            // Registration form validation
-            const form = document.getElementById('registrationForm');
-            const paymentFeedback = document.getElementById('paymentFeedback');
-            const successMessage = document.getElementById('successMessage');
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                let valid = true;
-                // Bootstrap validation
-                if (!form.checkValidity()) {
-                    valid = false;
-                }
-                // Payment option validation
-                const paymentChecked = form.querySelector('input[name="payment"]:checked');
-                if (!paymentChecked) {
-                    paymentFeedback.style.display = 'block';
-                    valid = false;
-                } else {
-                    paymentFeedback.style.display = 'none';
-                }
-                form.classList.add('was-validated');
-                if (valid) {
-                    form.reset();
-                    form.classList.remove('was-validated');
-                    successMessage.classList.remove('d-none');
-                    setTimeout(() => { successMessage.classList.add('d-none'); }, 4000);
-                }
-            });
         });
     </script>
 </body>
