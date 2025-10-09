@@ -6,14 +6,15 @@
 
     <!-- SEO Meta Tags -->
     <title>Advanced Python with APIs & Automation - Master Python APIs | SK AI Hub</title>
-    <meta name="description" content="Master Advanced Python with APIs, automation, and modern development practices at SK AI Hub.">
-    <meta name="keywords" content="Advanced Python, APIs, Automation, Python Development, Web Scraping, SK AI Hub">
+    <meta name="description" content="Master Advanced Python with APIs, automation, and modern development practices at SK AI Hub. Build production-ready applications with cloud deployment.">
+    <meta name="keywords" content="Advanced Python, APIs, Automation, Python Development, Web Scraping, Flask, Django, AWS, Cloud Deployment">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Advanced Python with APIs & Automation - Master Python APIs | SK AI Hub">
     <meta property="og:description" content="Master Advanced Python with APIs, automation, and modern development practices at SK AI Hub.">
     <meta property="og:image" content="https://skaihub.com/assets/img/new_logo.png">
     <meta property="og:url" content="https://skaihub.com/assets/course/advanced_python.html">
+    <meta property="og:type" content="website">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://skaihub.com/assets/course/advanced_python.html">
@@ -57,6 +58,7 @@
                         'fade-in': 'fadeIn 0.6s ease-in-out',
                         'slide-up': 'slideUp 0.6s ease-out',
                         'bounce-subtle': 'bounceSubtle 2s infinite',
+                        'float': 'float 3s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -70,6 +72,10 @@
                         bounceSubtle: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-5px)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         },
                     },
                     boxShadow: {
@@ -86,331 +92,45 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
+    <!-- DevIcon for Tech Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
-        :root {
-            --primary: #4a90e2;
-            --secondary: #50e3c2;
-            --accent: #f9d423;
-            --dark: #0d2c4e;
-            --light: #f4f7f6;
-            --white: #fff;
-            --shadow: 0 8px 32px rgba(44,62,80,0.08);
-            --gradient: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--light);
-            color: #222;
-            overflow-x: hidden;
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
         }
-        .course-header {
-            background: var(--gradient);
-            color: var(--white);
-            padding: 5rem 1rem 3rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+
+        .bg-gradient-accent {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
         }
-        .course-header .badge {
-            background: var(--accent);
-            color: var(--dark);
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.5em 1.2em;
-            border-radius: 50px;
-            margin-bottom: 1.2rem;
-            letter-spacing: 1px;
-        }
-        .course-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-        .course-header .lead {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 1.5rem;
-        }
-        .header-illustration {
-            width: 140px;
-            margin: 0 auto 1.5rem auto;
-            display: block;
-            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.08));
+
+        .animate-float {
             animation: float 3s ease-in-out infinite;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0);}
-            50% { transform: translateY(-18px);}
+
+        .curriculum-content {
+            transition: all 0.3s ease-in-out;
         }
-        .header-home-btn {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            z-index: 10;
-            background: var(--primary);
-            color: var(--white);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.15);
-            transition: background 0.2s, transform 0.2s;
-            text-decoration: none;
-        }
-        .header-home-btn:hover {
-            background: var(--dark);
-            transform: scale(1.08);
-            color: var(--white);
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            position: relative;
-            display: inline-block;
-            letter-spacing: 1px;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-            margin-top: 6px;
-        }
-        .card {
-            border: none;
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            background: var(--white);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 12px 32px rgba(44,62,80,0.13);
-        }
-        .card-body {
-            padding: 2.2rem;
-        }
-        .info-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .info-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 1.08rem;
-        }
-        .info-list li i {
-            color: var(--primary);
-            margin-right: 14px;
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
-        }
-        .what-you-learn-list {
-            list-style: none;
-            padding: 0;
-        }
-        .what-you-learn-list li {
-            position: relative;
-            padding-left: 2.1em;
-            margin-bottom: 0.9em;
-            font-size: 1.08rem;
+
+        .mobile-menu-enter {
+            transform: translateX(-100%);
             opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.5s;
         }
-        .what-you-learn-list li.visible {
-            opacity: 1;
+
+        .mobile-menu-enter-active {
             transform: translateX(0);
-        }
-        .what-you-learn-list li::before {
-            content: '\f058';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--secondary);
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 1.1em;
-        }
-        .registration-form {
-            background: var(--white);
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            padding: 2.5rem 2rem;
-            margin-top: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .registration-form::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
-            opacity: 0.18;
-            z-index: 0;
-        }
-        .form-label {
-            font-weight: 500;
-            color: var(--dark);
-        }
-        .form-control, .form-select {
-            border-radius: 7px;
-            border: 1px solid #e0e0e0;
-            padding: 0.9em 1em;
-            font-size: 1rem;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.18rem rgba(74,144,226,0.13);
-        }
-        .btn-custom {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: var(--white);
-            border: none;
-            padding: 0.85em 2.5em;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-        }
-        .btn-custom:hover {
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
-            transform: translateY(-2px) scale(1.03);
-        }
-        .form-check-input:checked {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-        .form-check-label i {
-            margin-right: 6px;
-            color: var(--secondary);
-        }
-        .timeline {
-            position: relative;
-            margin: 2rem 0 2rem 0.5rem;
-            padding-left: 2rem;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-        .timeline-step {
-            position: relative;
-            margin-bottom: 2.2rem;
-            padding-left: 2.5rem;
-        }
-        .timeline-step:last-child { margin-bottom: 0; }
-        .timeline-step .step-icon {
-            position: absolute;
-            left: -2px;
-            top: 0;
-            width: 28px;
-            height: 28px;
-            background: var(--white);
-            border: 3px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.1rem;
-            z-index: 2;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-        }
-        .timeline-step .step-title {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-        .timeline-step .step-desc {
-            color: #444;
-            font-size: 1rem;
-        }
-        .course-icon {
-            margin-right: 12px;
-            filter: drop-shadow(0 2px 8px rgba(44,62,80,0.08));
-            transition: transform 0.3s;
-        }
-        .course-icon:hover {
-            transform: scale(1.15) rotate(-8deg);
-        }
-        .fit-content-title {
-            width: fit-content;
-        }
-        .highlight {
-            background: linear-gradient(90deg, var(--accent) 60%, transparent 100%);
-            padding: 0 0.3em;
-            border-radius: 6px;
-            color: var(--dark);
-        }
-        .floating-badge {
-            position: absolute;
-            left: 30px;
-            top: 30px;
-            background: var(--accent);
-            color: var(--dark);
-            font-weight: 700;
-            padding: 0.5em 1.2em;
-            border-radius: 50px;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-            animation: badgeFloat 2.5s infinite alternate;
-            z-index: 2;
-        }
-        @keyframes badgeFloat {
-            0% { transform: translateY(0);}
-            100% { transform: translateY(-10px);}
-        }
-        /* Responsive */
-        @media (max-width: 991px) {
-            .course-header h1 { font-size: 2.2rem; }
-            .section-title { font-size: 1.4rem; }
-            .card-body { padding: 1.2rem; }
-            .registration-form { padding: 1.2rem 0.7rem; }
-            .header-home-btn {
-                top: 12px;
-                right: 12px;
-                width: 42px;
-                height: 42px;
-                font-size: 1.1rem;
-            }
-            .floating-badge { left: 10px; top: 10px; }
-        }
-        @media (max-width: 767px) {
-            .timeline { padding-left: 1.2rem; }
-            .timeline-step { padding-left: 2rem; }
-            .timeline-step .step-icon { left: -8px; }
-        }
-         .contact-support-title {
-            color: var(--primary);
-            font-weight: 600;
-        }
-         .highlighted-announcement {
-            font-size: 1.1rem;
-            color: var(--accent);
+            opacity: 1;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         }
     </style>
 </head>
@@ -492,9 +212,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <!-- Badge -->
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6">
-                    <span class="material-icons text-sm mr-2">code</span>
-                    Free Course
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent-100 text-accent-800 text-sm font-medium mb-6">
+                    <span class="material-icons text-sm mr-2">local_offer</span>
+                    Limited Time: ₹1,999
                 </div>
 
                 <!-- Title -->
@@ -528,32 +248,32 @@
                 <!-- Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">4.6</div>
+                        <div class="text-2xl font-bold text-primary-600">4.8</div>
                         <div class="text-sm text-gray-600">⭐ Rating</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">1,200+</div>
+                        <div class="text-2xl font-bold text-primary-600">2,500+</div>
                         <div class="text-sm text-gray-600">Students</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">8</div>
+                        <div class="text-2xl font-bold text-primary-600">12</div>
                         <div class="text-sm text-gray-600">Weeks</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-primary-600">Free</div>
-                        <div class="text-sm text-gray-600">Certificate</div>
+                        <div class="text-2xl font-bold text-primary-600">₹1,999</div>
+                        <div class="text-sm text-gray-600">Only</div>
                     </div>
                 </div>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
-                        <span class="material-icons mr-2">play_arrow</span>
-                        Start Learning Free
+                    <a href="#registration" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                        <span class="material-icons mr-2">shopping_cart</span>
+                        Enroll Now - ₹1,999
                     </a>
-                    <a href="#overview" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
-                        <span class="material-icons mr-2">info</span>
-                        Course Overview
+                    <a href="#curriculum" class="inline-flex items-center px-8 py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-200">
+                        <span class="material-icons mr-2">school</span>
+                        View Curriculum
                     </a>
                 </div>
             </div>
@@ -815,7 +535,7 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Course Curriculum</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    8-week comprehensive program covering advanced Python concepts, API development, and automation techniques.
+                    12-week comprehensive program covering advanced Python concepts, API development, and automation techniques.
                 </p>
             </div>
 
@@ -829,7 +549,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900">Advanced Python Concepts</h3>
-                                <p class="text-gray-600 text-sm">Week 1-2 • 12 hours</p>
+                                <p class="text-gray-600 text-sm">Week 1-2 • 14 hours</p>
                             </div>
                         </div>
                         <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
@@ -868,7 +588,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900">API Development with Flask</h3>
-                                <p class="text-gray-600 text-sm">Week 3-4 • 14 hours</p>
+                                <p class="text-gray-600 text-sm">Week 3-4 • 16 hours</p>
                             </div>
                         </div>
                         <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
@@ -907,7 +627,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900">Web Scraping & Automation</h3>
-                                <p class="text-gray-600 text-sm">Week 5-6 • 12 hours</p>
+                                <p class="text-gray-600 text-sm">Week 5-6 • 14 hours</p>
                             </div>
                         </div>
                         <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
@@ -946,7 +666,7 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-gray-900">Cloud Deployment & Final Project</h3>
-                                <p class="text-gray-600 text-sm">Week 7-8 • 16 hours</p>
+                                <p class="text-gray-600 text-sm">Week 7-8 • 18 hours</p>
                             </div>
                         </div>
                         <span class="material-icons text-gray-400 curriculum-icon">expand_more</span>
@@ -980,7 +700,7 @@
     </section>
 
     <!-- Course Info & Registration -->
-    <section class="py-16 bg-white">
+    <section id="registration" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Main Content -->
@@ -994,7 +714,7 @@
                                     <span class="material-icons text-primary-600 mr-3">schedule</span>
                                     <div>
                                         <p class="font-semibold text-gray-900">Duration</p>
-                                        <p class="text-gray-600">8 Weeks (60+ hours)</p>
+                                        <p class="text-gray-600">12 Weeks (60+ hours)</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center">
@@ -1071,7 +791,7 @@
                         <div class="bg-white rounded-lg p-4 mb-6 text-center shadow-sm">
                             <div class="text-3xl font-bold text-primary-600 mb-1">₹1,999</div>
                             <div class="text-gray-600">Complete Course Fee</div>
-                            <div class="text-sm text-green-600 mt-2">Limited Time Offer</div>
+                            <div class="text-sm text-accent-600 mt-2">Limited Time Offer</div>
                         </div>
 
                         <form id="registerForm" class="space-y-4">
@@ -1131,13 +851,13 @@
                             <div id="formAlert" class="hidden p-3 rounded-lg text-sm"></div>
 
                             <button type="submit" id="registerBtn" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                                <span id="registerBtnText">Register Now</span>
+                                <span id="registerBtnText">Register Now - ₹1,999</span>
                                 <div id="registerBtnSpinner" class="hidden inline-block ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                             </button>
                         </form>
 
                         <div class="mt-4 text-center text-sm text-gray-600">
-                            <p>Next batch starts: <strong>30th July 2024</strong></p>
+                            <p>Next batch starts: <strong>15th August 2024</strong></p>
                         </div>
                     </div>
                 </div>
@@ -1145,8 +865,71 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="../../assets/img/new_logo.png" alt="SK AI Hub Logo" class="h-8 w-8">
+                        <span class="text-lg font-bold">SK AI Hub</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Empowering the next generation of developers and innovators through comprehensive technology education and hands-on learning experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons">facebook</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons">twitter</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons">linkedin</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons">instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../../index.html#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="../../index.html#courses" class="hover:text-white transition-colors">Courses</a></li>
+                        <li><a href="../../index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <span class="material-icons text-sm mr-2">phone</span>
+                            +91 98765 43210
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-sm mr-2">email</span>
+                            info@skaihub.com
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-sm mr-2">location_on</span>
+                            Your City, India
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SK AI Hub. All rights reserved. | Made with ❤️ for aspiring developers</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         // Initialize AOS
@@ -1193,10 +976,34 @@
             // Mobile menu functionality
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const mobileCoursesDropdown = document.getElementById('mobile-courses-dropdown');
+            const mobileCoursesMenu = document.getElementById('mobile-courses-menu');
 
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function() {
                     mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            if (mobileCoursesDropdown && mobileCoursesMenu) {
+                mobileCoursesDropdown.addEventListener('click', function() {
+                    mobileCoursesMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Desktop dropdown functionality
+            const coursesDropdown = document.getElementById('courses-dropdown');
+            const coursesMenu = document.getElementById('courses-menu');
+
+            if (coursesDropdown && coursesMenu) {
+                coursesDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    coursesMenu.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function() {
+                    coursesMenu.classList.add('hidden');
                 });
             }
 
@@ -1250,7 +1057,7 @@
                         showAlert('Registration successful! We will contact you soon with further details.', 'success');
                         registerForm.reset();
                         btn.disabled = false;
-                        btnText.textContent = "Register Now";
+                        btnText.textContent = "Register Now - ₹1,999";
                         btnSpinner.classList.add('hidden');
                     }, 1500);
                 });
@@ -1268,143 +1075,6 @@
                     }, 5000);
                 }
             }
-        });
-    </script>
-</body>
-    <!-- Bootstrap & AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Animate on Scroll
-        AOS.init({ duration: 900, once: true });
-
-        // Dynamic What You'll Learn List with animation
-        const learnList = [
-            "Build RESTful APIs with Flask and Django.",
-            "Advanced web scraping with BeautifulSoup & Scrapy.",
-            "Automate browsers for testing and data gathering using Selenium.",
-            "Integrate with databases and third-party APIs.",
-            "Deploy Python applications to the cloud (AWS, Heroku).",
-            "Follow best practices for code, security, and scalability.",
-            "Work on live projects and real-world automation tasks.",
-            "Version control with Git & GitHub for collaboration.",
-            "Dockerize your Python apps for easy deployment.",
-            "Interview prep and freelancing tips for Python developers."
-        ];
-        const learnUl = document.getElementById('learn-list');
-        learnList.forEach((item, idx) => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            learnUl.appendChild(li);
-            setTimeout(() => li.classList.add('visible'), 200 + idx * 120);
-        });
-
-        // Dynamic Course Info
-        const infoList = [
-            { icon: "fas fa-sitemap", label: "Category:", value: "Professional" },
-            { icon: "fas fa-desktop", label: "Mode:", value: "Online + Offline" },
-            { icon: "far fa-clock", label: "Duration:", value: "1 Month (40+ hours)" },
-            { icon: "fas fa-rupee-sign", label: "Fee:", value: "₹1,999" },
-            { icon: "fas fa-chart-line", label: "Level:", value: "Intermediate–Advanced" },
-            { icon: "fas fa-certificate", label: "Certificate:", value: "Yes (with project)" },
-            { icon: "fas fa-users", label: "Batch Size:", value: "Small (max 15)" },
-            { icon: "fas fa-briefcase", label: "Projects:", value: "3+ Live Projects" }
-        ];
-        const infoUl = document.getElementById('info-list');
-        infoList.forEach(info => {
-            const li = document.createElement('li');
-            li.innerHTML = `<i class="${info.icon}"></i><strong>${info.label}</strong> ${info.value}`;
-            infoUl.appendChild(li);
-        });
-
-        // Dynamic Timeline (Course Roadmap)
-        const timelineSteps = [
-            {
-                icon: "fas fa-code",
-                title: "Advanced Python Concepts",
-                desc: "OOP, decorators, generators, context managers, error handling, and best practices."
-            },
-            {
-                icon: "fas fa-network-wired",
-                title: "API Development",
-                desc: "RESTful API design, Flask & Django REST Framework, authentication, and documentation."
-            },
-            {
-                icon: "fas fa-robot",
-                title: "Automation & Scripting",
-                desc: "Automate files, emails, Excel, and repetitive tasks using Python scripts."
-            },
-            {
-                icon: "fas fa-spider",
-                title: "Web Scraping",
-                desc: "Scrape and process data from websites using BeautifulSoup and Scrapy."
-            },
-            {
-                icon: "fas fa-globe",
-                title: "Browser Automation",
-                desc: "Automate browsers for testing and data extraction using Selenium."
-            },
-            {
-                icon: "fas fa-database",
-                title: "Database & API Integration",
-                desc: "Connect with SQL/NoSQL databases and third-party APIs."
-            },
-            {
-                icon: "fab fa-docker",
-                title: "Deployment & Docker",
-                desc: "Dockerize your apps and deploy to AWS/Heroku."
-            },
-            {
-                icon: "fas fa-project-diagram",
-                title: "Live Projects",
-                desc: "Work on real-world projects and build your portfolio."
-            },
-            {
-                icon: "fas fa-user-tie",
-                title: "Career Guidance",
-                desc: "Interview prep, freelancing, and resume building."
-            }
-        ];
-        const timelineDiv = document.getElementById('timeline');
-        timelineSteps.forEach((step, idx) => {
-            const stepDiv = document.createElement('div');
-            stepDiv.className = 'timeline-step';
-            stepDiv.setAttribute('data-aos', 'fade-up');
-            stepDiv.setAttribute('data-aos-delay', 100 + idx * 80);
-            stepDiv.innerHTML = `
-                <span class="step-icon"><i class="${step.icon}"></i></span>
-                <div class="step-title">${step.title}</div>
-                <div class="step-desc">${step.desc}</div>
-            `;
-            timelineDiv.appendChild(stepDiv);
-        });
-
-        // Enhanced Form Validation and Feedback
-        document.getElementById('regForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const mode = document.getElementById('mode').value;
-            const payment = document.querySelector('input[name="payment"]:checked');
-            const alertBox = document.getElementById('formAlert');
-            if (!name || !email || !phone || !mode || !payment) {
-                alertBox.className = 'alert alert-danger mt-3';
-                alertBox.textContent = 'Please fill all required fields and select a payment option.';
-                alertBox.classList.remove('d-none');
-                return;
-            }
-            alertBox.className = 'alert alert-success mt-3';
-            alertBox.textContent = 'Registration successful! We will contact you soon.';
-            alertBox.classList.remove('d-none');
-            this.reset();
-            setTimeout(() => alertBox.classList.add('d-none'), 3500);
-        });
-
-        // Animate course icons on hover (JS fallback for mobile)
-        document.querySelectorAll('.course-icon').forEach(icon => {
-            icon.addEventListener('mouseenter', () => icon.style.transform = 'scale(1.15) rotate(-8deg)');
-            icon.addEventListener('mouseleave', () => icon.style.transform = '');
         });
     </script>
 </body>
