@@ -587,214 +587,262 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Enhanced Navbar Functionality
-class EnhancedNavbar {
-  constructor() {
-    this.navbar = document.getElementById('main-navbar');
-    this.mobileMenuButton = document.getElementById('mobile-menu-button');
-    this.mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.getElementById('navbar');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-    this.init();
-  }
-
-  init() {
-    this.setupScrollEffects();
-    this.setupMobileMenu();
-    this.setupActiveStates();
-    this.setupKeyboardNavigation();
-    this.setupAccessibility();
-  }
-
-  setupScrollEffects() {
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-
-    const updateNavbar = () => {
-      const scrollY = window.scrollY;
-      const navbarHeight = this.navbar.offsetHeight;
-
-      // Add/remove scrolled class for background changes
-      if (scrollY > 50) {
-        this.navbar.classList.add('navbar-scrolled');
-      } else {
-        this.navbar.classList.remove('navbar-scrolled');
-      }
-
-      // Hide/show navbar on scroll (optional - can be enabled if desired)
-      // if (scrollY > lastScrollY && scrollY > navbarHeight) {
-      //   this.navbar.style.transform = 'translateY(-100%)';
-      // } else {
-      //   this.navbar.style.transform = 'translateY(0)';
-      // }
-
-      lastScrollY = scrollY;
-      ticking = false;
-    };
-
-    const requestTick = () => {
-      if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', requestTick, { passive: true });
-  }
-
-  setupMobileMenu() {
-    if (!this.mobileMenuButton || !this.mobileMenu) return;
-
-    this.mobileMenuButton.addEventListener('click', () => {
-      const isOpen = this.mobileMenu.classList.contains('hidden');
+  // Enhanced Mobile Menu Toggle
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.contains('hidden');
 
       if (isOpen) {
-        this.mobileMenu.classList.remove('hidden');
-        this.mobileMenu.classList.add('block');
-        this.mobileMenuButton.setAttribute('aria-expanded', 'true');
-        this.mobileMenuButton.querySelector('.material-icons').textContent = 'close';
+        // Open menu
+        mobileMenu.classList.remove('hidden');
+        mobileMenuButton.classList.add('active');
+        mobileMenuButton.setAttribute('aria-expanded', 'true');
+        mobileMenuButton.querySelector('.material-icons').textContent = 'close';
+
+        // Animate menu items with stagger
+        const menuItems = mobileMenu.querySelectorAll('.mobile-nav-link, .space-y-2 > div, .pt-4');
+        menuItems.forEach((item, index) => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateX(-20px)';
+          setTimeout(() => {
+            item.style.transition = 'all 0.3s ease-out';
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+          }, index * 50);
+        });
+
       } else {
-        this.mobileMenu.classList.add('hidden');
-        this.mobileMenu.classList.remove('block');
-        this.mobileMenuButton.setAttribute('aria-expanded', 'false');
-        this.mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
+        // Close menu
+        mobileMenuButton.classList.remove('active');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
+
+        // Fade out animation
+        const menuItems = mobileMenu.querySelectorAll('.mobile-nav-link, .space-y-2 > div, .pt-4');
+        menuItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+          }, index * 25);
+        });
+
+        // Hide menu after animation
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
       }
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!this.mobileMenuButton.contains(e.target) && !this.mobileMenu.contains(e.target)) {
-        this.closeMobileMenu();
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenuButton.click();
+        }
       }
     });
 
     // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.closeMobileMenu();
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenuButton.click();
       }
     });
   }
 
-  closeMobileMenu() {
-    if (this.mobileMenu) {
-      this.mobileMenu.classList.add('hidden');
-      this.mobileMenu.classList.remove('block');
+  // Enhanced Navbar Scroll Effects
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateNavbar() {
+    const scrollY = window.scrollY;
+    const navbarHeight = navbar.offsetHeight;
+
+    // Add/remove scrolled class
+    if (scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
     }
-    if (this.mobileMenuButton) {
-      this.mobileMenuButton.setAttribute('aria-expanded', 'false');
-      this.mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
+
+    // Hide/show navbar on scroll (optional - can be enabled if desired)
+    // if (scrollY > lastScrollY && scrollY > navbarHeight) {
+    //   navbar.style.transform = 'translateY(-100%)';
+    // } else {
+    //   navbar.style.transform = 'translateY(0)';
+    // }
+
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
     }
   }
 
-  setupKeyboardNavigation() {
-    // Enhanced keyboard navigation for dropdowns
-    const dropdownButtons = document.querySelectorAll('[role="button"][aria-haspopup="true"]');
+  window.addEventListener('scroll', requestTick, { passive: true });
 
-    dropdownButtons.forEach(button => {
-      button.addEventListener('keydown', (e) => {
+  // Enhanced Dropdown Interactions
+  const dropdowns = document.querySelectorAll('#navbar .relative.group');
+
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('button');
+    const menu = dropdown.querySelector('.absolute');
+
+    if (button && menu) {
+      // Keyboard navigation
+      button.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          button.click();
+          // Trigger hover effect
+          dropdown.classList.toggle('force-hover');
         }
       });
-    });
-  }
 
-  performSearch(query, courses) {
-    if (!query) {
-      this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">Start typing to search courses...</div>';
-      return;
-    }
+      // Accessibility attributes
+      button.setAttribute('aria-haspopup', 'true');
+      button.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('role', 'menu');
 
-    const results = courses.filter(course =>
-      course.title.toLowerCase().includes(query) ||
-      course.category.toLowerCase().includes(query)
-    );
-
-    if (results.length === 0) {
-      this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">No courses found matching your search.</div>';
-      return;
-    }
-
-    const resultsHTML = results.map(course => `
-      <a href="${course.url}" class="flex items-center p-4 rounded-xl hover:bg-primary-50 transition-all duration-200 group">
-        <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mr-4">
-          <span class="material-icons text-white text-sm">school</span>
-        </div>
-        <div class="flex-1">
-          <div class="font-semibold text-neutral-900 group-hover:text-primary-600">${course.title}</div>
-          <div class="text-sm text-neutral-500">${course.category}</div>
-        </div>
-        <span class="material-icons text-neutral-400 group-hover:text-primary-600 transition-colors duration-300">arrow_forward</span>
-      </a>
-    `).join('');
-
-    this.searchResults.innerHTML = resultsHTML;
-  }
-
-  closeSearch() {
-    this.searchOverlay.classList.add('hidden');
-    this.searchInput.value = '';
-    this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">Start typing to search courses...</div>';
-  }
-
-  setupActiveStates() {
-    // Manual active state management - only on click, not on scroll
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        // Remove active class from all links
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-        // Add active class to clicked link
-        link.classList.add('active');
+      // Update aria-expanded on hover
+      dropdown.addEventListener('mouseenter', function() {
+        button.setAttribute('aria-expanded', 'true');
       });
-    });
-  }
 
-  setupKeyboardNavigation() {
-    // Enhanced keyboard navigation for dropdowns
-    const dropdownButtons = document.querySelectorAll('[role="button"][aria-haspopup="true"]');
-
-    dropdownButtons.forEach(button => {
-      button.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          button.click();
-        }
-      });
-    });
-  }
-
-  setupAccessibility() {
-    // Add ARIA labels and improve accessibility
-    const dropdowns = document.querySelectorAll('.relative.group');
-    dropdowns.forEach(dropdown => {
-      const button = dropdown.querySelector('button');
-      const menu = dropdown.querySelector('[role="menu"]') || dropdown.querySelector('div:last-child');
-
-      if (button && menu) {
-        button.setAttribute('aria-haspopup', 'true');
+      dropdown.addEventListener('mouseleave', function() {
         button.setAttribute('aria-expanded', 'false');
-        menu.setAttribute('role', 'menu');
+      });
+    }
+  });
 
-        button.addEventListener('click', () => {
-          const isExpanded = button.getAttribute('aria-expanded') === 'true';
-          button.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-        });
+  // Enhanced Course Dropdown Items
+  const courseItems = document.querySelectorAll('.course-dropdown-item');
+  courseItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(8px) scale(1.02)';
+      this.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.2)';
+    });
+
+    item.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0) scale(1)';
+      this.style.boxShadow = 'none';
+    });
+  });
+
+  // Enhanced Mobile Navigation Links
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Close mobile menu after clicking a link
+      if (mobileMenuButton && !mobileMenu.classList.contains('hidden')) {
+        setTimeout(() => {
+          mobileMenuButton.click();
+        }, 300);
+      }
+    });
+  });
+
+  // Search Button Functionality (placeholder)
+  const searchButton = document.querySelector('#navbar button[title="Search"]');
+  if (searchButton) {
+    searchButton.addEventListener('click', function() {
+      // Placeholder for search functionality
+      console.log('Search clicked - implement search modal here');
+      // You can add search modal or redirect to search page
+    });
+  }
+
+  // Enhanced CTA Button Ripple Effect
+  const ctaButtons = document.querySelectorAll('#navbar a[href="#contact"]');
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      // Add ripple effect
+      const ripple = document.createElement('div');
+      ripple.style.position = 'absolute';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.animation = 'ripple 0.6s linear';
+      ripple.style.left = (e.offsetX - 10) + 'px';
+      ripple.style.top = (e.offsetY - 10) + 'px';
+      ripple.style.width = '20px';
+      ripple.style.height = '20px';
+
+      this.style.position = 'relative';
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+
+  // Add ripple animation to CSS if not exists
+  if (!document.querySelector('#ripple-style')) {
+    const style = document.createElement('style');
+    style.id = 'ripple-style';
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Enhanced Logo Animation
+  const logo = document.querySelector('#navbar .flex.items-center.space-x-3');
+  if (logo) {
+    logo.addEventListener('mouseenter', function() {
+      const logoImg = this.querySelector('img');
+      const logoText = this.querySelector('span');
+
+      if (logoImg) {
+        logoImg.style.animation = 'logoPulse 2s ease-in-out infinite';
+      }
+
+      if (logoText) {
+        logoText.style.animation = 'gradientShift 2s ease-in-out infinite';
       }
     });
 
-    // Focus management for mobile menu
-    if (this.mobileMenuButton) {
-      this.mobileMenuButton.setAttribute('aria-label', 'Toggle mobile menu');
-      this.mobileMenuButton.setAttribute('aria-expanded', 'false');
-    }
-  }
-}
+    logo.addEventListener('mouseleave', function() {
+      const logoImg = this.querySelector('img');
+      const logoText = this.querySelector('span');
 
-// Initialize enhanced navbar when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  new EnhancedNavbar();
+      if (logoImg) {
+        logoImg.style.animation = '';
+      }
+
+      if (logoText) {
+        logoText.style.animation = '';
+      }
+    });
+  }
+
+  // Performance optimization: Throttle scroll events
+  let scrollThrottle;
+  window.addEventListener('scroll', function() {
+    if (!scrollThrottle) {
+      scrollThrottle = setTimeout(function() {
+        // Any scroll-based navbar updates can go here
+        scrollThrottle = null;
+      }, 16); // ~60fps
+    }
+  });
+
+  // Initialize navbar state
+  updateNavbar();
 });
 
 // Add CSS for navbar scroll effects

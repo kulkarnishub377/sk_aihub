@@ -162,17 +162,17 @@
     </div>
   </div>
 
-  <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-40 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Enhanced Professional Navigation -->
+  <nav id="navbar" class="fixed top-0 w-full bg-white/95 backdrop-blur-xl border-b border-neutral-200/50 z-50 transition-all duration-300 shadow-lg">
+    <div class="w-full px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
 
-        <!-- Logo -->
+        <!-- Enhanced Logo Section -->
         <div class="flex items-center">
           <a href="#hero" class="flex items-center space-x-3 group">
             <div class="relative">
               <img src="assets/img/new_logo.png" alt="SK AI Hub Logo" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-sm"></div>
             </div>
             <div class="hidden sm:block">
               <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 group-hover:from-secondary-600 group-hover:to-primary-600 transition-all duration-300">SK AI Hub</span>
@@ -181,132 +181,26 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center space-x-8">
-          <a href="#hero" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group">
-            Home
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+        <div class="hidden lg:flex items-center space-x-2">
+          <!-- Home Link -->
+          <a href="#hero" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+            <span class="relative z-10 flex items-center">
+              <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">home</span>
+              Home
+            </span>
+            <div class="absolute inset-0 bg-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
           </a>
 
-          <a href="#about" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group">
-            About
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+          <!-- About Link -->
+          <a href="#about" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+            <span class="relative z-10 flex items-center">
+              <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">business</span>
+              About
+            </span>
+            <div class="absolute inset-0 bg-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
           </a>
-
-          <!-- Courses Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 flex items-center space-x-1">
-              <span>Courses</span>
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-
-            <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-large border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-              <div class="p-6">
-                <div class="grid grid-cols-1 gap-4">
-                  <a href="assets/course/python_for_software_dev.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group">
-                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                      <span class="material-icons text-primary-600 text-sm">code</span>
-                    </div>
-                    <div>
-                      <div class="font-semibold text-gray-900">AI with Python</div>
-                      <div class="text-sm text-gray-600">Master Python for AI development</div>
-                    </div>
-                  </a>
-
-                  <a href="assets/course/full_stack_web_dev.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group">
-                    <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
-                      <span class="material-icons text-secondary-600 text-sm">web</span>
-                    </div>
-                    <div>
-                      <div class="font-semibold text-gray-900">AI Web Apps</div>
-                      <div class="text-sm text-gray-600">Build intelligent web applications</div>
-                    </div>
-                  </a>
-
-                  <a href="assets/course/advanced_python.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group">
-                    <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
-                      <span class="material-icons text-accent-600 text-sm">psychology</span>
-                    </div>
-                    <div>
-                      <div class="font-semibold text-gray-900">Advanced AI Python</div>
-                      <div class="text-sm text-gray-600">Deep dive into AI algorithms</div>
-                    </div>
-                  </a>
-
-                  <a href="assets/course/flutter_app_dev.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 group">
-                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <span class="material-icons text-purple-600 text-sm">phone_android</span>
-                    </div>
-                    <div>
-                      <div class="font-semibold text-gray-900">AI Mobile Apps</div>
-                      <div class="text-sm text-gray-600">Create AI-powered mobile applications</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="mt-4 pt-4 border-t border-gray-200">
-                  <a href="#courses" class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center">
-                    View All Courses
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a href="#why-us" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group">
-            Why Us
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-
-          <a href="#contact" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 relative group">
-            Contact
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="hidden lg:flex items-center space-x-4">
-          <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-300 shadow-soft hover:shadow-medium">
-            Get Started
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-          <span class="material-icons text-gray-700">menu</span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
-        <div class="px-4 py-6 space-y-4">
-          <a href="#hero" class="block text-gray-700 hover:text-primary-600 font-medium py-2 transition-colors duration-300">Home</a>
-          <a href="#about" class="block text-gray-700 hover:text-primary-600 font-medium py-2 transition-colors duration-300">About</a>
-
-          <div class="space-y-2">
-            <div class="font-medium text-gray-900 py-2">Courses</div>
-            <a href="assets/course/python_for_software_dev.html" class="block text-gray-600 hover:text-primary-600 py-2 pl-4 transition-colors duration-300">AI with Python</a>
-            <a href="assets/course/full_stack_web_dev.html" class="block text-gray-600 hover:text-primary-600 py-2 pl-4 transition-colors duration-300">AI Web Apps</a>
-            <a href="assets/course/advanced_python.html" class="block text-gray-600 hover:text-primary-600 py-2 pl-4 transition-colors duration-300">Advanced AI Python</a>
-            <a href="assets/course/flutter_app_dev.html" class="block text-gray-600 hover:text-primary-600 py-2 pl-4 transition-colors duration-300">AI Mobile Apps</a>
-          </div>
-
-          <a href="#why-us" class="block text-gray-700 hover:text-primary-600 font-medium py-2 transition-colors duration-300">Why Us</a>
-          <a href="#contact" class="block text-gray-700 hover:text-primary-600 font-medium py-2 transition-colors duration-300">Contact</a>
-
-          <div class="pt-4 border-t border-gray-200">
-            <a href="#contact" class="block bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors duration-300">
-              Get Started
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
 
           <!-- Enhanced Courses Dropdown -->
           <div class="relative group">
@@ -323,70 +217,110 @@
             </button>
 
             <!-- Enhanced Dropdown Menu -->
-            <div class="absolute left-0 mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-neutral-200/50 transform translate-y-2 group-hover:translate-y-0">
-              <div class="p-4">
+            <div class="absolute left-0 mt-3 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-neutral-200/50 transform translate-y-2 group-hover:translate-y-0">
+              <div class="p-6">
                 <!-- Programming Courses -->
                 <div class="mb-4">
-                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-2">
+                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3 flex items-center">
+                    <span class="material-icons text-sm mr-2 text-primary-500">code</span>
                     Programming & AI
                   </h4>
-                  <div class="space-y-1">
-                    <a href="assets/course/python_for_software_dev.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI with Python
+                  <div class="grid grid-cols-1 gap-2">
+                    <a href="assets/course/python_for_software_dev.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-primary-500 group-hover:scale-110 transition-transform duration-300">language</span>
+                      <div>
+                        <div class="font-semibold">AI with Python</div>
+                        <div class="text-xs text-neutral-500">Master Python for AI development</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/advanced_python.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      Advanced AI Python
+                    <a href="assets/course/advanced_python.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-secondary-500 group-hover:scale-110 transition-transform duration-300">psychology</span>
+                      <div>
+                        <div class="font-semibold">Advanced AI Python</div>
+                        <div class="text-xs text-neutral-500">Deep dive into AI algorithms</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/java_with_dsa.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Algorithms with Java
+                    <a href="assets/course/java_with_dsa.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-accent-500 group-hover:scale-110 transition-transform duration-300">memory</span>
+                      <div>
+                        <div class="font-semibold">AI Algorithms with Java</div>
+                        <div class="text-xs text-neutral-500">Data structures & algorithms</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/c_cpp_programming.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Systems Programming
+                    <a href="assets/course/c_cpp_programming.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-purple-500 group-hover:scale-110 transition-transform duration-300">settings</span>
+                      <div>
+                        <div class="font-semibold">AI Systems Programming</div>
+                        <div class="text-xs text-neutral-500">C/C++ for AI systems</div>
+                      </div>
                     </a>
                   </div>
                 </div>
 
                 <!-- Web & Mobile Development -->
                 <div class="mb-4">
-                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-2">
+                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3 flex items-center">
+                    <span class="material-icons text-sm mr-2 text-blue-500">web</span>
                     Web & Mobile Development
                   </h4>
-                  <div class="space-y-1">
-                    <a href="assets/course/full_stack_web_dev.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Web Applications
+                  <div class="grid grid-cols-1 gap-2">
+                    <a href="assets/course/full_stack_web_dev.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-indigo-500 group-hover:scale-110 transition-transform duration-300">web</span>
+                      <div>
+                        <div class="font-semibold">AI Web Applications</div>
+                        <div class="text-xs text-neutral-500">Build intelligent web apps</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/flutter_app_dev.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Mobile Applications
+                    <a href="assets/course/flutter_app_dev.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-teal-500 group-hover:scale-110 transition-transform duration-300">phone_android</span>
+                      <div>
+                        <div class="font-semibold">AI Mobile Applications</div>
+                        <div class="text-xs text-neutral-500">Flutter AI mobile apps</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/web_design.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI UI/UX Design
+                    <a href="assets/course/web_design.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-pink-500 group-hover:scale-110 transition-transform duration-300">design_services</span>
+                      <div>
+                        <div class="font-semibold">AI UI/UX Design</div>
+                        <div class="text-xs text-neutral-500">Design AI-powered interfaces</div>
+                      </div>
                     </a>
                   </div>
                 </div>
 
                 <!-- Data & Career -->
-                <div class="mb-3">
-                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-2">
+                <div class="mb-4">
+                  <h4 class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3 flex items-center">
+                    <span class="material-icons text-sm mr-2 text-green-500">analytics</span>
                     Data & Career
                   </h4>
-                  <div class="space-y-1">
-                    <a href="assets/course/database.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Data Engineering
+                  <div class="grid grid-cols-1 gap-2">
+                    <a href="assets/course/database.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-emerald-500 group-hover:scale-110 transition-transform duration-300">storage</span>
+                      <div>
+                        <div class="font-semibold">AI Data Engineering</div>
+                        <div class="text-xs text-neutral-500">Big data & AI databases</div>
+                      </div>
                     </a>
 
-                    <a href="assets/course/career_booster.html" class="course-dropdown-item block px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm">
-                      AI Career Accelerator
+                    <a href="assets/course/career_booster.html" class="course-dropdown-item flex items-center px-3 py-2 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all duration-200 text-neutral-900 hover:text-primary-600 font-medium text-sm group">
+                      <span class="material-icons text-lg mr-3 text-orange-500 group-hover:scale-110 transition-transform duration-300">rocket_launch</span>
+                      <div>
+                        <div class="font-semibold">AI Career Accelerator</div>
+                        <div class="text-xs text-neutral-500">Launch your AI career</div>
+                      </div>
                     </a>
                   </div>
                 </div>
 
-                <div class="pt-3 border-t border-neutral-200">
-                  <a href="#courses" class="flex items-center justify-center w-full py-2 px-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm">
+                <div class="pt-4 border-t border-neutral-200">
+                  <a href="#courses" class="flex items-center justify-center w-full py-3 px-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm group">
+                    <span class="material-icons mr-2 group-hover:rotate-12 transition-transform duration-300">visibility</span>
                     View All Courses
                   </a>
                 </div>
@@ -394,7 +328,18 @@
             </div>
           </div>
 
-          <a href="#whyus" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+          <!-- AI Tools Link -->
+          <a href="#ai-tools" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+            <span class="relative z-10 flex items-center">
+              <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">build</span>
+              AI Tools
+            </span>
+            <div class="absolute inset-0 bg-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
+          </a>
+
+          <!-- Why Us Link -->
+          <a href="#why-us" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
             <span class="relative z-10 flex items-center">
               <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">verified</span>
               Why Us
@@ -403,6 +348,27 @@
             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
           </a>
 
+          <!-- Testimonials Link -->
+          <a href="#testimonials" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+            <span class="relative z-10 flex items-center">
+              <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">reviews</span>
+              Reviews
+            </span>
+            <div class="absolute inset-0 bg-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
+          </a>
+
+          <!-- Blog Link -->
+          <a href="#blog" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
+            <span class="relative z-10 flex items-center">
+              <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">article</span>
+              Blog
+            </span>
+            <div class="absolute inset-0 bg-primary-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300"></div>
+          </a>
+
+          <!-- Contact Link -->
           <a href="#contact" class="nav-link relative px-4 py-2 rounded-xl font-medium text-neutral-700 hover:text-primary-600 transition-all duration-300 group">
             <span class="relative z-10 flex items-center">
               <span class="material-icons text-sm mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">contact_support</span>
@@ -415,6 +381,11 @@
 
         <!-- Enhanced Right Side Actions -->
         <div class="flex items-center space-x-3">
+          <!-- Search Button -->
+          <button class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 group" title="Search">
+            <span class="material-icons text-lg group-hover:scale-110 transition-transform duration-300">search</span>
+          </button>
+
           <!-- User Account Dropdown -->
           <div class="relative group">
             <button class="flex items-center space-x-2 px-4 py-2 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 group">
@@ -470,6 +441,12 @@
               </div>
             </div>
           </div>
+
+          <!-- Enhanced CTA Button -->
+          <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 hover:scale-105 transition-all duration-300 group">
+            <span class="material-icons mr-2 text-sm group-hover:rotate-12 transition-transform duration-300">rocket_launch</span>
+            Get Started
+          </a>
 
           <!-- Enhanced Mobile Menu Button -->
           <button id="mobile-menu-button" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300">
@@ -548,9 +525,25 @@
             </div>
           </div>
 
-          <a href="#whyus" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
+          <!-- Other Mobile Links -->
+          <a href="#ai-tools" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
+            <span class="material-icons text-lg mr-3">build</span>
+            <span class="font-medium">AI Tools</span>
+          </a>
+
+          <a href="#why-us" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
             <span class="material-icons text-lg mr-3">verified</span>
             <span class="font-medium">Why Us</span>
+          </a>
+
+          <a href="#testimonials" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
+            <span class="material-icons text-lg mr-3">reviews</span>
+            <span class="font-medium">Reviews</span>
+          </a>
+
+          <a href="#blog" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
+            <span class="material-icons text-lg mr-3">article</span>
+            <span class="font-medium">Blog</span>
           </a>
 
           <a href="#contact" class="mobile-nav-link flex items-center px-4 py-3 rounded-xl text-neutral-700 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200">
@@ -558,35 +551,29 @@
             <span class="font-medium">Contact</span>
           </a>
 
-          <!-- Mobile Account Actions -->
-          <div class="pt-4 border-t border-neutral-200 space-y-2">
-            <a href="assets/course/login_signup.html" class="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg">
-              <span class="material-icons text-lg mr-2">login</span>
-              Sign In
-            </a>
-
-            <a href="assets/course/login_signup.html" class="flex items-center justify-center w-full px-4 py-3 border-2 border-primary-600 text-primary-600 rounded-xl font-semibold hover:bg-primary-50 transition-all duration-300">
-              <span class="material-icons text-lg mr-2">person_add</span>
-              Sign Up
+          <!-- Mobile CTA -->
+          <div class="pt-4 border-t border-neutral-200 mt-4">
+            <a href="#contact" class="flex items-center justify-center w-full py-3 px-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl group">
+              <span class="material-icons mr-2 group-hover:rotate-12 transition-transform duration-300">rocket_launch</span>
+              Get Started Today
             </a>
           </div>
         </div>
       </div>
-
-
     </div>
   </nav>
 
   <!-- Advanced Hero Section - Ultra Professional & Powerful -->
-  <section id="hero" class="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
-    <!-- Advanced Background System -->
-    <div class="absolute inset-0">
-      <!-- Dynamic Grid Animation -->
-      <div class="absolute inset-0 opacity-8">
-        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px); background-size: 60px 60px; animation: grid-flow 25s linear infinite;"></div>
+  <!-- Ultra-Modern Full-Width Hero Section -->
+  <section id="hero" class="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden w-full">
+    <!-- Advanced Dynamic Background System -->
+    <div class="absolute inset-0 w-full">
+      <!-- Animated Grid Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px); background-size: 50px 50px; animation: gridMove 20s linear infinite;"></div>
       </div>
 
-      <!-- Advanced Floating Elements -->
+      <!-- Enhanced Floating Elements -->
       <div class="absolute top-16 left-12 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-float-slow"></div>
       <div class="absolute top-32 right-16 w-24 h-24 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-float-reverse"></div>
       <div class="absolute bottom-32 left-16 w-40 h-40 bg-gradient-to-br from-indigo-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse-slow"></div>
@@ -594,212 +581,239 @@
       <div class="absolute top-1/2 left-1/4 w-20 h-20 bg-gradient-to-br from-cyan-400/15 to-blue-400/15 rounded-full blur-lg animate-bounce-slow"></div>
       <div class="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-br from-emerald-400/15 to-teal-400/15 rounded-full blur-lg animate-float-delayed"></div>
 
-      <!-- Neural Network Connections -->
+      <!-- Advanced Neural Network Connections -->
       <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1200 800">
         <defs>
-          <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#3B82F6"/>
-            <stop offset="50%" stop-color="#8B5CF6"/>
-            <stop offset="100%" stop-color="#06B6D4"/>
+          <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+            <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:0.5" />
+            <stop offset="100%" style="stop-color:#ec4899;stop-opacity:0.3" />
           </linearGradient>
         </defs>
-        <!-- Dynamic Connection Lines -->
-        <path d="M100 200 Q400 150 700 200 T1100 200" stroke="url(#hero-gradient)" stroke-width="3" fill="none" class="animate-draw-path"/>
-        <path d="M150 350 Q450 300 750 350 T1150 350" stroke="url(#hero-gradient)" stroke-width="3" fill="none" class="animate-draw-path" style="animation-delay: 1s"/>
-        <path d="M200 500 Q500 450 800 500 T1200 500" stroke="url(#hero-gradient)" stroke-width="3" fill="none" class="animate-draw-path" style="animation-delay: 2s"/>
-        <path d="M50 650 Q350 600 650 650 T1050 650" stroke="url(#hero-gradient)" stroke-width="3" fill="none" class="animate-draw-path" style="animation-delay: 3s"/>
-
-        <!-- Interactive Nodes -->
-        <circle cx="100" cy="200" r="8" fill="#3B82F6" class="animate-pulse"/>
-        <circle cx="700" cy="200" r="6" fill="#8B5CF6" class="animate-pulse" style="animation-delay: 0.5s"/>
-        <circle cx="1100" cy="200" r="8" fill="#06B6D4" class="animate-pulse" style="animation-delay: 1s"/>
-        <circle cx="150" cy="350" r="6" fill="#3B82F6" class="animate-pulse" style="animation-delay: 1.5s"/>
-        <circle cx="750" cy="350" r="8" fill="#8B5CF6" class="animate-pulse" style="animation-delay: 2s"/>
-        <circle cx="1150" cy="350" r="6" fill="#06B6D4" class="animate-pulse" style="animation-delay: 2.5s"/>
-        <circle cx="200" cy="500" r="8" fill="#3B82F6" class="animate-pulse" style="animation-delay: 3s"/>
-        <circle cx="800" cy="500" r="6" fill="#8B5CF6" class="animate-pulse" style="animation-delay: 3.5s"/>
-        <circle cx="1200" cy="500" r="8" fill="#06B6D4" class="animate-pulse" style="animation-delay: 4s"/>
+        <polyline points="100,200 300,150 500,250 700,200 900,300" stroke="url(#neuralGradient)" stroke-width="2" fill="none" class="animate-pulse">
+          <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="4s" repeatCount="indefinite"/>
+        </polyline>
+        <polyline points="150,400 350,350 550,450 750,400 950,500" stroke="url(#neuralGradient)" stroke-width="2" fill="none" class="animate-pulse">
+          <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="5s" repeatCount="indefinite"/>
+        </polyline>
+        <polyline points="200,600 400,550 600,650 800,600 1000,700" stroke="url(#neuralGradient)" stroke-width="2" fill="none" class="animate-pulse">
+          <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="6s" repeatCount="indefinite"/>
+        </polyline>
       </svg>
 
-      <!-- Advanced Particle System -->
+      <!-- Interactive Particle System -->
       <div class="absolute inset-0">
-        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-particle-float opacity-70"></div>
-        <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-purple-400 rounded-full animate-particle-float-delayed opacity-60"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-indigo-400 rounded-full animate-particle-float opacity-80"></div>
-        <div class="absolute bottom-1/3 right-1/4 w-2 h-2 bg-pink-400 rounded-full animate-particle-float-delayed opacity-50"></div>
-        <div class="absolute top-1/2 left-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-particle-float opacity-90"></div>
-        <div class="absolute top-2/3 right-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-particle-float opacity-60"></div>
-        <div class="absolute bottom-1/2 left-1/4 w-2 h-2 bg-teal-400 rounded-full animate-particle-float-delayed opacity-70"></div>
+        <div class="particle absolute w-2 h-2 bg-blue-400 rounded-full opacity-60 animate-ping" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle absolute w-1.5 h-1.5 bg-purple-400 rounded-full opacity-50 animate-ping" style="top: 40%; left: 20%; animation-delay: 1s;"></div>
+        <div class="particle absolute w-2.5 h-2.5 bg-pink-400 rounded-full opacity-70 animate-ping" style="top: 60%; left: 15%; animation-delay: 2s;"></div>
+        <div class="particle absolute w-1 h-1 bg-indigo-400 rounded-full opacity-40 animate-ping" style="top: 30%; left: 80%; animation-delay: 0.5s;"></div>
+        <div class="particle absolute w-2 h-2 bg-teal-400 rounded-full opacity-55 animate-ping" style="top: 70%; left: 85%; animation-delay: 1.5s;"></div>
+        <div class="particle absolute w-1.5 h-1.5 bg-orange-400 rounded-full opacity-45 animate-ping" style="top: 50%; left: 90%; animation-delay: 2.5s;"></div>
       </div>
 
       <!-- Gradient Overlay -->
       <div class="absolute inset-0 bg-gradient-to-br from-white/95 via-transparent to-blue-50/40"></div>
     </div>
 
-    <div class="relative z-10 flex items-center min-h-screen">
+    <div class="relative z-10 flex items-center min-h-screen w-full">
       <div class="w-full px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-          <!-- Advanced Hero Content -->
-          <div class="text-center">
-            <!-- Premium Status Badges -->
-            <div class="flex flex-wrap justify-center gap-3 mb-8">
-              <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 backdrop-blur-sm animate-fade-in-up">
-                <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-2 animate-pulse"></div>
-                <span class="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">AI-Powered Learning Platform</span>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+              <!-- Premium Status Badges -->
+              <div class="flex flex-wrap gap-3">
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-lg">
+                  <span class="material-icons text-sm mr-2">verified</span>
+                  AI-Powered Platform
+                </div>
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white text-sm font-semibold rounded-full shadow-lg">
+                  <span class="material-icons text-sm mr-2">local_shipping</span>
+                  Industry Leading
+                </div>
+                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+                  <span class="material-icons text-sm mr-2">workspace_premium</span>
+                  Award Winning
+                </div>
               </div>
-              <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/50 backdrop-blur-sm animate-fade-in-up" style="animation-delay: 0.2s">
-                <div class="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mr-2 animate-ping"></div>
-                <span class="text-sm font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Industry Leading</span>
-              </div>
-              <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200/50 backdrop-blur-sm animate-fade-in-up" style="animation-delay: 0.4s">
-                <div class="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-2 animate-bounce"></div>
-                <span class="text-sm font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Award Winning</span>
-              </div>
-            </div>
 
-            <!-- Ultra Advanced Headline -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-slate-900 mb-8 leading-none animate-fade-in-up" style="animation-delay: 0.6s;">
-              Master the Future of
-              <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-gradient-x relative">
-                Artificial Intelligence
-                <div class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-full animate-pulse"></div>
-              </span>
-            </h1>
+              <!-- Main Headline -->
+              <div class="space-y-4">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 leading-tight">
+                  Master
+                  <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient-x">
+                    Artificial Intelligence
+                  </span>
+                </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+              </div>
 
-            <!-- Enhanced Subtitle -->
-            <p class="text-xl md:text-2xl lg:text-3xl text-slate-600 mb-12 max-w-5xl mx-auto leading-relaxed animate-fade-in-up font-medium" style="animation-delay: 0.8s;">
-              Transform your career with <span class="font-bold text-blue-600">cutting-edge AI courses</span>,
-              <span class="font-bold text-purple-600">hands-on projects</span>, and
-              <span class="font-bold text-indigo-600">personalized mentorship</span>.
-              Join thousands of professionals shaping the future of technology at India's premier AI education platform.
-            </p>
+              <!-- Enhanced Subtitle -->
+              <p class="text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed font-light">
+                Transform your career with India's premier AI education platform.
+                <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Learn Python, Machine Learning, Deep Learning & AI applications
+                </span>
+                from industry experts.
+              </p>
 
-            <!-- Advanced Feature Showcase -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up" style="animation-delay: 1s;">
-              <div class="group flex items-center px-6 py-3 bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg border border-slate-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                  <span class="material-icons text-white text-lg">school</span>
+              <!-- Advanced Feature Showcase -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="group flex items-center space-x-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                  <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <span class="material-icons text-white">psychology</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-gray-900">AI & ML</div>
+                    <div class="text-sm text-gray-600">Advanced Algorithms</div>
+                  </div>
                 </div>
-                <div class="text-left">
-                  <div class="text-sm font-bold text-slate-900">Expert-Led Courses</div>
-                  <div class="text-xs text-slate-600">Industry veterans</div>
-                </div>
-              </div>
-              <div class="group flex items-center px-6 py-3 bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg border border-slate-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                  <span class="material-icons text-white text-lg">code</span>
-                </div>
-                <div class="text-left">
-                  <div class="text-sm font-bold text-slate-900">Hands-on Projects</div>
-                  <div class="text-xs text-slate-600">Real-world applications</div>
-                </div>
-              </div>
-              <div class="group flex items-center px-6 py-3 bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg border border-slate-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                  <span class="material-icons text-white text-lg">work</span>
-                </div>
-                <div class="text-left">
-                  <div class="text-sm font-bold text-slate-900">Career Support</div>
-                  <div class="text-xs text-slate-600">Job placement assistance</div>
-                </div>
-              </div>
-              <div class="group flex items-center px-6 py-3 bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg border border-slate-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
-                  <span class="material-icons text-white text-lg">verified</span>
-                </div>
-                <div class="text-left">
-                  <div class="text-sm font-bold text-slate-900">Certified Learning</div>
-                  <div class="text-xs text-slate-600">Industry recognized</div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Premium CTA Section -->
-            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-20 animate-fade-in-up" style="animation-delay: 1.2s;">
-              <a href="#courses" class="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="relative z-10 flex items-center">
-                  <span class="material-icons mr-3 text-xl group-hover:rotate-12 transition-transform duration-300">rocket_launch</span>
-                  <span>Start Your AI Journey</span>
+                <div class="group flex items-center space-x-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                  <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <span class="material-icons text-white">code</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-gray-900">Python</div>
+                    <div class="text-sm text-gray-600">Programming Mastery</div>
+                  </div>
+                </div>
+
+                <div class="group flex items-center space-x-4 p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                  <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <span class="material-icons text-white">rocket_launch</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-gray-900">Career</div>
+                    <div class="text-sm text-gray-600">Job Ready Skills</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enhanced CTA Section -->
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#courses" class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+                  <span class="material-icons mr-3 group-hover:rotate-12 transition-transform duration-300">play_arrow</span>
+                  Start Learning Now
                   <span class="material-icons ml-3 group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
-                </div>
-                <div class="absolute inset-0 rounded-2xl border-2 border-white/20 group-hover:border-white/40 transition-colors duration-300"></div>
-              </a>
-              <a href="#contact" class="group relative inline-flex items-center px-10 py-5 border-3 border-slate-300 text-slate-700 font-bold text-lg rounded-2xl bg-white/90 backdrop-blur-lg hover:border-blue-400 hover:text-blue-600 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                <div class="relative z-10 flex items-center">
-                  <span class="material-icons mr-3 text-lg group-hover:scale-110 transition-transform duration-300">contact_support</span>
-                  <span>Get Free Consultation</span>
-                  <span class="material-icons ml-3 group-hover:translate-x-1 transition-transform duration-300">phone</span>
-                </div>
-              </a>
-            </div>
+                </a>
 
-            <!-- Advanced Interactive Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto animate-fade-in-up" style="animation-delay: 1.4s;">
-              <div class="group text-center p-6 bg-white/60 backdrop-blur-lg rounded-3xl border border-slate-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                <div class="relative">
-                  <div class="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" data-counter="2500">2,500+</div>
-                  <div class="absolute -top-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
-                </div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">AI Learners</div>
-                <div class="text-xs text-slate-500">Trained & Placed</div>
-                <div class="w-full bg-slate-200 rounded-full h-1 mt-3 overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-progress w-full"></div>
-                </div>
+                <a href="#about" class="group inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold text-lg rounded-2xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
+                  <span class="material-icons mr-3 group-hover:scale-110 transition-transform duration-300">info</span>
+                  Learn More
+                </a>
               </div>
-              <div class="group text-center p-6 bg-white/60 backdrop-blur-lg rounded-3xl border border-slate-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                <div class="relative">
-                  <div class="text-4xl md:text-5xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" data-counter="45">45+</div>
-                  <div class="absolute -top-2 -right-2 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+
+              <!-- Trust Indicators -->
+              <div class="flex flex-wrap items-center gap-6 pt-4">
+                <div class="flex items-center space-x-2">
+                  <div class="flex -space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full border-2 border-white"></div>
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-2 border-white"></div>
+                    <div class="w-8 h-8 bg-gradient-to-r from-pink-400 to-red-500 rounded-full border-2 border-white"></div>
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
+                  </div>
+                  <span class="text-gray-600 font-medium">2,000+ Students</span>
                 </div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">AI Experts</div>
-                <div class="text-xs text-slate-500">Industry Leaders</div>
-                <div class="w-full bg-slate-200 rounded-full h-1 mt-3 overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-progress w-full"></div>
+
+                <div class="flex items-center space-x-2">
+                  <span class="material-icons text-green-500">verified</span>
+                  <span class="text-gray-600 font-medium">Industry Certified</span>
                 </div>
-              </div>
-              <div class="group text-center p-6 bg-white/60 backdrop-blur-lg rounded-3xl border border-slate-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                <div class="relative">
-                  <div class="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" data-counter="15">15+</div>
-                  <div class="absolute -top-2 -right-2 w-3 h-3 bg-purple-500 rounded-full animate-bounce"></div>
-                </div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">AI Courses</div>
-                <div class="text-xs text-slate-500">Comprehensive Programs</div>
-                <div class="w-full bg-slate-200 rounded-full h-1 mt-3 overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full animate-progress w-full"></div>
-                </div>
-              </div>
-              <div class="group text-center p-6 bg-white/60 backdrop-blur-lg rounded-3xl border border-slate-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                <div class="relative">
-                  <div class="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" data-counter="97">97%</div>
-                  <div class="absolute -top-2 -right-2 w-3 h-3 bg-orange-500 rounded-full animate-ping"></div>
-                </div>
-                <div class="text-sm font-semibold text-slate-700 mb-1">Success Rate</div>
-                <div class="text-xs text-slate-500">Career Advancement</div>
-                <div class="w-full bg-slate-200 rounded-full h-1 mt-3 overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-progress w-97/100"></div>
+
+                <div class="flex items-center space-x-2">
+                  <span class="material-icons text-blue-500">school</span>
+                  <span class="text-gray-600 font-medium">Expert Instructors</span>
                 </div>
               </div>
             </div>
 
-            <!-- Trust Indicators -->
-            <div class="flex flex-wrap justify-center items-center gap-8 mt-16 animate-fade-in-up" style="animation-delay: 1.6s;">
-              <div class="flex items-center space-x-2 text-slate-600">
-                <span class="material-icons text-green-500">verified</span>
-                <span class="text-sm font-medium">ISO Certified</span>
+            <!-- Right Content - Interactive Stats Dashboard -->
+            <div class="relative">
+              <!-- Main Stats Card -->
+              <div class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20">
+                <div class="text-center mb-8">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">Our Impact</h3>
+                  <p class="text-gray-600">Real numbers, real results</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                  <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <span class="material-icons text-white text-2xl">people</span>
+                    </div>
+                    <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600" data-counter="2000">0</div>
+                    <div class="text-sm text-gray-600 font-medium">Students Trained</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full animate-pulse" style="width: 97%"></div>
+                    </div>
+                  </div>
+
+                  <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <span class="material-icons text-white text-2xl">work</span>
+                    </div>
+                    <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600" data-counter="95">0</div>
+                    <div class="text-sm text-gray-600 font-medium">Job Placement</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full animate-pulse" style="width: 95%"></div>
+                    </div>
+                  </div>
+
+                  <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <span class="material-icons text-white text-2xl">school</span>
+                    </div>
+                    <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600" data-counter="50">0</div>
+                    <div class="text-sm text-gray-600 font-medium">Expert Courses</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div class="bg-gradient-to-r from-emerald-500 to-teal-600 h-2 rounded-full animate-pulse" style="width: 100%"></div>
+                    </div>
+                  </div>
+
+                  <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <span class="material-icons text-white text-2xl">star</span>
+                    </div>
+                    <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600" data-counter="4.9">0</div>
+                    <div class="text-sm text-gray-600 font-medium">Average Rating</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                      <div class="bg-gradient-to-r from-orange-500 to-red-600 h-2 rounded-full animate-pulse" style="width: 98%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Achievement Badges -->
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="text-center p-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl border border-blue-100">
+                    <span class="material-icons text-blue-500 text-2xl mb-1 block">workspace_premium</span>
+                    <div class="text-xs font-semibold text-blue-700">ISO Certified</div>
+                  </div>
+                  <div class="text-center p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-100">
+                    <span class="material-icons text-purple-500 text-2xl mb-1 block">business</span>
+                    <div class="text-xs font-semibold text-purple-700">Industry Partners</div>
+                  </div>
+                  <div class="text-center p-3 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100">
+                    <span class="material-icons text-emerald-500 text-2xl mb-1 block">verified</span>
+                    <div class="text-xs font-semibold text-emerald-700">Award Winning</div>
+                  </div>
+                </div>
               </div>
-              <div class="flex items-center space-x-2 text-slate-600">
-                <span class="material-icons text-blue-500">business</span>
-                <span class="text-sm font-medium">Industry Partnerships</span>
+
+              <!-- Floating Achievement Cards -->
+              <div class="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-4 rounded-2xl shadow-xl animate-bounce">
+                <div class="flex items-center space-x-2">
+                  <span class="material-icons text-sm">local_fire_department</span>
+                  <span class="font-bold text-sm">#1 AI Platform</span>
+                </div>
               </div>
-              <div class="flex items-center space-x-2 text-slate-600">
-                <span class="material-icons text-purple-500">school</span>
-                <span class="text-sm font-medium">Accredited Programs</span>
-              </div>
-              <div class="flex items-center space-x-2 text-slate-600">
-                <span class="material-icons text-orange-500">workspace_premium</span>
-                <span class="text-sm font-medium">Award Winning</span>
+
+              <div class="absolute -bottom-4 -left-4 bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-2xl shadow-xl animate-pulse">
+                <div class="flex items-center space-x-2">
+                  <span class="material-icons text-sm">trending_up</span>
+                  <span class="font-bold text-sm">Growing Fast</span>
+                </div>
               </div>
             </div>
           </div>
@@ -807,20 +821,12 @@
       </div>
     </div>
 
-    <!-- Advanced Scroll Indicator -->
+    <!-- Enhanced Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up" style="animation-delay: 2s;">
-      <div class="flex flex-col items-center text-slate-600 group cursor-pointer">
-        <span class="text-sm font-medium mb-3 group-hover:text-slate-900 transition-colors duration-300">Discover More</span>
-        <div class="relative">
-          <div class="w-8 h-14 border-3 border-slate-300 rounded-full flex justify-center group-hover:border-slate-500 transition-colors duration-300">
-            <div class="w-1.5 h-4 bg-slate-400 rounded-full mt-3 animate-bounce group-hover:bg-slate-600 transition-colors duration-300"></div>
-          </div>
-          <div class="absolute inset-0 border-3 border-transparent rounded-full animate-ping opacity-20"></div>
-        </div>
-        <div class="mt-2 flex space-x-1">
-          <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse"></div>
-          <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
-          <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+      <div class="flex flex-col items-center text-slate-600 group cursor-pointer hover:text-blue-600 transition-colors duration-300">
+        <span class="text-sm font-medium mb-2 group-hover:text-blue-600">Discover More</span>
+        <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </div>
@@ -829,117 +835,308 @@
   <!-- Neural Network Animation Canvas -->
   <canvas id="neural-network-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30"></canvas>
 
-  <!-- About Section with Advanced Interactive Design -->
-  <!-- About Section - Professional Design -->
-  <section id="about" class="py-24 bg-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-8">
-          <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-          <span class="text-sm font-medium text-blue-700">About SK AI Hub</span>
-        </div>
+  <!-- About Section - Full-Width Professional Design -->
+  <section id="about" class="py-32 bg-white relative w-full overflow-hidden">
+    <!-- Advanced Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);"></div>
+    </div>
 
-        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-          Leading the AI
-          <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            Revolution in Education
-          </span>
-        </h2>
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-20">
+            <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 mb-8 backdrop-blur-sm">
+              <div class="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3 animate-pulse"></div>
+              <span class="text-sm font-semibold text-blue-700">About SK AI Hub</span>
+            </div>
 
-        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          Empowering the next generation of AI innovators with cutting-edge technology, hands-on experience, and industry-leading expertise.
-        </p>
-      </div>
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
+              Leading the AI
+              <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Revolution in Education
+              </span>
+            </h2>
 
-      <!-- Mission, Vision, Values -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-        <!-- Mission -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
-          <div class="flex items-center justify-center w-16 h-16 bg-blue-500 rounded-2xl mb-6 mx-auto">
-            <span class="material-icons text-white text-2xl">track_changes</span>
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-light">
+              Empowering the next generation of AI innovators with cutting-edge technology, hands-on experience,
+              and industry-leading expertise. We bridge the gap between theoretical knowledge and real-world application.
+            </p>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Our Mission</h3>
-          <p class="text-slate-600 text-center leading-relaxed">
-            To empower individuals and organizations with cutting-edge AI skills, fostering innovation and driving technological advancement.
-          </p>
-        </div>
 
-        <!-- Vision -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
-          <div class="flex items-center justify-center w-16 h-16 bg-green-500 rounded-2xl mb-6 mx-auto">
-            <span class="material-icons text-white text-2xl">remove_red_eye</span>
+          <!-- Mission, Vision, Values - Enhanced -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+            <!-- Mission -->
+            <div class="group bg-gradient-to-br from-white to-blue-50/30 p-10 rounded-3xl border border-blue-100/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl mb-8 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span class="material-icons text-white text-3xl">track_changes</span>
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Mission</h3>
+              <p class="text-gray-700 text-center leading-relaxed text-lg">
+                To empower individuals and organizations with cutting-edge AI skills, fostering innovation and driving
+                technological advancement across industries worldwide.
+              </p>
+              <div class="mt-6 flex justify-center">
+                <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="group bg-gradient-to-br from-white to-emerald-50/30 p-10 rounded-3xl border border-emerald-100/50 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl mb-8 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span class="material-icons text-white text-3xl">remove_red_eye</span>
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Vision</h3>
+              <p class="text-gray-700 text-center leading-relaxed text-lg">
+                To be the world's leading AI education platform, creating a global community of AI experts who shape
+                the future of technology and drive meaningful innovation.
+              </p>
+              <div class="mt-6 flex justify-center">
+                <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Values -->
+            <div class="group bg-gradient-to-br from-white to-purple-50/30 p-10 rounded-3xl border border-purple-100/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl mb-8 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span class="material-icons text-white text-3xl">favorite</span>
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">Our Values</h3>
+              <p class="text-gray-700 text-center leading-relaxed text-lg">
+                Innovation, Excellence, Inclusivity, and Ethical AI development. We believe in making AI education
+                accessible to everyone, regardless of background or experience level.
+              </p>
+              <div class="mt-6 flex justify-center">
+                <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full"></div>
+              </div>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Our Vision</h3>
-          <p class="text-slate-600 text-center leading-relaxed">
-            To be the world's leading AI education platform, creating a global community of AI experts.
-          </p>
-        </div>
 
-        <!-- Values -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
-          <div class="flex items-center justify-center w-16 h-16 bg-purple-500 rounded-2xl mb-6 mx-auto">
-            <span class="material-icons text-white text-2xl">favorite</span>
+          <!-- Why Choose Us - Enhanced -->
+          <div class="mb-24">
+            <div class="text-center mb-16">
+              <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Why Choose
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">SK AI Hub</span>
+              </h3>
+              <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover what sets us apart in the world of AI education
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Expert Faculty -->
+              <div class="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">school</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Expert Faculty</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  Learn from industry veterans with decades of experience at top tech companies and research institutions.
+                </p>
+              </div>
+
+              <!-- Hands-on Learning -->
+              <div class="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">build</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Hands-on Learning</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  Build real-world projects and applications using industry-standard tools and frameworks.
+                </p>
+              </div>
+
+              <!-- Career Support -->
+              <div class="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">work</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Career Support</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  Comprehensive career guidance, resume building, interview preparation, and job placement assistance.
+                </p>
+              </div>
+
+              <!-- Latest Technology -->
+              <div class="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">rocket_launch</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Latest Technology</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  Stay ahead with cutting-edge AI technologies, frameworks, and methodologies used by industry leaders.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Our Values</h3>
-          <p class="text-slate-600 text-center leading-relaxed">
-            Innovation, Excellence, Inclusivity, and Ethical AI development for everyone.
-          </p>
-        </div>
-      </div>
 
-      <!-- AI Technologies -->
-      <div class="text-center mb-12">
-        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          AI Technologies We Master
-        </h3>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-          From foundational algorithms to cutting-edge applications, we cover the entire AI landscape.
-        </p>
-      </div>
+          <!-- AI Technologies We Master - Enhanced -->
+          <div class="mb-24">
+            <div class="text-center mb-16">
+              <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                AI Technologies We
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Master</span>
+              </h3>
+              <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                From foundational algorithms to cutting-edge applications, we cover the entire AI landscape
+              </p>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Machine Learning -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-lg mb-4 mx-auto">
-            <span class="material-icons text-white">memory</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Machine Learning -->
+              <div class="group bg-gradient-to-br from-white to-blue-50/50 p-8 rounded-2xl border border-blue-100/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">memory</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Machine Learning</h4>
+                <p class="text-gray-600 text-center leading-relaxed mb-4">
+                  Supervised & unsupervised learning algorithms, ensemble methods, and advanced ML techniques
+                </p>
+                <div class="flex flex-wrap justify-center gap-2">
+                  <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Regression</span>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Classification</span>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Clustering</span>
+                </div>
+              </div>
+
+              <!-- Deep Learning -->
+              <div class="group bg-gradient-to-br from-white to-purple-50/50 p-8 rounded-2xl border border-purple-100/50 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">neural_network</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Deep Learning</h4>
+                <p class="text-gray-600 text-center leading-relaxed mb-4">
+                  Neural networks, CNNs, RNNs, Transformers, and advanced deep learning architectures
+                </p>
+                <div class="flex flex-wrap justify-center gap-2">
+                  <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">CNNs</span>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">RNNs</span>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Transformers</span>
+                </div>
+              </div>
+
+              <!-- Computer Vision -->
+              <div class="group bg-gradient-to-br from-white to-emerald-50/50 p-8 rounded-2xl border border-emerald-100/50 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">visibility</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Computer Vision</h4>
+                <p class="text-gray-600 text-center leading-relaxed mb-4">
+                  Image recognition, object detection, segmentation, and advanced computer vision applications
+                </p>
+                <div class="flex flex-wrap justify-center gap-2">
+                  <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">OpenCV</span>
+                  <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">YOLO</span>
+                  <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">Segmentation</span>
+                </div>
+              </div>
+
+              <!-- NLP -->
+              <div class="group bg-gradient-to-br from-white to-orange-50/50 p-8 rounded-2xl border border-orange-100/50 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <span class="material-icons text-white text-2xl">text_fields</span>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Natural Language Processing</h4>
+                <p class="text-gray-600 text-center leading-relaxed mb-4">
+                  Text analysis, sentiment analysis, language models, and conversational AI development
+                </p>
+                <div class="flex flex-wrap justify-center gap-2">
+                  <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">BERT</span>
+                  <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">GPT</span>
+                  <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">NLTK</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h4 class="text-lg font-semibold text-slate-900 mb-2 text-center">Machine Learning</h4>
-          <p class="text-sm text-slate-600 text-center">Supervised & unsupervised learning algorithms</p>
-        </div>
 
-        <!-- Computer Vision -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-center w-12 h-12 bg-green-500 rounded-lg mb-4 mx-auto">
-            <span class="material-icons text-white">visibility</span>
-          </div>
-          <h4 class="text-lg font-semibold text-slate-900 mb-2 text-center">Computer Vision</h4>
-          <p class="text-sm text-slate-600 text-center">Image recognition and object detection</p>
-        </div>
+          <!-- Additional Technologies Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16">
+            <!-- Data Science -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">analytics</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">Data Science</h5>
+              <p class="text-sm text-gray-600">Big data processing</p>
+            </div>
 
-        <!-- NLP -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-lg mb-4 mx-auto">
-            <span class="material-icons text-white">text_fields</span>
-          </div>
-          <h4 class="text-lg font-semibold text-slate-900 mb-2 text-center">Natural Language Processing</h4>
-          <p class="text-sm text-slate-600 text-center">Text analysis and language models</p>
-        </div>
+            <!-- Reinforcement Learning -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">gamepad</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">Reinforcement Learning</h5>
+              <p class="text-sm text-gray-600">RL algorithms</p>
+            </div>
 
-        <!-- Data Science -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="flex items-center justify-center w-12 h-12 bg-orange-500 rounded-lg mb-4 mx-auto">
-            <span class="material-icons text-white">analytics</span>
+            <!-- Generative AI -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">auto_awesome</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">Generative AI</h5>
+              <p class="text-sm text-gray-600">GANs & Diffusion</p>
+            </div>
+
+            <!-- MLOps -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">settings</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">MLOps</h5>
+              <p class="text-sm text-gray-600">Model deployment</p>
+            </div>
+
+            <!-- Edge AI -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">devices</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">Edge AI</h5>
+              <p class="text-sm text-gray-600">IoT applications</p>
+            </div>
+
+            <!-- AI Ethics -->
+            <div class="text-center p-6 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <span class="material-icons text-white">balance</span>
+              </div>
+              <h5 class="font-semibold text-gray-900 mb-2">AI Ethics</h5>
+              <p class="text-sm text-gray-600">Responsible AI</p>
+            </div>
           </div>
-          <h4 class="text-lg font-semibold text-slate-900 mb-2 text-center">Data Science & Analytics</h4>
-          <p class="text-sm text-slate-600 text-center">Big data processing and analytics</p>
+
+          <!-- Call to Action -->
+          <div class="text-center">
+            <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white">
+              <h3 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Start Your AI Journey?
+              </h3>
+              <p class="text-xl mb-8 opacity-90">
+                Join thousands of students who have transformed their careers with SK AI Hub
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#courses" class="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-bold text-lg rounded-2xl hover:bg-gray-50 transition-colors duration-300">
+                  <span class="material-icons mr-3">explore</span>
+                  Explore Courses
+                </a>
+                <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-2xl hover:bg-white hover:text-gray-900 transition-all duration-300">
+                  <span class="material-icons mr-3">contact_support</span>
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- AI Tools Section - Professional Light Design -->
-  <section id="ai-tools" class="py-24 bg-slate-50 relative">
+  <!-- AI Tools Section - Full-Width Professional Design -->
+  <section id="ai-tools" class="py-32 bg-slate-50 relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Animated Grid Pattern -->
@@ -966,7 +1163,9 @@
       <div class="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/60"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 backdrop-blur-sm mb-8 animate-fade-in-up">
@@ -1406,7 +1605,7 @@
   </section>
 
   <!-- Courses Section - Professional Light Design -->
-  <section id="courses" class="py-24 bg-white relative">
+  <section id="courses" class="py-32 bg-white relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Animated Circuit Pattern -->
@@ -1438,7 +1637,9 @@
       <div class="absolute inset-0 bg-gradient-to-t from-gray-50/90 via-transparent to-white/70"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 backdrop-blur-sm mb-8 animate-fade-in-up">
@@ -1935,7 +2136,7 @@
       </div>
 
   <!-- Pricing Section -->
-  <section id="pricing" class="py-32 bg-slate-900 relative overflow-hidden">
+  <section id="pricing" class="py-32 bg-slate-900 relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Circuit Pattern Background -->
@@ -1975,7 +2176,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <!-- Animated Badge -->
@@ -2602,7 +2805,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-32 bg-gray-50 relative overflow-hidden">
+  <section id="faq" class="py-32 bg-gray-50 relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Question Mark Pattern -->
@@ -2650,7 +2853,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-gray-50/80 to-white/90"></div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <!-- Animated Badge -->
@@ -2940,7 +3145,7 @@
   </section>
 
   <!-- Contact Section with Material Design -->
-  <section id="contact" class="py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+  <section id="contact" class="py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Neural Network Connections -->
@@ -2987,7 +3192,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-indigo-50/80 to-purple-50/90"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <!-- Animated Badge -->
@@ -3241,7 +3448,7 @@
   </section>
 
   <!-- Blog Section -->
-  <section id="blog" class="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
+  <section id="blog" class="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative w-full overflow-hidden">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Knowledge Flow Animation -->
@@ -3292,7 +3499,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-emerald-50/90 via-teal-50/80 to-cyan-50/90"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Enhanced Section Header -->
       <div class="text-center mb-20">
         <!-- Animated Badge -->
@@ -3533,7 +3742,7 @@
       </div>
 
   <!-- Enhanced Footer -->
-  <footer class="bg-white text-gray-900 py-20 relative overflow-hidden border-t border-gray-200">
+  <footer class="bg-white text-gray-900 py-20 relative w-full overflow-hidden border-t border-gray-200">
     <!-- Advanced Background Elements -->
     <div class="absolute inset-0">
       <!-- Neural Network Grid -->
@@ -3561,7 +3770,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-white/95 via-gray-50/90 to-white/95"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="relative w-full">
+      <div class="w-full px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
       <!-- Main Footer Content -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <!-- Enhanced Brand & About -->
