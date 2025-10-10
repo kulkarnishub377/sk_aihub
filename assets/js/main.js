@@ -465,22 +465,249 @@ if (monthlyBtn && yearlyBtn) {
   });
 }
 
-// FAQ Accordion Functionality
-document.querySelectorAll('.faq-toggle').forEach(button => {
-  button.addEventListener('click', () => {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector('.material-icons');
+// Enhanced Navbar Functionality
+class EnhancedNavbar {
+  constructor() {
+    this.navbar = document.getElementById('main-navbar');
+    this.mobileMenuButton = document.getElementById('mobile-menu-button');
+    this.mobileMenu = document.getElementById('mobile-menu');
 
-    // Close all other FAQ items
-    document.querySelectorAll('.faq-content').forEach(item => {
-      if (item !== content) {
-        item.classList.add('hidden');
-        item.previousElementSibling.querySelector('.material-icons').style.transform = 'rotate(0deg)';
+    this.init();
+  }
+
+  init() {
+    this.setupScrollEffects();
+    this.setupMobileMenu();
+    this.setupActiveStates();
+    this.setupKeyboardNavigation();
+    this.setupAccessibility();
+  }
+
+  setupScrollEffects() {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNavbar = () => {
+      const scrollY = window.scrollY;
+      const navbarHeight = this.navbar.offsetHeight;
+
+      // Add/remove scrolled class for background changes
+      if (scrollY > 50) {
+        this.navbar.classList.add('navbar-scrolled');
+      } else {
+        this.navbar.classList.remove('navbar-scrolled');
+      }
+
+      // Hide/show navbar on scroll (optional - can be enabled if desired)
+      // if (scrollY > lastScrollY && scrollY > navbarHeight) {
+      //   this.navbar.style.transform = 'translateY(-100%)';
+      // } else {
+      //   this.navbar.style.transform = 'translateY(0)';
+      // }
+
+      lastScrollY = scrollY;
+      ticking = false;
+    };
+
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+  }
+
+  setupMobileMenu() {
+    if (!this.mobileMenuButton || !this.mobileMenu) return;
+
+    this.mobileMenuButton.addEventListener('click', () => {
+      const isOpen = this.mobileMenu.classList.contains('hidden');
+
+      if (isOpen) {
+        this.mobileMenu.classList.remove('hidden');
+        this.mobileMenu.classList.add('block');
+        this.mobileMenuButton.setAttribute('aria-expanded', 'true');
+        this.mobileMenuButton.querySelector('.material-icons').textContent = 'close';
+      } else {
+        this.mobileMenu.classList.add('hidden');
+        this.mobileMenu.classList.remove('block');
+        this.mobileMenuButton.setAttribute('aria-expanded', 'false');
+        this.mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
       }
     });
 
-    // Toggle current FAQ item
-    content.classList.toggle('hidden');
-    icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-  });
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!this.mobileMenuButton.contains(e.target) && !this.mobileMenu.contains(e.target)) {
+        this.closeMobileMenu();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeMobileMenu();
+      }
+    });
+  }
+
+  closeMobileMenu() {
+    if (this.mobileMenu) {
+      this.mobileMenu.classList.add('hidden');
+      this.mobileMenu.classList.remove('block');
+    }
+    if (this.mobileMenuButton) {
+      this.mobileMenuButton.setAttribute('aria-expanded', 'false');
+      this.mobileMenuButton.querySelector('.material-icons').textContent = 'menu';
+    }
+  }
+
+  setupKeyboardNavigation() {
+    // Enhanced keyboard navigation for dropdowns
+    const dropdownButtons = document.querySelectorAll('[role="button"][aria-haspopup="true"]');
+
+    dropdownButtons.forEach(button => {
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          button.click();
+        }
+      });
+    });
+  }
+
+  performSearch(query, courses) {
+    if (!query) {
+      this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">Start typing to search courses...</div>';
+      return;
+    }
+
+    const results = courses.filter(course =>
+      course.title.toLowerCase().includes(query) ||
+      course.category.toLowerCase().includes(query)
+    );
+
+    if (results.length === 0) {
+      this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">No courses found matching your search.</div>';
+      return;
+    }
+
+    const resultsHTML = results.map(course => `
+      <a href="${course.url}" class="flex items-center p-4 rounded-xl hover:bg-primary-50 transition-all duration-200 group">
+        <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mr-4">
+          <span class="material-icons text-white text-sm">school</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-neutral-900 group-hover:text-primary-600">${course.title}</div>
+          <div class="text-sm text-neutral-500">${course.category}</div>
+        </div>
+        <span class="material-icons text-neutral-400 group-hover:text-primary-600 transition-colors duration-300">arrow_forward</span>
+      </a>
+    `).join('');
+
+    this.searchResults.innerHTML = resultsHTML;
+  }
+
+  closeSearch() {
+    this.searchOverlay.classList.add('hidden');
+    this.searchInput.value = '';
+    this.searchResults.innerHTML = '<div class="text-center text-neutral-500 py-8">Start typing to search courses...</div>';
+  }
+
+  setupActiveStates() {
+    // Manual active state management - only on click, not on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Remove active class from all links
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        // Add active class to clicked link
+        link.classList.add('active');
+      });
+    });
+  }
+
+  setupKeyboardNavigation() {
+    // Enhanced keyboard navigation for dropdowns
+    const dropdownButtons = document.querySelectorAll('[role="button"][aria-haspopup="true"]');
+
+    dropdownButtons.forEach(button => {
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          button.click();
+        }
+      });
+    });
+  }
+
+  setupAccessibility() {
+    // Add ARIA labels and improve accessibility
+    const dropdowns = document.querySelectorAll('.relative.group');
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('button');
+      const menu = dropdown.querySelector('[role="menu"]') || dropdown.querySelector('div:last-child');
+
+      if (button && menu) {
+        button.setAttribute('aria-haspopup', 'true');
+        button.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('role', 'menu');
+
+        button.addEventListener('click', () => {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+        });
+      }
+    });
+
+    // Focus management for mobile menu
+    if (this.mobileMenuButton) {
+      this.mobileMenuButton.setAttribute('aria-label', 'Toggle mobile menu');
+      this.mobileMenuButton.setAttribute('aria-expanded', 'false');
+    }
+  }
+}
+
+// Initialize enhanced navbar when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new EnhancedNavbar();
 });
+
+// Add CSS for navbar scroll effects
+const style = document.createElement('style');
+style.textContent = `
+  .navbar-scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .nav-link.active {
+    color: #0284c7 !important;
+    background-color: rgba(2, 132, 199, 0.1) !important;
+  }
+
+  .nav-link.active .absolute.bottom-0 {
+    width: 100% !important;
+  }
+
+  .course-dropdown-item:hover {
+    transform: translateX(4px);
+  }
+
+  .mobile-nav-link:hover {
+    background-color: rgba(2, 132, 199, 0.1);
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 1024px) {
+    .nav-link .material-icons {
+      opacity: 1 !important;
+    }
+  }
+`;
+document.head.appendChild(style);

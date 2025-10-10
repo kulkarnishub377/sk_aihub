@@ -1,0 +1,96 @@
+/* Grid Movement Animation */
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(80px, 80px); }
+}
+
+/* Enhanced Particle Float Animation */
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+}
+
+@keyframes particle-float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-15px) rotate(180deg); opacity: 0.7; }
+}
+
+/* Slow Spin Animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Draw Path Animation */
+@keyframes draw-path {
+  0% { stroke-dasharray: 0, 400; }
+  100% { stroke-dasharray: 400, 0; }
+}
+
+/* Footer Animations */
+@keyframes footer-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes footer-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes footer-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+}
+
+/* Footer Social Links */
+footer .social-link:hover {
+  animation: footer-float 0.6s ease-in-out;
+}
+
+/* Footer Contact Cards */
+footer .contact-card:hover {
+  animation: footer-glow 1s ease-in-out infinite;
+}
+
+/* Footer Links Animation */
+footer .footer-link:hover {
+  animation: footer-pulse 0.8s ease-in-out;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+#back-to-top:hover {
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.5);
+  animation: footer-float 0.6s ease-in-out;
+}
+
+/* Footer Grid Animation */
+footer .grid > div {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+footer .grid > div:nth-child(1) { animation-delay: 0.1s; }
+footer .grid > div:nth-child(2) { animation-delay: 0.2s; }
+footer .grid > div:nth-child(3) { animation-delay: 0.3s; }
+footer .grid > div:nth-child(4) { animation-delay: 0.4s; }
+
+/* Footer Neural Network Animation */
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; r: 3; }
+  50% { opacity: 0.8; r: 6; }
+}
+
+footer svg circle {
+  animation: neural-pulse 3s ease-in-out infinite;
+}
+
+footer svg circle:nth-child(1) { animation-delay: 0s; }
+footer svg circle:nth-child(2) { animation-delay: 0.5s; }
+footer svg circle:nth-child(3) { animation-delay: 1s; }
+footer svg circle:nth-child(4) { animation-delay: 1.5s; }
+footer svg circle:nth-child(5) { animation-delay: 2s; }
