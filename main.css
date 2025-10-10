@@ -1,3 +1,96 @@
+/* Advanced Hero Section Animations */
+
+/* Grid Flow Animation */
+@keyframes grid-flow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+/* Floating Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(90deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-180deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(270deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Particle Float Animations */
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.4; }
+  25% { transform: translateY(-15px) translateX(10px) rotate(90deg); opacity: 0.8; }
+  50% { transform: translateY(-30px) translateX(-10px) rotate(180deg); opacity: 0.6; }
+  75% { transform: translateY(-15px) translateX(-5px) rotate(270deg); opacity: 0.9; }
+}
+
+@keyframes particle-float-delayed {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.3; }
+  25% { transform: translateY(-12px) translateX(-8px) rotate(90deg); opacity: 0.7; }
+  50% { transform: translateY(-24px) translateX(8px) rotate(180deg); opacity: 0.5; }
+  75% { transform: translateY(-12px) translateX(4px) rotate(270deg); opacity: 0.8; }
+}
+
+/* Draw Path Animation for Neural Network */
+@keyframes draw-path {
+  0% { stroke-dasharray: 0, 1000; }
+  100% { stroke-dasharray: 1000, 0; }
+}
+
+/* Gradient Animation */
+@keyframes gradient-x {
+  0%, 100% { background-size: 200% 200%; background-position: left center; }
+  50% { background-size: 200% 200%; background-position: right center; }
+}
+
+/* Fade In Up Animation */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress Animation */
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Hero Section Classes */
+.animate-grid-flow { animation: grid-flow 25s linear infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-float-reverse { animation: float-reverse 7s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed 9s ease-in-out infinite; }
+.animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse-slow 5s ease-in-out infinite; }
+.animate-particle-float { animation: particle-float 8s ease-in-out infinite; }
+.animate-particle-float-delayed { animation: particle-float-delayed 10s ease-in-out infinite; }
+.animate-draw-path { animation: draw-path 4s ease-in-out forwards; }
+.animate-gradient-x { animation: gradient-x 3s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+.animate-progress { animation: progress 2s ease-out forwards; }
+
 /* Grid Movement Animation */
 @keyframes grid-move {
   0% { transform: translate(0, 0); }

@@ -1,4 +1,3 @@
-
 // Loading screen
 window.addEventListener('load', function() {
   const loadingScreen = document.getElementById('loading-screen');
@@ -464,6 +463,128 @@ if (monthlyBtn && yearlyBtn) {
     enterpriseYearly.textContent = 'Save ₹38,400/year';
   });
 }
+
+// Enhanced Counter Animation for Hero Stats
+function animateHeroCounter(counter) {
+  const target = parseInt(counter.getAttribute('data-counter'));
+  const duration = 2500; // 2.5 seconds for smoother animation
+  const start = performance.now();
+  const startValue = 0;
+
+  function update(currentTime) {
+    const elapsed = currentTime - start;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Easing function for smooth animation
+    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+    const current = Math.floor(startValue + (target - startValue) * easeOutQuart);
+
+    // Format numbers with commas and add + for numbers under 100
+    const formatted = current.toLocaleString() + (target < 100 ? '+' : '%');
+
+    // Handle percentage display
+    if (target === 97) {
+      counter.textContent = current + '%';
+    } else {
+      counter.textContent = current.toLocaleString() + (target < 100 ? '+' : '');
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// Enhanced Intersection Observer for Hero Counters
+const heroObserverOptions = {
+  threshold: 0.3,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const heroCounterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counters = entry.target.querySelectorAll('[data-counter]');
+      counters.forEach((counter, index) => {
+        if (!counter.hasAttribute('data-animated')) {
+          setTimeout(() => {
+            animateHeroCounter(counter);
+          }, index * 200); // Stagger animations
+          counter.setAttribute('data-animated', 'true');
+        }
+      });
+    }
+  });
+}, heroObserverOptions);
+
+// Observe hero section for counter animations
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+  heroCounterObserver.observe(heroSection);
+}
+
+// Enhanced Hero Section Interactions
+document.addEventListener('DOMContentLoaded', function() {
+  // Add hover effects for feature cards
+  const featureCards = document.querySelectorAll('#hero .group.flex.items-center');
+  featureCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+
+  // Add click effects for CTA buttons
+  const ctaButtons = document.querySelectorAll('#hero .group.relative.inline-flex');
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      this.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
+    });
+  });
+
+  // Enhanced scroll indicator interaction
+  const scrollIndicator = document.querySelector('#hero .absolute.bottom-8');
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', function() {
+      const nextSection = document.getElementById('about');
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Add parallax effect to floating elements
+  let parallaxTicking = false;
+  const parallaxElements = document.querySelectorAll('#hero .absolute.w-32, #hero .absolute.w-24, #hero .absolute.w-40, #hero .absolute.w-28, #hero .absolute.w-20, #hero .absolute.w-16');
+
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+
+    parallaxElements.forEach((element, index) => {
+      const speed = (index % 3 + 1) * 0.1;
+      element.style.transform = `translateY(${rate * speed}px)`;
+    });
+
+    parallaxTicking = false;
+  }
+
+  function requestParallaxTick() {
+    if (!parallaxTicking) {
+      requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestParallaxTick, { passive: true });
+});
 
 // Enhanced Navbar Functionality
 class EnhancedNavbar {
