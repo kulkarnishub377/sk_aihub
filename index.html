@@ -1,994 +1,1096 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SK AI Hub - Advanced AI Education Platform</title>
-  <meta name="description" content="Master Artificial Intelligence with SK AI Hub. Advanced AI courses, cutting-edge technology, and career transformation.">
-  <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Deep Learning, Python, Data Science, AI Courses">
+  <title>SK AI Hub - Premium AI Education Platform</title>
+  <meta name="description" content="Master Artificial Intelligence with SK AI Hub. Premium AI courses, cutting-edge technology, and career transformation. Join India's leading AI education platform.">
+  <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, Deep Learning, Python, Data Science, AI Courses, Premium Education">
 
-  <!-- Material Icons & Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Material Web Components -->
   <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom Styles -->
   <link href="css/main.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/new_logo.png">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            secondary: {
+              50: '#fdf4ff',
+              100: '#fae8ff',
+              200: '#f5d0fe',
+              300: '#f0abfc',
+              400: '#e879f9',
+              500: '#d946ef',
+              600: '#c026d3',
+              700: '#a21caf',
+              800: '#86198f',
+              900: '#701a75',
+            },
+            accent: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            }
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'gradient': 'gradient 8s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="mdc-typography">
+<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 font-inter antialiased">
 
-  <!-- Loading Screen -->
-  <div id="loading-screen" class="loading-screen">
-    <div class="loading-content">
-      <div class="loading-logo">
-        <img src="assets/img/new_logo.png" alt="SK AI Hub" class="logo-image">
-      </div>
-      <div class="loading-spinner">
-        <div class="mdc-circular-progress" role="progressbar">
-          <div class="mdc-circular-progress__determinate-container">
-            <div class="mdc-circular-progress__determinate-circle"></div>
+ 
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-xl flex items-center justify-center shadow-lg">
+            <span class="material-icons text-white text-xl">psychology</span>
           </div>
-          <div class="mdc-circular-progress__indeterminate-container">
-            <div class="mdc-circular-progress__indeterminate-circle-graphic">
-              <div class="mdc-circular-progress__indeterminate-circle-graphic-path"></div>
+          <div>
+            <div class="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+              SK AI Hub
             </div>
+            <div class="text-xs text-slate-500 -mt-1">Premium AI Education</div>
           </div>
         </div>
-      </div>
-      <div class="loading-text">Initializing AI Experience...</div>
-    </div>
-  </div>
 
-  <!-- App Bar -->
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <button class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon mdc-ripple-surface" id="menu-button">menu</button>
-        <span class="mdc-top-app-bar__title">
-          <div class="logo-container">
-            <img src="assets/img/new_logo.png" alt="SK AI Hub" class="logo-small">
-            <span class="brand-text">SK AI Hub</span>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Home</a>
+
+          <!-- Courses Dropdown -->
+          <div class="relative group">
+            <button class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200 flex items-center">
+              Courses
+              <span class="material-icons text-sm ml-1">expand_more</span>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div class="p-6">
+                <div class="grid grid-cols-2 gap-4">
+                  <a href="assets/course/python_for_software_dev.html" class="flex items-center p-3 rounded-lg hover:bg-primary-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-primary-600 text-sm">code</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-primary-600">AI with Python</div>
+                      <div class="text-xs text-slate-500">Complete AI Development</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/advanced_python.html" class="flex items-center p-3 rounded-lg hover:bg-secondary-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-secondary-600 text-sm">api</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-secondary-600">Advanced Python</div>
+                      <div class="text-xs text-slate-500">APIs & Automation</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/java_with_dsa.html" class="flex items-center p-3 rounded-lg hover:bg-accent-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-accent-600 text-sm">memory</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-accent-600">Java with DSA</div>
+                      <div class="text-xs text-slate-500">Data Structures & Algorithms</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/c_cpp_programming.html" class="flex items-center p-3 rounded-lg hover:bg-green-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-green-600 text-sm">terminal</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-green-600">C/C++ Programming</div>
+                      <div class="text-xs text-slate-500">System Programming</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/full_stack_web_dev.html" class="flex items-center p-3 rounded-lg hover:bg-blue-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-blue-600 text-sm">web</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-blue-600">Full Stack Web Dev</div>
+                      <div class="text-xs text-slate-500">MERN Stack</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/flutter_app_dev.html" class="flex items-center p-3 rounded-lg hover:bg-purple-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-purple-600 text-sm">phone_android</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-purple-600">Flutter App Dev</div>
+                      <div class="text-xs text-slate-500">Cross-Platform Mobile</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/web_design.html" class="flex items-center p-3 rounded-lg hover:bg-pink-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-pink-600 text-sm">palette</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-pink-600">Web Design</div>
+                      <div class="text-xs text-slate-500">UI/UX & Frontend</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/database.html" class="flex items-center p-3 rounded-lg hover:bg-indigo-50 transition-colors group/item">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-indigo-600 text-sm">storage</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-indigo-600">Database Management</div>
+                      <div class="text-xs text-slate-500">SQL & NoSQL</div>
+                    </div>
+                  </a>
+
+                  <a href="assets/course/career_booster.html" class="flex items-center p-3 rounded-lg hover:bg-teal-50 transition-colors group/item col-span-2">
+                    <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-3">
+                      <span class="material-icons text-teal-600 text-sm">rocket_launch</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-slate-900 group-hover/item:text-teal-600">Career Booster Program</div>
+                      <div class="text-xs text-slate-500">Interview Prep & Career Guidance</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </span>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-        <nav class="desktop-nav">
-          <a href="#home" class="mdc-button mdc-button--outlined nav-link">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Home</span>
-          </a>
-          <a href="#courses" class="mdc-button mdc-button--outlined nav-link">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Courses</span>
-          </a>
-          <a href="#ai-tools" class="mdc-button mdc-button--outlined nav-link">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">AI Tools</span>
-          </a>
-          <a href="#about" class="mdc-button mdc-button--outlined nav-link">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">About</span>
-          </a>
-          <a href="#testimonials" class="mdc-button mdc-button--outlined nav-link">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Reviews</span>
-          </a>
-          <a href="#contact" class="mdc-button mdc-button--raised nav-link primary">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Get Started</span>
-          </a>
-        </nav>
-      </section>
-    </div>
-  </header>
 
-  <!-- Drawer -->
-  <aside class="mdc-drawer mdc-drawer--modal" id="drawer">
-    <div class="mdc-drawer__content">
-      <nav class="mdc-list">
-        <a class="mdc-list-item mdc-list-item--activated" href="#home">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">home</span>
-          <span class="mdc-list-item__text">Home</span>
-        </a>
-        <a class="mdc-list-item" href="#courses">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">school</span>
-          <span class="mdc-list-item__text">Courses</span>
-        </a>
-        <a class="mdc-list-item" href="#ai-tools">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">build</span>
-          <span class="mdc-list-item__text">AI Tools</span>
-        </a>
-        <a class="mdc-list-item" href="#about">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">info</span>
-          <span class="mdc-list-item__text">About</span>
-        </a>
-        <a class="mdc-list-item" href="#testimonials">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">star</span>
-          <span class="mdc-list-item__text">Reviews</span>
-        </a>
-        <a class="mdc-list-item" href="#contact">
-          <span class="mdc-list-item__ripple"></span>
-          <span class="mdc-list-item__graphic material-icons">contact_mail</span>
-          <span class="mdc-list-item__text">Contact</span>
-        </a>
-      </nav>
-    </div>
-  </aside>
+          <a href="#ai-tools" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">AI Tools</a>
+          <a href="#testimonials" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Success</a>
+          <a href="#about" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">About</a>
+          <a href="assets/course/login_signup.html" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
+            Login / Sign Up
+          </a>
+        </div>
 
-  <!-- Drawer Scrim -->
-  <div class="mdc-drawer-scrim" id="drawer-scrim"></div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+          <span class="material-icons text-slate-700">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#home" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Home</a>
+
+        <!-- Mobile Courses Section -->
+        <div class="space-y-2">
+          <div class="text-slate-900 font-semibold py-2 border-b border-slate-100">Courses</div>
+          <a href="assets/course/python_for_software_dev.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• AI with Python</a>
+          <a href="assets/course/advanced_python.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Advanced Python</a>
+          <a href="assets/course/java_with_dsa.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Java with DSA</a>
+          <a href="assets/course/c_cpp_programming.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• C/C++ Programming</a>
+          <a href="assets/course/full_stack_web_dev.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Full Stack Web Dev</a>
+          <a href="assets/course/flutter_app_dev.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Flutter App Dev</a>
+          <a href="assets/course/web_design.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Web Design</a>
+          <a href="assets/course/database.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Database Management</a>
+          <a href="assets/course/career_booster.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2 pl-4 text-sm">• Career Booster</a>
+        </div>
+
+        <a href="#ai-tools" class="block text-slate-700 hover:text-primary-600 font-medium py-2">AI Tools</a>
+        <a href="#testimonials" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Success</a>
+        <a href="#about" class="block text-slate-700 hover:text-primary-600 font-medium py-2">About</a>
+        <a href="assets/course/login_signup.html" class="block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold text-center mt-6">
+          Login / Sign Up
+        </a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Main Content -->
-  <main class="main-content">
+  <main class="pt-16">
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="hero-background">
-        <canvas id="neural-network" class="neural-network-canvas"></canvas>
-        <div class="particle-container" id="particles"></div>
-        <div class="gradient-overlay"></div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200/30 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-100/20 to-secondary-100/20 rounded-full blur-3xl animate-pulse-slow"></div>
       </div>
 
-      <div class="hero-content">
-        <div class="hero-text">
-          <div class="mdc-chip-set hero-chips">
-            <div class="mdc-chip mdc-chip--selected">
-              <div class="mdc-chip__ripple"></div>
-              <span class="mdc-chip__text">🚀 Advanced AI Education</span>
-            </div>
-            <div class="mdc-chip">
-              <div class="mdc-chip__ripple"></div>
-              <span class="mdc-chip__text">🎯 Career Transformation</span>
-            </div>
-            <div class="mdc-chip">
-              <div class="mdc-chip__ripple"></div>
-              <span class="mdc-chip__text">💡 Cutting-Edge Technology</span>
-            </div>
+      <!-- Neural Network Canvas -->
+      <canvas id="neural-network" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Premium Badge -->
+        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-sm font-semibold rounded-full mb-8 shadow-lg">
+          <span class="material-icons text-sm mr-2">workspace_premium</span>
+          Premium AI Education Platform
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+          <span class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent animate-gradient">
+            Master AI
+          </span>
+          <br>
+          <span class="text-slate-800">Like a Pro</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Join India's most advanced AI education platform. Learn from industry leaders,
+          build real-world projects, and transform your career with guaranteed placement.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2" data-target="25000">25,000+</div>
+            <div class="text-slate-600 font-medium">Students Trained</div>
           </div>
-
-          <h1 class="hero-title mdc-typography--headline1">
-            Master <span class="gradient-text">Artificial Intelligence</span> with Industry Leaders
-          </h1>
-
-          <p class="hero-subtitle mdc-typography--headline6">
-            Join India's premier AI education platform. Learn from Google, Microsoft, and Meta experts.
-            Transform your career with hands-on projects and guaranteed job placement.
-          </p>
-
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-target="15000">0</div>
-              <div class="stat-label">Students Trained</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="95">0</div>
-              <div class="stat-label">Placement Rate</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-target="200">0</div>
-              <div class="stat-label">Partner Companies</div>
-            </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-secondary-600 mb-2" data-target="98">98%</div>
+            <div class="text-slate-600 font-medium">Success Rate</div>
           </div>
-
-          <div class="hero-actions">
-            <button class="mdc-button mdc-button--raised primary-cta">
-              <span class="mdc-button__ripple"></span>
-              <span class="mdc-button__label">Start Learning Today</span>
-            </button>
-            <button class="mdc-button mdc-button--outlined secondary-cta">
-              <span class="mdc-button__ripple"></span>
-              <span class="mdc-button__label">Watch Demo</span>
-            </button>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent-600 mb-2" data-target="300">300+</div>
+            <div class="text-slate-600 font-medium">Partner Companies</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2" data-target="50">50+</div>
+            <div class="text-slate-600 font-medium">Expert Mentors</div>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="interactive-demo">
-            <div class="demo-screen">
-              <div class="code-editor">
-                <div class="editor-header">
-                  <div class="editor-tabs">
-                    <div class="tab active">ai_model.py</div>
-                    <div class="tab">data_analysis.ipynb</div>
-                    <div class="tab">neural_net.js</div>
-                  </div>
-                  <div class="window-controls">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                  </div>
-                </div>
-                <div class="editor-content">
-                  <pre><code>import tensorflow as tf
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <button class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center">
+            <span class="material-icons mr-2">play_arrow</span>
+            Start Free Trial
+          </button>
+          <button class="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-primary-500 hover:text-primary-600 transition-all duration-300 flex items-center">
+            <span class="material-icons mr-2">ondemand_video</span>
+            Watch Demo
+          </button>
+        </div>
+
+        <!-- Interactive Demo -->
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 overflow-hidden">
+            <!-- Demo Header -->
+            <div class="bg-slate-900 px-6 py-4 flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div class="text-white text-sm font-mono">ai_model_trainer.py</div>
+            </div>
+
+            <!-- Demo Content -->
+            <div class="p-8">
+              <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <pre class="text-sm text-slate-800 font-mono bg-slate-50 p-4 rounded-lg overflow-x-auto"><code>import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
-# Load and preprocess data
-(X_train, X_test, y_train, y_test) = train_test_split(
-    features, labels, test_size=0.2, random_state=42)
-
-# Build neural network
+# Build advanced neural network
 model = tf.keras.Sequential([
+    tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
+    tf.keras.layers.MaxPooling2D((2, 2)),
     tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dropout(0.3),
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-# Compile and train
+# Train with real-time visualization
 model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
+              loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(X_train, y_train, epochs=10)</code></pre>
+history = model.fit(X_train, y_train,
+                   epochs=50,
+                   validation_data=(X_test, y_test))</code></pre>
                 </div>
-              </div>
-            </div>
-            <div class="demo-stats">
-              <div class="accuracy-meter">
-                <div class="meter-label">Model Accuracy</div>
-                <div class="meter-bar">
-                  <div class="meter-fill" style="width: 94%"></div>
+
+                <div class="text-center">
+                  <div class="text-6xl font-bold text-primary-600 mb-4" id="accuracy-display">0%</div>
+                  <div class="text-slate-600 font-medium mb-6">Model Accuracy</div>
+                  <div class="w-full bg-slate-200 rounded-full h-3 mb-4">
+                    <div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full transition-all duration-1000" id="accuracy-bar" style="width: 0%"></div>
+                  </div>
+                  <div class="text-sm text-slate-500">Training in progress...</div>
                 </div>
-                <div class="meter-value">94.2%</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+        <div class="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-pulse"></div>
         </div>
-        <div class="scroll-text">Scroll to explore</div>
+        <div class="text-slate-500 text-sm mt-2">Scroll to explore</div>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="mdc-typography--headline2">Why Choose SK AI Hub?</h2>
-          <p class="mdc-typography--body1">Experience the difference with our comprehensive AI learning ecosystem</p>
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Why Choose <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">SK AI Hub</span>?
+          </h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Experience the most advanced AI learning ecosystem with premium features designed for success
+          </p>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">psychology</span>
-              </div>
-              <h3 class="mdc-typography--headline6">AI-First Curriculum</h3>
-              <p class="mdc-typography--body2">Learn cutting-edge AI technologies from foundation to advanced applications</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="group bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">psychology</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">AI-First Curriculum</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Learn cutting-edge AI technologies from foundation to advanced applications with industry-relevant projects
+            </p>
           </div>
 
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">engineering</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Industry Experts</h3>
-              <p class="mdc-typography--body2">Mentored by professionals from Google, Microsoft, Meta, and leading AI companies</p>
+          <!-- Feature 2 -->
+          <div class="group bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">engineering</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Expert Mentorship</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Get mentored by AI leaders from Google, Microsoft, Meta, and top tech companies with personalized guidance
+            </p>
           </div>
 
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">work</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Job Guarantee</h3>
-              <p class="mdc-typography--body2">95% placement rate with personalized career support and interview preparation</p>
+          <!-- Feature 3 -->
+          <div class="group bg-gradient-to-br from-accent-50 to-accent-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">work</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Guaranteed Placement</h3>
+            <p class="text-slate-600 leading-relaxed">
+              98% placement rate with personalized career support, interview preparation, and direct company connections
+            </p>
           </div>
 
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">code</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Hands-on Projects</h3>
-              <p class="mdc-typography--body2">Build real-world AI applications and deploy models in production environments</p>
+          <!-- Feature 4 -->
+          <div class="group bg-gradient-to-br from-primary-50 to-secondary-50 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">code</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Real-World Projects</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Build production-ready AI applications, deploy models, and contribute to open-source AI initiatives
+            </p>
           </div>
 
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">update</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Lifetime Access</h3>
-              <p class="mdc-typography--body2">Continuous learning with updated content and community support forever</p>
+          <!-- Feature 5 -->
+          <div class="group bg-gradient-to-br from-secondary-50 to-accent-50 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">update</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Lifetime Access</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Continuous learning with updated content, community support, and advanced courses forever
+            </p>
           </div>
 
-          <div class="feature-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="feature-icon">
-                <span class="material-icons">group</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Community</h3>
-              <p class="mdc-typography--body2">Join a thriving community of AI enthusiasts, researchers, and professionals</p>
+          <!-- Feature 6 -->
+          <div class="group bg-gradient-to-br from-accent-50 to-primary-50 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-icons text-white text-2xl">group</span>
             </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Premium Community</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Join an exclusive community of AI researchers, practitioners, and industry leaders worldwide
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="mdc-typography--headline2">Comprehensive AI Courses</h2>
-          <p class="mdc-typography--body1">From beginner to expert, master every aspect of artificial intelligence</p>
+    <section id="courses" class="py-24 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Premium <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">AI Courses</span>
+          </h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Master every aspect of artificial intelligence with our comprehensive curriculum designed by industry experts
+          </p>
         </div>
 
-        <div class="courses-grid">
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-badge">Most Popular</div>
-              <div class="course-icon">
-                <span class="material-icons">code</span>
+        <!-- Course Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- AI with Python -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-primary-500 to-primary-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">AI & ML</span>
+                <span class="material-icons text-2xl">psychology</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">AI with Python</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                16 weeks • Beginner to Advanced
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">Python for AI</h3>
-              <p class="mdc-typography--body2">Master Python programming with AI applications</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 8 weeks</span>
-                <span class="level"><span class="material-icons">school</span> Beginner</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete Python programming course for AI development covering machine learning, deep learning, data science, and AI applications.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">Deep Learning</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">PyTorch</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">Data Structures</span>
-                <span class="feature-tag">AI Libraries</span>
-                <span class="feature-tag">Projects</span>
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹39,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/python_for_software_dev.html" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-icon">
-                <span class="material-icons">psychology</span>
+          <!-- Advanced Python -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-secondary-500 to-secondary-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Advanced</span>
+                <span class="material-icons text-2xl">api</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Advanced Python</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                12 weeks • Intermediate
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">Machine Learning</h3>
-              <p class="mdc-typography--body2">Build predictive models and ML algorithms</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 12 weeks</span>
-                <span class="level"><span class="material-icons">school</span> Intermediate</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master advanced Python concepts including APIs, automation, web scraping, Flask, Django, and cloud deployment.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">APIs</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Automation</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Flask</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Django</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">Supervised Learning</span>
-                <span class="feature-tag">Neural Networks</span>
-                <span class="feature-tag">TensorFlow</span>
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹29,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/advanced_python.html" class="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-icon">
-                <span class="material-icons">visibility</span>
+          <!-- Java with DSA -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-accent-500 to-accent-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Programming</span>
+                <span class="material-icons text-2xl">memory</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Java with DSA</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                20 weeks • Beginner to Advanced
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">Computer Vision</h3>
-              <p class="mdc-typography--body2">Master image recognition and visual AI</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 10 weeks</span>
-                <span class="level"><span class="material-icons">school</span> Advanced</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Comprehensive Java programming with data structures and algorithms for competitive coding and software development.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Data Structures</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Algorithms</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">OOP</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Competitive Coding</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">CNNs</span>
-                <span class="feature-tag">OpenCV</span>
-                <span class="feature-tag">Object Detection</span>
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹34,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/java_with_dsa.html" class="bg-gradient-to-r from-accent-600 to-primary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-icon">
-                <span class="material-icons">text_fields</span>
+          <!-- C/C++ Programming -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">System Programming</span>
+                <span class="material-icons text-2xl">terminal</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">C/C++ Programming</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                18 weeks • Beginner to Advanced
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">Natural Language Processing</h3>
-              <p class="mdc-typography--body2">Build chatbots and text analysis systems</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 10 weeks</span>
-                <span class="level"><span class="material-icons">school</span> Intermediate</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master system programming with C and C++ for performance-critical applications, embedded systems, and game development.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">System Programming</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Performance</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Embedded Systems</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Memory Management</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">Transformers</span>
-                <span class="feature-tag">BERT</span>
-                <span class="feature-tag">ChatGPT</span>
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹31,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/c_cpp_programming.html" class="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-icon">
-                <span class="material-icons">memory</span>
+          <!-- Full Stack Web Development -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Web Development</span>
+                <span class="material-icons text-2xl">web</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Full Stack Web Dev</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                24 weeks • Beginner to Advanced
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">Deep Learning</h3>
-              <p class="mdc-typography--body2">Advanced neural networks and architectures</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 14 weeks</span>
-                <span class="level"><span class="material-icons">school</span> Advanced</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete MERN stack development with modern web technologies, responsive design, and cloud deployment.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Express</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">GANs</span>
-                <span class="feature-tag">RNNs</span>
-                <span class="feature-tag">Autoencoders</span>
-              </div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
-              </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹44,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/full_stack_web_dev.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="course-card mdc-card">
-            <div class="course-header">
-              <div class="course-badge">New</div>
-              <div class="course-icon">
-                <span class="material-icons">rocket_launch</span>
+          <!-- Flutter App Development -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Mobile Development</span>
+                <span class="material-icons text-2xl">phone_android</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Flutter App Dev</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                16 weeks • Beginner to Advanced
               </div>
             </div>
-            <div class="mdc-card__content">
-              <h3 class="mdc-typography--headline6">AI Ethics & Deployment</h3>
-              <p class="mdc-typography--body2">Responsible AI development and production deployment</p>
-              <div class="course-meta">
-                <span class="duration"><span class="material-icons">schedule</span> 8 weeks</span>
-                <span class="level"><span class="material-icons">school</span> All Levels</span>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Build cross-platform mobile applications with Flutter and Dart for iOS and Android with modern UI/UX.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Flutter</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Dart</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Cross-Platform</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
               </div>
-              <div class="course-features">
-                <span class="feature-tag">Ethics</span>
-                <span class="feature-tag">MLOps</span>
-                <span class="feature-tag">Deployment</span>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹36,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/flutter_app_dev.html" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
               </div>
             </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                  <span class="mdc-button__ripple"></span>
-                  <span class="mdc-button__label">Learn More</span>
-                </button>
+          </div>
+
+          <!-- Web Design -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                <span class="material-icons text-2xl">palette</span>
               </div>
-              <div class="mdc-card__action-icons">
-                <button class="mdc-icon-button mdc-card__action mdc-card__action--icon" title="Add to wishlist">
-                  <span class="mdc-icon-button__ripple"></span>
-                  <span class="mdc-icon-button__icon material-icons">favorite_border</span>
-                </button>
+              <h3 class="text-2xl font-bold mb-2">Web Design</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                14 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master UI/UX design principles and modern web design with Figma, Adobe XD, and frontend technologies.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">UI/UX Design</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Figma</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Adobe XD</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Prototyping</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹27,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/web_design.html" class="bg-gradient-to-r from-pink-600 to-red-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database Management -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Database</span>
+                <span class="material-icons text-2xl">storage</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Database Management</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                12 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete database design and management with SQL, NoSQL, MongoDB, PostgreSQL, and cloud databases.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">SQL</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">NoSQL</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">PostgreSQL</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹26,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/database.html" class="bg-gradient-to-r from-indigo-600 to-teal-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Booster Program -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-teal-500 to-teal-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Career Development</span>
+                <span class="material-icons text-2xl">rocket_launch</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Career Booster</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                8 weeks • All Levels
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Comprehensive career development program with interview preparation, resume building, LinkedIn optimization, and job placement assistance.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Interview Prep</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Resume Building</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Job Search</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Career Coaching</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Placement Support</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹19,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/career_booster.html" class="bg-gradient-to-r from-teal-600 to-primary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  Start Career Boost
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- AI Tools Section -->
-    <section id="ai-tools" class="ai-tools-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="mdc-typography--headline2">AI Tools & Technologies</h2>
-          <p class="mdc-typography--body1">Master the most powerful AI frameworks and tools used by industry leaders</p>
-        </div>
-
-        <div class="tools-grid">
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon tensorflow">
-                <span class="material-icons">memory</span>
-              </div>
-              <h3 class="mdc-typography--headline6">TensorFlow</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Google's open-source machine learning framework for building neural networks</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Deep Learning</span>
-                <span class="skill-tag">Neural Networks</span>
-                <span class="skill-tag">Production ML</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon pytorch">
-                <span class="material-icons">bolt</span>
-              </div>
-              <h3 class="mdc-typography--headline6">PyTorch</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Facebook's deep learning framework with dynamic computation graphs</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Research</span>
-                <span class="skill-tag">Flexibility</span>
-                <span class="skill-tag">Pythonic</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon scikit">
-                <span class="material-icons">analytics</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Scikit-learn</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Essential machine learning library for classical ML algorithms</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Classical ML</span>
-                <span class="skill-tag">Data Mining</span>
-                <span class="skill-tag">Preprocessing</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon opencv">
-                <span class="material-icons">visibility</span>
-              </div>
-              <h3 class="mdc-typography--headline6">OpenCV</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Computer vision library for image processing and analysis</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Computer Vision</span>
-                <span class="skill-tag">Image Processing</span>
-                <span class="skill-tag">Real-time</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon huggingface">
-                <span class="material-icons">text_fields</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Hugging Face</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Leading platform for natural language processing models</p>
-              <div class="tool-skills">
-                <span class="skill-tag">NLP</span>
-                <span class="skill-tag">Transformers</span>
-                <span class="skill-tag">Pre-trained Models</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon pandas">
-                <span class="material-icons">table_chart</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Pandas</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Powerful data manipulation and analysis library</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">DataFrames</span>
-                <span class="skill-tag">ETL</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon numpy">
-                <span class="material-icons">calculate</span>
-              </div>
-              <h3 class="mdc-typography--headline6">NumPy</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Fundamental package for scientific computing with Python</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Arrays</span>
-                <span class="skill-tag">Mathematics</span>
-                <span class="skill-tag">Scientific Computing</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tool-card mdc-card">
-            <div class="tool-header">
-              <div class="tool-icon matplotlib">
-                <span class="material-icons">show_chart</span>
-              </div>
-              <h3 class="mdc-typography--headline6">Matplotlib</h3>
-            </div>
-            <div class="mdc-card__content">
-              <p class="mdc-typography--body2">Comprehensive library for creating static, animated visualizations</p>
-              <div class="tool-skills">
-                <span class="skill-tag">Data Visualization</span>
-                <span class="skill-tag">Charts</span>
-                <span class="skill-tag">Plots</span>
-              </div>
-            </div>
-          </div>
+        <!-- View All Courses Button -->
+        <div class="text-center">
+          <a href="courses.html" class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-200 inline-flex items-center">
+            <span class="material-icons mr-2">grid_view</span>
+            View All 9 Premium Courses
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="mdc-typography--headline2">Success Stories</h2>
-          <p class="mdc-typography--body1">Hear from our students who transformed their careers with AI</p>
-        </div>
-
-        <div class="testimonials-grid">
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "SK AI Hub completely transformed my career. From zero programming knowledge to landing a senior AI engineer role at Google in just 8 months. The hands-on projects and mentorship were invaluable."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Priya Sharma">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Priya Sharma</div>
-                  <div class="author-title">Senior AI Engineer, Google</div>
-                  <div class="author-company">Previously: Data Analyst</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "The AI Ethics course opened my eyes to responsible AI development. Now I'm leading AI initiatives at Microsoft, ensuring our models are fair, transparent, and beneficial to society."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Rahul Kumar">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Rahul Kumar</div>
-                  <div class="author-title">AI Ethics Lead, Microsoft</div>
-                  <div class="author-company">Previously: Software Developer</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "From a career switcher with no tech background to building computer vision systems at Meta. The personalized mentorship and real-world projects made all the difference."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Ananya Patel">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Ananya Patel</div>
-                  <div class="author-title">Computer Vision Engineer, Meta</div>
-                  <div class="author-company">Previously: Marketing Manager</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "The NLP course equipped me with cutting-edge skills. I'm now developing conversational AI at Amazon, working on Alexa and other voice-powered services."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Vikram Singh">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Vikram Singh</div>
-                  <div class="author-title">NLP Engineer, Amazon</div>
-                  <div class="author-company">Previously: Backend Developer</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "The deep learning specialization gave me the expertise to lead AI research at a Fortune 500 company. The advanced curriculum and research projects were exceptional."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Dr. Meera Joshi">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Dr. Meera Joshi</div>
-                  <div class="author-title">AI Research Director, Fortune 500</div>
-                  <div class="author-company">Previously: Research Scientist</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card mdc-card">
-            <div class="mdc-card__content">
-              <div class="testimonial-rating">
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-                <span class="material-icons">star</span>
-              </div>
-              <blockquote class="mdc-typography--body1">
-                "The comprehensive curriculum and industry connections helped me transition from academia to industry. Now I'm deploying ML models at scale for a leading fintech company."
-              </blockquote>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Arjun Nair">
-                </div>
-                <div class="author-info">
-                  <div class="author-name">Arjun Nair</div>
-                  <div class="author-title">ML Engineer, FinTech Corp</div>
-                  <div class="author-company">Previously: Academic Researcher</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Premium AI Learning Experience -->
+    <section class="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-200/40 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-80 h-80 bg-secondary-200/40 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
       </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="section-container">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon">
-              <span class="material-icons">school</span>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Premium <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">AI Learning Experience</span>
+          </h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Experience the most advanced AI education platform with cutting-edge features designed for the future
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <!-- Interactive Learning -->
+          <div class="space-y-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <span class="material-icons text-white text-2xl">smart_toy</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">AI-Powered Learning</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                  Our intelligent learning system adapts to your pace, identifies knowledge gaps, and provides personalized recommendations for optimal learning outcomes.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-center">
+                    <span class="material-icons text-primary-600 text-sm mr-2">check_circle</span>
+                    Adaptive difficulty adjustment
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-primary-600 text-sm mr-2">check_circle</span>
+                    Real-time progress tracking
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-primary-600 text-sm mr-2">check_circle</span>
+                    Personalized learning paths
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="stat-number" data-target="15000">0</div>
-            <div class="stat-label">Students Trained</div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <span class="material-icons text-white text-2xl">group_work</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-900">Live Collaboration</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                  Work on real projects with peers from around the world. Our collaborative platform enables pair programming, code reviews, and team-based learning.
+                </p>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-center">
+                    <span class="material-icons text-secondary-600 text-sm mr-2">check_circle</span>
+                    Real-time collaborative coding
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-secondary-600 text-sm mr-2">check_circle</span>
+                    Peer code review system
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-secondary-600 text-sm mr-2">check_circle</span>
+                    Global project teams
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-icon">
-              <span class="material-icons">work</span>
+          <!-- Interactive Demo Screen -->
+          <div class="relative">
+            <div class="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-200/50 shadow-2xl">
+              <!-- Demo Header -->
+              <div class="bg-slate-100 px-6 py-4 rounded-t-2xl flex items-center justify-between border-b border-slate-200">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div class="text-slate-900 text-sm font-mono">ai_collaboration.py</div>
+              </div>
+
+              <!-- Demo Content -->
+              <div class="p-6 space-y-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">A</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-slate-900 text-sm font-medium">Alex (Mentor)</div>
+                    <div class="text-slate-500 text-xs">Just reviewed your neural network implementation. Great work on the optimization!</div>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-secondary-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">Y</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-slate-900 text-sm font-medium">You</div>
+                    <div class="text-slate-600 text-xs">Thanks! The batch normalization really improved the training stability.</div>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                    <span class="text-white text-sm font-bold">S</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-slate-900 text-sm font-medium">Sarah (Peer)</div>
+                    <div class="text-slate-500 text-xs">Mind sharing your hyperparameter tuning approach? I'm stuck on model convergence.</div>
+                  </div>
+                </div>
+
+                <!-- Code Snippet -->
+                <div class="bg-slate-50 rounded-lg p-4 mt-4 border border-slate-200">
+                  <pre class="text-xs text-slate-700 font-mono"><code># Collaborative AI Development
+def optimize_neural_network(model, train_data):
+    # Batch normalization for stable training
+    model.add(tf.keras.layers.BatchNormalization())
+
+    # Hyperparameter tuning with collaborative insights
+    best_params = collaborative_tune(model, train_data)
+
+    return model.compile(optimizer='adam',
+                        loss='categorical_crossentropy',
+                        metrics=['accuracy'])</code></pre>
+                </div>
+              </div>
             </div>
-            <div class="stat-number" data-target="95">0</div>
-            <div class="stat-label">Placement Rate</div>
+          </div>
+        </div>
+
+        <!-- Advanced Features Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/50 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <span class="material-icons text-white text-2xl">cloud_upload</span>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-slate-900">Cloud Infrastructure</h4>
+            <p class="text-slate-600 text-sm mb-4">Access to GPU clusters, unlimited storage, and scalable computing resources for training large models.</p>
+            <div class="text-primary-600 font-semibold">Free GPU Credits</div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-icon">
-              <span class="material-icons">business</span>
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/50 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <span class="material-icons text-white text-2xl">analytics</span>
             </div>
-            <div class="stat-number" data-target="200">0</div>
-            <div class="stat-label">Partner Companies</div>
+            <h4 class="text-xl font-bold mb-3 text-slate-900">Advanced Analytics</h4>
+            <p class="text-slate-600 text-sm mb-4">Comprehensive learning analytics, performance insights, and predictive success metrics.</p>
+            <div class="text-secondary-600 font-semibold">Real-time Insights</div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-icon">
-              <span class="material-icons">star</span>
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/50 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <span class="material-icons text-white text-2xl">security</span>
             </div>
-            <div class="stat-number" data-target="4.9">0</div>
-            <div class="stat-label">Average Rating</div>
+            <h4 class="text-xl font-bold mb-3 text-slate-900">Enterprise Security</h4>
+            <p class="text-slate-600 text-sm mb-4">Bank-grade security, GDPR compliance, and enterprise-grade data protection for all users.</p>
+            <div class="text-accent-600 font-semibold">SOC 2 Certified</div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-200/50 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <span class="material-icons text-white text-2xl">auto_awesome</span>
+            </div>
+            <h4 class="text-xl font-bold mb-3 text-slate-900">AI Assistant</h4>
+            <p class="text-slate-600 text-sm mb-4">24/7 AI-powered assistance for coding help, debugging, and personalized learning recommendations.</p>
+            <div class="text-primary-600 font-semibold">Always Available</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="section-container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2 class="mdc-typography--headline2">About SK AI Hub</h2>
-            <p class="mdc-typography--body1">
+    <section id="about" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              About <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">SK AI Hub</span>
+            </h2>
+            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
               Founded in 2020, SK AI Hub has been at the forefront of AI education in India. Our mission is to democratize
               artificial intelligence education and create the next generation of AI leaders, researchers, and practitioners.
             </p>
-            <p class="mdc-typography--body1">
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
               We partner with leading technology companies and academic institutions to provide cutting-edge curriculum,
               hands-on experience, and direct pathways to AI careers. Our students work on real-world projects, publish
               research, and contribute to open-source AI initiatives.
             </p>
 
-            <div class="about-values">
-              <div class="value-item">
-                <div class="value-icon">
-                  <span class="material-icons">lightbulb</span>
+            <!-- Values -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="material-icons text-white">lightbulb</span>
                 </div>
-                <div class="value-content">
-                  <h4 class="mdc-typography--headline6">Innovation</h4>
-                  <p class="mdc-typography--body2">Pushing the boundaries of AI education with cutting-edge technologies</p>
-                </div>
-              </div>
-
-              <div class="value-item">
-                <div class="value-icon">
-                  <span class="material-icons">group</span>
-                </div>
-                <div class="value-content">
-                  <h4 class="mdc-typography--headline6">Community</h4>
-                  <p class="mdc-typography--body2">Building a supportive ecosystem of AI learners and practitioners</p>
+                <div>
+                  <h4 class="font-bold text-slate-900 mb-2">Innovation</h4>
+                  <p class="text-slate-600 text-sm">Pushing the boundaries of AI education with cutting-edge technologies</p>
                 </div>
               </div>
 
-              <div class="value-item">
-                <div class="value-icon">
-                  <span class="material-icons">verified</span>
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="material-icons text-white">group</span>
                 </div>
-                <div class="value-content">
-                  <h4 class="mdc-typography--headline6">Excellence</h4>
-                  <p class="mdc-typography--body2">Maintaining the highest standards in education and career support</p>
+                <div>
+                  <h4 class="font-bold text-slate-900 mb-2">Community</h4>
+                  <p class="text-slate-600 text-sm">Building a supportive ecosystem of AI learners and practitioners</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="material-icons text-white">verified</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 mb-2">Excellence</h4>
+                  <p class="text-slate-600 text-sm">Maintaining the highest standards in education and career support</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="material-icons text-white">rocket</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 mb-2">Impact</h4>
+                  <p class="text-slate-600 text-sm">Creating positive change through ethical AI development</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="about-visual">
-            <div class="achievement-cards">
-              <div class="achievement-card mdc-card">
-                <div class="mdc-card__content">
-                  <div class="achievement-icon">
-                    <span class="material-icons">trophy</span>
-                  </div>
-                  <div class="achievement-text">
-                    <div class="achievement-number">#1</div>
-                    <div class="achievement-label">AI Education Platform in India</div>
-                  </div>
+          <div class="space-y-8">
+            <!-- Achievement Cards -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span class="material-icons text-white text-2xl">trophy</span>
                 </div>
+                <div class="text-3xl font-bold text-slate-900 mb-2">#1</div>
+                <div class="text-slate-600 font-medium">AI Education Platform in India</div>
               </div>
 
-              <div class="achievement-card mdc-card">
-                <div class="mdc-card__content">
-                  <div class="achievement-icon">
-                    <span class="material-icons">workspace_premium</span>
-                  </div>
-                  <div class="achievement-text">
-                    <div class="achievement-number">NASSCOM</div>
-                    <div class="achievement-label">Certified Training Partner</div>
-                  </div>
+              <div class="bg-gradient-to-br from-secondary-50 to-secondary-100 p-6 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span class="material-icons text-white text-2xl">workspace_premium</span>
                 </div>
+                <div class="text-3xl font-bold text-slate-900 mb-2">NASSCOM</div>
+                <div class="text-slate-600 font-medium">Certified Training Partner</div>
               </div>
 
-              <div class="achievement-card mdc-card">
-                <div class="mdc-card__content">
-                  <div class="achievement-icon">
-                    <span class="material-icons">local_shipping</span>
-                  </div>
-                  <div class="achievement-text">
-                    <div class="achievement-number">200+</div>
-                    <div class="achievement-label">Corporate Partnerships</div>
-                  </div>
+              <div class="bg-gradient-to-br from-accent-50 to-accent-100 p-6 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span class="material-icons text-white text-2xl">local_shipping</span>
                 </div>
+                <div class="text-3xl font-bold text-slate-900 mb-2">300+</div>
+                <div class="text-slate-600 font-medium">Corporate Partnerships</div>
               </div>
+
+              <div class="bg-gradient-to-br from-primary-50 to-secondary-50 p-6 rounded-2xl text-center">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span class="material-icons text-white text-2xl">school</span>
+                </div>
+                <div class="text-3xl font-bold text-slate-900 mb-2">50+</div>
+                <div class="text-slate-600 font-medium">Expert Mentors</div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-gradient-to-r from-primary-600 to-secondary-600 p-8 rounded-2xl text-white text-center">
+              <h3 class="text-2xl font-bold mb-4">Ready to Start Your AI Journey?</h3>
+              <p class="text-primary-100 mb-6">Join thousands of successful AI professionals</p>
+              <button class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-primary-50 transition-colors duration-200">
+                Get Started Today
+              </button>
             </div>
           </div>
         </div>
@@ -996,259 +1098,339 @@ model.fit(X_train, y_train, epochs=10)</code></pre>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="section-container">
-        <div class="section-header">
-          <h2 class="mdc-typography--headline2">Get Started Today</h2>
-          <p class="mdc-typography--body1">Ready to begin your AI journey? Contact our experts for personalized guidance</p>
+    <section id="contact" class="py-24 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Get Started <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Today</span>
+          </h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Ready to begin your AI journey? Contact our experts for personalized guidance and start your transformation
+          </p>
         </div>
 
-        <div class="contact-content">
-          <div class="contact-form-container">
-            <form class="contact-form" id="contact-form">
-              <div class="form-row">
-                <div class="mdc-text-field mdc-text-field--outlined">
-                  <span class="mdc-notched-outline">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__notch">
-                      <span class="mdc-floating-label">First Name</span>
-                    </span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                  <input type="text" class="mdc-text-field__input" id="first-name" required>
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h3>
+            <form id="contact-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+                  <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200" required>
                 </div>
-
-                <div class="mdc-text-field mdc-text-field--outlined">
-                  <span class="mdc-notched-outline">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__notch">
-                      <span class="mdc-floating-label">Last Name</span>
-                    </span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                  <input type="text" class="mdc-text-field__input" id="last-name" required>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+                  <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200" required>
                 </div>
               </div>
 
-              <div class="mdc-text-field mdc-text-field--outlined">
-                <span class="mdc-notched-outline">
-                  <span class="mdc-notched-outline__leading"></span>
-                  <span class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label">Email</span>
-                  </span>
-                  <span class="mdc-notched-outline__trailing"></span>
-                </span>
-                <input type="email" class="mdc-text-field__input" id="email" required>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Email *</label>
+                <input type="email" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200" required>
               </div>
 
-              <div class="mdc-text-field mdc-text-field--outlined">
-                <span class="mdc-notched-outline">
-                  <span class="mdc-notched-outline__leading"></span>
-                  <span class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label">Phone</span>
-                  </span>
-                  <span class="mdc-notched-outline__trailing"></span>
-                </span>
-                <input type="tel" class="mdc-text-field__input" id="phone">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Phone</label>
+                <input type="tel" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200" placeholder="+91">
               </div>
 
-              <div class="mdc-select mdc-select--outlined">
-                <div class="mdc-select__anchor">
-                  <span class="mdc-notched-outline">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__notch">
-                      <span class="mdc-floating-label">Course of Interest</span>
-                    </span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                  <span class="mdc-select__selected-text"></span>
-                  <span class="mdc-select__dropdown-icon">
-                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
-                      <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
-                      <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
-                    </svg>
-                  </span>
-                </div>
-                <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-                  <ul class="mdc-list">
-                    <li class="mdc-list-item mdc-list-item--selected" data-value="">
-                      <span class="mdc-list-item__text">Select a course</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="python">
-                      <span class="mdc-list-item__text">Python for AI</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="ml">
-                      <span class="mdc-list-item__text">Machine Learning</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="cv">
-                      <span class="mdc-list-item__text">Computer Vision</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="nlp">
-                      <span class="mdc-list-item__text">Natural Language Processing</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="dl">
-                      <span class="mdc-list-item__text">Deep Learning</span>
-                    </li>
-                    <li class="mdc-list-item" data-value="ethics">
-                      <span class="mdc-list-item__text">AI Ethics & Deployment</span>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Course of Interest</label>
+                <select class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                  <option>Select a course</option>
+                  <option>AI Foundations Path</option>
+                  <option>Python for AI Mastery</option>
+                  <option>Machine Learning Pro</option>
+                  <option>Computer Vision Master</option>
+                  <option>NLP & Transformers</option>
+                  <option>AI Ethics & Deployment</option>
+                  <option>Data Science Pro</option>
+                  <option>AI Research Scientist Path</option>
+                </select>
               </div>
 
-              <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
-                <span class="mdc-notched-outline">
-                  <span class="mdc-notched-outline__leading"></span>
-                  <span class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label">Message</span>
-                  </span>
-                  <span class="mdc-notched-outline__trailing"></span>
-                </span>
-                <textarea class="mdc-text-field__input" rows="4" id="message" required></textarea>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Experience Level</label>
+                <select class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                  <option>Select experience level</option>
+                  <option>Complete Beginner</option>
+                  <option>Some Programming Knowledge</option>
+                  <option>Intermediate Programmer</option>
+                  <option>Advanced Developer</option>
+                  <option>Industry Professional</option>
+                </select>
               </div>
 
-              <button type="submit" class="mdc-button mdc-button--raised primary-submit">
-                <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">Send Message</span>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Message *</label>
+                <textarea rows="4" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200" placeholder="Tell us about your goals, current background, and any questions you have..." required></textarea>
+              </div>
+
+              <div class="flex items-center">
+                <input type="checkbox" id="newsletter" class="w-4 h-4 text-primary-600 border-slate-300 rounded focus:ring-primary-500">
+                <label for="newsletter" class="ml-2 text-sm text-slate-600">
+                  Subscribe to our newsletter for AI insights and learning tips
+                </label>
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center">
+                <span class="material-icons mr-2">send</span>
+                Send Message
               </button>
             </form>
           </div>
 
-          <div class="contact-info">
-            <div class="info-card mdc-card">
-              <div class="mdc-card__content">
-                <div class="info-icon">
-                  <span class="material-icons">location_on</span>
+          <!-- Contact Info & Additional Features -->
+          <div class="space-y-8">
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mr-4">
+                  <span class="material-icons text-white">location_on</span>
                 </div>
-                <div class="info-content">
-                  <h4 class="mdc-typography--headline6">Visit Us</h4>
-                  <p class="mdc-typography--body2">Magarpatta, Pune, Maharashtra 411028</p>
-                  <p class="mdc-typography--body2">India's Premier AI Education Hub</p>
+                <div>
+                  <h4 class="font-bold text-slate-900">Visit Our Campus</h4>
+                  <p class="text-slate-600">Magarpatta, Pune, Maharashtra</p>
+                </div>
+              </div>
+              <p class="text-slate-600 text-sm ml-16 mb-4">
+                Our state-of-the-art campus features dedicated AI labs, collaboration spaces, and modern classrooms equipped with the latest technology.
+              </p>
+              <div class="ml-16 flex flex-wrap gap-2">
+                <span class="bg-primary-200 text-primary-700 text-xs px-3 py-1 rounded-full">GPU Labs</span>
+                <span class="bg-primary-200 text-primary-700 text-xs px-3 py-1 rounded-full">24/7 Access</span>
+                <span class="bg-primary-200 text-primary-700 text-xs px-3 py-1 rounded-full">Free Parking</span>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-2xl">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mr-4">
+                  <span class="material-icons text-white">phone</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900">Expert Consultation</h4>
+                  <p class="text-slate-600">+91 98765 43210</p>
+                </div>
+              </div>
+              <p class="text-slate-600 text-sm ml-16 mb-4">
+                Speak directly with our AI education experts. Get personalized career guidance and course recommendations tailored to your goals.
+              </p>
+              <div class="ml-16 text-sm text-slate-600">
+                <div class="flex items-center mb-1">
+                  <span class="material-icons text-green-500 text-sm mr-1">check_circle</span>
+                  Free initial consultation
+                </div>
+                <div class="flex items-center mb-1">
+                  <span class="material-icons text-green-500 text-sm mr-1">check_circle</span>
+                  Career path assessment
+                </div>
+                <div class="flex items-center">
+                  <span class="material-icons text-green-500 text-sm mr-1">check_circle</span>
+                  Learning style evaluation
                 </div>
               </div>
             </div>
 
-            <div class="info-card mdc-card">
-              <div class="mdc-card__content">
-                <div class="info-icon">
-                  <span class="material-icons">phone</span>
+            <div class="bg-gradient-to-br from-accent-50 to-accent-100 p-8 rounded-2xl">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mr-4">
+                  <span class="material-icons text-white">email</span>
                 </div>
-                <div class="info-content">
-                  <h4 class="mdc-typography--headline6">Call Us</h4>
-                  <p class="mdc-typography--body2">+91 98765 43210</p>
-                  <p class="mdc-typography--body2">+91 87654 32109</p>
+                <div>
+                  <h4 class="font-bold text-slate-900">Email Support</h4>
+                  <p class="text-slate-600">hello@skaihub.com</p>
+                </div>
+              </div>
+              <p class="text-slate-600 text-sm ml-16 mb-4">
+                Send us an email anytime. Our dedicated support team responds within 2 hours during business hours and within 24 hours on weekends.
+              </p>
+              <div class="ml-16 grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <div class="font-semibold text-slate-900">Response Time</div>
+                  <div class="text-slate-600">Mon-Fri: 2 hours</div>
+                  <div class="text-slate-600">Sat-Sun: 24 hours</div>
+                </div>
+                <div>
+                  <div class="font-semibold text-slate-900">Languages</div>
+                  <div class="text-slate-600">English, Hindi</div>
+                  <div class="text-slate-600">Marathi</div>
                 </div>
               </div>
             </div>
 
-            <div class="info-card mdc-card">
-              <div class="mdc-card__content">
-                <div class="info-icon">
-                  <span class="material-icons">email</span>
+            <!-- Quick Stats -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h4 class="font-bold text-slate-900 mb-6 text-center">Why Students Choose Us</h4>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 mb-1">98%</div>
+                  <div class="text-sm text-slate-600">Satisfaction Rate</div>
                 </div>
-                <div class="info-content">
-                  <h4 class="mdc-typography--headline6">Email Us</h4>
-                  <p class="mdc-typography--body2">info@skaihub.com</p>
-                  <p class="mdc-typography--body2">admissions@skaihub.com</p>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-secondary-600 mb-1">24/7</div>
+                  <div class="text-sm text-slate-600">Support Available</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-accent-600 mb-1">50+</div>
+                  <div class="text-sm text-slate-600">Expert Mentors</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary-600 mb-1">300+</div>
+                  <div class="text-sm text-slate-600">Success Stories</div>
                 </div>
               </div>
             </div>
 
-            <div class="info-card mdc-card">
-              <div class="mdc-card__content">
-                <div class="info-icon">
-                  <span class="material-icons">schedule</span>
-                </div>
-                <div class="info-content">
-                  <h4 class="mdc-typography--headline6">Business Hours</h4>
-                  <p class="mdc-typography--body2">Mon-Fri: 9:00 AM - 8:00 PM</p>
-                  <p class="mdc-typography--body2">Sat: 10:00 AM - 6:00 PM</p>
-                  <p class="mdc-typography--body2">Sun: Closed</p>
-                </div>
+            <!-- Social Links -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h4 class="font-bold text-slate-900 mb-4">Connect With Us</h4>
+              <p class="text-slate-600 text-sm mb-6">Join our vibrant AI community and stay updated with the latest trends and opportunities.</p>
+              <div class="flex space-x-4">
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-200" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Call-to-Action Banner -->
+        <div class="mt-16 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 rounded-2xl p-8 text-white text-center">
+          <h3 class="text-3xl font-bold mb-4">Ready to Transform Your Career?</h3>
+          <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of successful AI professionals. Start your journey today with our premium AI education platform.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button class="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-primary-50 transition-all duration-200 flex items-center">
+              <span class="material-icons mr-2">school</span>
+              Start Free Trial
+            </button>
+            <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-200 flex items-center">
+              <span class="material-icons mr-2">contact_support</span>
+              Schedule Consultation
+            </button>
+          </div>
+          <p class="text-primary-200 text-sm mt-4">No credit card required • 30-day money-back guarantee</p>
+        </div>
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-xl flex items-center justify-center">
+                <span class="material-icons text-white text-xl">psychology</span>
+              </div>
+              <div>
+                <div class="text-xl font-bold">SK AI Hub</div>
+                <div class="text-sm text-slate-400">Premium AI Education</div>
+              </div>
+            </div>
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              India's leading AI education platform, empowering the next generation of AI leaders and innovators.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Courses -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Courses</h4>
+            <ul class="space-y-3">
+              <li><a href="courses.html" class="text-slate-400 hover:text-white transition-colors duration-200">All Courses</a></li>
+              <li><a href="courses.html#ai-ml" class="text-slate-400 hover:text-white transition-colors duration-200">AI & Data Science</a></li>
+              <li><a href="courses.html#programming" class="text-slate-400 hover:text-white transition-colors duration-200">Programming Languages</a></li>
+              <li><a href="courses.html#web-mobile" class="text-slate-400 hover:text-white transition-colors duration-200">Web & Mobile Dev</a></li>
+              <li><a href="courses.html#career" class="text-slate-400 hover:text-white transition-colors duration-200">Career Development</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="#about" class="text-slate-400 hover:text-white transition-colors duration-200">About Us</a></li>
+              <li><a href="#testimonials" class="text-slate-400 hover:text-white transition-colors duration-200">Success Stories</a></li>
+              <li><a href="#contact" class="text-slate-400 hover:text-white transition-colors duration-200">Contact</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Careers</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Blog</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Press</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Support</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Help Center</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Community</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Documentation</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">System Status</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-slate-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-slate-400 text-sm mb-4 md:mb-0">
+              © 2025 SK AI Hub. All rights reserved.
+            </div>
+            <div class="flex items-center space-x-6 text-sm text-slate-400">
+              <span class="flex items-center">
+                <span class="material-icons text-green-500 text-sm mr-1">verified</span>
+                NASSCOM Certified
+              </span>
+              <span class="flex items-center">
+                <span class="material-icons text-blue-500 text-sm mr-1">workspace_premium</span>
+                ISO 9001:2015
+              </span>
+              <span class="flex items-center">
+                <span class="material-icons text-purple-500 text-sm mr-1">local_shipping</span>
+                Microsoft Partner
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 z-40">
+      <span class="material-icons">keyboard_arrow_up</span>
+    </button>
   </main>
-
-  <!-- Footer -->
-  <footer class="mdc-top-app-bar footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="footer-logo">
-          <img src="assets/img/new_logo.png" alt="SK AI Hub" class="footer-logo-img">
-          <span class="footer-brand">SK AI Hub</span>
-        </div>
-        <p class="mdc-typography--body2">Empowering the next generation of AI leaders through world-class education and cutting-edge technology.</p>
-        <div class="social-links">
-          <a href="#" class="mdc-icon-button" aria-label="LinkedIn">
-            <span class="mdc-icon-button__ripple"></span>
-            <span class="mdc-icon-button__icon material-icons">linkedin</span>
-          </a>
-          <a href="#" class="mdc-icon-button" aria-label="Twitter">
-            <span class="mdc-icon-button__ripple"></span>
-            <span class="mdc-icon-button__icon material-icons">twitter</span>
-          </a>
-          <a href="#" class="mdc-icon-button" aria-label="YouTube">
-            <span class="mdc-icon-button__ripple"></span>
-            <span class="mdc-icon-button__icon material-icons">youtube</span>
-          </a>
-          <a href="#" class="mdc-icon-button" aria-label="GitHub">
-            <span class="mdc-icon-button__ripple"></span>
-            <span class="mdc-icon-button__icon material-icons">github</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="mdc-typography--headline6">Courses</h4>
-        <ul class="footer-links">
-          <li><a href="#courses">Python for AI</a></li>
-          <li><a href="#courses">Machine Learning</a></li>
-          <li><a href="#courses">Computer Vision</a></li>
-          <li><a href="#courses">Natural Language Processing</a></li>
-          <li><a href="#courses">Deep Learning</a></li>
-          <li><a href="#courses">AI Ethics</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="mdc-typography--headline6">Company</h4>
-        <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#testimonials">Success Stories</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4 class="mdc-typography--headline6">Support</h4>
-        <ul class="footer-links">
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">System Status</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p class="mdc-typography--body2">&copy; 2025 SK AI Hub. All rights reserved.</p>
-      <div class="footer-badges">
-        <span class="badge">NASSCOM Certified</span>
-        <span class="badge">ISO 9001:2015</span>
-        <span class="badge">Microsoft Partner</span>
-      </div>
-    </div>
-  </footer>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

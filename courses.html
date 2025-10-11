@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Courses - SK AI Hub Premium Education Platform</title>
+  <meta name="description" content="Explore all premium courses at SK AI Hub. From AI and Python to web development and mobile apps. Master cutting-edge technologies with expert mentorship.">
+  <meta name="keywords" content="AI courses, Python programming, Java DSA, C++ programming, web development, mobile app development, database management, career booster">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/new_logo.png">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            secondary: {
+              50: '#fdf4ff',
+              100: '#fae8ff',
+              200: '#f5d0fe',
+              300: '#f0abfc',
+              400: '#e879f9',
+              500: '#d946ef',
+              600: '#c026d3',
+              700: '#a21caf',
+              800: '#86198f',
+              900: '#701a75',
+            },
+            accent: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            }
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'gradient': 'gradient 8s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 font-inter antialiased">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-xl flex items-center justify-center shadow-lg">
+            <span class="material-icons text-white text-xl">psychology</span>
+          </div>
+          <div>
+            <div class="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+              SK AI Hub
+            </div>
+            <div class="text-xs text-slate-500 -mt-1">Premium AI Education</div>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Home</a>
+          <a href="courses.html" class="text-primary-600 font-semibold">Courses</a>
+          <a href="index.html#ai-tools" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">AI Tools</a>
+          <a href="index.html#testimonials" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">Success</a>
+          <a href="index.html#about" class="text-slate-700 hover:text-primary-600 font-medium transition-colors duration-200">About</a>
+          <button id="theme-toggle" class="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center transition-colors duration-200" aria-label="Toggle theme">
+            <span class="material-icons text-slate-600">dark_mode</span>
+          </button>
+          <a href="assets/course/login_signup.html" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
+            Login / Sign Up
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+          <span class="material-icons text-slate-700">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+      <div class="px-4 py-6 space-y-4">
+        <a href="index.html" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Home</a>
+        <a href="courses.html" class="block text-primary-600 font-semibold py-2">Courses</a>
+        <a href="index.html#ai-tools" class="block text-slate-700 hover:text-primary-600 font-medium py-2">AI Tools</a>
+        <a href="index.html#testimonials" class="block text-slate-700 hover:text-primary-600 font-medium py-2">Success</a>
+        <a href="index.html#about" class="block text-slate-700 hover:text-primary-600 font-medium py-2">About</a>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-slate-700 font-medium">Theme</span>
+          <button id="mobile-theme-toggle" class="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center transition-colors duration-200" aria-label="Toggle theme">
+            <span class="material-icons text-slate-600">dark_mode</span>
+          </button>
+        </div>
+        <a href="assets/course/login_signup.html" class="block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-3 rounded-full font-semibold text-center mt-6">
+          Login / Sign Up
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-16">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <!-- Background Elements -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200/30 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-100/20 to-secondary-100/20 rounded-full blur-3xl animate-pulse-slow"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <!-- Premium Badge -->
+        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-sm font-semibold rounded-full mb-8 shadow-lg">
+          <span class="material-icons text-sm mr-2">school</span>
+          Complete Course Catalog
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <span class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent animate-gradient">
+            Master Any Technology
+          </span>
+          <br>
+          <span class="text-slate-800">Choose Your Path</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Explore our comprehensive collection of premium courses designed by industry experts.
+          From AI and machine learning to web development and mobile apps.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2">9</div>
+            <div class="text-slate-600 font-medium">Premium Courses</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-secondary-600 mb-2">50+</div>
+            <div class="text-slate-600 font-medium">Expert Mentors</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent-600 mb-2">24/7</div>
+            <div class="text-slate-600 font-medium">Learning Support</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary-600 mb-2">98%</div>
+            <div class="text-slate-600 font-medium">Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section id="categories" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Course Categories</h2>
+          <p class="text-lg text-slate-600">Choose from our diverse range of technology domains</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- AI & Data Science -->
+          <div id="ai-ml" class="group bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <span class="material-icons text-white text-3xl">psychology</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">AI & Data Science</h3>
+            <p class="text-slate-600 mb-6">Master artificial intelligence, machine learning, and data science with cutting-edge technologies.</p>
+            <div class="text-sm text-primary-600 font-semibold">2 Premium Courses</div>
+          </div>
+
+          <!-- Programming Languages -->
+          <div id="programming" class="group bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <span class="material-icons text-white text-3xl">code</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Programming Languages</h3>
+            <p class="text-slate-600 mb-6">Learn fundamental and advanced programming languages for software development.</p>
+            <div class="text-sm text-secondary-600 font-semibold">3 Premium Courses</div>
+          </div>
+
+          <!-- Web & Mobile Development -->
+          <div id="web-mobile" class="group bg-gradient-to-br from-accent-50 to-accent-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <span class="material-icons text-white text-3xl">web</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Web & Mobile Development</h3>
+            <p class="text-slate-600 mb-6">Build modern web applications and cross-platform mobile apps with industry-standard frameworks.</p>
+            <div class="text-sm text-accent-600 font-semibold">3 Premium Courses</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Courses Grid -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">All Premium Courses</h2>
+          <p class="text-lg text-slate-600">Comprehensive learning paths designed for career success</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- AI with Python -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-primary-500 to-primary-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">AI & ML</span>
+                <span class="material-icons text-2xl">psychology</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">AI with Python</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                16 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete Python programming course for AI development covering machine learning, deep learning, data science, and AI applications.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">Deep Learning</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow</span>
+                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">PyTorch</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹39,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/python_for_software_dev.html" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Python -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-secondary-500 to-secondary-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Advanced</span>
+                <span class="material-icons text-2xl">api</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Advanced Python</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                12 weeks • Intermediate
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master advanced Python concepts including APIs, automation, web scraping, Flask, Django, and cloud deployment.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">APIs</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Automation</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Flask</span>
+                <span class="bg-secondary-100 text-secondary-700 text-xs font-semibold px-3 py-1 rounded-full">Django</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹29,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/advanced_python.html" class="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Java with DSA -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-accent-500 to-accent-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Programming</span>
+                <span class="material-icons text-2xl">memory</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Java with DSA</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                20 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Comprehensive Java programming with data structures and algorithms for competitive coding and software development.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Data Structures</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Algorithms</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">OOP</span>
+                <span class="bg-accent-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">Competitive Coding</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹34,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/java_with_dsa.html" class="bg-gradient-to-r from-accent-600 to-primary-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- C/C++ Programming -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">System Programming</span>
+                <span class="material-icons text-2xl">terminal</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">C/C++ Programming</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                18 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master system programming with C and C++ for performance-critical applications, embedded systems, and game development.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">System Programming</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Performance</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Embedded Systems</span>
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Memory Management</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹31,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/c_cpp_programming.html" class="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Web Development -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Web Development</span>
+                <span class="material-icons text-2xl">web</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Full Stack Web Dev</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                24 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete MERN stack development with modern web technologies, responsive design, and cloud deployment.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Express</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹44,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/full_stack_web_dev.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flutter App Development -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Mobile Development</span>
+                <span class="material-icons text-2xl">phone_android</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Flutter App Dev</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                16 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Build cross-platform mobile applications with Flutter and Dart for iOS and Android with modern UI/UX.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Flutter</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Dart</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Cross-Platform</span>
+                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹36,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/flutter_app_dev.html" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web Design -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                <span class="material-icons text-2xl">palette</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Web Design</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                14 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Master UI/UX design principles and modern web design with Figma, Adobe XD, and frontend technologies.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">UI/UX Design</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Figma</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Adobe XD</span>
+                <span class="bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">Prototyping</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹27,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/web_design.html" class="bg-gradient-to-r from-pink-600 to-red-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database Management -->
+          <div class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Database</span>
+                <span class="material-icons text-2xl">storage</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Database Management</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                12 weeks • Beginner to Advanced
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Complete database design and management with SQL, NoSQL, MongoDB, PostgreSQL, and cloud databases.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">SQL</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">NoSQL</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">PostgreSQL</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹26,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/database.html" class="bg-gradient-to-r from-indigo-600 to-teal-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  View Course
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Booster Program -->
+          <div id="career" class="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-4 overflow-hidden md:col-span-2 lg:col-span-3">
+            <div class="bg-gradient-to-r from-teal-500 to-teal-600 p-6 text-white">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-white/20 text-xs font-semibold px-3 py-1 rounded-full">Career Development</span>
+                <span class="material-icons text-2xl">rocket_launch</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Career Booster Program</h3>
+              <div class="flex items-center text-sm">
+                <span class="material-icons text-sm mr-1">schedule</span>
+                8 weeks • All Levels
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-slate-600 mb-6">Comprehensive career development program with interview preparation, resume building, LinkedIn optimization, and job placement assistance.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Interview Prep</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Resume Building</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Job Search</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Career Coaching</span>
+                <span class="bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">Placement Support</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-2xl font-bold text-slate-900">₹19,999</div>
+                  <div class="text-sm text-slate-500">Complete Package</div>
+                </div>
+                <a href="assets/course/career_booster.html" class="bg-gradient-to-r from-teal-600 to-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+                  Start Career Boost
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Journey CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Learning Journey?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+          Join thousands of successful professionals who transformed their careers with SK AI Hub.
+          Choose your course and begin your journey today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="assets/course/login_signup.html" class="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-primary-50 transition-all duration-200 flex items-center">
+            <span class="material-icons mr-2">login</span>
+            Sign Up Now
+          </a>
+          <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-200 flex items-center">
+            <span class="material-icons mr-2">contact_support</span>
+            Get Free Consultation
+          </a>
+        </div>
+        <p class="text-primary-200 text-sm mt-4">No credit card required • 30-day money-back guarantee • Lifetime access</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-xl flex items-center justify-center">
+                <span class="material-icons text-white text-xl">psychology</span>
+              </div>
+              <div>
+                <div class="text-xl font-bold">SK AI Hub</div>
+                <div class="text-sm text-slate-400">Premium AI Education</div>
+              </div>
+            </div>
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              India's leading AI education platform, empowering the next generation of AI leaders and innovators.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors duration-200">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Courses -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Courses</h4>
+            <ul class="space-y-3">
+              <li><a href="assets/course/python_for_software_dev.html" class="text-slate-400 hover:text-white transition-colors duration-200">AI with Python</a></li>
+              <li><a href="assets/course/advanced_python.html" class="text-slate-400 hover:text-white transition-colors duration-200">Advanced Python</a></li>
+              <li><a href="assets/course/java_with_dsa.html" class="text-slate-400 hover:text-white transition-colors duration-200">Java with DSA</a></li>
+              <li><a href="assets/course/c_cpp_programming.html" class="text-slate-400 hover:text-white transition-colors duration-200">C/C++ Programming</a></li>
+              <li><a href="assets/course/full_stack_web_dev.html" class="text-slate-400 hover:text-white transition-colors duration-200">Full Stack Web Dev</a></li>
+              <li><a href="assets/course/flutter_app_dev.html" class="text-slate-400 hover:text-white transition-colors duration-200">Flutter App Dev</a></li>
+              <li><a href="assets/course/web_design.html" class="text-slate-400 hover:text-white transition-colors duration-200">Web Design</a></li>
+              <li><a href="assets/course/database.html" class="text-slate-400 hover:text-white transition-colors duration-200">Database Management</a></li>
+              <li><a href="assets/course/career_booster.html" class="text-slate-400 hover:text-white transition-colors duration-200">Career Booster</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html#about" class="text-slate-400 hover:text-white transition-colors duration-200">About Us</a></li>
+              <li><a href="index.html#testimonials" class="text-slate-400 hover:text-white transition-colors duration-200">Success Stories</a></li>
+              <li><a href="index.html#contact" class="text-slate-400 hover:text-white transition-colors duration-200">Contact</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Careers</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Blog</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Press</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Support</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Help Center</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Community</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Documentation</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">System Status</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-slate-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-slate-400 text-sm mb-4 md:mb-0">
+              © 2025 SK AI Hub. All rights reserved.
+            </div>
+            <div class="flex items-center space-x-6 text-sm text-slate-400">
+              <span class="flex items-center">
+                <span class="material-icons text-green-500 text-sm mr-1">verified</span>
+                NASSCOM Certified
+              </span>
+              <span class="flex items-center">
+                <span class="material-icons text-blue-500 text-sm mr-1">workspace_premium</span>
+                ISO 9001:2015
+              </span>
+              <span class="flex items-center">
+                <span class="material-icons text-purple-500 text-sm mr-1">local_shipping</span>
+                Microsoft Partner
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 z-40">
+      <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
