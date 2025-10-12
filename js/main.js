@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initLoadingScreen();
     initNeuralNetwork();
+    initNavbarEnhancements();
     initMobileMenu();
     initScrollEffects();
     initMagneticButtons();
     initTypewriterEffect();
     initParticleSystem();
     initAccessibility();
+    initCourseEnhancements();
 });
 
 // Loading Screen
@@ -258,45 +260,351 @@ function initAccessibility() {
     });
 }
 
-// Utility Functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+// Enhanced Course Filtering and Interactions
+function initCourseEnhancements() {
+  // Course filtering functionality
+  const searchInput = document.querySelector('#courses input[type="text"]');
+  const categoryFilter = document.querySelector('#courses select:nth-child(2)');
+  const levelFilter = document.querySelector('#courses select:nth-child(3)');
+  const sortFilter = document.querySelector('#courses select:nth-child(4)');
+  const courseCards = document.querySelectorAll('#courses .group');
 
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
+  function filterCourses() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const categoryValue = categoryFilter.value;
+    const levelValue = levelFilter.value;
+    const sortValue = sortFilter.value;
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    courseCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      const category = card.querySelector('.rounded-full').textContent.toLowerCase();
+      const level = card.querySelector('.text-sm').textContent.toLowerCase();
+      const price = parseInt(card.querySelector('.font-bold').textContent.replace(/[^\d]/g, ''));
+
+      let showCard = true;
+
+      // Search filter
+      if (searchTerm && !title.includes(searchTerm) && !description.includes(searchTerm)) {
+        showCard = false;
+      }
+
+      // Category filter
+      if (categoryValue && !category.includes(categoryValue.toLowerCase())) {
+        showCard = false;
+      }
+
+      // Level filter
+      if (levelValue && !level.includes(levelValue.toLowerCase())) {
+        showCard = false;
+      }
+
+      card.style.display = showCard ? 'block' : 'none';
     });
-});
+
+    // Sort functionality
+    const visibleCards = Array.from(courseCards).filter(card => card.style.display !== 'none');
+    const container = courseCards[0].parentElement;
+
+    visibleCards.sort((a, b) => {
+      const priceA = parseInt(a.querySelector('.font-bold').textContent.replace(/[^\d]/g, ''));
+      const priceB = parseInt(b.querySelector('.font-bold').textContent.replace(/[^\d]/g, ''));
+      const ratingA = parseFloat(a.querySelector('.font-semibold').textContent);
+      const ratingB = parseFloat(b.querySelector('.font-semibold').textContent);
+
+      switch(sortValue) {
+        case 'price-low':
+          return priceA - priceB;
+        case 'price-high':
+          return priceB - priceA;
+        case 'rating':
+          return ratingB - ratingA;
+        case 'newest':
+          return Math.random() - 0.5; // Random for demo
+        default:
+          return 0;
+      }
+    });
+
+    visibleCards.forEach(card => container.appendChild(card));
+  }
+
+  // Event listeners for filters
+  searchInput?.addEventListener('input', filterCourses);
+  categoryFilter?.addEventListener('change', filterCourses);
+  levelFilter?.addEventListener('change', filterCourses);
+  sortFilter?.addEventListener('change', filterCourses);
+
+  // View toggle functionality
+  const viewButtons = document.querySelectorAll('#courses .bg-slate-100 button');
+  viewButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      viewButtons.forEach(btn => btn.classList.remove('bg-white', 'text-primary-600'));
+      button.classList.add('bg-white', 'text-primary-600');
+
+      const grid = document.querySelector('#courses .grid');
+      if (button.querySelector('.material-icons').textContent === 'view_list') {
+        grid.className = 'flex flex-col gap-8 mb-12';
+        courseCards.forEach(card => {
+          card.className = 'group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 hover:border-primary-200 flex';
+        });
+      } else {
+        grid.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12';
+        courseCards.forEach(card => {
+          card.className = 'group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-6 overflow-hidden border border-slate-100 hover:border-primary-200';
+        });
+      }
+    });
+  });
+
+  // Wishlist functionality
+  const wishlistButtons = document.querySelectorAll('#courses button[title="Add to Wishlist"]');
+  wishlistButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const icon = button.querySelector('.material-icons');
+      const isWishlisted = icon.textContent === 'favorite';
+
+      icon.textContent = isWishlisted ? 'favorite_border' : 'favorite';
+      button.classList.toggle('text-red-500', !isWishlisted);
+
+      // Show notification
+      showNotification(isWishlisted ? 'Removed from wishlist' : 'Added to wishlist', isWishlisted ? 'info' : 'success');
+    });
+  });
+
+  // Preview functionality
+  const previewButtons = document.querySelectorAll('#courses button[title="Quick Preview"]');
+  previewButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = button.closest('.group');
+      const courseTitle = card.querySelector('h3').textContent;
+      const courseDesc = card.querySelector('p').textContent;
+
+      // Create modal
+      const modal = document.createElement('div');
+      modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+      modal.innerHTML = `
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+          <div class="p-6 border-b border-slate-200">
+            <div class="flex items-center justify-between">
+              <h3 class="text-2xl font-bold text-slate-900">${courseTitle}</h3>
+              <button class="text-slate-400 hover:text-slate-600" onclick="this.closest('.fixed').remove()">
+                <span class="material-icons">close</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 mb-6">${courseDesc}</p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-3">What you'll learn:</h4>
+                <ul class="space-y-2 text-sm text-slate-600">
+                  <li class="flex items-center">
+                    <span class="material-icons text-green-500 mr-2 text-base">check_circle</span>
+                    Hands-on projects
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-green-500 mr-2 text-base">check_circle</span>
+                    Industry best practices
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-green-500 mr-2 text-base">check_circle</span>
+                    Certificate of completion
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900 mb-3">Course features:</h4>
+                <ul class="space-y-2 text-sm text-slate-600">
+                  <li class="flex items-center">
+                    <span class="material-icons text-blue-500 mr-2 text-base">schedule</span>
+                    Lifetime access
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-blue-500 mr-2 text-base">group</span>
+                    Community support
+                  </li>
+                  <li class="flex items-center">
+                    <span class="material-icons text-blue-500 mr-2 text-base">verified</span>
+                    Verified certificate
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    });
+  });
+
+  // Progress bar animations
+  const progressBars = document.querySelectorAll('#courses .bg-slate-200');
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const progressBar = entry.target;
+        const width = progressBar.style.width;
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+          progressBar.style.width = width;
+        }, 500);
+      }
+    });
+  }, observerOptions);
+
+  progressBars.forEach(bar => progressObserver.observe(bar));
+
+  // Enhanced hover effects
+  courseCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const progressBar = card.querySelector('.bg-slate-200 .rounded-full');
+      if (progressBar) {
+        progressBar.style.transform = 'scaleX(1.05)';
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      const progressBar = card.querySelector('.bg-slate-200 .rounded-full');
+      if (progressBar) {
+        progressBar.style.transform = 'scaleX(1)';
+      }
+    });
+  });
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+    type === 'success' ? 'bg-green-500' :
+    type === 'error' ? 'bg-red-500' :
+    type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
+  } text-white`;
+
+  notification.innerHTML = `
+    <div class="flex items-center">
+      <span class="material-icons mr-2 text-sm">${
+        type === 'success' ? 'check_circle' :
+        type === 'error' ? 'error' :
+        type === 'warning' ? 'warning' : 'info'
+      }</span>
+      <span class="text-sm font-medium">${message}</span>
+    </div>
+  `;
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.classList.remove('translate-x-full');
+  }, 100);
+
+  setTimeout(() => {
+    notification.classList.add('translate-x-full');
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+// Professional Navbar Enhancements
+function initNavbarEnhancements() {
+    // Smooth scroll with offset for fixed navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const navbarHeight = 64; // h-16 = 64px
+                const targetPosition = target.offsetTop - navbarHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Enhanced mobile menu with improved animations
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+
+            if (isOpen) {
+                // Close menu
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                // Open menu
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Navbar scroll effects
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('nav');
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down - hide navbar
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up - show navbar
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
+    // Enhanced dropdown animations
+    const dropdowns = document.querySelectorAll('.group');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            const menu = dropdown.querySelector('[class*="opacity-0"]');
+            if (menu) {
+                menu.style.transform = 'translateY(0) scale(1)';
+                menu.style.opacity = '1';
+            }
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            const menu = dropdown.querySelector('[class*="opacity-0"]');
+            if (menu) {
+                menu.style.transform = 'translateY(-10px) scale(0.95)';
+                menu.style.opacity = '0';
+            }
+        });
+    });
+}
 
 // Add loading animation CSS
 const style = document.createElement('style');

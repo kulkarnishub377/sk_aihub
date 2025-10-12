@@ -19,19 +19,84 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== LOADING SCREEN ===== */
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 50%, #f97316 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease-out;
+/* ===== ENHANCED NAVIGATION STYLES ===== */
+nav {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+nav:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Navbar Logo Animation */
+nav .group:hover .w-10 {
+  animation: logoPulse 0.6s ease-in-out;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Navigation Link Hover Effects */
+nav a:hover {
+  transform: translateY(-1px);
+}
+
+/* Mega Dropdown Animations */
+.group:hover [class*="opacity-0"] {
+  animation: dropdownFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Course Card Hover Effects */
+.group/item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Animations */
+#mobile-menu {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Button Effects */
+nav .group:hover {
+  filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.15));
+}
+
+/* Gradient Text Animation */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+nav .bg-gradient-to-r {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
 }
 
 .loading-content {
@@ -458,4 +523,178 @@ textarea:focus-visible {
 /* ===== THEME TRANSITIONS ===== */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== ENHANCED COURSE SECTION STYLES ===== */
+
+/* Course Filter Panel */
+#courses .bg-white.shadow-xl {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Course Card Enhanced Hover Effects */
+#courses .group {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#courses .group:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Progress Bar Animations */
+#courses .bg-slate-200 .rounded-full {
+  transition: width 1s ease-out, transform 0.3s ease;
+  transform-origin: left;
+}
+
+/* Rating Stars Animation */
+#courses .flex.text-yellow-400 {
+  animation: starGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes starGlow {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.2); }
+}
+
+/* Price Badge Animation */
+#courses .bg-green-100 {
+  animation: pricePulse 3s ease-in-out infinite;
+}
+
+@keyframes pricePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Wishlist Button Hover */
+#courses button[title="Add to Wishlist"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Filter Input Focus Effects */
+#courses input:focus,
+#courses select:focus {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Course Stats Animation */
+#courses .inline-flex.items-center {
+  animation: statsSlideIn 1s ease-out;
+}
+
+@keyframes statsSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Styles */
+.fixed.inset-0 {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.fixed.inset-0 > div {
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Notification Styles */
+.fixed.top-4.right-4 {
+  animation: notificationSlideIn 0.3s ease-out;
+}
+
+@keyframes notificationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Enhanced Course Card Grid */
+#courses .grid {
+  animation: gridFadeIn 0.8s ease-out;
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill Tags Hover */
+#courses .px-3.py-1 {
+  transition: all 0.2s ease;
+}
+
+#courses .px-3.py-1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* View Toggle Animation */
+#courses .bg-slate-100 button {
+  transition: all 0.3s ease;
+}
+
+#courses .bg-slate-100 button:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhanced Button Hover Effects */
+#courses .bg-gradient-to-r:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading States */
+#courses .animate-pulse {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
