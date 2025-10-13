@@ -1429,18 +1429,30 @@ cv2.destroyAllWindows()`
   setupCompanyLogoErrorHandling() {
     // Handle broken logo images with fallback
     document.querySelectorAll('.company-logo').forEach(logo => {
+      const container = logo.closest('.company-logo-container');
+
+      // Add loading state
+      container.classList.add('loading');
+
       logo.addEventListener('error', (e) => {
         const container = e.target.closest('.company-logo-container');
         const companyName = e.target.alt;
 
+        // Remove loading state
+        container.classList.remove('loading');
+
         // Hide broken image
         e.target.style.display = 'none';
 
-        // Create fallback element
-        const fallback = document.createElement('div');
-        fallback.className = 'fallback-logo';
-        fallback.textContent = companyName.charAt(0).toUpperCase();
-        fallback.title = `${companyName} - Logo temporarily unavailable`;
+        // Create fallback element if it doesn't exist
+        let fallback = container.querySelector('.fallback-logo');
+        if (!fallback) {
+          fallback = document.createElement('div');
+          fallback.className = 'fallback-logo';
+          fallback.textContent = companyName.charAt(0).toUpperCase();
+          fallback.title = `${companyName} - Logo temporarily unavailable`;
+          container.appendChild(fallback);
+        }
 
         // Add gradient background based on company
         const gradients = [
@@ -1454,14 +1466,17 @@ cv2.destroyAllWindows()`
         const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
         fallback.style.background = randomGradient;
 
-        container.appendChild(fallback);
-
         // Log error for debugging
         console.warn(`Company logo failed to load: ${companyName} - ${e.target.src}`);
       });
 
       // Add load success handler
       logo.addEventListener('load', (e) => {
+        const container = e.target.closest('.company-logo-container');
+
+        // Remove loading state
+        container.classList.remove('loading');
+
         e.target.style.opacity = '0.6';
         e.target.style.transform = 'scale(0.95)';
         setTimeout(() => {
@@ -1470,6 +1485,13 @@ cv2.destroyAllWindows()`
           e.target.style.transform = 'scale(1)';
         }, 100);
       });
+
+      // Force load check after a delay (for cached images)
+      setTimeout(() => {
+        if (logo.complete && logo.naturalHeight !== 0) {
+          container.classList.remove('loading');
+        }
+      }, 1000);
     });
   }
 
@@ -1587,22 +1609,40 @@ cv2.destroyAllWindows()`
   }
 
   setupCompanyLogoInteractions() {
-    // Add click interactions
+    // Add click interactions for company logos
     document.querySelectorAll('.company-logo-container').forEach(container => {
       container.addEventListener('click', (e) => {
-        const companyName = container.querySelector('.company-tooltip')?.textContent || 'Company';
+        // Don't prevent default for anchor tags - let them navigate
+        if (container.tagName.toLowerCase() === 'a') {
+          // Add visual feedback for link clicks
+          this.createClickRipple(e, container);
 
-        // Create click ripple effect
-        this.createClickRipple(e, container);
+          const companyName = container.querySelector('.company-tooltip')?.textContent || 'Company';
 
-        // Show notification
-        this.showCompanyNotification(companyName);
+          // Show notification for link clicks
+          this.showCompanyNotification(companyName + ' - Opening website...');
 
-        // Add temporary highlight
-        container.style.boxShadow = '0 0 30px rgba(14, 165, 233, 0.4)';
-        setTimeout(() => {
-          container.style.boxShadow = '';
-        }, 1000);
+          // Add temporary highlight
+          container.style.boxShadow = '0 0 30px rgba(14, 165, 233, 0.4)';
+          setTimeout(() => {
+            container.style.boxShadow = '';
+          }, 1000);
+        } else {
+          // Handle non-link containers (fallback)
+          const companyName = container.querySelector('.company-tooltip')?.textContent || 'Company';
+
+          // Create click ripple effect
+          this.createClickRipple(e, container);
+
+          // Show notification
+          this.showCompanyNotification(companyName);
+
+          // Add temporary highlight
+          container.style.boxShadow = '0 0 30px rgba(14, 165, 233, 0.4)';
+          setTimeout(() => {
+            container.style.boxShadow = '';
+          }, 1000);
+        }
       });
     });
   }
