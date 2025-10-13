@@ -365,132 +365,317 @@
   <!-- Main Content -->
   <main class="pt-16">
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-      <!-- Background Elements -->
+    <!-- Advanced Interactive Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <!-- Advanced Background Layers -->
       <div class="absolute inset-0">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200/30 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-100/20 to-secondary-100/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <!-- Dynamic Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-secondary-900/20 to-accent-900/20 animate-gradient"></div>
+
+        <!-- Floating Geometric Shapes -->
+        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute bottom-20 right-10 w-[600px] h-[600px] bg-secondary-500/10 rounded-full blur-3xl animate-float-reverse" style="animation-delay: 3s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent-500/10 rounded-full blur-3xl animate-float-fast" style="animation-delay: 1.5s;"></div>
+
+        <!-- Interactive Grid Background -->
+        <div class="absolute inset-0 opacity-20">
+          <div class="grid-background" id="grid-bg"></div>
+        </div>
+
+        <!-- Particle Canvas -->
+        <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+
+        <!-- Neural Network Canvas -->
+        <canvas id="neural-network" class="absolute inset-0 w-full h-full pointer-events-none opacity-40"></canvas>
+
+        <!-- Mouse Follower Effect -->
+        <div id="mouse-follower" class="absolute w-96 h-96 bg-gradient-radial from-primary-500/20 to-transparent rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity duration-300"></div>
       </div>
 
-      <!-- Neural Network Canvas -->
-      <canvas id="neural-network" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
-
+      <!-- Interactive Content Container -->
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <!-- Premium Badge -->
-        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-sm font-semibold rounded-full mb-8 shadow-lg">
-          <span class="material-icons text-sm mr-2">workspace_premium</span>
-          Premium AI Education Platform
+
+        <!-- Dynamic Badge with Animation -->
+        <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white text-sm font-semibold rounded-full mb-8 shadow-2xl animate-fade-in-up border border-white/20 backdrop-blur-sm">
+          <span class="material-icons text-base mr-2 animate-pulse">auto_awesome</span>
+          <span id="dynamic-badge-text">Premium AI Education Platform</span>
+          <div class="ml-2 w-2 h-2 bg-white rounded-full animate-ping"></div>
         </div>
 
-        <!-- Main Heading -->
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent animate-gradient">
-            Master AI
-          </span>
-          <br>
-          <span class="text-slate-800">Like a Pro</span>
-        </h1>
+        <!-- Advanced Main Heading with Typewriter Effect -->
+        <div class="mb-8">
+          <h1 class="text-6xl md:text-8xl font-black mb-4 leading-tight">
+            <span class="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent animate-gradient-fast block" id="main-heading">
+              Master AI
+            </span>
+            <span class="text-white text-5xl md:text-7xl font-bold animate-fade-in-up" style="animation-delay: 1s;">
+              Like a <span class="bg-gradient-to-r from-accent-400 to-primary-400 bg-clip-text text-transparent">Pro</span>
+            </span>
+          </h1>
 
-        <!-- Subtitle -->
-        <p class="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-          Join India's most advanced AI education platform. Learn from industry leaders,
-          build real-world projects, and transform your career with guaranteed placement.
-        </p>
+          <!-- Dynamic Subtitle -->
+          <div class="max-w-5xl mx-auto">
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 1.5s;" id="hero-subtitle">
+              Join India's most advanced AI education platform. Learn from industry leaders,
+              build real-world projects, and transform your career with guaranteed placement.
+            </p>
 
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2" data-target="25000">25,000+</div>
-            <div class="text-slate-600 font-medium">Students Trained</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-secondary-600 mb-2" data-target="98">98%</div>
-            <div class="text-slate-600 font-medium">Success Rate</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-accent-600 mb-2" data-target="300">300+</div>
-            <div class="text-slate-600 font-medium">Partner Companies</div>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-primary-600 mb-2" data-target="50">50+</div>
-            <div class="text-slate-600 font-medium">Expert Mentors</div>
+            <!-- Typing Indicator -->
+            <div class="inline-flex items-center text-slate-400 text-sm animate-fade-in-up" style="animation-delay: 2s;">
+              <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse mr-2"></span>
+              <span id="typing-indicator">25,000+ students already learning...</span>
+            </div>
           </div>
         </div>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center">
-            <span class="material-icons mr-2">play_arrow</span>
-            Start Free Trial
+        <!-- Advanced Interactive Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-fade-in-up" style="animation-delay: 2.5s;">
+          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
+            <div class="text-4xl font-bold text-primary-400 mb-2 animate-counter" data-target="25000">0</div>
+            <div class="text-slate-300 font-medium text-sm">Students Trained</div>
+            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
+              <div class="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
+            <div class="text-4xl font-bold text-secondary-400 mb-2 animate-counter" data-target="98">0</div>
+            <div class="text-slate-300 font-medium text-sm">Success Rate</div>
+            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
+              <div class="bg-gradient-to-r from-secondary-400 to-secondary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
+            <div class="text-4xl font-bold text-accent-400 mb-2 animate-counter" data-target="300">0</div>
+            <div class="text-slate-300 font-medium text-sm">Partner Companies</div>
+            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
+              <div class="bg-gradient-to-r from-accent-400 to-accent-600 h-full rounded-full animate-progress" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
+            <div class="text-4xl font-bold text-primary-400 mb-2 animate-counter" data-target="50">0</div>
+            <div class="text-slate-300 font-medium text-sm">Expert Mentors</div>
+            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
+              <div class="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced CTA Buttons with Magnetic Effect -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up" style="animation-delay: 3s;">
+          <button class="magnetic-btn bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-500 flex items-center group relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent-500 via-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <span class="material-icons mr-3 text-2xl animate-bounce">rocket_launch</span>
+            <span class="relative z-10">Start Free Trial</span>
+            <div class="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
           </button>
-          <button class="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-primary-500 hover:text-primary-600 transition-all duration-300 flex items-center">
-            <span class="material-icons mr-2">ondemand_video</span>
-            Watch Demo
+
+          <button class="magnetic-btn border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-xl hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-500 flex items-center group backdrop-blur-sm">
+            <span class="material-icons mr-3 text-2xl group-hover:animate-spin">play_circle_filled</span>
+            <span>Watch Live Demo</span>
+            <div class="ml-3 w-3 h-3 bg-primary-400 rounded-full animate-pulse"></div>
           </button>
         </div>
 
-        <!-- Interactive Demo -->
-        <div class="max-w-4xl mx-auto">
-          <div class="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/50 overflow-hidden">
-            <!-- Demo Header -->
-            <div class="bg-slate-900 px-6 py-4 flex items-center justify-between">
-              <div class="flex items-center space-x-2">
-                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        <!-- Advanced Interactive Demo with Multiple Views -->
+        <div class="max-w-6xl mx-auto animate-fade-in-up" style="animation-delay: 3.5s;">
+          <div class="bg-white/5 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+
+            <!-- Interactive Demo Tabs -->
+            <div class="bg-slate-800/50 px-8 py-4 border-b border-white/10">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <button class="demo-tab active flex items-center px-4 py-2 rounded-lg bg-primary-500/20 text-primary-300 font-medium transition-all duration-300" data-tab="code">
+                    <span class="material-icons mr-2 text-sm">code</span>
+                    Live Code
+                  </button>
+                  <button class="demo-tab flex items-center px-4 py-2 rounded-lg bg-white/10 text-slate-300 font-medium hover:bg-white/20 transition-all duration-300" data-tab="visualization">
+                    <span class="material-icons mr-2 text-sm">analytics</span>
+                    AI Training
+                  </button>
+                  <button class="demo-tab flex items-center px-4 py-2 rounded-lg bg-white/10 text-slate-300 font-medium hover:bg-white/20 transition-all duration-300" data-tab="results">
+                    <span class="material-icons mr-2 text-sm">insights</span>
+                    Results
+                  </button>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span class="text-white text-sm font-mono ml-4" id="demo-filename">ai_model_trainer.py</span>
+                </div>
               </div>
-              <div class="text-white text-sm font-mono">ai_model_trainer.py</div>
             </div>
 
-            <!-- Demo Content -->
-            <div class="p-8">
-              <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <pre class="text-sm text-slate-800 font-mono bg-slate-50 p-4 rounded-lg overflow-x-auto"><code>import tensorflow as tf
+            <!-- Demo Content Container -->
+            <div class="relative">
+
+              <!-- Code Tab Content -->
+              <div id="code-tab" class="demo-content active p-8">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                  <div class="space-y-4">
+                    <div class="flex items-center text-slate-300 text-sm mb-4">
+                      <span class="material-icons mr-2 text-green-400">play_arrow</span>
+                      Training neural network with real-time visualization
+                    </div>
+                    <pre class="text-sm text-slate-200 font-mono bg-slate-800/50 p-6 rounded-xl overflow-x-auto border border-white/10"><code id="code-content">import tensorflow as tf
+import numpy as np
 from sklearn.model_selection import train_test_split
 
-# Build advanced neural network
-model = tf.keras.Sequential([
-    tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
-    tf.keras.layers.MaxPooling2D((2, 2)),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dropout(0.3),
-    tf.keras.layers.Dense(10, activation='softmax')
-])
+# Advanced Neural Network Architecture
+class AdvancedAI(tf.keras.Model):
+    def __init__(self):
+        super(AdvancedAI, self).__init__()
+        self.conv1 = tf.keras.layers.Conv2D(64, (3, 3), activation='relu')
+        self.pool1 = tf.keras.layers.MaxPooling2D((2, 2))
+        self.conv2 = tf.keras.layers.Conv2D(128, (3, 3), activation='relu')
+        self.pool2 = tf.keras.layers.MaxPooling2D((2, 2))
+        self.flatten = tf.keras.layers.Flatten()
+        self.dense1 = tf.keras.layers.Dense(256, activation='relu')
+        self.dropout = tf.keras.layers.Dropout(0.4)
+        self.dense2 = tf.keras.layers.Dense(10, activation='softmax')
 
-# Train with real-time visualization
+    def call(self, inputs):
+        x = self.conv1(inputs)
+        x = self.pool1(x)
+        x = self.conv2(x)
+        x = self.pool2(x)
+        x = self.flatten(x)
+        x = self.dense1(x)
+        x = self.dropout(x)
+        return self.dense2(x)
+
+# Initialize and compile model
+model = AdvancedAI()
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
+# Real-time training with live updates
 history = model.fit(X_train, y_train,
-                   epochs=50,
-                   validation_data=(X_test, y_test))</code></pre>
-                </div>
-
-                <div class="text-center">
-                  <div class="text-6xl font-bold text-primary-600 mb-4" id="accuracy-display">0%</div>
-                  <div class="text-slate-600 font-medium mb-6">Model Accuracy</div>
-                  <div class="w-full bg-slate-200 rounded-full h-3 mb-4">
-                    <div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full transition-all duration-1000" id="accuracy-bar" style="width: 0%"></div>
+                   epochs=100,
+                   batch_size=32,
+                   validation_split=0.2,
+                   callbacks=[live_update_callback])</code></pre>
                   </div>
-                  <div class="text-sm text-slate-500">Training in progress...</div>
+
+                  <div class="text-center space-y-6">
+                    <div class="relative">
+                      <div class="text-7xl font-black text-primary-400 mb-2 animate-pulse" id="accuracy-display">0%</div>
+                      <div class="text-slate-300 font-medium text-lg">Model Accuracy</div>
+                      <div class="absolute -top-2 -right-2 w-4 h-4 bg-accent-500 rounded-full animate-ping"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                      <div class="w-full bg-white/20 rounded-full h-4 overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 h-full rounded-full transition-all duration-1000 animate-progress" id="accuracy-bar" style="width: 0%"></div>
+                      </div>
+                      <div class="text-sm text-slate-400" id="training-status">Initializing training...</div>
+                    </div>
+
+                    <!-- Training Metrics -->
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-secondary-400" id="epoch-count">0</div>
+                        <div class="text-xs text-slate-400">Epochs</div>
+                      </div>
+                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-accent-400" id="loss-value">0.00</div>
+                        <div class="text-xs text-slate-400">Loss</div>
+                      </div>
+                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+                        <div class="text-2xl font-bold text-primary-400" id="val-accuracy">0%</div>
+                        <div class="text-xs text-slate-400">Val Acc</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <!-- Visualization Tab Content -->
+              <div id="visualization-tab" class="demo-content hidden p-8">
+                <div class="text-center">
+                  <h3 class="text-2xl font-bold text-white mb-6">AI Model Training Visualization</h3>
+                  <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                      <h4 class="text-lg font-semibold text-primary-400 mb-4">Training Progress</h4>
+                      <canvas id="training-chart" width="300" height="200" class="w-full"></canvas>
+                    </div>
+                    <div class="bg-slate-800/50 rounded-xl p-6 border border-white/10">
+                      <h4 class="text-lg font-semibold text-secondary-400 mb-4">Model Architecture</h4>
+                      <div class="flex flex-col items-center space-y-4">
+                        <div class="w-16 h-16 bg-primary-500/50 rounded-lg flex items-center justify-center">
+                          <span class="material-icons text-primary-300">layers</span>
+                        </div>
+                        <div class="text-xs text-slate-400 text-center">Neural Network Layers</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Results Tab Content -->
+              <div id="results-tab" class="demo-content hidden p-8">
+                <div class="text-center">
+                  <h3 class="text-2xl font-bold text-white mb-6">Training Results & Insights</h3>
+                  <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-xl p-6 border border-green-500/30">
+                      <div class="text-4xl font-bold text-green-400 mb-2">98.7%</div>
+                      <div class="text-green-300 font-medium">Final Accuracy</div>
+                      <div class="text-xs text-green-400/70 mt-2">Industry Leading</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl p-6 border border-blue-500/30">
+                      <div class="text-4xl font-bold text-blue-400 mb-2">2.3s</div>
+                      <div class="text-blue-300 font-medium">Inference Time</div>
+                      <div class="text-xs text-blue-400/70 mt-2">Lightning Fast</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl p-6 border border-purple-500/30">
+                      <div class="text-4xl font-bold text-purple-400 mb-2">15MB</div>
+                      <div class="text-purple-300 font-medium">Model Size</div>
+                      <div class="text-xs text-purple-400/70 mt-2">Optimized</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-        <div class="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
-          <div class="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-pulse"></div>
+      <!-- Advanced Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up" style="animation-delay: 4s;">
+        <div class="flex flex-col items-center space-y-4">
+          <div class="relative">
+            <div class="w-8 h-14 border-2 border-white/30 rounded-full flex justify-center backdrop-blur-sm bg-white/10">
+              <div class="w-1 h-4 bg-white rounded-full mt-2 animate-bounce"></div>
+            </div>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent-500 rounded-full animate-ping"></div>
+          </div>
+          <div class="text-white/70 text-sm font-medium animate-pulse">Scroll to explore</div>
+          <div class="flex space-x-1">
+            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse"></div>
+            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+          </div>
         </div>
-        <div class="text-slate-500 text-sm mt-2">Scroll to explore</div>
       </div>
+
+      <!-- Floating Action Elements -->
+      <div class="absolute top-1/4 right-10 animate-float-slow opacity-60">
+        <div class="w-20 h-20 bg-gradient-to-br from-primary-500/30 to-secondary-500/30 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20">
+          <span class="material-icons text-primary-300 text-2xl">psychology</span>
+        </div>
+      </div>
+
+      <div class="absolute bottom-1/4 left-10 animate-float-reverse opacity-60" style="animation-delay: 2s;">
+        <div class="w-16 h-16 bg-gradient-to-br from-accent-500/30 to-primary-500/30 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/20">
+          <span class="material-icons text-accent-300 text-xl">auto_awesome</span>
+        </div>
+      </div>
+
     </section>
 
     <!-- Features Section -->
@@ -1260,18 +1445,195 @@ def optimize_neural_network(model, train_data):
           </div>
         </div>
 
-        <!-- Company Logos -->
-        <div class="text-center">
-          <p class="text-slate-600 mb-8">Our students work at top companies worldwide</p>
-          <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div class="text-2xl font-bold text-slate-400">Google</div>
-            <div class="text-2xl font-bold text-slate-400">Microsoft</div>
-            <div class="text-2xl font-bold text-slate-400">Amazon</div>
-            <div class="text-2xl font-bold text-slate-400">Meta</div>
-            <div class="text-2xl font-bold text-slate-400">Tesla</div>
-            <div class="text-2xl font-bold text-slate-400">Netflix</div>
-            <div class="text-2xl font-bold text-slate-400">Uber</div>
-            <div class="text-2xl font-bold text-slate-400">Adobe</div>
+        <!-- Company Logos Section -->
+        <div class="mt-20">
+          <div class="text-center mb-12">
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+              Our Students Work at <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Top Companies</span>
+            </h3>
+            <p class="text-slate-600 max-w-2xl mx-auto">
+              Join thousands of successful graduates working at leading technology companies worldwide
+            </p>
+          </div>
+
+          <!-- Premium Company Logos Grid -->
+          <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 md:p-12">
+            <!-- Top Tier Companies -->
+            <div class="mb-12">
+              <h4 class="text-lg font-semibold text-slate-800 mb-8 text-center">Top Tier Companies</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                <!-- Google -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Logo.png" alt="Google" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Google</div>
+                </div>
+
+                <!-- Microsoft -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/12/Microsoft-Logo.png" alt="Microsoft" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Microsoft</div>
+                </div>
+
+                <!-- Amazon -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/12/Amazon-Logo.png" alt="Amazon" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Amazon</div>
+                </div>
+
+                <!-- Meta (Facebook) -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2021/02/Meta-Logo.png" alt="Meta" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Meta</div>
+                </div>
+
+                <!-- Apple -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/08/Apple-Logo.png" alt="Apple" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Apple</div>
+                </div>
+
+                <!-- Netflix -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Netflix-Logo.png" alt="Netflix" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Netflix</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Giants -->
+            <div class="mb-12">
+              <h4 class="text-lg font-semibold text-slate-800 mb-8 text-center">Tech Giants</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                <!-- Tesla -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/12/Tesla-Logo.png" alt="Tesla" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Tesla</div>
+                </div>
+
+                <!-- Adobe -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Adobe-Logo.png" alt="Adobe" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Adobe</div>
+                </div>
+
+                <!-- IBM -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/09/IBM-Logo.png" alt="IBM" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">IBM</div>
+                </div>
+
+                <!-- Intel -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Intel-Logo.png" alt="Intel" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Intel</div>
+                </div>
+
+                <!-- NVIDIA -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Nvidia-Logo.png" alt="NVIDIA" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">NVIDIA</div>
+                </div>
+
+                <!-- Oracle -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Oracle</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Indian Tech Companies -->
+            <div class="mb-12">
+              <h4 class="text-lg font-semibold text-slate-800 mb-8 text-center">Leading Indian Companies</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                <!-- Infosys -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Infosys-Logo.png" alt="Infosys" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Infosys</div>
+                </div>
+
+                <!-- TCS -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/TCS-Logo.png" alt="TCS" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">TCS</div>
+                </div>
+
+                <!-- Wipro -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Wipro-Logo.png" alt="Wipro" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Wipro</div>
+                </div>
+
+                <!-- HCL -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/HCL-Logo.png" alt="HCL" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">HCL</div>
+                </div>
+
+                <!-- Tech Mahindra -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Tech-Mahindra-Logo.png" alt="Tech Mahindra" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Tech Mahindra</div>
+                </div>
+
+                <!-- Cognizant -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Cognizant-Logo.png" alt="Cognizant" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Cognizant</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Emerging Tech & Startups -->
+            <div class="mb-8">
+              <h4 class="text-lg font-semibold text-slate-800 mb-8 text-center">Emerging Tech & Startups</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                <!-- Flipkart -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Flipkart-Logo.png" alt="Flipkart" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Flipkart</div>
+                </div>
+
+                <!-- Paytm -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Paytm-Logo.png" alt="Paytm" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Paytm</div>
+                </div>
+
+                <!-- Ola -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Ola-Logo.png" alt="Ola" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Ola</div>
+                </div>
+
+                <!-- Swiggy -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Swiggy-Logo.png" alt="Swiggy" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Swiggy</div>
+                </div>
+
+                <!-- Zomato -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Zomato-Logo.png" alt="Zomato" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Zomato</div>
+                </div>
+
+                <!-- Byju's -->
+                <div class="company-logo-container group">
+                  <img src="https://logos-world.net/wp-content/uploads/2020/11/Byjus-Logo.png" alt="Byju's" class="company-logo grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <div class="company-tooltip">Byju's</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12 pt-8 border-t border-slate-200">
+              <p class="text-slate-600 mb-4">Ready to join them?</p>
+              <a href="#courses" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <span class="material-icons mr-2">rocket_launch</span>
+                Start Your Journey
+              </a>
+            </div>
           </div>
         </div>
       </div>
