@@ -1418,49 +1418,101 @@ cv2.destroyAllWindows()`
   // ===== COMPANY LOGOS INTERACTIONS =====
 
   setupCompanyLogos() {
-    // Auto-scroll marquee effect for company logos
-    this.setupCompanyMarquee();
-
-    // Company logo hover effects
+    // Initialize company logo features
+    this.setupCompanyLogoErrorHandling();
     this.setupCompanyHoverEffects();
-
-    // Load company logos with lazy loading
     this.setupCompanyLogoLazyLoading();
+    this.setupCompanyLogoAnimations();
+    this.setupCompanyLogoInteractions();
   }
 
-  setupCompanyMarquee() {
-    const companySections = document.querySelectorAll('.company-logo-container');
+  setupCompanyLogoErrorHandling() {
+    // Handle broken logo images with fallback
+    document.querySelectorAll('.company-logo').forEach(logo => {
+      logo.addEventListener('error', (e) => {
+        const container = e.target.closest('.company-logo-container');
+        const companyName = e.target.alt;
 
-    // Add continuous scroll effect
-    companySections.forEach((section, index) => {
-      section.style.animation = `companyScroll 30s linear infinite ${index * 2}s`;
-    });
+        // Hide broken image
+        e.target.style.display = 'none';
 
-    // Pause animation on hover
-    document.querySelectorAll('.company-logo-container').forEach(container => {
-      container.addEventListener('mouseenter', () => {
-        container.style.animationPlayState = 'paused';
+        // Create fallback element
+        const fallback = document.createElement('div');
+        fallback.className = 'fallback-logo';
+        fallback.textContent = companyName.charAt(0).toUpperCase();
+        fallback.title = `${companyName} - Logo temporarily unavailable`;
+
+        // Add gradient background based on company
+        const gradients = [
+          'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+          'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+          'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+          'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+          'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        ];
+        const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+        fallback.style.background = randomGradient;
+
+        container.appendChild(fallback);
+
+        // Log error for debugging
+        console.warn(`Company logo failed to load: ${companyName} - ${e.target.src}`);
       });
-      container.addEventListener('mouseleave', () => {
-        container.style.animationPlayState = 'running';
+
+      // Add load success handler
+      logo.addEventListener('load', (e) => {
+        e.target.style.opacity = '0.6';
+        e.target.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          e.target.style.transition = 'all 0.4s ease';
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'scale(1)';
+        }, 100);
       });
     });
   }
 
   setupCompanyHoverEffects() {
     document.querySelectorAll('.company-logo-container').forEach(container => {
-      const logos = container.querySelectorAll('.company-logo');
+      const logo = container.querySelector('.company-logo, .fallback-logo');
+      const tooltip = container.querySelector('.company-tooltip');
 
-      logos.forEach(logo => {
-        logo.addEventListener('mouseenter', () => {
-          logo.style.transform = 'scale(1.1)';
-          logo.style.filter = 'brightness(1.2)';
-        });
+      container.addEventListener('mouseenter', () => {
+        // Enhanced hover effects
+        container.style.transform = 'translateY(-8px) scale(1.02)';
 
-        logo.addEventListener('mouseleave', () => {
-          logo.style.transform = 'scale(1)';
-          logo.style.filter = 'brightness(1)';
-        });
+        if (logo) {
+          logo.style.transform = 'scale(1.1) rotate(2deg)';
+          logo.style.filter = 'brightness(1.2) contrast(1.1)';
+        }
+
+        // Show tooltip with animation
+        if (tooltip) {
+          tooltip.style.opacity = '1';
+          tooltip.style.visibility = 'visible';
+          tooltip.style.transform = 'translateX(-50%) scale(1)';
+        }
+
+        // Add ripple effect
+        this.createRippleEffect(container);
+      });
+
+      container.addEventListener('mouseleave', () => {
+        // Reset effects
+        container.style.transform = 'translateY(0) scale(1)';
+
+        if (logo) {
+          logo.style.transform = 'scale(1) rotate(0deg)';
+          logo.style.filter = 'grayscale(100%) contrast(0.8) brightness(0.6)';
+        }
+
+        // Hide tooltip
+        if (tooltip) {
+          tooltip.style.opacity = '0';
+          tooltip.style.visibility = 'hidden';
+          tooltip.style.transform = 'translateX(-50%) scale(0.8)';
+        }
       });
     });
   }
@@ -1469,17 +1521,190 @@ cv2.destroyAllWindows()`
     const companyLogos = document.querySelectorAll('.company-logo');
 
     const logoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           const logo = entry.target;
-          logo.style.opacity = '1';
-          logo.style.transform = 'translateY(0)';
+          const container = logo.closest('.company-logo-container');
+
+          // Staggered animation
+          setTimeout(() => {
+            logo.style.opacity = '1';
+            logo.style.transform = 'translateY(0) scale(1)';
+            container.style.animation = 'logoFadeIn 0.6s ease-out forwards';
+          }, index * 100);
+
           logoObserver.unobserve(logo);
         }
       });
-    }, { threshold: 0.1 });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
 
-    companyLogos.forEach(logo => logoObserver.observe(logo));
+    companyLogos.forEach(logo => {
+      logo.style.opacity = '0';
+      logo.style.transform = 'translateY(30px) scale(0.8)';
+      logoObserver.observe(logo);
+    });
+  }
+
+  setupCompanyLogoAnimations() {
+    // Add continuous subtle animations
+    document.querySelectorAll('.company-logo-container').forEach((container, index) => {
+      // Random subtle floating animation
+      const delay = Math.random() * 2;
+      const duration = 3 + Math.random() * 2;
+
+      container.style.animation = `companyFloat ${duration}s ease-in-out infinite ${delay}s`;
+    });
+
+    // Add marquee effect for sections on larger screens
+    if (window.innerWidth > 1024) {
+      this.setupCompanyMarquee();
+    }
+  }
+
+  setupCompanyMarquee() {
+    const sections = document.querySelectorAll('.company-logo-container');
+
+    sections.forEach((section, index) => {
+      // Subtle continuous movement
+      section.style.animation = `companyScroll 40s linear infinite ${index * 0.5}s`;
+    });
+
+    // Enhanced pause on hover
+    document.querySelectorAll('.company-logo-container').forEach(container => {
+      container.addEventListener('mouseenter', () => {
+        container.style.animationPlayState = 'paused';
+        container.style.transform = 'scale(1.05)';
+      });
+
+      container.addEventListener('mouseleave', () => {
+        container.style.animationPlayState = 'running';
+        container.style.transform = 'scale(1)';
+      });
+    });
+  }
+
+  setupCompanyLogoInteractions() {
+    // Add click interactions
+    document.querySelectorAll('.company-logo-container').forEach(container => {
+      container.addEventListener('click', (e) => {
+        const companyName = container.querySelector('.company-tooltip')?.textContent || 'Company';
+
+        // Create click ripple effect
+        this.createClickRipple(e, container);
+
+        // Show notification
+        this.showCompanyNotification(companyName);
+
+        // Add temporary highlight
+        container.style.boxShadow = '0 0 30px rgba(14, 165, 233, 0.4)';
+        setTimeout(() => {
+          container.style.boxShadow = '';
+        }, 1000);
+      });
+    });
+  }
+
+  createRippleEffect(container) {
+    const ripple = document.createElement('div');
+    ripple.className = 'company-ripple';
+    ripple.style.cssText = `
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      transform: translate(-50%, -50%);
+      transition: all 0.6s ease-out;
+      pointer-events: none;
+    `;
+
+    container.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.style.width = '200px';
+      ripple.style.height = '200px';
+      ripple.style.opacity = '0';
+    }, 10);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }
+
+  createClickRipple(event, container) {
+    const rect = container.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const ripple = document.createElement('div');
+    ripple.style.cssText = `
+      position: absolute;
+      left: ${x - 25}px;
+      top: ${y - 25}px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(14, 165, 233, 0.4);
+      transform: scale(0);
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+      pointer-events: none;
+      z-index: 5;
+    `;
+
+    container.appendChild(ripple);
+
+    requestAnimationFrame(() => {
+      ripple.style.transform = 'scale(2)';
+      ripple.style.opacity = '0';
+    });
+
+    setTimeout(() => ripple.remove(), 500);
+  }
+
+  showCompanyNotification(companyName) {
+    // Create floating notification
+    const notification = document.createElement('div');
+    notification.className = 'company-notification';
+    notification.innerHTML = `
+      <div class="notification-content">
+        <span class="material-icons">business</span>
+        <span>${companyName} - Leading AI Innovator</span>
+      </div>
+    `;
+
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-out;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+    `;
+
+    document.body.appendChild(notification);
+
+    // Animate in
+    setTimeout(() => {
+      notification.style.transform = 'translateX(0)';
+    }, 10);
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+      notification.style.transform = 'translateX(100%)';
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
   }
 }
 

@@ -1093,82 +1093,187 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  min-height: 80px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  min-height: 100px;
   width: 100%;
-  max-width: 140px;
+  max-width: 160px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.company-logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.company-logo-container:hover::before {
+  left: 100%;
 }
 
 .company-logo-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(14, 165, 233, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border-color: rgba(14, 165, 233, 0.3);
+  animation: logoPulse 2s ease-in-out infinite;
 }
 
 .company-logo {
   max-width: 100%;
-  max-height: 60px;
+  max-height: 70px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.6);
-  transition: all 0.3s ease;
+  filter: grayscale(100%) contrast(0.8) brightness(0.6);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
 }
 
 .company-logo-container:hover .company-logo {
-  filter: grayscale(0%) opacity(1);
-  transform: scale(1.05);
+  filter: grayscale(0%) contrast(1) brightness(1.1);
+  transform: scale(1.1) rotate(2deg);
+  animation: logoBounce 0.6s ease-out;
 }
 
 .company-tooltip {
   position: absolute;
-  bottom: -30px;
+  bottom: -35px;
   left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15, 23, 42, 0.9);
+  transform: translateX(-50%) scale(0.8);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
   color: white;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   z-index: 10;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .company-tooltip::before {
   content: '';
   position: absolute;
-  top: -4px;
+  top: -6px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid rgba(15, 23, 42, 0.9);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(15, 23, 42, 0.95);
 }
 
 .company-logo-container:hover .company-tooltip {
   opacity: 1;
   visibility: visible;
-  bottom: -35px;
+  bottom: -40px;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Logo loading animation */
+.company-logo-container .company-logo {
+  animation: logoFadeIn 0.8s ease-out;
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  50% {
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes logoBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(2deg);
+  }
+}
+
+/* Error handling for broken logos */
+.company-logo-container .company-logo[onerror] {
+  display: none;
+}
+
+.company-logo-container .company-logo[onerror] + .fallback-logo {
+  display: block !important;
+}
+
+.fallback-logo {
+  display: none;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Company Logos */
+@media (max-width: 1024px) {
+  .company-logo-container {
+    min-height: 80px;
+    max-width: 140px;
+    padding: 1.2rem;
+  }
+
+  .company-logo {
+    max-height: 50px;
+  }
+
+  .company-tooltip {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .company-logo-container {
-    min-height: 60px;
+    min-height: 70px;
     max-width: 120px;
-    padding: 0.75rem;
+    padding: 1rem;
   }
 
   .company-logo {
@@ -1177,19 +1282,36 @@ textarea:focus-visible {
 
   .company-tooltip {
     font-size: 0.7rem;
-    padding: 3px 6px;
+    padding: 4px 8px;
+  }
+
+  .fallback-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 640px) {
   .company-logo-container {
-    min-height: 50px;
+    min-height: 60px;
     max-width: 100px;
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   .company-logo {
     max-height: 35px;
+  }
+
+  .company-tooltip {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  .fallback-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
 
@@ -1203,6 +1325,21 @@ textarea:focus-visible {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes companyFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-0.5deg);
   }
 }
 
