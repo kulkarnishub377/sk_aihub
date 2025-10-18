@@ -36,6 +36,14 @@ class SKAIHub {
     this.setupEnhancedScrollIndicator();
     this.setupEnhancedMagneticButtons();
     this.setupRealtimeAccuracy();
+    // New Light Theme Hero Features
+    this.setupStatsCounter();
+    this.setupDemoTabs();
+    this.setupFloatingElements();
+    this.setupSkillProgress();
+    this.setupEnhancedCTA();
+    this.setupLiveDemo();
+    this.setupScrollReveal();
   }
 
   // ===== LOADING SCREEN =====
@@ -1354,6 +1362,184 @@ cv2.destroyAllWindows()`
 
       updateAccuracy();
     });
+  }
+
+  // ===== NEW LIGHT THEME HERO FEATURES =====
+  
+  // Stats Counter Animation
+  setupStatsCounter() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    const animateCounter = (element, target) => {
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target.toLocaleString() + (element.dataset.suffix || '');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current).toLocaleString() + (element.dataset.suffix || '');
+        }
+      }, 30);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.dataset.count);
+          animateCounter(entry.target, target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => observer.observe(stat));
+  }
+
+  // Demo Tabs
+  setupDemoTabs() {
+    const tabs = document.querySelectorAll('.demo-tab');
+    const contents = document.querySelectorAll('.demo-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        
+        tab.classList.add('active');
+        document.getElementById(target)?.classList.add('active');
+      });
+    });
+  }
+
+  // Interactive Floating Elements
+  setupFloatingElements() {
+    const floatingShapes = document.querySelectorAll('.floating-shape');
+    
+    document.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      floatingShapes.forEach((shape, index) => {
+        const speed = (index + 1) * 0.01;
+        const x = (clientX - centerX) * speed;
+        const y = (clientY - centerY) * speed;
+        
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+  }
+
+  // Progress Bar Animations
+  setupSkillProgress() {
+    const progressBars = document.querySelectorAll('.skill-progress');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progress = entry.target.dataset.progress;
+          entry.target.style.width = progress + '%';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    progressBars.forEach(bar => observer.observe(bar));
+  }
+
+  // Enhanced CTA Buttons with Ripple Effect
+  setupEnhancedCTA() {
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.6);
+          pointer-events: none;
+          animation: ripple 0.6s ease-out;
+        `;
+        
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Add ripple keyframe if not exists
+    if (!document.getElementById('ripple-style')) {
+      const style = document.createElement('style');
+      style.id = 'ripple-style';
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  // Live Demo Interaction
+  setupLiveDemo() {
+    const demoInput = document.getElementById('demo-input');
+    const demoOutput = document.getElementById('demo-output');
+    
+    if (!demoInput || !demoOutput) return;
+
+    demoInput.addEventListener('input', (e) => {
+      const value = e.target.value;
+      
+      // Simulate AI processing
+      demoOutput.innerHTML = '<div class="typing">Processing...</div>';
+      
+      setTimeout(() => {
+        demoOutput.innerHTML = `
+          <div class="ai-response">
+            <div class="response-label">AI Analysis:</div>
+            <div class="response-text">
+              ${value ? `Analyzing: "${value}"<br>
+              Sentiment: Positive<br>
+              Confidence: ${(Math.random() * 20 + 80).toFixed(1)}%<br>
+              Keywords: ${value.split(' ').slice(0, 3).join(', ')}` : 
+              'Enter text to see AI analysis...'}
+            </div>
+          </div>
+        `;
+      }, 500);
+    });
+  }
+
+  // Scroll Reveal Animations
+  setupScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(element => observer.observe(element));
   }
 
   // ===== END ADVANCED HERO FEATURES =====

@@ -365,317 +365,306 @@
   <!-- Main Content -->
   <main class="pt-16">
 
-    <!-- Advanced Interactive Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <!-- Advanced Background Layers -->
+    <!-- Modern Fresh Hero Section - Light Theme -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30">
+      <!-- Modern Light Background -->
       <div class="absolute inset-0">
-        <!-- Dynamic Gradient Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-secondary-900/20 to-accent-900/20 animate-gradient"></div>
-
-        <!-- Floating Geometric Shapes -->
-        <div class="absolute top-20 left-10 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div class="absolute bottom-20 right-10 w-[600px] h-[600px] bg-secondary-500/10 rounded-full blur-3xl animate-float-reverse" style="animation-delay: 3s;"></div>
-        <div class="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent-500/10 rounded-full blur-3xl animate-float-fast" style="animation-delay: 1.5s;"></div>
-
-        <!-- Interactive Grid Background -->
-        <div class="absolute inset-0 opacity-20">
-          <div class="grid-background" id="grid-bg"></div>
-        </div>
-
-        <!-- Particle Canvas -->
-        <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
-
-        <!-- Neural Network Canvas -->
-        <canvas id="neural-network" class="absolute inset-0 w-full h-full pointer-events-none opacity-40"></canvas>
-
-        <!-- Mouse Follower Effect -->
-        <div id="mouse-follower" class="absolute w-96 h-96 bg-gradient-radial from-primary-500/20 to-transparent rounded-full blur-3xl pointer-events-none opacity-0 transition-opacity duration-300"></div>
+        <!-- Animated Gradient Orbs -->
+        <div class="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute bottom-10 -right-20 w-[500px] h-[500px] bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float-reverse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-br from-indigo-400/15 to-blue-400/15 rounded-full blur-3xl animate-float-fast" style="animation-delay: 1s;"></div>
+        
+        <!-- Decorative Dots Pattern -->
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #e0e7ff 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3;"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-32 right-20 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl backdrop-blur-sm border border-blue-200/30 animate-float-slow"></div>
+        <div class="absolute bottom-32 left-20 w-16 h-16 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full backdrop-blur-sm border border-purple-200/30 animate-float-reverse" style="animation-delay: 1.5s;"></div>
+        
+        <!-- Grid Lines -->
+        <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#93c5fd" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
 
-      <!-- Interactive Content Container -->
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Modern Hero Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Content -->
+          <div class="text-left space-y-8 animate-fade-in-left">
+            
+            <!-- Premium Badge -->
+            <div class="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <svg class="w-4 h-4 mr-2 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span class="bg-gradient-to-r from-white to-blue-50 bg-clip-text text-transparent font-bold">Premium AI Learning Platform</span>
+              <div class="ml-2 w-2 h-2 bg-white rounded-full animate-ping"></div>
+            </div>
 
-        <!-- Dynamic Badge with Animation -->
-        <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white text-sm font-semibold rounded-full mb-8 shadow-2xl animate-fade-in-up border border-white/20 backdrop-blur-sm">
-          <span class="material-icons text-base mr-2 animate-pulse">auto_awesome</span>
-          <span id="dynamic-badge-text">Premium AI Education Platform</span>
-          <div class="ml-2 w-2 h-2 bg-white rounded-full animate-ping"></div>
-        </div>
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl font-black leading-tight">
+              <span class="block text-gray-900 mb-2">Transform Your</span>
+              <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-fast">AI Career</span>
+              <span class="block text-gray-900 text-4xl md:text-5xl mt-2">in Just <span class="text-blue-600">12 Weeks</span></span>
+            </h1>
 
-        <!-- Advanced Main Heading with Typewriter Effect -->
-        <div class="mb-8">
-          <h1 class="text-6xl md:text-8xl font-black mb-4 leading-tight">
-            <span class="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent animate-gradient-fast block" id="main-heading">
-              Master AI
-            </span>
-            <span class="text-white text-5xl md:text-7xl font-bold animate-fade-in-up" style="animation-delay: 1s;">
-              Like a <span class="bg-gradient-to-r from-accent-400 to-primary-400 bg-clip-text text-transparent">Pro</span>
-            </span>
-          </h1>
-
-          <!-- Dynamic Subtitle -->
-          <div class="max-w-5xl mx-auto">
-            <p class="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 1.5s;" id="hero-subtitle">
-              Join India's most advanced AI education platform. Learn from industry leaders,
-              build real-world projects, and transform your career with guaranteed placement.
+            <!-- Subtitle -->
+            <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+              Join <span class="font-bold text-blue-600">25,000+ students</span> mastering AI with industry experts. 
+              Get hands-on experience, build real projects, and land your dream job with <span class="font-bold text-purple-600">98% placement rate</span>.
             </p>
 
-            <!-- Typing Indicator -->
-            <div class="inline-flex items-center text-slate-400 text-sm animate-fade-in-up" style="animation-delay: 2s;">
-              <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse mr-2"></span>
-              <span id="typing-indicator">25,000+ students already learning...</span>
+            <!-- Feature Pills -->
+            <div class="flex flex-wrap gap-3">
+              <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-md border border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-semibold text-gray-700">Live Classes</span>
+              </div>
+              <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-md border border-gray-100">
+                <svg class="w-5 h-5 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-semibold text-gray-700">Lifetime Access</span>
+              </div>
+              <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-md border border-gray-100">
+                <svg class="w-5 h-5 text-purple-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-semibold text-gray-700">Job Guarantee</span>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <button class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="relative flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>Start Free Trial</span>
+                  <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </button>
+              
+              <button class="group px-8 py-4 bg-white text-gray-900 font-bold rounded-xl shadow-md hover:shadow-xl border-2 border-gray-200 hover:border-blue-300 transform hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Watch Demo</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="flex items-center space-x-6 pt-4">
+              <div class="flex -space-x-2">
+                <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/150?img=1" alt="Student">
+                <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/150?img=2" alt="Student">
+                <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/150?img=3" alt="Student">
+                <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/150?img=4" alt="Student">
+                <div class="w-10 h-10 rounded-full border-2 border-white shadow bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold">+2k</div>
+              </div>
+              <div class="text-sm text-gray-600">
+                <div class="flex items-center">
+                  <div class="flex text-yellow-400 mr-1">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                  </div>
+                  <span class="font-bold text-gray-900">4.9</span>
+                  <span class="ml-1">(2,547 reviews)</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Advanced Interactive Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-fade-in-up" style="animation-delay: 2.5s;">
-          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
-            <div class="text-4xl font-bold text-primary-400 mb-2 animate-counter" data-target="25000">0</div>
-            <div class="text-slate-300 font-medium text-sm">Students Trained</div>
-            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
-              <div class="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
-            </div>
-          </div>
+          <!-- Right Content - Interactive Dashboard -->
+          <div class="relative animate-fade-in-right">
+            <!-- Main Dashboard Card -->
+            <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+              <!-- Dashboard Header -->
+              <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm opacity-90">Your AI Journey</div>
+                      <div class="text-xl font-bold">Learning Dashboard</div>
+                    </div>
+                  </div>
+                  <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-sm">
+                    <span>Course Progress</span>
+                    <span class="font-bold">68%</span>
+                  </div>
+                  <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                    <div class="bg-gradient-to-r from-yellow-300 to-green-400 h-full rounded-full transition-all duration-1000 animate-progress" style="width: 68%"></div>
+                  </div>
+                </div>
+              </div>
 
-          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
-            <div class="text-4xl font-bold text-secondary-400 mb-2 animate-counter" data-target="98">0</div>
-            <div class="text-slate-300 font-medium text-sm">Success Rate</div>
-            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
-              <div class="bg-gradient-to-r from-secondary-400 to-secondary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
-            </div>
-          </div>
+              <!-- Stats Grid -->
+              <div class="p-6 grid grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-blue-600 animate-counter" data-target="24">0</span>
+                  </div>
+                  <div class="text-sm text-gray-600">Courses Completed</div>
+                </div>
 
-          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
-            <div class="text-4xl font-bold text-accent-400 mb-2 animate-counter" data-target="300">0</div>
-            <div class="text-slate-300 font-medium text-sm">Partner Companies</div>
-            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
-              <div class="bg-gradient-to-r from-accent-400 to-accent-600 h-full rounded-full animate-progress" style="width: 0%"></div>
-            </div>
-          </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl border border-purple-200">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-purple-600 animate-counter" data-target="156">0</span>
+                  </div>
+                  <div class="text-sm text-gray-600">Learning Hours</div>
+                </div>
 
-          <div class="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer" onclick="animateCounter(this)">
-            <div class="text-4xl font-bold text-primary-400 mb-2 animate-counter" data-target="50">0</div>
-            <div class="text-slate-300 font-medium text-sm">Expert Mentors</div>
-            <div class="w-full bg-white/20 rounded-full h-1 mt-3 overflow-hidden">
-              <div class="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full animate-progress" style="width: 0%"></div>
-            </div>
-          </div>
-        </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-200">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-green-600 animate-counter" data-target="42">0</span>
+                  </div>
+                  <div class="text-sm text-gray-600">Certifications</div>
+                </div>
 
-        <!-- Advanced CTA Buttons with Magnetic Effect -->
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up" style="animation-delay: 3s;">
-          <button class="magnetic-btn bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-500 flex items-center group relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-accent-500 via-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span class="material-icons mr-3 text-2xl animate-bounce">rocket_launch</span>
-            <span class="relative z-10">Start Free Trial</span>
-            <div class="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
-          </button>
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-xl border border-pink-200">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-pink-600 animate-counter" data-target="89">0</span>
+                  </div>
+                  <div class="text-sm text-gray-600">Study Partners</div>
+                </div>
+              </div>
 
-          <button class="magnetic-btn border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-xl hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-500 flex items-center group backdrop-blur-sm">
-            <span class="material-icons mr-3 text-2xl group-hover:animate-spin">play_circle_filled</span>
-            <span>Watch Live Demo</span>
-            <div class="ml-3 w-3 h-3 bg-primary-400 rounded-full animate-pulse"></div>
-          </button>
-        </div>
-
-        <!-- Advanced Interactive Demo with Multiple Views -->
-        <div class="max-w-6xl mx-auto animate-fade-in-up" style="animation-delay: 3.5s;">
-          <div class="bg-white/5 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
-
-            <!-- Interactive Demo Tabs -->
-            <div class="bg-slate-800/50 px-8 py-4 border-b border-white/10">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                  <button class="demo-tab active flex items-center px-4 py-2 rounded-lg bg-primary-500/20 text-primary-300 font-medium transition-all duration-300" data-tab="code">
-                    <span class="material-icons mr-2 text-sm">code</span>
-                    Live Code
+              <!-- Live Activity -->
+              <div class="px-6 pb-6">
+                <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-4 border border-gray-200">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span class="text-sm font-semibold text-gray-700">Live Now</span>
+                    </div>
+                    <span class="text-xs text-gray-500">342 online</span>
+                  </div>
+                  <div class="text-sm text-gray-600">
+                    <span class="font-semibold text-blue-600">Advanced Deep Learning</span> session starting in 15 min
+                  </div>
+                  <button class="mt-3 w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    Join Session
                   </button>
-                  <button class="demo-tab flex items-center px-4 py-2 rounded-lg bg-white/10 text-slate-300 font-medium hover:bg-white/20 transition-all duration-300" data-tab="visualization">
-                    <span class="material-icons mr-2 text-sm">analytics</span>
-                    AI Training
-                  </button>
-                  <button class="demo-tab flex items-center px-4 py-2 rounded-lg bg-white/10 text-slate-300 font-medium hover:bg-white/20 transition-all duration-300" data-tab="results">
-                    <span class="material-icons mr-2 text-sm">insights</span>
-                    Results
-                  </button>
-                </div>
-                <div class="flex items-center space-x-2">
-                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span class="text-white text-sm font-mono ml-4" id="demo-filename">ai_model_trainer.py</span>
                 </div>
               </div>
             </div>
 
-            <!-- Demo Content Container -->
-            <div class="relative">
+            <!-- Floating Cards -->
+            <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-xl flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-300 animate-float-slow">
+              <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
 
-              <!-- Code Tab Content -->
-              <div id="code-tab" class="demo-content active p-8">
-                <div class="grid lg:grid-cols-2 gap-8 items-center">
-                  <div class="space-y-4">
-                    <div class="flex items-center text-slate-300 text-sm mb-4">
-                      <span class="material-icons mr-2 text-green-400">play_arrow</span>
-                      Training neural network with real-time visualization
-                    </div>
-                    <pre class="text-sm text-slate-200 font-mono bg-slate-800/50 p-6 rounded-xl overflow-x-auto border border-white/10"><code id="code-content">import tensorflow as tf
-import numpy as np
-from sklearn.model_selection import train_test_split
+            <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full shadow-xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300 animate-float-reverse" style="animation-delay: 1s;">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
 
-# Advanced Neural Network Architecture
-class AdvancedAI(tf.keras.Model):
-    def __init__(self):
-        super(AdvancedAI, self).__init__()
-        self.conv1 = tf.keras.layers.Conv2D(64, (3, 3), activation='relu')
-        self.pool1 = tf.keras.layers.MaxPooling2D((2, 2))
-        self.conv2 = tf.keras.layers.Conv2D(128, (3, 3), activation='relu')
-        self.pool2 = tf.keras.layers.MaxPooling2D((2, 2))
-        self.flatten = tf.keras.layers.Flatten()
-        self.dense1 = tf.keras.layers.Dense(256, activation='relu')
-        self.dropout = tf.keras.layers.Dropout(0.4)
-        self.dense2 = tf.keras.layers.Dense(10, activation='softmax')
+        <!-- Bottom Stats Bar -->
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in-up" style="animation-delay: 0.5s;">
+          <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 animate-counter" data-target="25000">0</div>
+            <div class="text-sm text-gray-600 font-medium">Active Students</div>
+            <div class="mt-2 flex justify-center space-x-1">
+              <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
+              <div class="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+              <div class="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+            </div>
+          </div>
 
-    def call(self, inputs):
-        x = self.conv1(inputs)
-        x = self.pool1(x)
-        x = self.conv2(x)
-        x = self.pool2(x)
-        x = self.flatten(x)
-        x = self.dense1(x)
-        x = self.dropout(x)
-        return self.dense2(x)
+          <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2 animate-counter" data-target="98">0</div>
+            <div class="text-sm text-gray-600 font-medium">Placement Rate %</div>
+            <div class="mt-2 flex justify-center">
+              <div class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Verified</div>
+            </div>
+          </div>
 
-# Initialize and compile model
-model = AdvancedAI()
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
+          <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-green-600 to-cyan-600 bg-clip-text text-transparent mb-2 animate-counter" data-target="300">0</div>
+            <div class="text-sm text-gray-600 font-medium">Hiring Partners</div>
+            <div class="mt-2 flex justify-center space-x-1">
+              <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full"></div>
+              <div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full -ml-2"></div>
+              <div class="w-6 h-6 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full -ml-2"></div>
+            </div>
+          </div>
 
-# Real-time training with live updates
-history = model.fit(X_train, y_train,
-                   epochs=100,
-                   batch_size=32,
-                   validation_split=0.2,
-                   callbacks=[live_update_callback])</code></pre>
-                  </div>
-
-                  <div class="text-center space-y-6">
-                    <div class="relative">
-                      <div class="text-7xl font-black text-primary-400 mb-2 animate-pulse" id="accuracy-display">0%</div>
-                      <div class="text-slate-300 font-medium text-lg">Model Accuracy</div>
-                      <div class="absolute -top-2 -right-2 w-4 h-4 bg-accent-500 rounded-full animate-ping"></div>
-                    </div>
-
-                    <div class="space-y-4">
-                      <div class="w-full bg-white/20 rounded-full h-4 overflow-hidden">
-                        <div class="bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 h-full rounded-full transition-all duration-1000 animate-progress" id="accuracy-bar" style="width: 0%"></div>
-                      </div>
-                      <div class="text-sm text-slate-400" id="training-status">Initializing training...</div>
-                    </div>
-
-                    <!-- Training Metrics -->
-                    <div class="grid grid-cols-3 gap-4 mt-6">
-                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-secondary-400" id="epoch-count">0</div>
-                        <div class="text-xs text-slate-400">Epochs</div>
-                      </div>
-                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-accent-400" id="loss-value">0.00</div>
-                        <div class="text-xs text-slate-400">Loss</div>
-                      </div>
-                      <div class="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                        <div class="text-2xl font-bold text-primary-400" id="val-accuracy">0%</div>
-                        <div class="text-xs text-slate-400">Val Acc</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Visualization Tab Content -->
-              <div id="visualization-tab" class="demo-content hidden p-8">
-                <div class="text-center">
-                  <h3 class="text-2xl font-bold text-white mb-6">AI Model Training Visualization</h3>
-                  <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-slate-800/50 rounded-xl p-6 border border-white/10">
-                      <h4 class="text-lg font-semibold text-primary-400 mb-4">Training Progress</h4>
-                      <canvas id="training-chart" width="300" height="200" class="w-full"></canvas>
-                    </div>
-                    <div class="bg-slate-800/50 rounded-xl p-6 border border-white/10">
-                      <h4 class="text-lg font-semibold text-secondary-400 mb-4">Model Architecture</h4>
-                      <div class="flex flex-col items-center space-y-4">
-                        <div class="w-16 h-16 bg-primary-500/50 rounded-lg flex items-center justify-center">
-                          <span class="material-icons text-primary-300">layers</span>
-                        </div>
-                        <div class="text-xs text-slate-400 text-center">Neural Network Layers</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Results Tab Content -->
-              <div id="results-tab" class="demo-content hidden p-8">
-                <div class="text-center">
-                  <h3 class="text-2xl font-bold text-white mb-6">Training Results & Insights</h3>
-                  <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-xl p-6 border border-green-500/30">
-                      <div class="text-4xl font-bold text-green-400 mb-2">98.7%</div>
-                      <div class="text-green-300 font-medium">Final Accuracy</div>
-                      <div class="text-xs text-green-400/70 mt-2">Industry Leading</div>
-                    </div>
-                    <div class="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl p-6 border border-blue-500/30">
-                      <div class="text-4xl font-bold text-blue-400 mb-2">2.3s</div>
-                      <div class="text-blue-300 font-medium">Inference Time</div>
-                      <div class="text-xs text-blue-400/70 mt-2">Lightning Fast</div>
-                    </div>
-                    <div class="bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl p-6 border border-purple-500/30">
-                      <div class="text-4xl font-bold text-purple-400 mb-2">15MB</div>
-                      <div class="text-purple-300 font-medium">Model Size</div>
-                      <div class="text-xs text-purple-400/70 mt-2">Optimized</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+          <div class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">4.9</div>
+            <div class="text-sm text-gray-600 font-medium">Course Rating</div>
+            <div class="mt-2 flex justify-center text-yellow-400">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Advanced Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up" style="animation-delay: 4s;">
-        <div class="flex flex-col items-center space-y-4">
-          <div class="relative">
-            <div class="w-8 h-14 border-2 border-white/30 rounded-full flex justify-center backdrop-blur-sm bg-white/10">
-              <div class="w-1 h-4 bg-white rounded-full mt-2 animate-bounce"></div>
-            </div>
-            <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent-500 rounded-full animate-ping"></div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="flex flex-col items-center space-y-2">
+          <div class="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center p-2">
+            <div class="w-1 h-3 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full"></div>
           </div>
-          <div class="text-white/70 text-sm font-medium animate-pulse">Scroll to explore</div>
-          <div class="flex space-x-1">
-            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse"></div>
-            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
-            <div class="w-2 h-2 bg-white/50 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
-          </div>
+          <span class="text-xs text-gray-500 font-medium">Scroll to explore</span>
         </div>
       </div>
-
-      <!-- Floating Action Elements -->
-      <div class="absolute top-1/4 right-10 animate-float-slow opacity-60">
-        <div class="w-20 h-20 bg-gradient-to-br from-primary-500/30 to-secondary-500/30 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20">
-          <span class="material-icons text-primary-300 text-2xl">psychology</span>
-        </div>
-      </div>
-
-      <div class="absolute bottom-1/4 left-10 animate-float-reverse opacity-60" style="animation-delay: 2s;">
-        <div class="w-16 h-16 bg-gradient-to-br from-accent-500/30 to-primary-500/30 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/20">
-          <span class="material-icons text-accent-300 text-xl">auto_awesome</span>
-        </div>
-      </div>
-
     </section>
 
     <!-- Features Section -->
