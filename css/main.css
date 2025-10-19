@@ -106,6 +106,21 @@
   animation: gradient-fast 3s ease infinite;
 }
 
+/* Gradient X Animation (Horizontal Movement) */
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 5s ease infinite;
+}
+
 /* Counter Animation */
 @keyframes counter {
   from {
