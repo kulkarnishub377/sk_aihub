@@ -44,6 +44,10 @@ class SKAIHub {
     this.setupEnhancedCTA();
     this.setupLiveDemo();
     this.setupScrollReveal();
+    // Premium Added Features
+    this.setupCourseFiltering();
+    this.setupInteractiveCodeSlider();
+    this.setupAIAssistantWidget();
   }
 
   // ===== LOADING SCREEN =====
@@ -497,40 +501,155 @@ class SKAIHub {
   }
 
   // ===== ENHANCED MOBILE MENU =====
+  // ===== ENHANCED MOBILE MENU =====
   setupMobileMenu() {
-    const menuBtn = document.getElementById('menu-button');
+    const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const overlay = document.querySelector('.mobile-overlay');
-
+    
     if (!menuBtn || !mobileMenu) return;
 
     const toggleMenu = () => {
-      const isOpen = mobileMenu.classList.contains('open');
-      mobileMenu.classList.toggle('open');
-      menuBtn.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-
-      if (overlay) {
-        overlay.classList.toggle('active');
+      const isOpen = mobileMenu.style.opacity === '1';
+      
+      if (isOpen) {
+        mobileMenu.style.opacity = '0';
+        mobileMenu.style.transform = 'scaleY(0)';
+        mobileMenu.style.pointerEvents = 'none';
+        menuBtn.classList.remove('bg-slate-100');
+      } else {
+        mobileMenu.style.opacity = '1';
+        mobileMenu.style.transform = 'scaleY(1)';
+        mobileMenu.style.pointerEvents = 'auto';
+        menuBtn.classList.add('bg-slate-100');
       }
     };
 
     menuBtn.addEventListener('click', toggleMenu);
 
-    if (overlay) {
-      overlay.addEventListener('click', toggleMenu);
-    }
-
     // Close menu on navigation
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', toggleMenu);
+      link.addEventListener('click', () => {
+        if(mobileMenu.style.opacity === '1') toggleMenu();
+      });
+    });
+  }
+
+  // ===== DYNAMIC COURSE FILTERING =====
+  setupCourseFiltering() {
+    const filters = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.course-card');
+
+    if (!filters.length || !cards.length) return;
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        filters.forEach(f => {
+          f.classList.remove('bg-slate-900', 'text-white');
+          f.classList.add('bg-white', 'text-slate-700');
+        });
+        // Add active to clicked
+        btn.classList.add('bg-slate-900', 'text-white');
+        btn.classList.remove('bg-white', 'text-slate-700');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          card.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 400);
+          }
+        });
+      });
+    });
+  }
+
+  // ===== INTERACTIVE CODE SLIDER =====
+  setupInteractiveCodeSlider() {
+    const slider = document.getElementById('code-slider');
+    const overlay = document.getElementById('code-overlay');
+    const container = document.getElementById('code-container');
+    if (!slider || !overlay || !container) return;
+
+    let isDragging = false;
+
+    const moveSlider = (x) => {
+      const containerRect = container.getBoundingClientRect();
+      let percent = ((x - containerRect.left) / containerRect.width) * 100;
+      percent = Math.min(Math.max(percent, 0), 100);
+      overlay.style.width = `${percent}%`;
+      slider.style.left = `${percent}%`;
+    };
+
+    slider.addEventListener('mousedown', () => isDragging = true);
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) moveSlider(e.clientX);
     });
 
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-        toggleMenu();
-      }
+    // Touch support
+    slider.addEventListener('touchstart', () => isDragging = true);
+    window.addEventListener('touchend', () => isDragging = false);
+    container.addEventListener('touchmove', (e) => {
+      if (isDragging) moveSlider(e.touches[0].clientX);
+    });
+  }
+
+  // ===== FLOATING AI ASSISTANT =====
+  setupAIAssistantWidget() {
+    const aiBtn = document.getElementById('ai-chat-btn');
+    const aiWindow = document.getElementById('ai-chat-window');
+    const aiClose = document.getElementById('ai-chat-close');
+    const aiInput = document.getElementById('ai-chat-input');
+    const aiBody = document.getElementById('ai-chat-body');
+    const aiSend = document.getElementById('ai-chat-send');
+
+    if (!aiBtn || !aiWindow) return;
+
+    aiBtn.addEventListener('click', () => {
+      aiWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4', 'scale-95');
+      aiBtn.classList.add('scale-0');
+    });
+
+    aiClose.addEventListener('click', () => {
+      aiWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4', 'scale-95');
+      aiBtn.classList.remove('scale-0');
+    });
+
+    const addMessage = (text, isUser = false) => {
+      const msg = document.createElement('div');
+      msg.className = `max-w-[85%] p-3 rounded-xl text-sm ${isUser ? 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white ml-auto rounded-tr-sm shadow-md' : 'bg-slate-100 text-slate-800 mr-auto rounded-tl-sm border border-slate-200 shadow-sm'}`;
+      msg.textContent = text;
+      aiBody.appendChild(msg);
+      aiBody.scrollTop = aiBody.scrollHeight;
+    };
+
+    const handleSend = () => {
+      const text = aiInput.value.trim();
+      if (!text) return;
+      
+      addMessage(text, true);
+      aiInput.value = '';
+
+      // Mock AI response
+      setTimeout(() => {
+        addMessage("That's an excellent question! I specialize in outcome-driven paths. Based on your interest, I recommend checking out our Premium 1:1 Mentorship. Want me to open that for you?", false);
+      }, 1000);
+    };
+
+    aiSend?.addEventListener('click', handleSend);
+    aiInput?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
     });
   }
 

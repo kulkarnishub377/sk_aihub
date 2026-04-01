@@ -240,8 +240,8 @@
       </div>
     </div>
 
-    <!-- Enhanced Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-xl max-h-[80vh] overflow-y-auto">
+    <!-- Enhanced Mobile Menu container (Animated) -->
+    <div id="mobile-menu" class="absolute top-full left-0 w-full lg:hidden bg-white border-t border-slate-200 shadow-xl max-h-[80vh] overflow-y-auto transform origin-top transition-all duration-300 ease-out opacity-0 scale-y-0 pointer-events-none z-40">
       <div class="px-4 py-6 space-y-6">
 
         <!-- Mobile User Section -->
@@ -1056,18 +1056,18 @@
 
         <!-- Course Category Filters -->
         <div class="flex flex-wrap justify-center gap-3 mb-12" id="course-filters">
-          <button class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium shadow-md transition-all">All Tracks</button>
-          <button class="px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">AI & Data Science</button>
-          <button class="px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Software Engineering</button>
-          <button class="px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Web & Mobile</button>
-          <button class="px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Career Boost</button>
+          <button data-filter="all" class="filter-btn active px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium shadow-md transition-all">All Tracks</button>
+          <button data-filter="ai-data" class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">AI & Data Science</button>
+          <button data-filter="software-eng" class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Software Engineering</button>
+          <button data-filter="web-mobile" class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Web & Mobile</button>
+          <button data-filter="career" class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-medium transition-all">Career Boost</button>
         </div>
 
         <!-- Premium Course Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           
           <!-- Course Card 1 -->
-          <div class="group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+          <div data-category="ai-data" class="course-card group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
             <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-500 w-full"></div>
             <div class="p-6 flex-1 flex flex-col">
               <div class="flex justify-between items-start mb-4">
@@ -1090,7 +1090,7 @@
           </div>
 
           <!-- Course Card 2 -->
-          <div class="group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full relative">
+          <div data-category="software-eng" class="course-card group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full relative">
             <div class="absolute top-4 right-4 z-10">
               <span class="bg-red-500 text-white text-[10px] uppercase font-black px-2 py-1 rounded shadow-lg animate-pulse">Hot</span>
             </div>
@@ -1116,7 +1116,7 @@
           </div>
 
           <!-- Course Card 3 -->
-          <div class="group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+          <div data-category="web-mobile" class="course-card group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
             <div class="h-2 bg-gradient-to-r from-green-400 to-teal-500 w-full"></div>
             <div class="p-6 flex-1 flex flex-col">
               <div class="flex justify-between items-start mb-4">
@@ -1139,7 +1139,7 @@
           </div>
 
           <!-- Course Card 4 -->
-          <div class="group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+          <div data-category="software-eng" class="course-card group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
             <div class="h-2 bg-gradient-to-r from-orange-400 to-red-500 w-full"></div>
             <div class="p-6 flex-1 flex flex-col">
               <div class="flex justify-between items-start mb-4">
@@ -1161,7 +1161,7 @@
           </div>
 
           <!-- Course Card 5 -->
-          <div class="group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+          <div data-category="web-mobile" class="course-card group bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
             <div class="h-2 bg-gradient-to-r from-indigo-500 to-blue-600 w-full"></div>
             <div class="p-6 flex-1 flex flex-col">
               <div class="flex justify-between items-start mb-4">
@@ -1183,7 +1183,7 @@
           </div>
 
           <!-- Course Card 6 -->
-          <div class="group bg-slate-900 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.4)] overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full relative">
+          <div data-category="career" class="course-card group bg-slate-900 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.4)] overflow-hidden transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full relative">
             <div class="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-blue-900/50"></div>
             <div class="p-6 flex-1 flex flex-col relative z-10">
               <div class="flex items-center gap-2 mb-4">
@@ -1291,6 +1291,98 @@
             <div class="absolute -bottom-6 -right-6 w-full h-full bg-gradient-to-br from-secondary-600 to-primary-600 rounded-2xl transform -rotate-3 opacity-50 blur-sm"></div>
           </div>
           
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive "Before & After" Code Slider -->
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary-900/40 blur-[120px] rounded-full pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 text-blue-300 rounded-full font-bold text-sm tracking-wide mb-4 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+            EXPERIENCE THE DIFFERENCE
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Write Code 10x Faster with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary-400">AI Assistance</span>
+          </h2>
+          <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+            See how our tailored AI curriculum transforms your manual, boilerplate-heavy programming into lightning-fast logic. Drag the slider to compare.
+          </p>
+        </div>
+
+        <div class="relative w-full max-w-5xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-slate-700 shadow-2xl select-none group" id="code-container">
+          <!-- Traditional Code (Background/Right) -->
+          <div class="absolute inset-0 bg-slate-950 p-6 md:p-8 font-mono text-sm md:text-base text-slate-400">
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+              <span class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-bold uppercase tracking-wider">Traditional Way (4 Hours)</span>
+            </div>
+<pre><code><span class="text-purple-400">function</span> <span class="text-blue-400">fetchAndProcessData</span>(url) {
+  <span class="text-slate-500">// Manually handle promises, retries, and errors</span>
+  <span class="text-purple-400">return new</span> Promise((resolve, reject) => {
+    <span class="text-purple-400">const</span> xhr = <span class="text-purple-400">new</span> XMLHttpRequest();
+    xhr.open(<span class="text-green-400">'GET'</span>, url);
+    xhr.onload = <span class="text-purple-400">function</span>() {
+      <span class="text-purple-400">if</span> (xhr.status === <span class="text-orange-400">200</span>) {
+        <span class="text-purple-400">try</span> {
+          <span class="text-purple-400">const</span> data = JSON.parse(xhr.responseText);
+          <span class="text-purple-400">const</span> processed = [];
+          <span class="text-purple-400">for</span> (<span class="text-purple-400">let</span> i = 0; i &lt; data.length; i++) {
+            <span class="text-purple-400">if</span> (data[i].isValid) {
+              processed.push({
+                id: data[i].id,
+                value: data[i].val * <span class="text-orange-400">2</span>
+              });
+            }
+          }
+          resolve(processed);
+        } <span class="text-purple-400">catch</span>(e) { reject(e); }
+      } <span class="text-purple-400">else</span> { reject(xhr.statusText); }
+    };
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
+}</code></pre>
+          </div>
+
+          <!-- AI Code (Foreground/Left Overlay) -->
+          <div class="absolute top-0 left-0 bottom-0 bg-[#0d1627] p-6 md:p-8 font-mono text-sm md:text-base border-r-2 border-primary-500 overflow-hidden" id="code-overlay" style="width: 50%;">
+            <div class="flex items-center gap-3 w-[800px] mb-6 pb-4 border-b border-slate-800/50">
+              <span class="px-3 py-1 rounded bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.5)]"><i class="fas fa-bolt mr-2"></i>AI-Assisted Way (5 Minutes)</span>
+            </div>
+<div class="w-[800px]"><pre><code><span class="text-slate-500">// Generated by AI Copilot instantly</span>
+<span class="text-purple-400">const</span> <span class="text-blue-400">fetchAndProcessData</span> = <span class="text-purple-400">async</span> (url) => {
+  <span class="text-purple-400">try</span> {
+    <span class="text-purple-400">const</span> response = <span class="text-purple-400">await</span> fetch(url);
+    <span class="text-purple-400">if</span> (!response.ok) <span class="text-purple-400">throw new</span> Error(response.statusText);
+    
+    <span class="text-purple-400">const</span> data = <span class="text-purple-400">await</span> response.json();
+    
+    <span class="text-slate-500">// Clean, modern, functional processing</span>
+    <span class="text-purple-400">return</span> data
+      .filter(item => item.isValid)
+      .map(item => ({ 
+        id: item.id, 
+        value: item.val * <span class="text-orange-400">2</span> 
+      }));
+      
+  } <span class="text-purple-400">catch</span> (error) {
+    console.error(<span class="text-green-400">'Data fetch failed:'</span>, error);
+    <span class="text-purple-400">throw</span> error;
+  }
+};</code></pre></div>
+          </div>
+
+          <!-- Slider Handle -->
+          <div class="absolute top-0 bottom-0 w-1 bg-primary-500 cursor-ew-resize transform -translate-x-1/2 flex items-center justify-center hover:bg-primary-400 transition-colors z-20 group-hover:shadow-[0_0_20px_rgba(59,130,246,1)]" id="code-slider" style="left: 50%;">
+            <div class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-lg border-2 border-primary-500 flex items-center justify-center text-primary-600 transition-transform group-hover:scale-110">
+              <i class="fas fa-arrows-alt-h text-sm"></i>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2358,8 +2450,58 @@ def optimize_neural_network(model, train_data):
     </button>
   </main>
 
+  <!-- Floating AI Assistant Widget -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <!-- Chat Window -->
+    <div id="ai-chat-window" class="hidden flex-col w-[350px] h-[450px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200 mb-4 transition-all duration-300 transform origin-bottom-right opacity-0 scale-95 pointer-events-none">
+      
+      <!-- Chat Header -->
+      <div class="bg-gradient-to-r from-primary-600 to-secondary-600 p-4 flex justify-between items-center text-white">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm relative">
+            <i class="fas fa-robot text-xl"></i>
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm">SK AI Assistant</h4>
+            <p class="text-xs text-blue-100">Online | Ready to help</p>
+          </div>
+        </div>
+        <button id="ai-chat-close" class="text-white hover:bg-white/20 p-2 rounded-full transition-colors">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Chat Body -->
+      <div id="ai-chat-body" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4 flex flex-col">
+        <div class="text-center text-xs text-slate-400 my-2">Today</div>
+        
+        <!-- Bot Message -->
+        <div class="max-w-[85%] bg-slate-100 text-slate-800 p-3 rounded-xl rounded-tl-sm border border-slate-200 shadow-sm text-sm">
+          👋 Hi there! I'm the SK AI Hub Assistant. Looking to master AI, or searching for a specific course?
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+        <input type="text" id="ai-chat-input" placeholder="Ask me anything..." class="flex-1 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-sm outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all shadow-inner">
+        <button id="ai-chat-send" class="w-10 h-10 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors shadow-md transform hover:scale-105">
+          <i class="fas fa-paper-plane text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Toggle Button -->
+    <button id="ai-chat-btn" class="w-16 h-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full shadow-[0_10px_25px_rgba(59,130,246,0.5)] flex items-center justify-center text-white text-2xl hover:shadow-[0_15px_35px_rgba(59,130,246,0.6)] hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
+      <!-- Glow effect -->
+      <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <i class="fas fa-comment-dots z-10 transition-transform group-hover:scale-110"></i>
+      <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 border-2 border-white rounded-full animate-bounce"></span>
+    </button>
+  </div>
+
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="js/main.js"></script>
   
   <!-- Initialize AOS -->
   <script>
